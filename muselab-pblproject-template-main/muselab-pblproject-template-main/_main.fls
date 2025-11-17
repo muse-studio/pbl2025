@@ -1,8 +1,8 @@
-PWD c:/Users/momoka/Downloads/muselab-pblproject-template-main/muselab-pblproject-template-main
+PWD c:/Users/momoka/Documents/PBL2025/pbl2026/muselab-pblproject-template-main/muselab-pblproject-template-main
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/euptex/platex.fmt
-INPUT c:/Users/momoka/Downloads/muselab-pblproject-template-main/muselab-pblproject-template-main/_main.tex
+INPUT c:/Users/momoka/Documents/PBL2025/pbl2026/muselab-pblproject-template-main/muselab-pblproject-template-main/_main.tex
 OUTPUT _main.log
 INPUT ./ipsj.cls
 INPUT ipsj.cls
