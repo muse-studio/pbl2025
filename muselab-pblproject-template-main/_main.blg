@@ -1,0 +1,55 @@
+This is upBibTeX, Version 0.99d-j0.36-u1.30 (utf8.uptex) (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: _main.aux
+The style file: muselabunsrt.bst
+Database file #1: PBLsannkou2.bib
+Warning--Missing required argument author in La
+Warning--Missing required argument author in Lb
+Warning--Missing required argument author in Lc
+Warning--there's no number and/or volumeLc
+Warning--Missing required argument pages in Lc
+Warning--Missing required argument author in Ld
+Warning--Missing required argument author in Le
+You've used 5 entries,
+            2364 wiz_defined-function locations,
+            590 strings with 4871 characters,
+and the built_in function-call counts, 583 in all, are:
+= -- 33
+> -- 5
+< -- 0
++ -- 5
+- -- 0
+* -- 44
+:= -- 69
+add.period$ -- 5
+call.type$ -- 5
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 31
+empty$ -- 92
+format.name$ -- 0
+if$ -- 144
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 1
+newline$ -- 18
+num.names$ -- 0
+pop$ -- 25
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 31
+stack$ -- 0
+substring$ -- 0
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 7
+while$ -- 0
+width$ -- 6
+write$ -- 34
+is.kanji.str$ -- 9
+(There were 7 warnings)
