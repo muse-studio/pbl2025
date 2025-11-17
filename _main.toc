@@ -1,0 +1,56 @@
+\cftpagenumbersoff {subsubsection}
+\contentsline {section}{\numberline {1}\hskip 1zw{はじめに}}{2}{}%
+\contentsline {subsection}{\numberline {1.1}{研究背景}}{2}{}%
+\contentsline {section}{\numberline {2}\hskip 1zw{GUIシステムの設計}}{2}{}%
+\contentsline {subsection}{\numberline {2.1}{システム全体の概要}}{2}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}{ユーザが行う操作}}{2}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}{システムが行う処理}}{2}{}%
+\contentsline {subsection}{\numberline {2.2}{使用した技術}}{2}{}%
+\contentsline {subsection}{\numberline {2.3}{実装の詳細}}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}{使用ライブラリのインポート}}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}{GUIのレイアウト設計}}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.3}{動画ファイルのアップロード}}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.4}{動画の無音化}}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.5}{動画の再生}}{4}{}%
+\contentsline {subsubsection}{\numberline {2.3.6}{シーンの分割}}{4}{}%
+\contentsline {subsubsection}{\numberline {2.3.7}{シーン動画の保存}}{4}{}%
+\contentsline {subsubsection}{\numberline {2.3.8}{シーン画像の保存}}{5}{}%
+\contentsline {subsubsection}{\numberline {2.3.9}{シーン情報のHTML形式での表示}}{5}{}%
+\contentsline {subsubsection}{\numberline {2.3.10}{シーン選択および再生}}{5}{}%
+\contentsline {subsubsection}{\numberline {2.3.11}{複数のシーン選択および再生}}{5}{}%
+\contentsline {subsubsection}{\numberline {2.3.12}{効果音の検索}}{5}{}%
+\contentsline {subsubsection}{\numberline {2.3.13}{効果音の再生}}{6}{}%
+\contentsline {subsubsection}{\numberline {2.3.14}{シーンへの効果音挿入}}{6}{}%
+\contentsline {subsubsection}{\numberline {2.3.15}{複数シーンへの効果音挿入}}{7}{}%
+\contentsline {subsubsection}{\numberline {2.3.16}{効果音付きシーンの選択と再生}}{7}{}%
+\contentsline {subsubsection}{\numberline {2.3.17}{音付けされた動画のプレビュー再生}}{7}{}%
+\contentsline {subsubsection}{\numberline {2.3.18}{音付け完了後のエクスポート}}{8}{}%
+\contentsline {section}{\numberline {3}\hskip 1zw{GUIシステムの動作例}}{8}{}%
+\contentsline {subsection}{\numberline {3.1}{動画ファイルのアップロード}}{8}{}%
+\contentsline {subsection}{\numberline {3.2}{アップロード動画の再生}}{9}{}%
+\contentsline {subsection}{\numberline {3.3}{動画の無音化}}{9}{}%
+\contentsline {subsection}{\numberline {3.4}{動画のシーン分割}}{10}{}%
+\contentsline {subsection}{\numberline {3.5}{シーン動画の保存}}{10}{}%
+\contentsline {subsection}{\numberline {3.6}{シーン情報のHTML出力}}{11}{}%
+\contentsline {subsection}{\numberline {3.7}{シーンの選択と再生}}{11}{}%
+\contentsline {subsection}{\numberline {3.8}{複数シーンの選択と再生}}{12}{}%
+\contentsline {subsection}{\numberline {3.9}{効果音の検索および再生}}{12}{}%
+\contentsline {subsubsection}{\numberline {3.9.1}{効果音の検索}}{13}{}%
+\contentsline {subsubsection}{\numberline {3.9.2}{効果音の再生}}{13}{}%
+\contentsline {subsection}{\numberline {3.10}{シーンへの効果音挿入}}{13}{}%
+\contentsline {subsection}{\numberline {3.11}{複数シーンへの効果音挿入}}{14}{}%
+\contentsline {subsection}{\numberline {3.12}{効果音付きシーンの再生}}{15}{}%
+\contentsline {subsection}{\numberline {3.13}{効果音付き動画のプレビュー再生}}{15}{}%
+\contentsline {subsection}{\numberline {3.14}{効果音付き動画のエクスポート}}{15}{}%
+\contentsline {section}{\numberline {4}\hskip 1zw{GUIシステムの課題}}{16}{}%
+\contentsline {subsection}{\numberline {4.1}{FFmpegの処理時間}}{16}{}%
+\contentsline {subsection}{\numberline {4.2}{リストファイルのエラー}}{16}{}%
+\contentsline {subsection}{\numberline {4.3}{複数の効果音の挿入}}{16}{}%
+\contentsline {section}{\numberline {5}\hskip 1zw{まとめと今後の展望}}{16}{}%
+\contentsline {section}{\numberline {A.1}\hskip 1zw{読み合わせ時の主なチェックリスト}}{17}{}%
+\contentsline {subsection}{\numberline {A.1.1}{書き方の基本}}{17}{}%
+\contentsline {subsection}{\numberline {A.1.2}{新規性と有効性を明確に示す}}{17}{}%
+\contentsline {subsection}{\numberline {A.1.3}{書き方に関する具体的な注意}}{18}{}%
+\contentsline {subsection}{\numberline {A.1.4}{適切な引用}}{18}{}%
+\contentsline {subsection}{\numberline {A.1.5}{その他}}{18}{}%
+\contentsline {section}{\numberline {A.2}\hskip 1zw{おまけの雑感}}{18}{}%
