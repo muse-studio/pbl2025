@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2025.4.12)  17 NOV 2025 15:50
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2025.4.12)  19 NOV 2025 17:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4391,65 +4391,25 @@ File: fig/figure19.png Graphic file (type bmp)
  (I search font definition file: . . . . . . . . . ) [6]) (./_main.bbl
 LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\JY1/mc/m/n/8.8711 学習指導要領とは何か ？ ： 文部科学
- []
 
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-\JY1/mc/m/n/8.8711 省 ， \OT1/minntx/m/n/8.8711 https://www.mext.go.jp/a[]menu/shotou/new-
- []
+) (I search font definition file: . . . . . . . . . ) [7
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
-[]\JY1/mc/m/n/8.8711 教科書目録情報デ ータベ ース \OT1/minntx/m/n/8.8711 (\JY1/mc/m/n/8.8711 公財\OT1/minntx/m/n/8.8711 ) \JY1/mc/m/n/8.8711 教
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
-\JY1/mc/m/n/8.8711 科書研究センタ ー附属教科書図書館 ，
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
-\OT1/minntx/m/n/8.8711 https://textbook-rc-lib.net/Opac/search.htm?s=-cKZ-
- []
-
-LaTeX Font Info:    Trying to load font information for OMS+ntxtlf on input line 16.
-LaTeX Font Info:    No file OMSntxtlf.fd. on input line 16.
-
-LaTeX Font Warning: Font shape `OMS/ntxtlf/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbar' on input line 16.
-
-
-Underfull \hbox (badness 5260) in paragraph at lines 22--23
-[]\JY1/mc/m/n/8.8711 英語 \OT1/minntx/m/n/8.8711 4 \JY1/mc/m/n/8.8711 技能とは ？ \OMS/ntxtlf/m/n/8.8711 j \JY1/mc/m/n/8.8711 ブリテ ィ ッシ ュ ・ カウ
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-[]\JY1/mc/m/n/8.8711 無料の作曲 ・ 楽譜作成ソフト \OMS/ntxtlf/m/n/8.8711 j \OT1/minntx/m/n/8.8711 Mus-eScore\JY1/mc/m/n/8.8711 ，
- []
-
-) (I search font definition file: . . . . . . . . . ) [7] (./_main.aux)
+] (./_main.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
  ) 
 Here is how much of TeX's memory you used:
- 22632 strings out of 474774
- 418526 string characters out of 5762022
+ 22613 strings out of 474774
+ 418301 string characters out of 5762022
  1940035 words of memory out of 5000000
- 44550 multiletter control sequences out of 15000+600000
- 626567 words of font info for 218 fonts, out of 8000000 for 9000
+ 44532 multiletter control sequences out of 15000+600000
+ 626312 words of font info for 217 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  105i,12n,129p,1047b,628s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.dvi (9 pages, 66716 bytes).
+Output written on _main.dvi (9 pages, 63908 bytes).

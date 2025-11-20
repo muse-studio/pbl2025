@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2025.4.12)  1 MAY 2025 16:45
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2025.4.12)  19 NOV 2025 19:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/momoka/Downloads/muselab-pblproject-template-main/muselab-pblproject-template-main/_yoko.tex
-(c:/Users/momoka/Downloads/muselab-pblproject-template-main/muselab-pblproject-template-main/_yoko.tex
+**c:/Users/momoka/Documents/PBL2025/pbl2026/muselab-pblproject-template-main/muselab-pblproject-template-main/_yoko.tex
+(c:/Users/momoka/Documents/PBL2025/pbl2026/muselab-pblproject-template-main/muselab-pblproject-template-main/_yoko.tex
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -520,21 +520,25 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 14.0pt on input line 35.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.0pt on input line 35.
- (./author-title.tex) (./author-name.tex) (./muselab-yoko-sample.tex
+ (./author-title.tex) (./author-name.tex) (./muselab-yoko-momoka.tex
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 8.
+(Font)              scaled to size 10.0pt on input line 9.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 8.
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 8.
+(Font)              scaled to size 10.0pt on input line 9.
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 9.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 11.
- (c:/texlive/2024/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 11.
+LaTeX Font Info:    Font shape `JT1/mc/b/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 10.0pt on input line 43.
+LaTeX Font Info:    Font shape `JY1/mc/b/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 10.0pt on input line 43.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.0pt on input line 43.
 ) (./_yoko.bbl) [1
 
 
@@ -546,12 +550,12 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9198 strings out of 474774
- 164170 string characters out of 5762022
- 1935035 words of memory out of 5000000
- 31440 multiletter control sequences out of 15000+600000
- 571600 words of font info for 69 fonts, out of 8000000 for 9000
+ 9170 strings out of 474774
+ 163639 string characters out of 5762022
+ 1939035 words of memory out of 5000000
+ 31415 multiletter control sequences out of 15000+600000
+ 571944 words of font info for 69 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 81i,5n,103p,989b,221s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 81i,5n,103p,1005b,221s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _yoko.dvi (1 page, 7920 bytes).
+Output written on _yoko.dvi (1 page, 7568 bytes).
