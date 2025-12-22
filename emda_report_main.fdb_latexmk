@@ -1,0 +1,19 @@
+# Fdb version 4
+["dvipdf"] 0 "emda_report_main.dvi" "emda_report_main.pdf" "emda_report_main" 0 -1
+  "emda_report_main.dvi" 0 -1 0 "latex"
+  (generated)
+  "emda_report_main.pdf"
+  (rewritten before read)
+["latex"] 1766394085.18297 "c:/Users/wadaso/OneDrive/Desktop/卒論/git/pbl2025/emda_report_main.tex" "emda_report_main.dvi" "emda_report_main" 1766394085.73542 2
+  "c:/Users/wadaso/OneDrive/Desktop/卒論/git/pbl2025/emda_report_main.tex" 1766390521 6981 553825e7db547adfa7889b6e680bcb3b ""
+  "c:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1746082034 42148 61becc7c670cd061bb319c643c27fdd4 ""
+  "c:/texlive/2025/texmf-var/web2c/euptex/platex.fmt" 1746084427 3337069 f821addafa804137149418d73f66b5b9 ""
+  "c:/texlive/2025/texmf.cnf" 1746084297 713 e69b156964470283e0530f5060668171 ""
+  "emda_report_main.aux" 1766394085 32 3985256e7290058c681f74d7a3565a19 "latex"
+  "emda_report_main.tex" 1766390521 6981 553825e7db547adfa7889b6e680bcb3b ""
+  "ipsj.cls" 0 -1 0 ""
+  (generated)
+  "emda_report_main.aux"
+  "emda_report_main.dvi"
+  "emda_report_main.log"
+  (rewritten before read)
