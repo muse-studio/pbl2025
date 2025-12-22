@@ -1,8 +1,8 @@
-PWD c:/Users/mizuki/Documents/zemi/muselab-pblproject-template-main/muselab-pblproject-template-main
+PWD c:/Users/mizuki/Documents/pbl2026/muselab-pblproject-template-main
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/euptex/platex.fmt
-INPUT c:/Users/mizuki/Documents/zemi/muselab-pblproject-template-main/muselab-pblproject-template-main/_main.tex
+INPUT c:/Users/mizuki/Documents/pbl2026/muselab-pblproject-template-main/_main.tex
 OUTPUT _main.log
 INPUT ./ipsj.cls
 INPUT ipsj.cls
@@ -367,11 +367,11 @@ INPUT ./_main.lof
 INPUT ./_main.lof
 INPUT _main.lof
 OUTPUT _main.lof
-INPUT ./muselab-sample.tex
-INPUT ./muselab-sample.tex
-INPUT ./muselab-sample.tex
-INPUT ./muselab-sample.tex
-INPUT muselab-sample.tex
+INPUT ./muselab-sample-pbl2026.tex
+INPUT ./muselab-sample-pbl2026.tex
+INPUT ./muselab-sample-pbl2026.tex
+INPUT ./muselab-sample-pbl2026.tex
+INPUT muselab-sample-pbl2026.tex
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-ot1.tfm
@@ -388,18 +388,6 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-ot1.tfm
-INPUT ./f2.png
-INPUT ./f2.png
-INPUT ./f2.png
-INPUT extractbb -B cropbox -O f2.png
-INPUT ./f3.png
-INPUT ./f3.png
-INPUT ./f3.png
-INPUT extractbb -B cropbox -O f3.png
-INPUT ./f4.png
-INPUT ./f4.png
-INPUT ./f4.png
-INPUT extractbb -B cropbox -O f4.png
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
@@ -422,6 +410,20 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
+INPUT ./f2.png
+INPUT ./f2.png
+INPUT ./f2.png
+INPUT extractbb -B cropbox -O f2.png
+INPUT ./f3.png
+INPUT ./f3.png
+INPUT ./f3.png
+INPUT extractbb -B cropbox -O f3.png
+INPUT ./f4.png
+INPUT ./f4.png
+INPUT ./f4.png
+INPUT extractbb -B cropbox -O f4.png
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ./f5.png
 INPUT ./f5.png
 INPUT ./f5.png
