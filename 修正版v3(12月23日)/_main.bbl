@@ -1,0 +1,90 @@
+\begin{thebibliography}{10}
+
+\bibitem{zigsim}
+{ZIG-SIMProject}.
+
+\bibitem{1}
+月東菜乃，酒向慎司\string: 楽曲に基づく照明演出の自動構成に向けたリズム強調箇所の推定と照明変化への反映，エンタテインメントコンピューティングシンポジウム2025論文集 巻 2025, p. 48-55 (2025).
+
+\bibitem{2}
+神野満里奈，福原義久\string: 歌詞や曲調の印象に基づいた照明演出の自動生成システムの実現，エンタテインメントコンピューティングシンポジウム論文集 巻 2021, p. 135-143 (2021).
+
+\bibitem{5}
+Zhao, Z., Jin, D., Zhou, Z. and Zhang, X.: Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?, arXiv preprint arXiv:2506.01482 (2025).
+
+\bibitem{4}
+浅田風太，南澤孝太\string: 演奏者と鑑賞者の身体性を接続するオンラインライブ音楽ライブ空間のデザイン，慶応義塾大学大学院メディアデザイン研究科 (2020).
+
+\bibitem{python}
+{Welcome to Python.org}.
+
+\bibitem{sounddevice}
+{sounddevice · PyPI}.
+
+\bibitem{librosa}
+{librosa — librosa 0.11.0 documentation}.
+
+\bibitem{numpy}
+{NumPy}.
+
+\bibitem{pandas}
+{pandas - Python Data Analysis Library}.
+
+\bibitem{scikitlearn}
+{scikit-learn: machine learning in Python — scikit-learn 1.8.0 documentation}.
+
+\bibitem{socket}
+{socket --- 低水準ネットワークインターフェース — Python 3.14.2 ドキュメント}.
+
+\bibitem{ftd2xx}
+{ftd2xx · PyPI}.
+
+\bibitem{senbonzakura}
+{「MV」 千本桜 WhiteFlame feat 初音ミク - YouTube}.
+
+\bibitem{stradivariussenbonzakura}
+{ストラディバリウス！今宵の『千本桜』はキレッキレ！／石川綾子　AYAKO ISHIKAWA -SENBONZAKURA on Stradivarius}.
+
+\bibitem{recochokusonata}
+{無伴奏ヴァイオリン・ソナタ第3番 ニ短調 「バラード」 Op. 27, No. 3 (イザイ) - ヴァイオリン 楽譜}.
+
+\bibitem{stradivariussonata}
+{【LIVE】Hikarito Violin Solo "Ysaye Sonata No.3 Ballade" / イザイ作曲ヴァイオリンソナタ第三番【ライブ映像】}.
+
+\bibitem{recochokusplash}
+{SHOGO「SPLASH」の楽曲（シングル）・歌詞ページ｜1009177709｜レコチョク}.
+
+\bibitem{stradivariussplash}
+{Violinist SHOGO Solo Stage in Namba Hatch Soleil Solo Live}.
+
+\bibitem{mucs}
+{Demucs - 検索}.
+
+\bibitem{yolov8}
+{YOLOv8: State-of-the-Art Computer Vision Model}.
+
+\bibitem{randomforestregressor}
+{RandomForestRegressor — scikit-learn 1.8.0 documentation}.
+
+\bibitem{paganini}
+{Paganini 24 Violin Caprise No. 10 in G Minor, Op. 1/10 MIDI File Download :: MidiShow}.
+
+\bibitem{kayser}
+{36 Violin Studies, Op.20 (Kayser, Heinrich Ernst) - IMSLP/ペトルッチ楽譜ライブラリー: パブリックドメインの無料楽譜}.
+
+\bibitem{wohlfahrt}
+{Free sheet music - Wohlfahrt VIOLIN - FIDDLE - Download PDF, MP3 \& MIDIl}.
+
+\bibitem{fluidsynth}
+{FluidSynth | Software synthesizer based on the SoundFont 2 specifications}.
+
+\bibitem{kimi}
+{井上あずみ 君をのせて 歌詞 - 歌ネット』}.
+
+\bibitem{tsunagaroom}
+{Tsunaga Room – 「お家以上、図書館未満、」 学生と企業を繋ぐ 新たなコワーキングスペース}.
+
+\bibitem{utasonglisa}
+{LiSA 紅蓮華 歌詞 - 歌ネット}.
+
+\end{thebibliography}
