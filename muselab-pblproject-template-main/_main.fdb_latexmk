@@ -1,25 +1,25 @@
 # Fdb version 4
-["bibtex _main"] 1766387631.71489 "_main.aux" "_main.bbl" "_main" 1766387645.9354 0
+["bibtex _main"] 1766476872.34259 "_main.aux" "_main.bbl" "_main" 1766477612.25168 0
   "./PBLsannkou2.bib" 1763359891 2345 4eea93570c4d2d3d32cf2a759c96e2c6 ""
   "./muselabunsrt.bst" 1763359891 23642 51699832d463c601535e56d1f51d2ea9 ""
-  "_main.aux" 1766387641 4323 56f1364b79a889b3892fbc05a87a1f6d "latex"
+  "_main.aux" 1766477610 3266 9e78dc64a51302a3bc18d08f49b25147 "latex"
   (generated)
   "_main.bbl"
   "_main.blg"
   (rewritten before read)
-["dvipdf"] 1766387643.15778 "_main.dvi" "_main.pdf" "_main" 1766387645.94689 0
-  "_main.dvi" 1766387641 48508 f037b438b8abf7e3286e69631a401220 "latex"
+["dvipdf"] 1766477611.52885 "_main.dvi" "_main.pdf" "_main" 1766477612.25741 0
+  "_main.dvi" 1766477610 49636 1ee4649cbd09a0d1aef5bac52d51ffa5 "latex"
   (generated)
   "_main.pdf"
   (rewritten before read)
-["latex"] 1766387632.41556 "c:/Users/mizuki/Documents/pbl2026/muselab-pblproject-template-main/_main.tex" "_main.dvi" "_main" 1766387645.93603 0
-  "_main.aux" 1766387641 4323 56f1364b79a889b3892fbc05a87a1f6d "latex"
-  "_main.bbl" 1766387632 540 20294f182175bbb2b961e05388c2f4bc "bibtex _main"
-  "_main.lof" 1766387641 835 5e7aeef052f0cf5b17b694f5f2dd60a5 "latex"
+["latex"] 1766477609.32838 "c:/Users/mizuki/Documents/pbl2026/muselab-pblproject-template-main/_main.tex" "_main.dvi" "_main" 1766477612.25192 0
+  "_main.aux" 1766477610 3266 9e78dc64a51302a3bc18d08f49b25147 "latex"
+  "_main.bbl" 1766476872 49 0eba253fc001332e731e8aba3f23127b "bibtex _main"
+  "_main.lof" 1766477610 0 d41d8cd98f00b204e9800998ecf8427e "latex"
   "_main.tex" 1763362097 5049 dce0562ccd5555fae83ccb67b46fe8a3 ""
-  "_main.toc" 1766387641 1618 03aba25cd1001ad74c6eb66246c91b6e "latex"
-  "author-name.tex" 1766387035 274 19dc929fea970d23db3ffaa57a11e688 ""
-  "author-title.tex" 1766387035 244 26ea4b893563b0ae513d648fb7249be4 ""
+  "_main.toc" 1766477610 2077 cfdac9b89d3d2a3e2944d50e1b512a58 "latex"
+  "author-name.tex" 1766477287 26 efb71beb0803a962e18b9c4dfdcb51c8 ""
+  "author-title.tex" 1766477287 253 6e5d119900704822b629518450c64ce2 ""
   "c:/Users/mizuki/Documents/pbl2026/muselab-pblproject-template-main/_main.tex" 1763362097 5049 dce0562ccd5555fae83ccb67b46fe8a3 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1745078197 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1745079833 2124 2601a75482e9426d33db523edf23570a ""
@@ -28,7 +28,6 @@
   "c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1745079375 856 7404843a5f798859944d7973a47821d5 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1745079375 856 39c171483fe1bb7d0e1368980c0c205b ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1745077640 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
-  "c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1745077640 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm" 1745078632 520 82a3d37183f34b6eb363a161dfc002c2 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm" 1745078632 520 d082ac03a1087bc1ec2a06e24a9f68c0 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1745078632 520 4889cce2180234b97cad636b6039c722 ""
@@ -188,18 +187,9 @@
   "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1745077256 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "c:/texlive/2024/texmf-var/web2c/euptex/platex.fmt" 1745080556 8157727 913275ac57b2ea12183be2fccd93d945 ""
   "c:/texlive/2024/texmf.cnf" 1745080348 713 e69b156964470283e0530f5060668171 ""
-  "f1.png" 1763359891 160692 80e18233bef53a1c7340a0d2b85ff630 ""
-  "f2.png" 1763359891 164433 efc1b188bed35f61ba25e1433ae4eb14 ""
-  "f3.png" 1763359891 74535 10a86e7ce5f684a8a537df7972946923 ""
-  "f4.png" 1763359891 11556 48dceaaa52b8c2c0201d120dc3b18ad1 ""
-  "f5.png" 1763359891 195687 6bd661214e44e0679736304448284cda ""
-  "f6.png" 1763359891 196914 766ec5fe9c5d331fb240f4f62e77136a ""
-  "f7.png" 1763359891 10853 25e43cdf0d0c751cb213db2c2ae3e35f ""
-  "f8.png" 1763359891 210633 999156c6e0b8766845457d8299628a9a ""
-  "f9.png" 1763359891 35611 fbf86bd976bafcea5ff2d22ad59dbe55 ""
   "ipsj.cls" 1763359891 142123 edc2b78c657ed865834831a8cbffeb3f ""
   "ipsjtech.sty" 1763359891 6572 e752553af768fcae894e19205d3a7d42 ""
-  "muselab-sample-pbl2026.tex" 1766387607 27058 74d35eaf6d715fbd92336e3a8758de08 ""
+  "muselab-sample-pbl2026.tex" 1766477608 29638 c11cbbced77b59f6096bb11b87ad1198 ""
   "muselabtech.sty" 1763359891 8049 8a007c8a9ab107c323ad4c81a9756bbc ""
   (generated)
   "_main.aux"
