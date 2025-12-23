@@ -1,0 +1,30 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces ライトの配置イメージ(上面図)}}{3}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces 上げ弓（UP）}}{3}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces 下げ弓（DOWN）}}{4}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces 照明予測モデル構築のためのデータ生成フロー}}{4}{}%
+\contentsline {figure}{\numberline {5}{\ignorespaces *千本桜* 演奏映像}}{4}{}%
+\contentsline {figure}{\numberline {6}{\ignorespaces *Sonata* 演奏映像}}{4}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces *スプラッシュ* 演奏映像}}{5}{}%
+\contentsline {figure}{\numberline {8}{\ignorespaces 抽出する音響特徴量の内訳}}{5}{}%
+\contentsline {figure}{\numberline {9}{\ignorespaces ゼロ交差率 (ZCR) の定義式}}{5}{}%
+\contentsline {figure}{\numberline {10}{\ignorespaces スペクトル重心 (Spectral Centroid) の定義式}}{5}{}%
+\contentsline {figure}{\numberline {11}{\ignorespaces スペクトル帯域幅 (Spectral Bandwidth) の定義式}}{6}{}%
+\contentsline {figure}{\numberline {12}{\ignorespaces スペクトルフラットネス (Spectral Flatness) の定義式}}{6}{}%
+\contentsline {figure}{\numberline {13}{\ignorespaces 音量（RMS）の定義式}}{6}{}%
+\contentsline {figure}{\numberline {14}{\ignorespaces MFCC の一次差分および二次差分の定義式}}{6}{}%
+\contentsline {figure}{\numberline {15}{\ignorespaces 決定係数 (R^^c2^^b2) の定義式}}{10}{}%
+\contentsline {figure}{\numberline {16}{\ignorespaces 決定係数 (R^^c2^^b2) の結果}}{11}{}%
+\contentsline {figure}{\numberline {17}{\ignorespaces 照明色 (R成分) に対する音響特徴量}}{11}{}%
+\contentsline {figure}{\numberline {18}{\ignorespaces 照明色 (G成分)に対する音響特徴量}}{12}{}%
+\contentsline {figure}{\numberline {19}{\ignorespaces 照明色 (B成分)に対する音響特徴量}}{12}{}%
+\contentsline {figure}{\numberline {20}{\ignorespaces 照明の明るさに対する音響特徴量}}{13}{}%
+\contentsline {figure}{\numberline {21}{\ignorespaces 照明の点滅速度に対する音響特徴量}}{13}{}%
+\contentsline {figure}{\numberline {22}{\ignorespaces DMX対応照明機器}}{14}{}%
+\contentsline {figure}{\numberline {23}{\ignorespaces リアルタイム照明制御システム構成図}}{14}{}%
+\contentsline {figure}{\numberline {24}{\ignorespaces 照明上下動作}}{16}{}%
+\contentsline {figure}{\numberline {25}{\ignorespaces 実演機材配置図(上面図)}}{16}{}%
+\contentsline {figure}{\numberline {26}{\ignorespaces 実演曲目『紅蓮華』楽譜}}{17}{}%
+\contentsline {figure}{\numberline {27}{\ignorespaces 実演中の照明変化の様子（イントロ部分）}}{17}{}%
+\contentsline {figure}{\numberline {28}{\ignorespaces 実演中の照明変化の様子（Aメロ～Cメロ）}}{17}{}%
+\contentsline {figure}{\numberline {29}{\ignorespaces 実演中の照明変化の様子（サビ部分）}}{17}{}%
+\contentsline {figure}{\numberline {30}{\ignorespaces 実演中の照明変化の様子（サビ部分）}}{18}{}%
