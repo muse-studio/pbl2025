@@ -1,0 +1,28 @@
+\cftpagenumbersoff {subsubsection}
+\contentsline {section}{\numberline {1}\hskip 1zw{はじめに}}{1}{}%
+\contentsline {section}{\numberline {2}\hskip 1zw{インタラクティブ楽器}}{1}{}%
+\contentsline {subsection}{\numberline {2.1}{インタラクティブ楽器の歴史}}{1}{}%
+\contentsline {subsection}{\numberline {2.2}{本研究の狙い}}{1}{}%
+\contentsline {section}{\numberline {3}\hskip 1zw{システム構成}}{1}{}%
+\contentsline {subsection}{\numberline {3.1}{MediaPipe}}{1}{}%
+\contentsline {subsection}{\numberline {3.2}{Max}}{1}{}%
+\contentsline {subsection}{\numberline {3.3}{MIDI}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}{ノートオン/オフ・ノートナンバー}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}{コントロールチェンジ(CC)}}{2}{}%
+\contentsline {subsection}{\numberline {3.4}{ユーザーが行う動作}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}{基本姿勢}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}{ハンドサイン}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.4.3}{カメラからの距離}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.4.4}{手の開き具合}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.4.5}{つまみを回す動作}}{3}{}%
+\contentsline {section}{\numberline {4}\hskip 1zw{ハンドジェスチャーで制御するシンセ演奏システム}}{3}{}%
+\contentsline {subsection}{\numberline {4.1}{機能説明}}{3}{}%
+\contentsline {subsection}{\numberline {4.2}{モード変更}}{3}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}{スムージング機能}}{3}{}%
+\contentsline {subsection}{\numberline {4.3}{MIDI送信設定}}{3}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}{MIDI送信先}}{3}{}%
+\contentsline {subsubsection}{\numberline {4.3.2}{ノートナンバー・CCナンバー}}{3}{}%
+\contentsline {subsubsection}{\numberline {4.3.3}{MIDIチャンネル}}{3}{}%
+\contentsline {subsubsection}{\numberline {4.3.4}{MIDI CC範囲}}{3}{}%
+\contentsline {section}{\numberline {5}\hskip 1zw{考察}}{4}{}%
+\contentsline {section}{\numberline {6}\hskip 1zw{おわりに}}{4}{}%

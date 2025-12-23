@@ -1,0 +1,57 @@
+This is upBibTeX, Version 0.99d-j0.36-u2.00 (utf8.uptex) (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: _main.aux
+The style file: muselabunsrt.bst
+Database file #1: houkokusho2024.bib
+Warning--I didn't find a database entry for "okumura"
+Warning--I didn't find a database entry for "Goossens94"
+Warning--I didn't find a database entry for "natalie"
+Warning--I didn't find a database entry for "Shirai13"
+Warning--I didn't find a database entry for "Tap-biz17"
+Warning--I didn't find a database entry for "Nakata09"
+Warning--I didn't find a database entry for "book1"
+Warning--I didn't find a database entry for "book2"
+Warning--I didn't find a database entry for "book3"
+You've used 0 entries,
+            2364 wiz_defined-function locations,
+            580 strings with 4503 characters,
+and the built_in function-call counts, 19 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 8
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+is.kanji.str$ -- 0
+(There were 9 warnings)
