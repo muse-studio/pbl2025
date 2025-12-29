@@ -976,6 +976,75 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 
 % -6.3 持続音楽器を考慮した階層的フレーズ表現 -
 \subsection{持続音楽器を考慮した階層的フレーズ表現}
+保科理論で示されるように，音楽はグループやフレーズといった階層的な構造を持つ．
+この階層性は演奏表現においても同様であり，例えば「楽曲全体をある性格で演奏しつつ，その中の特定の区間のみを異なるニュアンスで際立たせる」といった，入れ子構造の表現意図を演奏者は持つことがある．
+本システムでは，ユーザによる複数回の加工を行うことで，この階層的な表現意図を実現することが可能である．
+具体的には，一度表現付けを行ったMIDIデータを保存し，それを新たな入力データとして再度読み込ませることで，ベースとなる表現の上に，より局所的な表現の再加工を行うことができる．
+
+本節では，「G線上のアリア」の冒頭6小節の主旋律パート（\figref{fig:Air_Phrase_flute}）を例に，ベースとなる大きな表現の流れの中に，性格の異なる複数の局所的な表現を段階的に組み込むことで，より多層的で物語性のある演奏デザインを試みる．
+
+% 図26
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{fig/Air_Phrase_flute.png}
+	\caption{「G線上のアリア」冒頭6小節の主旋律パート}
+	\label{fig:Air_Phrase_flute}
+\end{figure}
+
+% -6.3.1 適用手順と音楽的意図 -
+\subsubsection{適用手順と音楽的意図}
+本検証では，楽曲の表現意図を段階的に構築するプロセスとして，以下の手順でデータの再加工を行った．
+
+\begin{enumerate}
+	\item \textbf{ベース表現の適用：}
+		まず，フレーズ全体（1～6小節）に対し，繊細で柔らかなベース表現として「Dolce」を適用し，そのMIDIデータを一度書き出す．
+	\item \textbf{局所的表現の再加工：}
+		次に，書き出したMIDIデータを再度システムに読み込ませ，以下の2つの表現の再加工を行った．
+		\begin{itemize}
+			\item 3～4小節：Dolceの静けさからクライマックスへ繋ぐため，「Cantabile」を適用した．
+			\item 5小節：フレーズのクライマックスである5小節目に対し，情熱的な高まりを表現するため「Appassionato」を適用した．
+		\end{itemize}	
+\end{enumerate}
+
+% -6.3.2 CC2パラメータの変化と考察 -
+\subsubsection{CC2パラメータの変化と考察}
+上記のプロセスによって生成されたCC2値の推移を\figref{fig:Air_cc2_original}，\figref{fig:Air_cc2_dolce},\figref{fig:Air_cc2_processed}に示す．
+
+% 図27
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{fig/Air_cc2_original.png}
+	\caption{階層的表現の適用によるCc2値の変化（加工前）}
+	\label{fig:Air_cc2_original}
+\end{figure}
+
+% 図28
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{fig/Air_cc2_dolce.png}
+	\caption{階層的表現の適用によるCc2値の変化（ベースとなる「Dolce」適用後）}
+	\label{fig:Air_cc2_dolce}
+\end{figure}
+
+% 図29
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{fig/Air_cc2_processed.png}
+	\caption{階層的表現の適用によるCc2値の変化（最終的な階層的表現を適用後）}
+	\label{fig:Air_cc2_processed}
+\end{figure}
+
+これらの図は，本アプローチの有効性を明確に示している．
+加工前の平坦なCC2値（\figref{fig:Air_cc2_original}）に対し，まず「Dolce」を適用することで，全体が抑えられた緩やかな山型のカーブ（\figref{fig:Air_cc2_dolce}）が形成される．
+最終的な出力である\figref{fig:Air_cc2_processed}では，この「Dolce」によって形成されたベースラインの上に，「Cantabile」による緩やかな盛り上がりが3～4小節目に現れる．
+そして，その流れを引き継ぐ形で，5小節目には「Appassionato」によるダイナミックなピークが形成されている．
+
+ここでは，後から適用された「Cantabile」や「Appassionato」のカーブが，元のMIDIデータのCC2値を基準にするのではなく，先行して適用された「Dolce」のカーブの値を新たな基準として再計算・生成されている．
+これにより，大きなフレーズの流れを汲みつつ部分的な性格を変化させるという，音楽的に自然な階層性がパラメータレベルで実現されている．
+
+この結果は，本システムがユーザによる段階的な加工プロセスを通じて，単一のプリセットでは実現できない，多層的な楽曲の表現意図を構築できることを示している．
+演奏者は，大きなフレーズの全体像（Dolce）を描いた後，その中の特定の区間に対して「少し歌わせる（Cantabile）」「情熱的に盛り上げる（Appasionato）」といった，複数の異なるレベルの表情付けを施すことができる．
+これは，楽曲の物語性を深く解釈し，それを具体的なパラメータとして具現化する創造的なプロセスであり，本システムの有効性を強く示すものである．
 
 % -6.4 今後の課題と展望 -
 \subsection{今後の課題と展望}
