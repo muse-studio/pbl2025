@@ -1,8 +1,8 @@
-PWD c:/Users/saruy/Downloads/pbl2025-matsunaga-ryusui/pbl2025-matsunaga-ryusui/卒業論文
+PWD c:/Users/saruy/Downloads/pbl2025-1/卒業論文
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/euptex/platex.fmt
-INPUT c:/Users/saruy/Downloads/pbl2025-matsunaga-ryusui/pbl2025-matsunaga-ryusui/卒業論文/_main.tex
+INPUT c:/Users/saruy/Downloads/pbl2025-1/卒業論文/_main.tex
 OUTPUT _main.log
 INPUT ./ipsj.cls
 INPUT ipsj.cls
