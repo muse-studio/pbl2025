@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  30 DEC 2025 14:03
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  30 DEC 2025 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4878,16 +4878,16 @@ File: ../fig/splash.png Graphic file (type bmp)
 
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 939.
+            Default family used instead on input line 938.
+LaTeX Info: Symbol \texttwosuperior not provided by
+            font family ntxtlf in TS1 encoding.
+            Default family used instead on input line 940.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
             Default family used instead on input line 941.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
             Default family used instead on input line 942.
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 943.
 
 
 (I search font definition file: . . . . . . . . . ) [12]
@@ -4895,30 +4895,30 @@ File: ../fig/r2-formula.jpg Graphic file (type bmp)
 <../fig/r2-formula.jpg>
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 948.
+            Default family used instead on input line 947.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 948.
+            Default family used instead on input line 947.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 952.
+            Default family used instead on input line 951.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 958.
+            Default family used instead on input line 957.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 961.
+            Default family used instead on input line 960.
 File: ../fig/r2.png Graphic file (type bmp)
 <../fig/r2.png>
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 966.
+            Default family used instead on input line 965.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 966.
+            Default family used instead on input line 965.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 976.
+            Default family used instead on input line 975.
 
 
 File: ../fig/rlightstyle.png Graphic file (type bmp)
@@ -5001,4 +5001,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  105i,11n,129p,642b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.dvi (22 pages, 163896 bytes).
+Output written on _main.dvi (22 pages, 163664 bytes).
