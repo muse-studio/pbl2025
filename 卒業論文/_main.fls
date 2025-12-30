@@ -661,13 +661,4 @@ INPUT _main.bbl
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT ./appendix-ryusui.tex
-INPUT ./appendix-ryusui.tex
-INPUT ./appendix-ryusui.tex
-INPUT ./appendix-ryusui.tex
-INPUT appendix-ryusui.tex
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT _main.aux
