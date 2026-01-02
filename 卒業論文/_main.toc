@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {2.1}{音響信号に基づく照明演出の自動化}}{2}{}%
 \contentsline {subsection}{\numberline {2.2}{楽曲の印象・意味内容に基づく照明生成}}{2}{}%
 \contentsline {subsection}{\numberline {2.3}{深層学習を用いた照明演出生成}}{2}{}%
-\contentsline {subsection}{\numberline {2.4}{演奏者操作によるリアルタイム照明制御}}{2}{}%
+\contentsline {subsection}{\numberline {2.4}{演奏者操作によるリアルタイム照明制御}}{3}{}%
 \contentsline {subsection}{\numberline {2.5}{身体動作と照明演出の連動}}{3}{}%
 \contentsline {subsection}{\numberline {2.6}{本研究の位置づけ}}{3}{}%
 \contentsline {section}{\numberline {3}\hskip 1zw{リアルタイム照明制御システムの実装}}{3}{}%
@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {3.4}{音声入力処理}}{4}{}%
 \contentsline {subsection}{\numberline {3.5}{音響特徴量抽出}}{4}{}%
 \contentsline {subsubsection}{\numberline {3.5.1}{ゼロ交差率(ZCR)}}{4}{}%
-\contentsline {subsubsection}{\numberline {3.5.2}{スペクトル重心(Spectral Centroid)}}{4}{}%
+\contentsline {subsubsection}{\numberline {3.5.2}{スペクトル重心(Spectral Centroid)}}{5}{}%
 \contentsline {subsubsection}{\numberline {3.5.3}{スペクトル帯域幅(SpectralBandwidth)}}{5}{}%
 \contentsline {subsubsection}{\numberline {3.5.4}{スペクトルコントラスト(SpectralContrast)}}{5}{}%
 \contentsline {subsubsection}{\numberline {3.5.5}{スペクトルフラットネス(SpectralFlatness)}}{5}{}%

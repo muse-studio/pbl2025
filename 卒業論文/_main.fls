@@ -497,12 +497,12 @@ INPUT ../fig/usbdmx.png
 INPUT ../fig/usbdmx.png
 INPUT ../fig/usbdmx.png
 INPUT extractbb -B cropbox -O ../fig/usbdmx.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/light.png
 INPUT ../fig/light.png
 INPUT ../fig/light.png
 INPUT extractbb -B cropbox -O ../fig/light.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/setting.png
 INPUT ../fig/setting.png
 INPUT ../fig/setting.png
@@ -511,12 +511,12 @@ INPUT ../fig/zcr.png
 INPUT ../fig/zcr.png
 INPUT ../fig/zcr.png
 INPUT extractbb -B cropbox -O ../fig/zcr.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/spectralcentroid.png
 INPUT ../fig/spectralcentroid.png
 INPUT ../fig/spectralcentroid.png
 INPUT extractbb -B cropbox -O ../fig/spectralcentroid.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/spectralbandwidth.png
 INPUT ../fig/spectralbandwidth.png
 INPUT ../fig/spectralbandwidth.png
