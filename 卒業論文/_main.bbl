@@ -1,90 +1,90 @@
 \begin{thebibliography}{10}
 
-\bibitem{zigsim}
-{ZIG-SIMProject}.
+\bibitem{1-10incZIGProject}
+1→10, I.: ZIG-Project, \url{https://zig-project.com/}.
 
 \bibitem{1}
-月東菜乃，酒向慎司\string: 楽曲に基づく照明演出の自動構成に向けたリズム強調箇所の推定と照明変化への反映，エンタテインメントコンピューティングシンポジウム2025論文集 巻 2025, p. 48-55 (2025).
+月東菜乃，酒向慎司\string: 楽曲に基づく照明演出の自動構成に向けたリズム強調箇所の推定と照明変化への反映， Vol.~2025, pp.\ 48--55.
 
 \bibitem{2}
-神野満里奈，福原義久\string: 歌詞や曲調の印象に基づいた照明演出の自動生成システムの実現，エンタテインメントコンピューティングシンポジウム論文集 巻 2021, p. 135-143 (2021).
+神野満里奈，福原義久\string: 歌詞や曲調の印象に基づいた照明演出の自動生成システムの実現， Vol.~2021, pp.\ 135--143.
 
 \bibitem{5}
-Zhao, Z., Jin, D., Zhou, Z. and Zhang, X.: Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?, arXiv preprint arXiv:2506.01482 (2025).
+: Automatic {{Stage Lighting Control}}: {{Is}} It a {{Rule-Driven Process}} or {{Generative Task}}?
 
 \bibitem{4}
-浅田風太，南澤孝太\string: 演奏者と鑑賞者の身体性を接続するオンラインライブ音楽ライブ空間のデザイン，慶応義塾大学大学院メディアデザイン研究科 (2020).
+浅田風太，南澤孝太\string: 演奏者と鑑賞者の身体性を接続するオンライン音楽ライブ空間のデザイン.
 
-\bibitem{python}
-{Welcome to Python.org}.
+\bibitem{WelcomePythonorg2025}
+Welcome to {{Python}}.Org, \url{https://www.python.org/}.
 
-\bibitem{sounddevice}
-{sounddevice · PyPI}.
+\bibitem{SounddevicePlayRecord}
+Sounddevice: {{Play}} and {{Record Sound}} with {{Python}}, \url{http://python-sounddevice.readthedocs.io/}.
 
-\bibitem{librosa}
-{librosa — librosa 0.11.0 documentation}.
+\bibitem{mcfeeLibrosaAudioMusic2015}
+McFee, B., Raffel, C., Liang, D., Ellis, D., McVicar, M., Battenberg, E. and Nieto, O.: Librosa: {{Audio}} and {{Music Signal Analysis}} in {{Python}}, \url{https://doi.curvenote.com/10.25080/Majora-7b98e3ed-003}.
 
-\bibitem{numpy}
-{NumPy}.
+\bibitem{NumPy}
+{{NumPy}}, \url{https://numpy.org/ja/}.
 
-\bibitem{scikitlearn}
-{scikit-learn: machine learning in Python — scikit-learn 1.8.0 documentation}.
+\bibitem{ScikitlearnMachineLearning}
+Scikit-Learn: Machine Learning in {{Python}} — Scikit-Learn 1.8.0 Documentation, \url{https://scikit-learn.org/stable/index.html}.
 
-\bibitem{socket}
-{socket --- 低水準ネットワークインターフェース — Python 3.14.2 ドキュメント}.
+\bibitem{SocketDiShuiZhunnetutowakuintahuesu}
+socket --- 低水準ネットワークインターフェース，\url{https://docs.python.org/3/library/socket.html}.
 
-\bibitem{ftd2xx}
-{ftd2xx · PyPI}.
+\bibitem{Ftd2xxPythonInterface}
+Ftd2xx: {{Python}} Interface to Ftd2xx.Dll from {{FTDI}} Using Ctypes Based on D2xx by {{Pablo Bleyer}}.
 
-\bibitem{v}
-{【弓まっすぐへの道】弓だけの練習法！【1日5分】 | オンラインバイオリンレッスンなら『はるか先生！』}.
+\bibitem{GongmatusuguhenoDaoGongdakenoLianXiFa1Ri5FenOnrainbaiorinretusunnaraharukaXianSheng}
+{【弓まっすぐへの道】弓だけの練習法！【1日5分】 ｜ オンラインバイオリンレッスンなら『はるか先生！』}，{\url{https://www.chanharu-world.com/archives/528\#google_vignette}}.
 
-\bibitem{senbonzakura}
-{「MV」 千本桜 WhiteFlame feat 初音ミク - YouTube}.
+\bibitem{QianBenYingWhiteFlameFeatChuYinmikunoGeCi}
+「千本桜/WhiteFlame feat.初音ミク」の歌詞 って「イイネ！」，\url{https://www.uta-net.com/song/169183/}.
 
-\bibitem{stradivariussenbonzakura}
-{ストラディバリウス！今宵の『千本桜』はキレッキレ！／石川綾子　AYAKO ISHIKAWA -SENBONZAKURA on Stradivarius}.
+\bibitem{ayakoishikawatvSutoradeibariusuJinXiaonoQianBenYinghakiretukireShiChuanLingZiAYAKOISHIKAWA2021}
+ストラディバリウス！今宵の『千本桜』はキレッキレ！／石川綾子　{{AYAKO ISHIKAWA}} -{{SENBONZAKURA}} on {{Stradivarius}}，\url{https://www.youtube.com/watch?v=tVNy1BWZaVc}.
 
-\bibitem{recochokusonata}
-{無伴奏ヴァイオリン・ソナタ第3番 ニ短調 「バラード」 Op. 27, No. 3 (イザイ) - ヴァイオリン 楽譜}.
+\bibitem{VuaiorinsonataDi3FanBetovuenBaiKeShiDian}
+ヴァイオリンソナタ第3番 (ベートーヴェン) - 百科事典，\url{https://ja.wikid.org/}.
 
-\bibitem{stradivariussonata}
-{【LIVE】Hikarito Violin Solo "Ysaye Sonata No.3 Ballade" / イザイ作曲ヴァイオリンソナタ第三番【ライブ映像】}.
+\bibitem{aiolinofficialLIVEHikaritoViolinSolo2019}
+【{{LIVE}}】{{Hikarito Violin Solo}} "{{Ysaye Sonata No}}.3 {{Ballade}}" / イザイ作曲ヴァイオリンソナタ第三番【ライブ映像】，\url{https://www.youtube.com/watch?v=4wmSEHel2WI}.
 
-\bibitem{recochokusplash}
-{SHOGO「SPLASH」の楽曲（シングル）・歌詞ページ｜1009177709｜レコチョク}.
+\bibitem{SHOGOSPLASH}
+SHOGO 「SPLASH」, \url{https://recochoku.jp/song/S1009177709/}.
 
-\bibitem{stradivariussplash}
-{Violinist SHOGO Solo Stage in Namba Hatch Soleil Solo Live}.
+\bibitem{violinistshogoViolinistSHOGOSorosutezi2017}
+Violinist {{SHOGO}} ソロステージ in {{Nambaハッチ}}\_{{Soleil単独ライブ}}，\url{https://www.youtube.com/}.
 
-\bibitem{mucs}
-{Demucs - 検索}.
+\bibitem{FacebookresearchDemucs2026}
+Facebookresearch/Demucs, \url{https://github.com/facebookresearch/demucs}.
 
-\bibitem{yolov8}
-{YOLOv8: State-of-the-Art Computer Vision Model}.
+\bibitem{YOLOv8StateoftheArtComputer}
+{{YOLOv8}}: {{State-of-the-Art Computer Vision Model}}, \url{https://yolov8.com/}.
 
-\bibitem{randomforestregressor}
-{RandomForestRegressor — scikit-learn 1.8.0 documentation}.
+\bibitem{RandomForestRegressor}
+{{RandomForestRegressor}}, \url{https://scikit-learn/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html}.
 
-\bibitem{paganini}
-{Paganini 24 Violin Caprise No. 10 in G Minor, Op. 1/10 MIDI File Download :: MidiShow}.
+\bibitem{Paganini24Violin}
+Paganini 24 {{Violin Caprise No}}. 10 in {{G Minor}}, {{Op}}. 1/10 {{MIDI File Download}} :: {{MidiShow}}, \url{https://www.midishow.com/en/midi/paganini-24-violin-caprise-no-10-in-g-minor-o\p-1-10-midi-download-201071}.
 
-\bibitem{kayser}
-{36 Violin Studies, Op.20 (Kayser, Heinrich Ernst) - IMSLP/ペトルッチ楽譜ライブラリー: パブリックドメインの無料楽譜}.
+\bibitem{36ViolinStudies}
+36 {{Violin Studies}}, {{Op}}.20 ({{Kayser}}, {{Heinrich Ernst}}) - {{IMSLP}}/ペトルッチ楽譜ライブラリー: パブリックドメインの無料楽譜，\url{https://imslp.org/wiki/36\_Violin\_Studies,\_Op.20\_(Kayser,\_Heinrich\_Ernst)}.
 
-\bibitem{wohlfahrt}
-{Free sheet music - Wohlfahrt VIOLIN - FIDDLE - Download PDF, MP3 \& MIDIl}.
+\bibitem{FreeSheetMusic}
+Free Sheet Music - {{Wohlfahrt VIOLIN}} - {{FIDDLE}} - {{Download PDF}}, {{MP3}} \& {{MIDI}}, \url{https://www.free-scores.com/free-sheet-music.php?CATEGORIE=80\&search=Wohlfahrt}.
 
-\bibitem{fluidsynth}
-{FluidSynth | Software synthesizer based on the SoundFont 2 specifications}.
+\bibitem{FluidSynthSoftwareSynthesizer}
+{{FluidSynth}} | {{Software}} Synthesizer Based on the {{SoundFont}} 2 Specifications, \url{https://www.fluidsynth.org/}.
 
-\bibitem{kimi}
-{井上あずみ 君をのせて 歌詞 - 歌ネット』}.
+\bibitem{JunwonoseteJingShangazuminoGeCiTuteiine}
+「君をのせて/井上あずみ」の歌詞 って「イイネ！」，\url{https://www.uta-net.com/song/5063/}.
 
-\bibitem{tsunagaroom}
-{Tsunaga Room – 「お家以上、図書館未満、」 学生と企業を繋ぐ 新たなコワーキングスペース}.
+\bibitem{TsunagaRoomOJiaYiShangTuShuGuanWeiMan}
+Tsunaga Room – 「お家以上、図書館未満、」 学生と企業を繋ぐ 新たなコワーキングスペース，\url{https://www.gel-banana.jp/}.
 
-\bibitem{utasonglisa}
-{LiSA 紅蓮華 歌詞 - 歌ネット}.
+\bibitem{HongLianHuaLiSAnoGeCiTuteiine}
+「紅蓮華/LiSA」の歌詞 って「イイネ！」，\url{https://www.uta-net.com/song/270036/}.
 
 \end{thebibliography}

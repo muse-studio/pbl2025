@@ -660,7 +660,10 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ./_main.bbl
 INPUT ./_main.bbl
 INPUT _main.bbl
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
+INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txtt.tfm
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd

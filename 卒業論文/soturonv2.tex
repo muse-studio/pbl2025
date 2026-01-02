@@ -8,7 +8,7 @@
 
 このような背景から、演奏そのものを入力として照明を自動制御する仕組みが求められている。音楽演奏には音響的特徴だけでなく、身体動作に基づく表現も含まれており、これらを照明制御に統合することで、より一体感のある演出が実現できると考えられる。
 
-そこで本研究では、ヴァイオリン演奏に着目し、音響信号と身体動作を組み合わせたリアルタイム照明制御システムの構築を目的とする。具体的には、マイクから入力されたヴァイオリン音響信号から、スペクトル重心、スペクトル帯域幅、MFCC、ZCR などの音響特徴量を抽出し、機械学習モデルを用いて照明の RGB 値、明るさ、点滅速度といった照明特徴量を予測する。また、スマートフォンのモーションセンシングアプリ ZIG-SIM\cite{zigsim} を用いて、演奏者のヴァイオリン演奏における弓の上下動作を角速度として取得し、照明の上下動作に直接反映させる。
+そこで本研究では、ヴァイオリン演奏に着目し、音響信号と身体動作を組み合わせたリアルタイム照明制御システムの構築を目的とする。具体的には、マイクから入力されたヴァイオリン音響信号から、スペクトル重心、スペクトル帯域幅、MFCC、ZCR などの音響特徴量を抽出し、機械学習モデルを用いて照明の RGB 値、明るさ、点滅速度といった照明特徴量を予測する。また、スマートフォンのモーションセンシングアプリ ZIG-SIM\cite{1-10incZIGProject} を用いて、演奏者のヴァイオリン演奏における弓の上下動作を角速度として取得し、照明の上下動作に直接反映させる。
 
 本研究の着想は、筆者自身の「自分のヴァイオリン演奏だけで照明を直接動かしてみたい」という個人的関心に基づいている。ヴァイオリンを対象とした理由として、筆者自身が演奏経験を有しており、演奏者の立場からシステムの反応性や表現性を評価できる点が挙げられる。
 
@@ -133,7 +133,7 @@ DMX対応照明機器4台(図3)  \\
 それぞれの配線はケーブルを用いたものを実線で示し、無線通信は点線で示している。
 
 \subsection{ソフトウェア構成}
-本システムはPython\cite{python}で実装され、すべての処理を単一プログラム上で統合している。
+本システムはPython\cite{WelcomePythonorg2025}で実装され、すべての処理を単一プログラム上で統合している。
 使用した主なライブラリを表2に示す。
 
 \begin{table}[H]
@@ -145,12 +145,12 @@ DMX対応照明機器4台(図3)  \\
 \hline
 ライブラリ名 & 役割  \\
 \hline
-sounddevice\cite{sounddevice} & 音声ストリーム取得 \\
-librosa\cite{librosa} & 音響特徴量抽出  \\
-numpy\cite{numpy} & 数値処理、データ管理 \\
-scikit-learn\cite{scikitlearn} & 機械学習モデル推論  \\
-socket\cite{socket} & UDP通信  \\
-ftd2xx\cite{ftd2xx} & DMX信号出力 \\
+sounddevice\cite{SounddevicePlayRecord} & 音声ストリーム取得 \\
+librosa\cite{mcfeeLibrosaAudioMusic2015} & 音響特徴量抽出  \\
+numpy\cite{NumPy} & 数値処理、データ管理 \\
+scikit-learn\cite{ScikitlearnMachineLearning} & 機械学習モデル推論  \\
+socket\cite{SocketDiShuiZhunnetutowakuintahuesu} & UDP通信  \\
+ftd2xx\cite{Ftd2xxPythonInterface} & DMX信号出力 \\
 \hline
 \end{tabular}
 \end{table}
@@ -269,7 +269,7 @@ librosa の librosa.feature.mfcc() を用いて 20 次元の MFCC を算出し�
 調波成分を抽出した音声信号に対して、librosa の librosa.feature.tonnetz()を用いて6 次元の Tonnetz 特徴量を算出し、各次元の平均値を特徴量として採用した。
 
 \subsection{演奏動作取得}
-本システムでは、演奏者の弓の上下運動(上げ弓・下げ弓)(図11\cite{v}・図12\cite{v})を取得するために、スマートフォンをZIG-SIMセンサとして利用している。
+本システムでは、演奏者の弓の上下運動(上げ弓・下げ弓)(図11\cite{GongmatusuguhenoDaoGongdakenoLianXiFa1Ri5FenOnrainbaiorinretusunnaraharukaXianSheng}・図12\cite{GongmatusuguhenoDaoGongdakenoLianXiFa1Ri5FenOnrainbaiorinretusunnaraharukaXianSheng})を取得するために、スマートフォンをZIG-SIMセンサとして利用している。
 スマートフォンにはジャイロセンサが搭載されており、X軸方向の角速度を取得することで弓の前後運動を検出する。
 
 \begin{figure}[H]
@@ -469,7 +469,7 @@ DMX 信号の送信は約 10ms 周期で実行される。
 本研究では、入手可能な映像素材が限られているという制約のもと、音質および照明演出が比較的明瞭に記録されており、学習データとして十分な情報量を有すると判断された3種類の映像を選定した。
 各映像の詳細は以下の通りである。
 
-ライブ映像データの1つ目は、ヴァイオリン演奏曲「千本桜\cite{senbonzakura}」の演奏を記録した映像(図15)である\cite{stradivariussenbonzakura}。
+ライブ映像データの1つ目は、ヴァイオリン演奏曲「千本桜\cite{QianBenYingWhiteFlameFeatChuYinmikunoGeCi}」の演奏を記録した映像(図15)である\cite{ayakoishikawatvSutoradeibariusuJinXiaonoQianBenYinghakiretukireShiChuanLingZiAYAKOISHIKAWA2021}。
 
 \begin{figure}[H]
 	\centering
@@ -478,7 +478,7 @@ DMX 信号の送信は約 10ms 周期で実行される。
 	\label{fig:senbonzakura}
 \end{figure}
 
-2つ目のライブ映像データは、ヴァイオリンソロによるクラシック楽曲「ソナタ第三番\cite{recochokusonata}」を演奏した映像(図16)である\cite{stradivariussonata}。
+2つ目のライブ映像データは、ヴァイオリンソロによるクラシック楽曲「ソナタ第三番\cite{VuaiorinsonataDi3FanBetovuenBaiKeShiDian}」を演奏した映像(図16)である\cite{aiolinofficialLIVEHikaritoViolinSolo2019}。
 
 \begin{figure}[H]
 	\centering
@@ -487,7 +487,7 @@ DMX 信号の送信は約 10ms 周期で実行される。
 	\label{fig:sonata}
 \end{figure}
 
-3つ目のライブ映像データは、ヴァイオリンソロによる楽曲「スプラッシュ\cite{recochokusplash}」を演奏した映像(図17)である\cite{stradivariussplash}。
+3つ目のライブ映像データは、ヴァイオリンソロによる楽曲「スプラッシュ\cite{SHOGOSPLASH}」を演奏した映像(図17)である\cite{violinistshogoViolinistSHOGOSorosutezi2017}。
 
 \begin{figure}[H]
 	\centering
@@ -561,7 +561,7 @@ MFCC\_1 & Delta\_MFCC\_1 & Chroma\_1 & Tonnetz\_1 \\
 
 ライブ映像には、会場の反響音、観客ノイズ、伴奏音など、ヴァイオリン以外の音が含まれる。
 音響特徴量は不要な音が混入したまま学習するとモデルの精度劣化を招く。
-そこで音源分離モデルDemucs\cite{mucs}を用い、音声からヴァイオリン成分を抽出した。
+そこで音源分離モデルDemucs\cite{FacebookresearchDemucs2026}を用い、音声からヴァイオリン成分を抽出した。
 
 \begin{enumerate}
 	\item[\textbf{(2)}]\textbf{ヴァイオリン特徴量の抽出}
@@ -587,7 +587,7 @@ MFCC\_1 & Delta\_MFCC\_1 & Chroma\_1 & Tonnetz\_1 \\
 	\item[\textbf{(1)}]\textbf{人体検出による照明領域の特定}
 \end{enumerate}
 
-照明特徴量の抽出において最も重要な前処理は、YOLOv8\cite{yolov8} を用いた人物領域の除外である。
+照明特徴量の抽出において最も重要な前処理は、YOLOv8\cite{YOLOv8StateoftheArtComputer} を用いた人物領域の除外である。
 人物領域を含んだままRGBやBrightnessを算出すると、肌色や衣服の色、演奏者の動きによる輝度変化が混入し、照明そのものの変化を正確に捉えることができない。
 
 そこで本研究では、人物検出後に膨張処理を施し、演奏者周囲も含めて背景から除外した。
@@ -821,7 +821,7 @@ Time [s] & Blinking Speed  \\
 照明予測モデルの出力として使用した照明特徴量のデータセットは4.1.3節で述べた通りである。
 
 \subsubsection{モデルの構造と学習方法}
-照明予測モデル（仮）には、回帰モデルとして Random Forest Regressor\cite{randomforestregressor} を採用した。Random Forest は複数の決定木を組み合わせたアンサンブル学習手法である。
+照明予測モデル（仮）には、回帰モデルとして Random Forest Regressor\cite{RandomForestRegressor} を採用した。Random Forest は複数の決定木を組み合わせたアンサンブル学習手法である。
 決定木の本数は100とし、学習精度と計算コストのバランスを考慮した。
 
 \subsubsection{学習の実行とモデル保存}
@@ -904,7 +904,7 @@ MIDIデータには、音高変化、フレーズ構造、音価の違いなど�
 
 \subsubsection{MIDIデータセットの概要}
 本研究で使用したMIDIデータは、ヴァイオリン演奏において代表的かつ教育的価値の高い楽曲群から構成されている。
-具体的には、「Paganini\cite{paganini}」、「Kayser\cite{kayser}」、「Wohlfahrt\cite{wohlfahrt}」の作品を中心としたヴァイオリンソロのMIDIデータを用いた。
+具体的には、「Paganini\cite{Paganini24Violin}」、「Kayser\cite{36ViolinStudies}」、「Wohlfahrt\cite{FreeSheetMusic}」の作品を中心としたヴァイオリンソロのMIDIデータを用いた。
 
 Paganini の作品は、高度な演奏技巧や急激な音高変化、速いパッセージを多く含み、演奏表現の幅が非常に広い。
 一方で、Kayser および Wohlfahrt の練習曲は、音階練習や基本的な運弓・音程感覚の習得を目的とした楽曲が多く、比較的安定した音高変化と明瞭なフレーズ構造を持つ。
@@ -913,7 +913,7 @@ MIDIデータは、演奏音の音高、音価、発音タイミングなどを�
 特に、これらの練習曲・技巧曲は、音楽教育の現場でも広く使用されており、ヴァイオリン演奏の典型的な音域・音色変化・フレーズ構造を網羅している点で、本研究の補助的データとして有用である。
 \subsubsection{MIDIデータの音声変換}
 MIDIデータは直接音響特徴量を算出することができないため、まず音声信号へ変換する必要がある。
-本研究では、ソフトウェアシンセサイザー FluidSynth\cite{fluidsynth}を用い、MIDIファイルをWAV形式へ変換した。
+本研究では、ソフトウェアシンセサイザー FluidSynth\cite{FluidSynthSoftwareSynthesizer}を用い、MIDIファイルをWAV形式へ変換した。
 
 MIDIからWAVへの変換は各ファイルごとに自動的に実行される。
 
@@ -1239,7 +1239,7 @@ DMX対応照明機器4台  \\
 
 \subsubsection{実演曲目}
 
-実演に使用した楽曲は、『君に乗せて\cite{kimi}』(作曲：久石譲)である。
+実演に使用した楽曲は、『君に乗せて\cite{JunwonoseteJingShangazuminoGeCiTuteiine}』(作曲：久石譲)である。
 本曲はアニメ『天空の城ラピュタ』の主題歌として広く知られており、旋律が明瞭でテンポ変化が比較的少ない楽曲である。
 ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
 演奏はAメロからサビまでをカバーしている。
@@ -1273,13 +1273,13 @@ DMX対応照明機器4台  \\
 \subsection{第2回実演：紅蓮華（公開実演）}
 
 \subsubsection{実演環境}
-次の実演は、京都府福知山市の新町商店街にある「Tsunaga Room\cite{tsunagaroom}」にて実施した。
+次の実演は、京都府福知山市の新町商店街にある「Tsunaga Room\cite{TsunagaRoomOJiaYiShangTuShuGuanWeiMan}」にて実施した。
 この実演は、一般来場者を含む環境で行われた公開実演である。
 また、使用機材の配置や照射方法は5.2.1節と同様である。
 
 \subsubsection{実演曲目}
 
-実演に使用した楽曲は、『紅蓮華\cite{utasonglisa}』（作曲：草野華余子）である。
+実演に使用した楽曲は、『紅蓮華\cite{HongLianHuaLiSAnoGeCiTuteiine}』（作曲：草野華余子）である。
 本曲はアニメ『鬼滅の刃』のオープニングテーマとして広く知られており、力強いリズムと感情豊かなメロディが特徴である。
 ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
 演奏はイントロから1番のサビまでをカバーしている。
