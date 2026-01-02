@@ -3,6 +3,7 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: _main.aux
 The style file: ../muselabunsrt.bst
 Database file #1: ../muselab-sample.bib
+Warning--Missing required argument author in 1-10incZIGProject
 Warning--Missing required argument journal in 1
 Warning--Missing required argument year in 1
 Warning--Missing required argument journal in 2
@@ -41,34 +42,34 @@ Warning--Missing required argument author in TsunagaRoomOJiaYiShangTuShuGuanWeiM
 Warning--Missing required argument author in HongLianHuaLiSAnoGeCiTuteiine
 You've used 29 entries,
             2364 wiz_defined-function locations,
-            691 strings with 9925 characters,
-and the built_in function-call counts, 3618 in all, are:
+            690 strings with 9915 characters,
+and the built_in function-call counts, 3597 in all, are:
 = -- 187
-> -- 77
+> -- 74
 < -- 2
-+ -- 43
-- -- 14
-* -- 186
-:= -- 408
++ -- 42
+- -- 13
+* -- 188
+:= -- 401
 add.period$ -- 29
 call.type$ -- 29
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 65
-duplicate$ -- 194
+cite$ -- 66
+duplicate$ -- 192
 empty$ -- 562
-format.name$ -- 22
-if$ -- 909
+format.name$ -- 20
+if$ -- 906
 int.to.chr$ -- 0
 int.to.str$ -- 29
 missing$ -- 4
 newline$ -- 90
-num.names$ -- 5
-pop$ -- 151
+num.names$ -- 4
+pop$ -- 150
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 225
+skip$ -- 224
 stack$ -- 0
 substring$ -- 56
 swap$ -- 16
@@ -76,9 +77,9 @@ text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 36
-while$ -- 11
+warning$ -- 37
+while$ -- 10
 width$ -- 31
 write$ -- 173
-is.kanji.str$ -- 55
-(There were 36 warnings)
+is.kanji.str$ -- 53
+(There were 37 warnings)
