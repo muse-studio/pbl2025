@@ -639,12 +639,12 @@ INPUT ../fig/intro.png
 INPUT ../fig/intro.png
 INPUT ../fig/intro.png
 INPUT extractbb -B cropbox -O ../fig/intro.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/abc.png
 INPUT ../fig/abc.png
 INPUT ../fig/abc.png
 INPUT extractbb -B cropbox -O ../fig/abc.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/savi.png
 INPUT ../fig/savi.png
 INPUT ../fig/savi.png
@@ -661,6 +661,8 @@ INPUT ./_main.bbl
 INPUT ./_main.bbl
 INPUT _main.bbl
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT _main.aux

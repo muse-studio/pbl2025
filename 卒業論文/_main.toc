@@ -87,12 +87,12 @@
 \contentsline {subsubsection}{\numberline {5.3.3}{実演の進行方法}}{17}{}%
 \contentsline {subsubsection}{\numberline {5.3.4}{実演中の照明変化の様子}}{18}{}%
 \contentsline {section}{\numberline {6}\hskip 1zw{考察}}{19}{}%
-\contentsline {subsection}{\numberline {6.1}{意図通りに制御できた点}}{19}{}%
+\contentsline {subsection}{\numberline {6.1}{意図通りに制御できた点}}{20}{}%
 \contentsline {subsection}{\numberline {6.2}{実演において明らかとなった課題}}{20}{}%
 \contentsline {subsubsection}{\numberline {6.2.1}{照明制御における課題}}{20}{}%
 \contentsline {subsubsection}{\numberline {6.2.2}{演奏動作取得における課題}}{20}{}%
 \contentsline {subsection}{\numberline {6.3}{今後への示唆}}{20}{}%
 \contentsline {subsection}{\numberline {6.4}{本研究における実演システム構築の意義}}{20}{}%
 \contentsline {subsubsection}{\numberline {6.4.1}{研究的観点からの意義}}{20}{}%
-\contentsline {subsubsection}{\numberline {6.4.2}{実践的観点からの意義}}{20}{}%
-\contentsline {section}{\numberline {7}\hskip 1zw{結び}}{20}{}%
+\contentsline {subsubsection}{\numberline {6.4.2}{実践的観点からの意義}}{21}{}%
+\contentsline {section}{\numberline {7}\hskip 1zw{結び}}{21}{}%
