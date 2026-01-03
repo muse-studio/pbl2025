@@ -635,12 +635,12 @@ INPUT ../fig/gurenge-score.png
 INPUT ../fig/gurenge-score.png
 INPUT ../fig/gurenge-score.png
 INPUT extractbb -B cropbox -O ../fig/gurenge-score.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/gurenge-intro.png
 INPUT ../fig/gurenge-intro.png
 INPUT ../fig/gurenge-intro.png
 INPUT extractbb -B cropbox -O ../fig/gurenge-intro.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/gurenge-Amelody-Bmelody-Cmelody.png
 INPUT ../fig/gurenge-Amelody-Bmelody-Cmelody.png
 INPUT ../fig/gurenge-Amelody-Bmelody-Cmelody.png

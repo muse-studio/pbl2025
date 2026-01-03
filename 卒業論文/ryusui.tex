@@ -811,8 +811,6 @@ Time [s] & Brightness  \\
 照明の点滅速度を抽出するために、1秒ごとの平均Brightness値を時系列信号として蓄積し、
 前後5秒の局所FFT を行うことで点滅に対応する周波数成分を推定し、csvに書き出した(\tabref{tab:senbonzakurablinkcsv},\tabref{tab:sonatablinkcsv},\tabref{tab:splashblinkcsv})。
 
-以上により、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、学習用CSVデータとして構築した。
-
 \begin{table}[H]
 \centering
 \small
@@ -878,6 +876,8 @@ Time [s] & Blinking Speed  \\
 \hline
 \end{tabular}
 \end{table}
+
+以上により、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、学習用CSVデータとして構築した。
 
 \subsection{照明予測モデル(仮)の学習} \label{sec:modelthink}
 
@@ -1248,18 +1248,18 @@ $\mathrm{Chroma\_7}$ および $\mathrm{Tonnetz\_6}$ が上位に含まれてい
 \figref{fig:brightnessstyle}は、照明の明るさ（Background Brightness）を目的変数として学習した Random Forest 回帰モデルにおける、音響特徴量の重要度上位5項目を示した結果である。
 本図は、音響信号のどの要素が照明全体の明るさに影響を与えているかを明らかにするものである。
 
-解析の結果、RMS が約77.8\% と最も高い重要度を示した。次いで $\mathrm{Tonnetz\_6}$（約10.4\%）、$\mathrm{MFCC\_19}$（約5.3\%）、$\mathrm{MFCC\_5}$（約3.7\%）、$\mathrm{Spectral Contrast}$（約2.8\%）が続いた。
-
-RMS が約8割近い寄与率を示したことから、照明の明るさは主に音量に基づいて決定されていることが明らかとなった。
-
-本モデルでは、演奏音が強くなるにつれて照明が明るくなり、弱くなるにつれて暗くなるという対応関係が学習されている。
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\hsize]{../fig/brilightstyle.png}
 	\caption{照明の明るさに対する音響特徴量}
 	\label{fig:brightnessstyle}
 \end{figure}
+
+解析の結果、RMS が約77.8\% と最も高い重要度を示した。次いで $\mathrm{Tonnetz\_6}$（約10.4\%）、$\mathrm{MFCC\_19}$（約5.3\%）、$\mathrm{MFCC\_5}$（約3.7\%）、$\mathrm{Spectral Contrast}$（約2.8\%）が続いた。
+
+RMS が約8割近い寄与率を示したことから、照明の明るさは主に音量に基づいて決定されていることが明らかとなった。
+
+本モデルでは、演奏音が強くなるにつれて照明が明るくなり、弱くなるにつれて暗くなるという対応関係が学習されている。
 
 RMS に次いで $\mathrm{Tonnetz\_6}$（約10.4\%）の重要度が高かった。
 この結果は、照明の明るさが単純な音量変化だけでなく、音楽的な構造要素にも影響を受けていることを示している。
@@ -1329,6 +1329,14 @@ RGB 各成分および照明の明るさでは RMS の重要度が支配的で�
 照明は床方向から天井に向けて照射される構成とし、四方から演奏者を照らすような光環境を作り出した。
 システムは以下の機器構成で運用した(\tabref{tab:kizai})。また、実演における各機材の配置図(上面図)は\figref{fig:setting}の通りである。
 
+\subsubsection{実演曲目}
+
+実演に使用した楽曲は、『君に乗せて\cite{JunwonoseteJingShangazuminoGeCiTuteiine}』(作曲：久石譲)である。
+本曲はアニメ『天空の城ラピュタ』の主題歌として広く知られており、旋律が明瞭でテンポ変化が比較的少ない楽曲である。
+ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
+演奏はAメロからサビまでをカバーしている。
+\figref{fig:takeyouwithme-score}に実演で使用した楽譜を示す。
+
 \begin{table}[H]
 \centering
 \small
@@ -1347,33 +1355,11 @@ DMX対応照明機器4台  \\
 \end{tabular}
 \end{table}
 
-\subsubsection{実演曲目}
-
-実演に使用した楽曲は、『君に乗せて\cite{JunwonoseteJingShangazuminoGeCiTuteiine}』(作曲：久石譲)である。
-本曲はアニメ『天空の城ラピュタ』の主題歌として広く知られており、旋律が明瞭でテンポ変化が比較的少ない楽曲である。
-ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
-演奏はAメロからサビまでをカバーしている。
-\figref{fig:takeyouwithme-score}に実演で使用した楽譜を示す。
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\hsize]{../fig/takeyouwithme-score.png}
 	\caption{実演曲目『君に乗せて』楽譜}
 	\label{fig:takeyouwithme-score}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\hsize]{../fig/takeyouwithme-Amelody-Bmelody.png}
-	\caption{『君に乗せて』実演中の照明変化の様子(Aメロ～Bメロ)}
-	\label{fig:takeyouwithme-Amelody-Bmelody}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\hsize]{../fig/takeyouwithme-chorus.png}
-	\caption{『君に乗せて』実演中の照明変化の様子(サビ)}
-	\label{fig:takeyouwithme-chorus}
 \end{figure}
 
 \subsubsection{実演内容と観察結果}
@@ -1388,6 +1374,20 @@ DMX対応照明機器4台  \\
 次の実演は、京都府福知山市の新町商店街にある「Tsunaga Room\cite{TsunagaRoomOJiaYiShangTuShuGuanWeiMan}」にて実施した。
 この実演は、一般来場者を含む環境で行われた公開実演である。
 また、使用機材の配置や照射方法は\ref{sec:ensou}節と同様である。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\hsize]{../fig/takeyouwithme-Amelody-Bmelody.png}
+	\caption{『君に乗せて』実演中の照明変化の様子(Aメロ～Bメロ)}
+	\label{fig:takeyouwithme-Amelody-Bmelody}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\hsize]{../fig/takeyouwithme-chorus.png}
+	\caption{『君に乗せて』実演中の照明変化の様子(サビ)}
+	\label{fig:takeyouwithme-chorus}
+\end{figure}
 
 \subsubsection{実演曲目}
 
