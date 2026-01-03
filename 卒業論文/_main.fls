@@ -629,8 +629,6 @@ INPUT ../fig/takeyouwithme-chorus.png
 INPUT ../fig/takeyouwithme-chorus.png
 INPUT ../fig/takeyouwithme-chorus.png
 INPUT extractbb -B cropbox -O ../fig/takeyouwithme-chorus.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/gurenge-score.png
 INPUT ../fig/gurenge-score.png
 INPUT ../fig/gurenge-score.png
@@ -645,6 +643,8 @@ INPUT ../fig/gurenge-Amelody-Bmelody-Cmelody.png
 INPUT ../fig/gurenge-Amelody-Bmelody-Cmelody.png
 INPUT ../fig/gurenge-Amelody-Bmelody-Cmelody.png
 INPUT extractbb -B cropbox -O ../fig/gurenge-Amelody-Bmelody-Cmelody.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/gurenge-chorus1.png
 INPUT ../fig/gurenge-chorus1.png
 INPUT ../fig/gurenge-chorus1.png

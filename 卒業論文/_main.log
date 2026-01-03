@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  3 JAN 2026 16:41
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  3 JAN 2026 17:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4672,7 +4672,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 66.
+            Default family used instead on input line 65.
 
 
 [0
@@ -4882,47 +4882,47 @@ File: ../fig/splash.png Graphic file (type bmp)
 
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
+            Default family used instead on input line 1090.
+LaTeX Info: Symbol \texttwosuperior not provided by
+            font family ntxtlf in TS1 encoding.
             Default family used instead on input line 1092.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
             Default family used instead on input line 1094.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1096.
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1097.
+            Default family used instead on input line 1095.
 File: ../fig/r2-formula.jpg Graphic file (type bmp)
 <../fig/r2-formula.jpg>
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1102.
+            Default family used instead on input line 1100.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1102.
+            Default family used instead on input line 1100.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1106.
+            Default family used instead on input line 1104.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1113.
+            Default family used instead on input line 1111.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1117.
+            Default family used instead on input line 1115.
 File: ../fig/r2-result.png Graphic file (type bmp)
 <../fig/r2-result.png>
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1122.
+            Default family used instead on input line 1120.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1122.
+            Default family used instead on input line 1120.
 
 
 (I search font definition file: . . . . . . . . . ) [13]
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1132.
+            Default family used instead on input line 1130.
 
 
 File: ../fig/rlightstyle.png Graphic file (type bmp)
@@ -4932,10 +4932,10 @@ File: ../fig/rlightstyle.png Graphic file (type bmp)
 (I search font definition file: . . . . . . . . . ) [14]
 File: ../fig/glightstyle.png Graphic file (type bmp)
 <../fig/glightstyle.png>
+
+
 File: ../fig/blightstyle.png Graphic file (type bmp)
 <../fig/blightstyle.png>
-
-
 File: ../fig/brilightstyle.png Graphic file (type bmp)
 <../fig/brilightstyle.png>
 
@@ -4952,24 +4952,23 @@ File: ../fig/takeyouwithme-score.png Graphic file (type bmp)
 <../fig/takeyouwithme-score.png>
 File: ../fig/takeyouwithme-Amelody-Bmelody.png Graphic file (type bmp)
 <../fig/takeyouwithme-Amelody-Bmelody.png>
-
-
 File: ../fig/takeyouwithme-chorus.png Graphic file (type bmp)
 <../fig/takeyouwithme-chorus.png>
 
 
-(I search font definition file: . . . . . . . . . ) [17]
 File: ../fig/gurenge-score.png Graphic file (type bmp)
 <../fig/gurenge-score.png>
 
 
+(I search font definition file: . . . . . . . . . ) [17]
 
-
-(I search font definition file: . . . . . . . . . ) [18]
 File: ../fig/gurenge-intro.png Graphic file (type bmp)
 <../fig/gurenge-intro.png>
 File: ../fig/gurenge-Amelody-Bmelody-Cmelody.png Graphic file (type bmp)
 <../fig/gurenge-Amelody-Bmelody-Cmelody.png>
+
+
+(I search font definition file: . . . . . . . . . ) [18]
 File: ../fig/gurenge-chorus1.png Graphic file (type bmp)
 <../fig/gurenge-chorus1.png>
 
@@ -4982,11 +4981,10 @@ File: ../fig/gurenge-chorus2.png Graphic file (type bmp)
 
 
 
-(I search font definition file: . . . . . . . . . ) [20]
+(I search font definition file: . . . . . . . . . ) [20]) (./_main.bbl
 
-) (./_main.bbl
 LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 4.
- (c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+(c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 File: ot1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
@@ -5007,8 +5005,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
  []
 
 
-
-(I search font definition file: . . . . . . . . . ) [21]
 Underfull \hbox (badness 10000) in paragraph at lines 73--74
 []\OT1/minntx/m/n/8.8711 Paganini 24 Vi-o-lin Caprise No. 10 in G
  []
@@ -5029,6 +5025,8 @@ Overfull \hbox (2.6442pt too wide) in paragraph at lines 73--74
  []
 
 
+
+(I search font definition file: . . . . . . . . . ) [21]
 Underfull \hbox (badness 7944) in paragraph at lines 79--80
 []\OT1/minntx/m/n/8.8711 Free Sheet Mu-sic - Wohlfahrt VI-O-LIN - FID-
  []
@@ -5065,4 +5063,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  105i,12n,129p,528b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.dvi (24 pages, 177524 bytes).
+Output written on _main.dvi (24 pages, 177360 bytes).

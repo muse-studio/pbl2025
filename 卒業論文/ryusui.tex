@@ -883,6 +883,9 @@ Time [s] & Blinking Speed  \\
 
 \ref{sec:database}節で収集した学習用CSVデータを用いて、照明予測モデルの学習を行った。
 
+このモデルは、ライブ映像由来の実測データのみを用いて学習された点に特徴がある。
+一方で、3種類の映像のみでは演奏種類やデータ量としては少ないため、本研究ではこのモデルを「照明予測モデル（仮）」と位置付けている。
+
 \subsubsection{学習データの概要}
 
 照明予測モデル(仮)の学習には、\ref{sec:database}節にて生成した音響特徴量と照明特徴量のCSVのデータを1つのデータセットとして統合し、使用した(\tabref{tab:csv})。
@@ -905,11 +908,6 @@ Random Forest は複数の決定木を組み合わせたアンサンブル学習
 
 データセットを用いて Random Forest モデルを学習し、音響特徴量と照明特徴量の対応関係を獲得した。
 学習が完了したモデルは、再利用を目的として joblib を用いてファイルとして保存した。
-
-\subsubsection{照明予測モデル(仮)の位置づけ}
-
-本節で構築した照明予測モデル(仮)は、ライブ映像由来の実測データのみを用いて学習された点に特徴がある。
-一方で、演奏種類やデータ量には限界があるため、本研究ではこのモデルを「照明予測モデル（仮）」と位置付けている。
 
 \subsection{MIDIデータの生成と特徴量抽出} \label{sec:midi}
 
@@ -1195,13 +1193,6 @@ Spectral Contrast は、周波数帯域ごとのピークと谷の差を表す�
 
 解析の結果、RMS が全体の約86.8\% と極めて高い重要度を示し、他の特徴量（$\mathrm{Tonnetz\_6}$、$\mathrm{Chroma\_7}$、$\mathrm{MFCC\_5}$、$\mathrm{Spectral Contrast}$）はいずれも1〜7\%程度に留まった。
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\hsize]{../fig/glightstyle.png}
-	\caption{照明色 (G成分)に対する音響特徴量}
-	\label{fig:glightstyle}
-\end{figure}
-
 G成分において RMS が圧倒的な重要度を示したことは、音量が緑色照明の強度をほぼ支配的に決定していることを意味している。
 
 この結果は、G成分が他の色成分に比べて、音楽的な細かなニュアンスよりも音圧の変化を直接反映する成分として扱われていることを示している。
@@ -1223,13 +1214,6 @@ R成分の解析結果では、RMS に加えて Tonnetz や MFCC が比較的高
 解析の結果、RMS が約70.2\% と最も高い重要度を示した。
 次いで  $\mathrm{MFCC\_19}$（約14.9\%）が比較的高い寄与を示し、 $\mathrm{Chroma\_7}$、$\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$ はそれぞれ約5\%前後であった。
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\hsize]{../fig/blightstyle.png}
-	\caption{照明色 (B成分)に対する音響特徴量}
-	\label{fig:blightstyle}
-\end{figure}
-
 B成分においても RMS が最も支配的な特徴量であることから、青色照明も音量変化に大きく依存していることが分かる。
 音量が大きい場面では青色成分が強調され、音量が小さい場面では抑制される傾向をモデルが学習していると考えられる。
 
@@ -1240,6 +1224,20 @@ $\mathrm{MFCC\_19}$ が約15\%と比較的高い重要度を示した点は、B�
 $\mathrm{Chroma\_7}$ および $\mathrm{Tonnetz\_6}$ が上位に含まれていることから、B成分は音量や音色だけでなく、音楽的構造（音高分布や和声的関係）とも関連していることが分かる。
 
 特に Tonnetz が青色成分に影響している点は、静的・緊張感のある和声や、落ち着いた調性が青系照明として表現されやすい可能性を示唆している。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\hsize]{../fig/glightstyle.png}
+	\caption{照明色 (G成分)に対する音響特徴量}
+	\label{fig:glightstyle}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\hsize]{../fig/blightstyle.png}
+	\caption{照明色 (B成分)に対する音響特徴量}
+	\label{fig:blightstyle}
+\end{figure}
 
 これらの結果から、RGB 各成分は一様に音量に反応するのではなく、それぞれ異なる音響的役割を担っていることが明らかとなった。
 
@@ -1329,14 +1327,6 @@ RGB 各成分および照明の明るさでは RMS の重要度が支配的で�
 照明は床方向から天井に向けて照射される構成とし、四方から演奏者を照らすような光環境を作り出した。
 システムは以下の機器構成で運用した(\tabref{tab:kizai})。また、実演における各機材の配置図(上面図)は\figref{fig:setting}の通りである。
 
-\subsubsection{実演曲目}
-
-実演に使用した楽曲は、『君に乗せて\cite{JunwonoseteJingShangazuminoGeCiTuteiine}』(作曲：久石譲)である。
-本曲はアニメ『天空の城ラピュタ』の主題歌として広く知られており、旋律が明瞭でテンポ変化が比較的少ない楽曲である。
-ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
-演奏はAメロからサビまでをカバーしている。
-\figref{fig:takeyouwithme-score}に実演で使用した楽譜を示す。
-
 \begin{table}[H]
 \centering
 \small
@@ -1355,6 +1345,14 @@ DMX対応照明機器4台  \\
 \end{tabular}
 \end{table}
 
+\subsubsection{実演曲目}
+
+実演に使用した楽曲は、『君に乗せて\cite{JunwonoseteJingShangazuminoGeCiTuteiine}』(作曲：久石譲)である。
+本曲はアニメ『天空の城ラピュタ』の主題歌として広く知られており、旋律が明瞭でテンポ変化が比較的少ない楽曲である。
+ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
+演奏はAメロからサビまでをカバーしている。
+\figref{fig:takeyouwithme-score}に実演で使用した楽譜を示す。
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\hsize]{../fig/takeyouwithme-score.png}
@@ -1366,14 +1364,6 @@ DMX対応照明機器4台  \\
 
 この実演では、来場者を想定せず、研究者自身による検証を目的として演奏を行った(\figref{fig:takeyouwithme-Amelody-Bmelody},\figref{fig:takeyouwithme-chorus})。
 図のように、演奏音の入力に応じて照明の色、明るさおよび点滅速度が変化すること、運弓方向に応じて照明の上下動作が発生することを確認した。
-
-\subsection{第2回実演：紅蓮華（公開実演）}
-
-\subsubsection{実演環境}
-
-次の実演は、京都府福知山市の新町商店街にある「Tsunaga Room\cite{TsunagaRoomOJiaYiShangTuShuGuanWeiMan}」にて実施した。
-この実演は、一般来場者を含む環境で行われた公開実演である。
-また、使用機材の配置や照射方法は\ref{sec:ensou}節と同様である。
 
 \begin{figure}[H]
 	\centering
@@ -1388,6 +1378,14 @@ DMX対応照明機器4台  \\
 	\caption{『君に乗せて』実演中の照明変化の様子(サビ)}
 	\label{fig:takeyouwithme-chorus}
 \end{figure}
+
+\subsection{第2回実演：紅蓮華（公開実演）}
+
+\subsubsection{実演環境}
+
+次の実演は、京都府福知山市の新町商店街にある「Tsunaga Room\cite{TsunagaRoomOJiaYiShangTuShuGuanWeiMan}」にて実施した。
+この実演は、一般来場者を含む環境で行われた公開実演である。
+また、使用機材の配置や照射方法は\ref{sec:ensou}節と同様である。
 
 \subsubsection{実演曲目}
 
@@ -1442,6 +1440,13 @@ DMX対応照明機器4台  \\
 
 このような制御により、楽曲の導入部に適した静的かつ安定した視覚環境が形成されている。
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{../fig/gurenge-intro.png}
+	\caption{『紅蓮華』実演中の照明変化の様子（イントロ部分）}
+	\label{fig:gurenge-intro}
+\end{figure}
+
 \begin{enumerate}
 	\item[\textbf{(2)}]\textbf{中盤部における音量増加に伴う色相・輝度の遷移}
 \end{enumerate}
@@ -1456,6 +1461,13 @@ DMX対応照明機器4台  \\
 そのため、この区間においても点滅速度は補助的な要素に留まり、主な視覚的変化は色調および輝度の変化によって構成されている。
 
 運弓方向に連動した照明の上下動作は、中盤部においても引き続き確認できたが、演奏テンポが上がるにつれて、照明の上下移動と運弓動作との間に生じるラグがやや顕在化した。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{../fig/gurenge-Amelody-Bmelody-Cmelody.png}
+	\caption{『紅蓮華』実演中の照明変化の様子（Aメロ～Cメロ）}
+	\label{fig:gurenge-Amelody-Bmelody-Cmelody}
+\end{figure}
 
 \begin{enumerate}
 	\item[\textbf{(3)}]\textbf{サビ部分における高音量・高変動区間の動的照明制御}
@@ -1473,19 +1485,9 @@ DMX対応照明機器4台  \\
 運弓方向に連動した照明の上下動作については、サビ部分では運弓速度が大きくなるため、照明の移動が追従できない場面が複数確認された。
 上下動作には明確なラグが生じ、結果として照明の動きと演奏動作の対応関係が視覚的に把握しにくくなる傾向が見られた。
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\textwidth]{../fig/gurenge-intro.png}
-	\caption{『紅蓮華』実演中の照明変化の様子（イントロ部分）}
-	\label{fig:gurenge-intro}
-\end{figure}
+\section{考察} \label{sec:think}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\textwidth]{../fig/gurenge-Amelody-Bmelody-Cmelody.png}
-	\caption{『紅蓮華』実演中の照明変化の様子（Aメロ～Cメロ）}
-	\label{fig:gurenge-Amelody-Bmelody-Cmelody}
-\end{figure}
+前章では、音響特徴量に基づく照明制御の挙動を、楽曲構造ごとに示した。本節では、それらの結果を基に、本システムの制御特性を設計意図との対応関係および実演環境における実用性の観点から詳細に考察する。
 
 \begin{figure}[H]
 	\centering
@@ -1500,10 +1502,6 @@ DMX対応照明機器4台  \\
 	\caption{『紅蓮華』実演中の照明変化の様子（サビ部分）}
 	\label{fig:gurenge-chorus2}
 \end{figure}
-
-\section{考察} \label{sec:think}
-
-前章では、音響特徴量に基づく照明制御の挙動を、楽曲構造ごとに示した。本節では、それらの結果を基に、本システムの制御特性を設計意図との対応関係および実演環境における実用性の観点から詳細に考察する。
 
 \subsection{意図通りに制御できた点}
 
