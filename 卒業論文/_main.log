@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  4 JAN 2026 00:17
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  4 JAN 2026 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4927,27 +4927,23 @@ LaTeX Info: Symbol \texttwosuperior not provided by
 
 File: ../fig/rlightstyle.png Graphic file (type bmp)
 <../fig/rlightstyle.png>
-
-
-(I search font definition file: . . . . . . . . . ) [14]
 File: ../fig/glightstyle.png Graphic file (type bmp)
 <../fig/glightstyle.png>
 
 
+(I search font definition file: . . . . . . . . . ) [14]
 File: ../fig/blightstyle.png Graphic file (type bmp)
 <../fig/blightstyle.png>
+
+
 File: ../fig/brilightstyle.png Graphic file (type bmp)
 <../fig/brilightstyle.png>
-
-
-(I search font definition file: . . . . . . . . . ) [15]
 File: ../fig/blinklightstyle.png Graphic file (type bmp)
 <../fig/blinklightstyle.png>
 
 
+(I search font definition file: . . . . . . . . . ) [15]
 
-
-(I search font definition file: . . . . . . . . . ) [16]
 File: ../fig/takeyouwithme-score.png Graphic file (type bmp)
 <../fig/takeyouwithme-score.png>
 File: ../fig/takeyouwithme-Amelody-Bmelody.png Graphic file (type bmp)
@@ -4956,35 +4952,38 @@ File: ../fig/takeyouwithme-chorus.png Graphic file (type bmp)
 <../fig/takeyouwithme-chorus.png>
 
 
+(I search font definition file: . . . . . . . . . ) [16]
 File: ../fig/gurenge-score.png Graphic file (type bmp)
 <../fig/gurenge-score.png>
 
 
-(I search font definition file: . . . . . . . . . ) [17]
 
+
+(I search font definition file: . . . . . . . . . ) [17]
 File: ../fig/gurenge-intro.png Graphic file (type bmp)
 <../fig/gurenge-intro.png>
 File: ../fig/gurenge-Amelody-Bmelody-Cmelody.png Graphic file (type bmp)
 <../fig/gurenge-Amelody-Bmelody-Cmelody.png>
 
 
-(I search font definition file: . . . . . . . . . ) [18]
 File: ../fig/gurenge-chorus1.png Graphic file (type bmp)
 <../fig/gurenge-chorus1.png>
 
 
+(I search font definition file: . . . . . . . . . ) [18]
 File: ../fig/gurenge-chorus2.png Graphic file (type bmp)
 <../fig/gurenge-chorus2.png>
 
 
+
+
 (I search font definition file: . . . . . . . . . ) [19]
 
+) (./_main.bbl
 
-
-(I search font definition file: . . . . . . . . . ) [20]) (./_main.bbl
-
+(I search font definition file: . . . . . . . . . ) [20]
 LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 4.
-(c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+ (c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 File: ot1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
@@ -5026,7 +5025,7 @@ Overfull \hbox (2.6442pt too wide) in paragraph at lines 73--74
 
 
 
-(I search font definition file: . . . . . . . . . ) [21]
+
 Underfull \hbox (badness 7944) in paragraph at lines 79--80
 []\OT1/minntx/m/n/8.8711 Free Sheet Mu-sic - Wohlfahrt VI-O-LIN - FID-
  []
@@ -5043,11 +5042,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
 )
 
-
-
-(I search font definition file: . . . . . . . . . ) [22
-
-] (./_main.aux)
+(I search font definition file: . . . . . . . . . ) [21] (./_main.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2024-11-01> patch level 2
@@ -5057,10 +5052,10 @@ L3 programming layer <2020/03/25>
 Here is how much of TeX's memory you used:
  26696 strings out of 473836
  513848 string characters out of 5734522
- 875337 words of memory out of 5000000
+ 875339 words of memory out of 5000000
  49420 multiletter control sequences out of 15000+600000
  616827 words of font info for 190 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 105i,12n,129p,528b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 105i,11n,129p,528b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.dvi (24 pages, 177360 bytes).
+Output written on _main.dvi (23 pages, 171692 bytes).
