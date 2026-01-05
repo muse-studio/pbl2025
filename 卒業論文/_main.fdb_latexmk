@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex _main"] 1767627947.20434 "_main.aux" "_main.bbl" "_main" 1767628346.47185 0
+["bibtex _main"] 1767629534.05872 "_main.aux" "_main.bbl" "_main" 1767629958.06685 0
   "../muselab-sample.bib" 1767394786 20476 6040ad8e810d2e84ba571aaff1fa0145 ""
   "../muselabunsrt.bst" 1767069556 23642 51699832d463c601535e56d1f51d2ea9 ""
-  "_main.aux" 1767628337 17525 9f216dc68e74b78f497964c1e660ae00 "latex"
+  "_main.aux" 1767629948 17524 e7c537731622662bdad992ba23ff3760 "latex"
   (generated)
   "_main.bbl"
   "_main.blg"
   (rewritten before read)
-["dvipdf"] 1767628339.35578 "_main.dvi" "_main.pdf" "_main" 1767628346.48589 0
-  "_main.dvi" 1767628337 145936 c9566e09e8263cc7c7f2cfb5f5b7aaa9 "latex"
+["dvipdf"] 1767629950.80186 "_main.dvi" "_main.pdf" "_main" 1767629958.08003 0
+  "_main.dvi" 1767629948 145920 08eddf9a6ffa7f14c0bf446bd0f0609e "latex"
   (generated)
   "_main.pdf"
   (rewritten before read)
-["latex"] 1767628322.16655 "c:/Users/saruy/Downloads/pbl2025-1/卒業論文/_main.tex" "_main.dvi" "_main" 1767628346.47221 0
+["latex"] 1767629934.17452 "c:/Users/saruy/Downloads/pbl2025-1/卒業論文/_main.tex" "_main.dvi" "_main" 1767629958.06722 0
   "../_date.tex" 1767069556 1019 b624fba205d5c565be31f7272acc17b4 ""
   "../credit/author-name.tex" 1767396942 173 0be072e4699a023290f788300a9ba194 ""
   "../credit/author-title.tex" 1767396965 269 4bb9d8f0ba253a72efc63695785f0eb0 ""
@@ -24,7 +24,7 @@
   "../fig/down.png" 1767622837 1051309 69f23c34d632167e0dae0541e7102be5 ""
   "../fig/glightstyle.png" 1767623943 48282 10e2b08374fc30a35cd4fb10bb033efc ""
   "../fig/gurenge-play.png" 1767616178 497789 d421f356e5e65126daee805e9e85b78b ""
-  "../fig/gurenge-score.png" 1767069911 294819 203ad499c9288b18f384342506979cb9 ""
+  "../fig/gurenge-score.png" 1767629835 293429 c23a8cb92824c45d10dd904ea3f05d1c ""
   "../fig/lightupdown.png" 1767069911 150461 f29f709d4894cfe2d83578ad3bc0c449 ""
   "../fig/r2-result.png" 1767069911 12361 61a5e3e5c42f03f43b772d9d63e6c0ff ""
   "../fig/rlightstyle.png" 1767623683 49823 fdaf593ed8c0ac9fbf2ffa1e1019c1e1 ""
@@ -35,15 +35,15 @@
   "../fig/system-structure.png" 1767597576 100588 4b20c898e3468885335de369b8f739f7 ""
   "../fig/takeyouwithme-Amelody-Bmelody.png" 1767069910 291801 59edfb704d7f2488753d8af6e9f907f9 ""
   "../fig/takeyouwithme-chorus.png" 1767069911 321888 3295f4992a3f93dbefe9fe7b8f7eb48f ""
-  "../fig/takeyouwithme-score.png" 1767069911 125355 fe0e47852338f4dffb88431626e8d439 ""
+  "../fig/takeyouwithme-score.png" 1767629809 124570 904e9e58e2f86948fb2dd72351e2bef8 ""
   "../fig/up.png" 1767622798 858204 ddf5e7fe675ffa3dd5ed96bed2e74088 ""
   "../muselab-correction.sty" 1767069556 1776 0b9da0f39eabaa5aca9b18bffa95288a ""
-  "_main.aux" 1767628337 17525 9f216dc68e74b78f497964c1e660ae00 "latex"
-  "_main.bbl" 1767627947 4913 e5c6ad1e841473ad92e82dfb66b252e5 "bibtex _main"
-  "_main.lof" 1767628337 2299 b555d33a84a2402dd27d9d766b92f302 "latex"
-  "_main.lot" 1767628337 483 47dafabb48bb26deadaaa5baf6b3851a "latex"
+  "_main.aux" 1767629948 17524 e7c537731622662bdad992ba23ff3760 "latex"
+  "_main.bbl" 1767629534 4913 e5c6ad1e841473ad92e82dfb66b252e5 "bibtex _main"
+  "_main.lof" 1767629948 2298 0f6a9abe7fabcf31e32ac2736d7c2c90 "latex"
+  "_main.lot" 1767629948 483 47dafabb48bb26deadaaa5baf6b3851a "latex"
   "_main.tex" 1767397059 5437 5e5d058d13ca8812f345a9e2fc6622fa ""
-  "_main.toc" 1767628337 6268 64e1f5d99d49ab4a3c27e5aaa7df1e6c "latex"
+  "_main.toc" 1767629948 6268 64e1f5d99d49ab4a3c27e5aaa7df1e6c "latex"
   "c:/Users/saruy/Downloads/pbl2025-1/卒業論文/_main.tex" 1767397059 5437 5e5d058d13ca8812f345a9e2fc6622fa ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1744603306 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1744605947 2124 2601a75482e9426d33db523edf23570a ""
@@ -237,7 +237,7 @@
   "ipsj.cls" 1767069556 142123 edc2b78c657ed865834831a8cbffeb3f ""
   "ipsjtech.sty" 1767069556 6572 e752553af768fcae894e19205d3a7d42 ""
   "muselabtech.sty" 1767069556 7956 282dc59db1c2355cdf8f0ff1d5cc9d6c ""
-  "ryusui.tex" 1767628321 82893 e5e27d893d9e4d6d546503914d3c9044 ""
+  "ryusui.tex" 1767629515 82892 13f74e5264f41dd775e710ea2f57d7d1 ""
   (generated)
   "_main.aux"
   "_main.dvi"

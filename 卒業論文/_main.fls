@@ -583,12 +583,12 @@ INPUT ../fig/takeyouwithme-score.png
 INPUT ../fig/takeyouwithme-score.png
 INPUT ../fig/takeyouwithme-score.png
 INPUT extractbb -B cropbox -O ../fig/takeyouwithme-score.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/takeyouwithme-Amelody-Bmelody.png
 INPUT ../fig/takeyouwithme-Amelody-Bmelody.png
 INPUT ../fig/takeyouwithme-Amelody-Bmelody.png
 INPUT extractbb -B cropbox -O ../fig/takeyouwithme-Amelody-Bmelody.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/takeyouwithme-chorus.png
 INPUT ../fig/takeyouwithme-chorus.png
 INPUT ../fig/takeyouwithme-chorus.png
