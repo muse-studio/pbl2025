@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2025.4.20)  23 DEC 2025 17:13
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.sjis) (TeX Live 2024) (preloaded format=platex 2025.4.20)  6 JAN 2026 05:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4121,7 +4121,11 @@ File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.61035pt on input line 74.
- (./_main.aux)
+ (./_main.aux
+
+LaTeX Warning: Label `fig:sample1' multiply defined.
+
+)
 \openout1 = `_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 74.
@@ -4257,7 +4261,6 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 
  [0
 
-
 ] (./muselab-sample-pbl2026.tex
 LaTeX Font Info:    Font shape `JT1/mc/b/n' in size <11.82813> not available
 (Font)              Font shape `JT1/mc/bx/n' tried instead on input line 6.
@@ -4270,59 +4273,105 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <11.82813> not available
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 11.82813pt on input line 6.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 68.
+(Font)              scaled to size 8.8711pt on input line 90.
 LaTeX Font Info:    Font shape `JT1/mc/b/n' in size <8.8711> not available
-(Font)              Font shape `JT1/mc/bx/n' tried instead on input line 68.
+(Font)              Font shape `JT1/mc/bx/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8.8711> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 68.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `JY1/mc/b/n' in size <8.8711> not available
-(Font)              Font shape `JY1/mc/bx/n' tried instead on input line 68.
+(Font)              Font shape `JY1/mc/bx/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8.8711> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 68.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 90.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.8711pt on input line 68.
+(Font)              scaled to size 8.8711pt on input line 90.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.82585pt on input line 68.
+(Font)              scaled to size 7.82585pt on input line 90.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.11441pt on input line 68.
+(Font)              scaled to size 7.11441pt on input line 90.
  (I search kanjifont definition file: . . ) (I search font definition file: . . . . . . . . . )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 4.26868pt on input line 68.
+(Font)              scaled to size 4.26868pt on input line 90.
  (I search kanjifont definition file: . . )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 68.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 90.
  (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 68.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 90.
  (c:/texlive/2024/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.11441pt on input line 68.
+(Font)              scaled to size 7.11441pt on input line 90.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.24873pt on input line 68.
+(Font)              scaled to size 9.24873pt on input line 90.
  [1
 
-] (I search font definition file: . . . . . . . . . ) [2] (I search font definition file: . . . . . . . . . ) [3] (I search font definition file: . . . . . . . . . ) [4]) (./_main.bbl
+]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.13184pt on input line 93.
+File: 2026-f1.png Graphic file (type bmp)
+<2026-f1.png>
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.61035pt on input line 136.
+File: 2026-f2.png Graphic file (type bmp)
+<2026-f2.png>
+ (I search font definition file: . . . . . . . . . ) [2]
+File: 2026-f3.png Graphic file (type bmp)
+<2026-f3.png>
+File: 2026-f4.png Graphic file (type bmp)
+<2026-f4.png>
+File: 2026-f5.png Graphic file (type bmp)
+<2026-f5.png>
+ (I search font definition file: . . . . . . . . . ) [3] (I search font definition file: . . . . . . . . . ) [4]
+File: 2026-f6.png Graphic file (type bmp)
+<2026-f6.png>
+File: 2026-f7.png Graphic file (type bmp)
+<2026-f7.png>
+File: 2026-f8.png Graphic file (type bmp)
+<2026-f8.png>
+File: 2026-f9.png Graphic file (type bmp)
+<2026-f9.png>
+ (I search font definition file: . . . . . . . . . ) [5]
+File: 2026-f10.png Graphic file (type bmp)
+<2026-f10.png>
+File: 2026-f11.png Graphic file (type bmp)
+<2026-f11.png>
+ (I search font definition file: . . . . . . . . . ) [6]
+File: 2026-f12.png Graphic file (type bmp)
+<2026-f12.png>
+File: 2026-f13.png Graphic file (type bmp)
+<2026-f13.png>
+File: 2026-f14.png Graphic file (type bmp)
+<2026-f14.png>
+File: 2026-f15.png Graphic file (type bmp)
+<2026-f15.png>
+ (I search font definition file: . . . . . . . . . ) [7]
+File: 2026-f16.jpg Graphic file (type bmp)
+<2026-f16.jpg>
+ (I search font definition file: . . . . . . . . . ) [8]) (./_main.bbl
 LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 1.
-
-
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) (I search font definition file: . . . . . . . . . ) [5] (./_main.aux)
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 4.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
+(Font)              scaled to size 8.8711pt on input line 4.
+) (I search font definition file: . . . . . . . . . ) [9] (./_main.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 22245 strings out of 474774
- 411067 string characters out of 5762022
- 1932035 words of memory out of 5000000
- 44203 multiletter control sequences out of 15000+600000
- 613118 words of font info for 181 fonts, out of 8000000 for 9000
+ 22404 strings out of 474774
+ 414028 string characters out of 5762022
+ 1935035 words of memory out of 5000000
+ 44326 multiletter control sequences out of 15000+600000
+ 615249 words of font info for 186 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 105i,11n,129p,546b,517s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 105i,11n,129p,546b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.dvi (7 pages, 49636 bytes).
+Output written on _main.dvi (11 pages, 82816 bytes).

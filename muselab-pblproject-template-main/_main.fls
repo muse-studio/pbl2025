@@ -403,10 +403,86 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
+INPUT ./2026-f1.png
+INPUT ./2026-f1.png
+INPUT ./2026-f1.png
+INPUT extractbb -B cropbox -O 2026-f1.png
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
+INPUT ./2026-f2.png
+INPUT ./2026-f2.png
+INPUT ./2026-f2.png
+INPUT extractbb -B cropbox -O 2026-f2.png
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT ./2026-f3.png
+INPUT ./2026-f3.png
+INPUT ./2026-f3.png
+INPUT extractbb -B cropbox -O 2026-f3.png
+INPUT ./2026-f4.png
+INPUT ./2026-f4.png
+INPUT ./2026-f4.png
+INPUT extractbb -B cropbox -O 2026-f4.png
+INPUT ./2026-f5.png
+INPUT ./2026-f5.png
+INPUT ./2026-f5.png
+INPUT extractbb -B cropbox -O 2026-f5.png
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT ./2026-f6.png
+INPUT ./2026-f6.png
+INPUT ./2026-f6.png
+INPUT extractbb -B cropbox -O 2026-f6.png
+INPUT ./2026-f7.png
+INPUT ./2026-f7.png
+INPUT ./2026-f7.png
+INPUT extractbb -B cropbox -O 2026-f7.png
+INPUT ./2026-f8.png
+INPUT ./2026-f8.png
+INPUT ./2026-f8.png
+INPUT extractbb -B cropbox -O 2026-f8.png
+INPUT ./2026-f9.png
+INPUT ./2026-f9.png
+INPUT ./2026-f9.png
+INPUT extractbb -B cropbox -O 2026-f9.png
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT ./2026-f10.png
+INPUT ./2026-f10.png
+INPUT ./2026-f10.png
+INPUT extractbb -B cropbox -O 2026-f10.png
+INPUT ./2026-f11.png
+INPUT ./2026-f11.png
+INPUT ./2026-f11.png
+INPUT extractbb -B cropbox -O 2026-f11.png
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT ./2026-f12.png
+INPUT ./2026-f12.png
+INPUT ./2026-f12.png
+INPUT extractbb -B cropbox -O 2026-f12.png
+INPUT ./2026-f13.png
+INPUT ./2026-f13.png
+INPUT ./2026-f13.png
+INPUT extractbb -B cropbox -O 2026-f13.png
+INPUT ./2026-f14.png
+INPUT ./2026-f14.png
+INPUT ./2026-f14.png
+INPUT extractbb -B cropbox -O 2026-f14.png
+INPUT ./2026-f15.png
+INPUT ./2026-f15.png
+INPUT ./2026-f15.png
+INPUT extractbb -B cropbox -O 2026-f15.png
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT ./2026-f16.jpg
+INPUT ./2026-f16.jpg
+INPUT ./2026-f16.jpg
+INPUT extractbb -B cropbox -O 2026-f16.jpg
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ./_main.bbl
@@ -438,6 +514,7 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-ot1.tfm
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2024/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT _main.aux
