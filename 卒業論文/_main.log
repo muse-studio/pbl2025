@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  6 JAN 2026 01:18
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  6 JAN 2026 01:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4751,58 +4751,58 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 
 (I search font definition file: . . . . . . . . . ) [3]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.13184pt on input line 142.
+(Font)              scaled to size 8.13184pt on input line 141.
 File: ../fig/system-structure.png Graphic file (type bmp)
 <../fig/system-structure.png>
-LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 158.
+LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 157.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 158.
+(Font)              scaled to size 8.8711pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 158.
+(Font)              scaled to size 6.47585pt on input line 157.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 158.
+(Font)              scaled to size 4.87912pt on input line 157.
 File: ../fig/dmx-light.png Graphic file (type bmp)
 <../fig/dmx-light.png>
 
@@ -4870,34 +4870,34 @@ File: ../fig/splash.png Graphic file (type bmp)
 
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 919.
+            Default family used instead on input line 918.
 
 
 (I search font definition file: . . . . . . . . . ) [12]
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 921.
+            Default family used instead on input line 920.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.0155pt on input line 924.
+(Font)              scaled to size 7.0155pt on input line 923.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.28572pt on input line 924.
+(Font)              scaled to size 5.28572pt on input line 923.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 937.
+            Default family used instead on input line 936.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 942.
+            Default family used instead on input line 941.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 946.
+            Default family used instead on input line 945.
 File: ../fig/r2-result.png Graphic file (type bmp)
 <../fig/r2-result.png>
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 951.
+            Default family used instead on input line 950.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 951.
+            Default family used instead on input line 950.
 
 
 File: ../fig/takeyouwithme-score.png Graphic file (type bmp)
@@ -5002,4 +5002,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  105i,11n,129p,523b,651s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.dvi (19 pages, 145920 bytes).
+Output written on _main.dvi (19 pages, 145844 bytes).
