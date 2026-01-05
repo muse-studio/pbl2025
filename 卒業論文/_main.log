@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  4 JAN 2026 12:25
+This is e-upTeX, Version 3.141592653-p4.1.2-u2.00-250202-2.6 (utf8.sjis) (TeX Live 2025) (preloaded format=platex 2025.4.14)  6 JAN 2026 00:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4670,26 +4670,18 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 9.61035pt on input line 2.
 
 
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 65.
-
-
-[0
-
-])
+)
 \tf@toc=\write7
 \openout7 = `_main.toc'.
 
  (./_main.lof
+
+[0
+
+]
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 18.
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 19.
-
-
+            Default family used instead on input line 16.
 )
 \tf@lof=\write8
 \openout8 = `_main.lof'.
@@ -4700,7 +4692,11 @@ LaTeX Info: Symbol \texttwosuperior not provided by
 
 
 
-[1] (./ryusui.tex
+
+
+[1
+
+] (./ryusui.tex
 LaTeX Font Info:    Font shape `JT1/mc/b/n' in size <11.82813> not available
 (Font)              Font shape `JT1/mc/bx/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <11.82813> not available
@@ -4751,119 +4747,115 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 
 ]
 
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.13184pt on input line 118.
-File: ../fig/system-structure.png Graphic file (type bmp)
-<../fig/system-structure.png>
-LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 134.
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8711pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.47585pt on input line 134.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 4.87912pt on input line 134.
-File: ../fig/usb-dmx-interface.png Graphic file (type bmp)
-<../fig/usb-dmx-interface.png>
 
 
 (I search font definition file: . . . . . . . . . ) [3]
-File: ../fig/light.png Graphic file (type bmp)
-<../fig/light.png>
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.13184pt on input line 142.
+File: ../fig/system-structure.png Graphic file (type bmp)
+<../fig/system-structure.png>
+LaTeX Font Info:    Calculating math sizes for size <8.8711> on input line 158.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.8711pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.47585pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 4.87912pt on input line 158.
+File: ../fig/dmx-light.png Graphic file (type bmp)
+<../fig/dmx-light.png>
+
+
 File: ../fig/setting.png Graphic file (type bmp)
 <../fig/setting.png>
 
 
-File: ../fig/zcr.png Graphic file (type bmp)
-<../fig/zcr.png>
-
-
 (I search font definition file: . . . . . . . . . ) [4]
-File: ../fig/spectralcentroid.png Graphic file (type bmp)
-<../fig/spectralcentroid.png>
-File: ../fig/spectralbandwidth.png Graphic file (type bmp)
-<../fig/spectralbandwidth.png>
-File: ../fig/spectralflatness.png Graphic file (type bmp)
-<../fig/spectralflatness.png>
 
-
-File: ../fig/rms.png Graphic file (type bmp)
-<../fig/rms.png>
-File: ../fig/mfccdelta.png Graphic file (type bmp)
-<../fig/mfccdelta.png>
-
-
-(I search font definition file: . . . . . . . . . ) [5]
 File: ../fig/up.png Graphic file (type bmp)
 <../fig/up.png>
 File: ../fig/down.png Graphic file (type bmp)
 <../fig/down.png>
 
 
+(I search font definition file: . . . . . . . . . ) [5]
+
 
 
 (I search font definition file: . . . . . . . . . ) [6]
-
 File: ../fig/lightupdown.png Graphic file (type bmp)
 <../fig/lightupdown.png>
 
 
+File: ../fig/rlightstyle.png Graphic file (type bmp)
+<../fig/rlightstyle.png>
+File: ../fig/glightstyle.png Graphic file (type bmp)
+<../fig/glightstyle.png>
+
+
 (I search font definition file: . . . . . . . . . ) [7]
+File: ../fig/blightstyle.png Graphic file (type bmp)
+<../fig/blightstyle.png>
+
+
+File: ../fig/brilightstyle.png Graphic file (type bmp)
+<../fig/brilightstyle.png>
+
+
+(I search font definition file: . . . . . . . . . ) [8]
+File: ../fig/blinklightstyle.png Graphic file (type bmp)
+<../fig/blinklightstyle.png>
+
+
 File: ../fig/dataflow.png Graphic file (type bmp)
 <../fig/dataflow.png>
 File: ../fig/senbonzakura.png Graphic file (type bmp)
 <../fig/senbonzakura.png>
-
-
 File: ../fig/sonata.png Graphic file (type bmp)
 <../fig/sonata.png>
 File: ../fig/splash.png Graphic file (type bmp)
 <../fig/splash.png>
-
-
-(I search font definition file: . . . . . . . . . ) [8]
-
 
 
 (I search font definition file: . . . . . . . . . ) [9]
@@ -4876,112 +4868,64 @@ File: ../fig/splash.png Graphic file (type bmp)
 
 (I search font definition file: . . . . . . . . . ) [11]
 
+LaTeX Info: Symbol \texttwosuperior not provided by
+            font family ntxtlf in TS1 encoding.
+            Default family used instead on input line 919.
 
 
 (I search font definition file: . . . . . . . . . ) [12]
-
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1090.
+            Default family used instead on input line 921.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 7.0155pt on input line 924.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 5.28572pt on input line 924.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1092.
+            Default family used instead on input line 937.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1094.
+            Default family used instead on input line 942.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1095.
-File: ../fig/r2-formula.jpg Graphic file (type bmp)
-<../fig/r2-formula.jpg>
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1100.
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1100.
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1104.
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1111.
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1115.
+            Default family used instead on input line 946.
 File: ../fig/r2-result.png Graphic file (type bmp)
 <../fig/r2-result.png>
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1120.
+            Default family used instead on input line 951.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1120.
+            Default family used instead on input line 951.
 
-
-(I search font definition file: . . . . . . . . . ) [13]
-LaTeX Info: Symbol \texttwosuperior not provided by
-            font family ntxtlf in TS1 encoding.
-            Default family used instead on input line 1130.
-
-
-File: ../fig/rlightstyle.png Graphic file (type bmp)
-<../fig/rlightstyle.png>
-File: ../fig/glightstyle.png Graphic file (type bmp)
-<../fig/glightstyle.png>
-
-
-(I search font definition file: . . . . . . . . . ) [14]
-File: ../fig/blightstyle.png Graphic file (type bmp)
-<../fig/blightstyle.png>
-
-
-File: ../fig/brilightstyle.png Graphic file (type bmp)
-<../fig/brilightstyle.png>
-File: ../fig/blinklightstyle.png Graphic file (type bmp)
-<../fig/blinklightstyle.png>
-
-
-(I search font definition file: . . . . . . . . . ) [15]
 
 File: ../fig/takeyouwithme-score.png Graphic file (type bmp)
 <../fig/takeyouwithme-score.png>
 File: ../fig/takeyouwithme-Amelody-Bmelody.png Graphic file (type bmp)
 <../fig/takeyouwithme-Amelody-Bmelody.png>
+
+
+(I search font definition file: . . . . . . . . . ) [13]
 File: ../fig/takeyouwithme-chorus.png Graphic file (type bmp)
 <../fig/takeyouwithme-chorus.png>
 
 
-(I search font definition file: . . . . . . . . . ) [16]
 File: ../fig/gurenge-score.png Graphic file (type bmp)
 <../fig/gurenge-score.png>
+File: ../fig/gurenge-play.png Graphic file (type bmp)
+<../fig/gurenge-play.png>
+
+
+(I search font definition file: . . . . . . . . . ) [14]
 
 
 
-
-(I search font definition file: . . . . . . . . . ) [17]
-File: ../fig/gurenge-intro.png Graphic file (type bmp)
-<../fig/gurenge-intro.png>
-File: ../fig/gurenge-Amelody-Bmelody-Cmelody.png Graphic file (type bmp)
-<../fig/gurenge-Amelody-Bmelody-Cmelody.png>
-
-
-File: ../fig/gurenge-chorus1.png Graphic file (type bmp)
-<../fig/gurenge-chorus1.png>
-
-
-(I search font definition file: . . . . . . . . . ) [18]
-File: ../fig/gurenge-chorus2.png Graphic file (type bmp)
-<../fig/gurenge-chorus2.png>
+(I search font definition file: . . . . . . . . . ) [15]
 
 
 
-
-(I search font definition file: . . . . . . . . . ) [19]
-
-) (./_main.bbl
-
-(I search font definition file: . . . . . . . . . ) [20]
+(I search font definition file: . . . . . . . . . ) [16]) (./_main.bbl
 LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 4.
  (c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 File: ot1ntxtt.fd 2012/04/20 v3.1
@@ -4989,60 +4933,60 @@ File: ot1ntxtt.fd 2012/04/20 v3.1
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
 (Font)              scaled to size 8.8711pt on input line 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 []\OT1/minntx/m/n/8.8711 Facebookresearch/Demucs, $\OT1/ntxtt/m/n/8.8711 https : / / github . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 []\OT1/minntx/m/n/8.8711 RandomForestRegressor, $\OT1/ntxtt/m/n/8.8711 https : / / scikit-[]learn /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \OT1/ntxtt/m/n/8.8711 stable / modules / generated / sklearn . ensemble .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 []\OT1/minntx/m/n/8.8711 Paganini 24 Vi-o-lin Caprise No. 10 in G
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 \OT1/minntx/m/n/8.8711 Mi-nor, Op. 1/10 MIDI File Down-load ::
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 \OT1/minntx/m/n/8.8711 MidiShow, $\OT1/ntxtt/m/n/8.8711 https : / / www . midishow . com / en / midi /
  []
 
 
-Overfull \hbox (2.6442pt too wide) in paragraph at lines 73--74
+Overfull \hbox (2.6442pt too wide) in paragraph at lines 70--71
 \OT1/ntxtt/m/n/8.8711 paganini-[]24-[]violin-[]caprise-[]no-[]10-[]in-[]g-[]minor-[]o \
  []
 
 
-
-
-Underfull \hbox (badness 7944) in paragraph at lines 79--80
+Underfull \hbox (badness 7944) in paragraph at lines 76--77
 []\OT1/minntx/m/n/8.8711 Free Sheet Mu-sic - Wohlfahrt VI-O-LIN - FID-
  []
 
 
-Underfull \hbox (badness 6808) in paragraph at lines 79--80
+Underfull \hbox (badness 6808) in paragraph at lines 76--77
 \OT1/minntx/m/n/8.8711 DLE - Down-load PDF, MP3 & MIDI, $\OT1/ntxtt/m/n/8.8711 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 \OT1/ntxtt/m/n/8.8711 / / www . free-[]scores . com / free-[]sheet-[]music . php ?
  []
 
 )
 
-(I search font definition file: . . . . . . . . . ) [21] (./_main.aux)
+(I search font definition file: . . . . . . . . . ) [17] (./_main.aux)
  ***********
 pLaTeX2e <2023-02-14>+1, based on
 LaTeX2e <2024-11-01> patch level 2
@@ -5050,12 +4994,12 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26696 strings out of 473836
- 513848 string characters out of 5734522
- 875339 words of memory out of 5000000
- 49420 multiletter control sequences out of 15000+600000
- 616827 words of font info for 190 fonts, out of 8000000 for 9000
+ 26597 strings out of 473836
+ 511245 string characters out of 5734522
+ 873796 words of memory out of 5000000
+ 49335 multiletter control sequences out of 15000+600000
+ 616738 words of font info for 192 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 105i,11n,129p,528b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 105i,12n,129p,523b,651s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.dvi (23 pages, 171692 bytes).
+Output written on _main.dvi (19 pages, 145936 bytes).
