@@ -54,7 +54,7 @@
 \contentsline {subsection}{\numberline {5.2}{第2回実演：紅蓮華（公開実演）}}{14}{}%
 \contentsline {subsubsection}{\numberline {5.2.1}{実演環境}}{14}{}%
 \contentsline {subsubsection}{\numberline {5.2.2}{実演曲目}}{14}{}%
-\contentsline {subsubsection}{\numberline {5.2.3}{実演の進行方法}}{15}{}%
+\contentsline {subsubsection}{\numberline {5.2.3}{実演の進行方法}}{14}{}%
 \contentsline {subsubsection}{\numberline {5.2.4}{実演中の照明変化の様子}}{15}{}%
 \contentsline {section}{\numberline {6}\hskip 1zw{考察}}{16}{}%
 \contentsline {subsection}{\numberline {6.1}{意図通りに制御できた点}}{16}{}%
