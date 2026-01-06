@@ -1,7 +1,0 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces バッハのコラールのPCA散布図（K-meansで色分け）}}{2}{}%
-\contentsline {figure}{\numberline {2}{\ignorespaces バッハのコラールの分析をヒートマップで可視化したもの}}{2}{}%
-\contentsline {figure}{\numberline {3}{\ignorespaces バッハのコラールクラスタ1のPCA散布図(k-meansで色分け)}}{2}{}%
-\contentsline {figure}{\numberline {4}{\ignorespaces バッハのコラールの分析をヒートマップで可視化したもの（クラスタ1のみ）}}{2}{}%
-\contentsline {figure}{\numberline {5}{\ignorespaces バッハのコラールクラスタ1のPCA散布図(k-meansで色分け)}}{2}{}%
-\contentsline {figure}{\numberline {6}{\ignorespaces バッハのコラールの分析をヒートマップで可視化したもの（サブクラスタ1のみ）}}{2}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces 各特徴量の相関係数}}{3}{}%
