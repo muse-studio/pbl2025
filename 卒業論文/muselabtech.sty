@@ -16,15 +16,11 @@
 \newcommand{\cut}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
 
 % ==============================================
-% 年度・提出日・改訂日の設定
+% 定数
 % ==============================================
-<<<<<<< HEAD:muselab-pblproject-template-main/muselabtech.sty
 \def\thesisyear{2024}
 \def\submitdate{2026年1月30日}
 %\def\revicedate{2026年2月○日}
-=======
-\input{../_date} 
->>>>>>> ce78ee9a86767c2bb557e2f6b8c327a82047aa91:卒業論文/muselabtech.sty
 % ==============================================
 % ヘッダ
 % ==============================================
@@ -39,7 +35,7 @@
       %IPSJ SIG Technical Report%
    \else 福知山公立大学情報学部 地域情報PBLプロジェクト報告書\fi}%%
 
-
+\def\ipsj@year{2023-2025}
 
 %%%%%%%%%
 %%%
@@ -178,12 +174,8 @@
       \par\vspace{7mm}
       \mbox{\begin{tabular}{rl}
             提出日 & \submitdate \\
-<<<<<<< HEAD:muselab-pblproject-template-main/muselabtech.sty
             \\
             %改訂日 & \revicedate \\
-=======
-            \showReviceDate
->>>>>>> ce78ee9a86767c2bb557e2f6b8c327a82047aa91:卒業論文/muselabtech.sty
          \end{tabular}
       }
       %
