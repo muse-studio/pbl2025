@@ -1,8 +1,8 @@
-PWD c:/Users/haru/Desktop/muselab-pblproject-template-main/muselab-pblproject-template-main
+PWD c:/Users/haru/Desktop/新しいフォルダー/pbl2025-1
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/euptex/platex.fmt
-INPUT c:/Users/haru/Desktop/muselab-pblproject-template-main/muselab-pblproject-template-main/_main.tex
+INPUT c:/Users/haru/Desktop/新しいフォルダー/pbl2025-1/_main.tex
 OUTPUT _main.log
 INPUT ./ipsj.cls
 INPUT ipsj.cls
@@ -432,23 +432,8 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
-INPUT ./basic.png
-INPUT ./basic.png
-INPUT ./basic.png
-INPUT extractbb -B cropbox -O basic.png
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT ./kizai.png
-INPUT ./kizai.png
-INPUT ./kizai.png
-INPUT extractbb -B cropbox -O kizai.png
-INPUT ./place.png
-INPUT ./place.png
-INPUT ./place.png
-INPUT extractbb -B cropbox -O place.png
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ./_main.bbl
