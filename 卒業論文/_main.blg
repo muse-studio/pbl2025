@@ -19,6 +19,8 @@ Warning--Missing required argument journal in 4
 Warning--Missing required argument year in 4
 Warning--there's no number and/or volume4
 Warning--Missing required argument pages in 4
+Warning--Missing required argument journal in MenXieShenTiGanJuetoShiJueQingBaonizuregaShengziruMeiRuHuanJingniokeruDiChiYannaYingXiangnoyuzahenoYingXiang2019
+Warning--Missing required argument year in MenXieShenTiGanJuetoShiJueQingBaonizuregaShengziruMeiRuHuanJingniokeruDiChiYannaYingXiangnoyuzahenoYingXiang2019
 Warning--Missing required argument author in WelcomePythonorg2025
 Warning--Missing required argument author in SounddevicePlayRecord
 Warning--Missing required argument author in NumPy
@@ -41,46 +43,46 @@ Warning--Missing required argument author in FluidSynthSoftwareSynthesizer
 Warning--Missing required argument author in JunwonoseteJingShangazuminoGeCiTuteiine
 Warning--Missing required argument author in TsunagaRoomOJiaYiShangTuShuGuanWeiMan
 Warning--Missing required argument author in HongLianHuaLiSAnoGeCiTuteiine
-You've used 29 entries,
+You've used 30 entries,
             2364 wiz_defined-function locations,
-            689 strings with 9676 characters,
-and the built_in function-call counts, 3811 in all, are:
-= -- 206
-> -- 82
-< -- 3
-+ -- 44
-- -- 15
-* -- 205
-:= -- 428
-add.period$ -- 29
-call.type$ -- 29
+            696 strings with 10157 characters,
+and the built_in function-call counts, 4224 in all, are:
+= -- 231
+> -- 107
+< -- 4
++ -- 51
+- -- 21
+* -- 241
+:= -- 477
+add.period$ -- 30
+call.type$ -- 30
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 67
-duplicate$ -- 207
-empty$ -- 577
-format.name$ -- 22
-if$ -- 957
+cite$ -- 70
+duplicate$ -- 236
+empty$ -- 609
+format.name$ -- 28
+if$ -- 1056
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 5
-newline$ -- 90
-num.names$ -- 5
-pop$ -- 149
+int.to.str$ -- 30
+missing$ -- 6
+newline$ -- 93
+num.names$ -- 6
+pop$ -- 155
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 234
+skip$ -- 248
 stack$ -- 0
-substring$ -- 80
-swap$ -- 23
-text.length$ -- 11
+substring$ -- 104
+swap$ -- 30
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 38
-while$ -- 14
-width$ -- 31
-write$ -- 173
-is.kanji.str$ -- 57
-(There were 38 warnings)
+warning$ -- 40
+while$ -- 18
+width$ -- 32
+write$ -- 180
+is.kanji.str$ -- 72
+(There were 40 warnings)

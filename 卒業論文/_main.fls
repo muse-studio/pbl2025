@@ -549,6 +549,8 @@ INPUT ../fig/dataflow.png
 INPUT ../fig/dataflow.png
 INPUT ../fig/dataflow.png
 INPUT extractbb -B cropbox -O ../fig/dataflow.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/senbonzakura.png
 INPUT ../fig/senbonzakura.png
 INPUT ../fig/senbonzakura.png
@@ -565,26 +567,24 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/r2-result.png
 INPUT ../fig/r2-result.png
 INPUT ../fig/r2-result.png
 INPUT extractbb -B cropbox -O ../fig/r2-result.png
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/takeyouwithme-score.png
 INPUT ../fig/takeyouwithme-score.png
 INPUT ../fig/takeyouwithme-score.png
 INPUT extractbb -B cropbox -O ../fig/takeyouwithme-score.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/takeyouwithme-Amelody-Bmelody.png
 INPUT ../fig/takeyouwithme-Amelody-Bmelody.png
 INPUT ../fig/takeyouwithme-Amelody-Bmelody.png
@@ -593,6 +593,8 @@ INPUT ../fig/takeyouwithme-chorus.png
 INPUT ../fig/takeyouwithme-chorus.png
 INPUT ../fig/takeyouwithme-chorus.png
 INPUT extractbb -B cropbox -O ../fig/takeyouwithme-chorus.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/gurenge-score.png
 INPUT ../fig/gurenge-score.png
 INPUT ../fig/gurenge-score.png
@@ -605,8 +607,6 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ./_main.bbl
 INPUT ./_main.bbl
 INPUT _main.bbl
@@ -614,6 +614,8 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txtt.tfm
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT _main.aux
