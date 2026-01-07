@@ -4,10 +4,10 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces 上げ弓}}{6}{}%
 \contentsline {figure}{\numberline {5}{\ignorespaces 下げ弓}}{6}{}%
 \contentsline {figure}{\numberline {6}{\ignorespaces 照明上下動作}}{7}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces 照明色 (R成分) に対する音響特徴量}}{8}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces 照明色 (R成分) に対する音響特徴量}}{7}{}%
 \contentsline {figure}{\numberline {8}{\ignorespaces 照明色 (G成分)に対する音響特徴量}}{8}{}%
 \contentsline {figure}{\numberline {9}{\ignorespaces 照明色 (B成分)に対する音響特徴量}}{8}{}%
-\contentsline {figure}{\numberline {10}{\ignorespaces 照明の明るさに対する音響特徴量}}{8}{}%
+\contentsline {figure}{\numberline {10}{\ignorespaces 照明のBrightnessに対する音響特徴量}}{8}{}%
 \contentsline {figure}{\numberline {11}{\ignorespaces 照明の点滅速度に対する音響特徴量}}{9}{}%
 \contentsline {figure}{\numberline {12}{\ignorespaces 照明予測モデル構築のためのデータ生成フロー}}{9}{}%
 \contentsline {figure}{\numberline {13}{\ignorespaces **千本桜**の演奏映像}}{10}{}%

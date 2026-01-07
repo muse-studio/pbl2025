@@ -525,12 +525,12 @@ INPUT ../fig/rlightstyle.png
 INPUT ../fig/rlightstyle.png
 INPUT ../fig/rlightstyle.png
 INPUT extractbb -B cropbox -O ../fig/rlightstyle.png
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
+INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/glightstyle.png
 INPUT ../fig/glightstyle.png
 INPUT ../fig/glightstyle.png
 INPUT extractbb -B cropbox -O ../fig/glightstyle.png
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT ../fig/blightstyle.png
 INPUT ../fig/blightstyle.png
 INPUT ../fig/blightstyle.png
@@ -614,8 +614,6 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/txfonts/txtt.tfm
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 INPUT _main.aux

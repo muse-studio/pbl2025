@@ -3,7 +3,6 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: _main.aux
 The style file: ../muselabunsrt.bst
 Database file #1: ../muselab-sample.bib
-Warning--Missing required argument author in 1-10incZIGProject
 Warning--Missing required argument journal in 1
 Warning--Missing required argument year in 1
 Warning--Missing required argument journal in 2
@@ -21,58 +20,46 @@ Warning--there's no number and/or volume4
 Warning--Missing required argument pages in 4
 Warning--Missing required argument journal in MenXieShenTiGanJuetoShiJueQingBaonizuregaShengziruMeiRuHuanJingniokeruDiChiYannaYingXiangnoyuzahenoYingXiang2019
 Warning--Missing required argument year in MenXieShenTiGanJuetoShiJueQingBaonizuregaShengziruMeiRuHuanJingniokeruDiChiYannaYingXiangnoyuzahenoYingXiang2019
-Warning--Missing required argument author in WelcomePythonorg2025
-Warning--Missing required argument author in SounddevicePlayRecord
-Warning--Missing required argument author in NumPy
-Warning--Missing required argument author in ScikitlearnMachineLearning
-Warning--Missing required argument author in SocketDiShuiZhunnetutowakuintahuesu
-Warning--Missing required argument author in Ftd2xxPythonInterface
-Warning--Missing required argument author in QianBenYingWhiteFlameFeatChuYinmikunoGeCi
 Warning--Missing required argument author in ayakoishikawatvSutoradeibariusuJinXiaonoQianBenYinghakiretukireShiChuanLingZiAYAKOISHIKAWA2021
-Warning--Missing required argument author in VuaiorinsonataDi3FanBetovuenBaiKeShiDian
 Warning--Missing required argument author in aiolinofficialLIVEHikaritoViolinSolo2019
-Warning--Missing required argument author in SHOGOSPLASH
 Warning--Missing required argument author in violinistshogoViolinistSHOGOSorosutezi2017
 Warning--Missing required argument author in FacebookresearchDemucs2026
 Warning--Missing required argument author in YOLOv8StateoftheArtComputer
-Warning--Missing required argument author in RandomForestRegressor
 Warning--Missing required argument author in Paganini24Violin
 Warning--Missing required argument author in 36ViolinStudies
 Warning--Missing required argument author in FreeSheetMusic
 Warning--Missing required argument author in FluidSynthSoftwareSynthesizer
-Warning--Missing required argument author in JunwonoseteJingShangazuminoGeCiTuteiine
 Warning--Missing required argument author in TsunagaRoomOJiaYiShangTuShuGuanWeiMan
-Warning--Missing required argument author in HongLianHuaLiSAnoGeCiTuteiine
-You've used 30 entries,
+You've used 16 entries,
             2364 wiz_defined-function locations,
-            696 strings with 10157 characters,
-and the built_in function-call counts, 4224 in all, are:
-= -- 231
-> -- 107
+            635 strings with 7951 characters,
+and the built_in function-call counts, 2702 in all, are:
+= -- 161
+> -- 72
 < -- 4
-+ -- 51
-- -- 21
-* -- 241
-:= -- 477
-add.period$ -- 30
-call.type$ -- 30
++ -- 30
+- -- 14
+* -- 176
+:= -- 313
+add.period$ -- 16
+call.type$ -- 16
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 70
-duplicate$ -- 236
-empty$ -- 609
-format.name$ -- 28
-if$ -- 1056
+cite$ -- 43
+duplicate$ -- 159
+empty$ -- 357
+format.name$ -- 14
+if$ -- 666
 int.to.chr$ -- 0
-int.to.str$ -- 30
+int.to.str$ -- 16
 missing$ -- 6
-newline$ -- 93
-num.names$ -- 6
-pop$ -- 155
+newline$ -- 51
+num.names$ -- 5
+pop$ -- 78
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 248
+skip$ -- 148
 stack$ -- 0
 substring$ -- 104
 swap$ -- 30
@@ -80,9 +67,9 @@ text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 40
-while$ -- 18
-width$ -- 32
-write$ -- 180
-is.kanji.str$ -- 72
-(There were 40 warnings)
+warning$ -- 27
+while$ -- 17
+width$ -- 18
+write$ -- 97
+is.kanji.str$ -- 45
+(There were 27 warnings)
