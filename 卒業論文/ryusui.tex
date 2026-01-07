@@ -227,17 +227,10 @@ ftd2xx & DMX信号出力 \\
 次に、切り出された 1 秒分の音声フレームに対して、librosa ライブラリを用いて音響特徴量の抽出を行う。
 本研究では、ヴァイオリン演奏音に含まれる特徴を数値として表現するため、10種類の音響特徴量を算出している。
 
-\begin{enumerate}
-	\item[\textbf{(1)}]\textbf{ゼロ交差率}
-\end{enumerate}
-
-ゼロ交差率は、音の波形が上下に切り替わる回数を表す特徴量である。
-高速に変化する音やノイズ的な音では値が大きくなり、滑らかで安定した音では小さくなる。
-
-例えば、摩擦音のような「シーッ」という音では値が高く、低音で持続的な音では低くなる傾向がある。
+\subsubsection{スペクトル系特徴量}
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{スペクトル重心(Spectral Centroid)}
+	\item[\textbf{(1)}]\textbf{スペクトル重心(Spectral Centroid)}
 \end{enumerate}
 
 スペクトル重心は、音の「Brightness」を表す特徴量である。
@@ -247,7 +240,7 @@ ftd2xx & DMX信号出力 \\
 この特徴量により、音の鋭さや軽やかさを捉えることができる。
 
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{スペクトル帯域幅(SpectralBandwidth)}
+	\item[\textbf{(2)}]\textbf{スペクトル帯域幅(SpectralBandwidth)}
 \end{enumerate}
 
 スペクトル帯域幅は、音に含まれる周波数成分の「広がり」を表す特徴量である。
@@ -256,7 +249,7 @@ ftd2xx & DMX信号出力 \\
 和音やノイズ成分を多く含む音では帯域幅が広くなり、単音でクリアな音では狭くなる傾向がある。
 
 \begin{enumerate}
-	\item[\textbf{(4)}]\textbf{スペクトルコントラスト(SpectralContrast)}
+	\item[\textbf{(3)}]\textbf{スペクトルコントラスト(SpectralContrast)}
 \end{enumerate}
 
 スペクトルコントラストは、音の中の「強い成分」と「弱い成分」の差を表す特徴量である。
@@ -266,7 +259,7 @@ ftd2xx & DMX信号出力 \\
 この特徴量により、演奏の抑揚や音の輪郭の明瞭さを捉えることができる。
 
 \begin{enumerate}
-	\item[\textbf{(5)}]\textbf{スペクトルフラットネス(SpectralFlatness)}
+	\item[\textbf{(4)}]\textbf{スペクトルフラットネス(SpectralFlatness)}
 \end{enumerate}
 
 スペクトルフラットネスは、音がどの程度ノイズ的であるかを示す特徴量である。
@@ -275,7 +268,7 @@ ftd2xx & DMX信号出力 \\
 ヴァイオリン演奏においては、弓の擦れ音が強い場面などで変化が現れる。
 
 \begin{enumerate}
-	\item[\textbf{(6)}]\textbf{スペクトルロールオフ（SpectralRolloff）}
+	\item[\textbf{(5)}]\textbf{スペクトルロールオフ（SpectralRolloff）}
 \end{enumerate}
 
 スペクトルロールオフは、音に含まれる高音成分がどのあたりまで存在しているかを示す特徴量である。
@@ -284,12 +277,25 @@ ftd2xx & DMX信号出力 \\
 
 この特徴量は、音の尖り具合や鋭さを把握するために用いられる。
 
+\subsubsection{時間領域系特徴量}
+
 \begin{enumerate}
-	\item[\textbf{(7)}]\textbf{音量(Root Mean Square)}
+	\item[\textbf{(6)}]\textbf{音量(Root Mean Square)}
 \end{enumerate}
 
 音量は、音の「大きさ」を表す特徴量である。
 値が大きいほど強い音であり、値が小さいほど弱く静かな音であることを示す。
+
+\begin{enumerate}
+	\item[\textbf{(7)}]\textbf{ゼロ交差率}
+\end{enumerate}
+
+ゼロ交差率は、音の波形が上下に切り替わる回数を表す特徴量である。
+高速に変化する音やノイズ的な音では値が大きくなり、滑らかで安定した音では小さくなる。
+
+例えば、摩擦音のような「シーッ」という音では値が高く、低音で持続的な音では低くなる傾向がある。
+
+\subsubsection{MFCC系特徴量}
 
 \begin{enumerate}
 	\item[\textbf{(8)}]\textbf{メル周波数ケプストラム係数(MFCC)}
@@ -299,6 +305,8 @@ ftd2xx & DMX信号出力 \\
 「人の声っぽい」「金属的」「柔らかい」といった音の質感を捉えることに優れており、複数の数値の組み合わせによって構成されている。
 
 一言で表すと、音の「質感」を表す特徴量である。
+
+\subsubsection{ハーモニー系特徴量}
 
 \begin{enumerate}
 	\item[\textbf{(9)}]\textbf{クロマ特徴量（Chroma）}
