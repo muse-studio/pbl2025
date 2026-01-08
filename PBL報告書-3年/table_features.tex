@@ -1,0 +1,27 @@
+% !TEX root = _main3nen.tex
+\begin{table}[t]
+    \caption{抽出した特徴量一覧}
+    \label{tab:features}
+    \centering
+    % \renewcommand{\arraystretch}{2.1} % ← 1.5倍に広げる（1.2〜1.8くらいで調整）
+    \begin{adjustbox}{width=\linewidth} % adjustboxで幅を100%に指定
+        \begin{tabular}{lllll}\hline
+            特徴量              & 意味               & どの性質を表すか         &  & \\\hline\hline
+            measures         & 小節数              & 曲の長さ             &  & \\
+            avg\_chord\_size & 平均和音サイズ（同時発音数）   & 和声の厚み            &  & \\
+            seventh\_ratio   & 7th和音の割合         & 和声の複雑さ           &  & \\
+            pitch\_mean      & 平均音高             & 全体の音域の中心         &  & \\
+            pitch\_std       & 音高の標準偏差          & メロディの動きの大きさ      &  & \\
+            pitch\_range     & 最高音−最低音          & 音域の広さ            &  & \\
+            leap\_rate       & 跳躍進行の割合          & メロディの飛び方の多さ      &  & \\
+            smoothness       & 音程差の逆数的な指標       & 滑らかさ             &  & \\
+            up\_rate         & 上行音程の割合          & メロディの方向性（上昇か下降か） &  & \\
+            \\
+            \shortstack{dur\_whole/half/quarter/                        \\eighth/sixteenth} & 各音価の出現比率         & リズムの構成（長音中心か短音中心か） &  &  \\
+            vel\_mean        & 平均ベロシティ（強さ）      & 曲の平均的な音量         &  & \\
+            vel\_std         & ベロシティの変動         & 強弱表現の豊かさ         &  & \\
+            prog\_unique     & ユニークな和音進行数       & ハーモニーの多様性        &  & \\
+            rn\_seq\_len     & ローマ数字解析による進行列の長さ & 和声進行の規模          &  & \\\hline
+        \end{tabular}
+    \end{adjustbox}
+\end{table}
