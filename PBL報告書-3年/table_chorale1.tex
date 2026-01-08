@@ -1,0 +1,30 @@
+% !TEX root = _main3nen.tex
+
+\begin{figure*}[tb]
+    \centering
+    % --- 左側の画像 ---
+    \begin{minipage}[b]{0.33\linewidth}
+        \centering
+        \includegraphics[width=.9\linewidth]{../fig/pca.png}
+        \subcaption{PCA散布図（K-meansで色分け）}
+        \label{fig:pca}
+    \end{minipage}
+    % --- 中側の画像 ---
+    \begin{minipage}[b]{0.33\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../fig/average1.png}
+        \subcaption{クラスタごとの特徴量平均の比較}
+        \label{fig:average1}
+    \end{minipage}
+    \hfill % 左右の間に適度な空白を入れる
+    % --- 右側の画像 ---
+    \begin{minipage}[b]{0.33\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../fig/Z-score1.png}
+        \subcaption{クラスタごとのZ-score}
+        \label{fig:Z-score1}
+    \end{minipage}
+
+    \caption{バッハのコラールの分析}
+    \label{fig:total1}
+\end{figure*}
