@@ -9,5 +9,12 @@
 *.lot
 *.synctex.gz
 *.synctex(busy)
+<<<<<<< HEAD
 *.toc
 .DS_Store
+=======
+ipsj_*/*
+PBL報告書-3年*/*
+卒業論文*/*
+卒論プロジェクト*/*
+>>>>>>> 35286f3 (１・２年用ブランチ)
