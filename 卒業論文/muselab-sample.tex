@@ -246,14 +246,14 @@ Max８では受信した情報に基づき音声を合成し再生を行う.
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{fig/sisutemuzenntai.pdf}
+	\includegraphics[width=\hsize]{../fig/sisutemuzenntai.pdf}
 	\caption{システム全体構成}
 	\label{fig:zenntai}
 \end{figure}
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{fig/akatonnbogakufu.png}
+	\includegraphics[width=\hsize]{../fig/akatonnbogakufu.png}
 	\caption{赤とんぼ楽譜}
 	\label{fig:akatonbo}
 \end{figure}
@@ -315,7 +315,7 @@ Pythonプログラムでは,まずMIDIファイルを読み込み,楽曲に含�
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{fig/Pythonterminal.png}
+	\includegraphics[width=\hsize]{../fig/Pythonterminal.png}
 	\caption{実行時のPythonターミナル画面}
 	\label{fig:system_terminal}
 \end{figure}
@@ -327,7 +327,7 @@ Max８側では,Python から送信された OSC メッセージを UDP 経由�
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{fig/Max8zentaizu.png}
+	\includegraphics[width=\hsize]{../fig/Max8zentaizu.png}
 	\caption{Max８構成}
 	\label{fig:max8}
 \end{figure}
@@ -337,20 +337,20 @@ Max８側では,Python から送信された OSC メッセージを UDP 経由�
 
 本研究において構築したヴィブラートシステムでは,PythonプログラムからOSCを用いて送信された音高変動量はMax８で受信され,可視化することができた.
 一定周期の制限波形に加え,周期や振幅が時間的に変化する複数のヴィブラートの形状が波形表示錠で確認できた.
-確認できた波形は\figref{fig:vibhakei}に示す通りである.
+確認できた波形は\figref{fig:vibhakei1},\figref{fig:vibhakei2}に示す通りである.
 横軸が時間,縦軸が音高変動量を示している.
 なお,波形は右側から左側に時間が進んでいる.
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{fig/vibhakei1.png}
+	\includegraphics[width=\hsize]{../fig/vibhakei1.png}
 	\caption{ヴィブラート波形の可視化例（定速で一定（テスト用））}
 	\label{fig:vibhakei1}
 \end{figure}
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{fig/vibhakei2.png}
+	\includegraphics[width=\hsize]{../fig/vibhakei2.png}
 	\caption{ヴィブラート波形の可視化例（加速しながら強く））}
 	\label{fig:vibhakei2}
 \end{figure}
