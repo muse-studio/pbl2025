@@ -221,6 +221,9 @@ ftd2xx & DMX信号出力 \\
 
 次に、切り出された 1 秒分の音声フレームに対して、librosa ライブラリを用いて音響特徴量の抽出を行う。
 本研究では、ヴァイオリン演奏音に含まれる特徴を数値として表現するため、10種類の音響特徴量を算出している。
+特徴量は「スペクトル系特徴量」、「時間領域系特徴量」、「MFCC系特徴量」、「ハーモニー系特徴量」に大別される。
+
+\subsubsection{スペクトル系特徴量}
 
 \begin{enumerate}
 	\item[\textbf{(1)}]\textbf{スペクトル重心(Spectral Centroid)}
@@ -270,6 +273,8 @@ ftd2xx & DMX信号出力 \\
 
 この特徴量は、音の尖り具合や鋭さを把握するために用いられる。
 
+\subsubsection{時間領域系特徴量}
+
 \begin{enumerate}
 	\item[\textbf{(6)}]\textbf{音量(Root Mean Square)}
 \end{enumerate}
@@ -286,6 +291,8 @@ ftd2xx & DMX信号出力 \\
 
 例えば、摩擦音のような「シーッ」という音では値が高く、低音で持続的な音では低くなる傾向がある。
 
+\subsubsection{MFCC系特徴量}
+
 \begin{enumerate}
 	\item[\textbf{(8)}]\textbf{メル周波数ケプストラム係数(MFCC)}
 \end{enumerate}
@@ -294,6 +301,8 @@ ftd2xx & DMX信号出力 \\
 「人の声っぽい」「金属的」「柔らかい」といった音の質感を捉えることに優れており、複数の数値の組み合わせによって構成されている。
 
 一言で表すと、音の「質感」を表す特徴量である。
+
+\subsubsection{ハーモニー系特徴量}
 
 \begin{enumerate}
 	\item[\textbf{(9)}]\textbf{クロマ特徴量（Chroma）}
@@ -345,23 +354,23 @@ PCに送信されたx軸のジャイロデータをもとに、弓方向の判�
 具体的には、以下の手順で検討を行った。
 
 \begin{enumerate}
-	\item[(2-1)]弓を完全に静止させた状態で数十秒間データを取得
+	\item[\textbf{(1)}]\textbf{弓を完全に静止させた状態で数十秒間データを取得}
 \end{enumerate}
 
 \begin{enumerate}
-	\item[(2-2)]弓を非常にゆっくり動かした場合の角速度を計測
+	\item[\textbf{(2)}]\textbf{弓を非常にゆっくり動かした場合の角速度を計測}
 \end{enumerate}
 
 \begin{enumerate}
-	\item[(2-3)]通常の演奏速度における角速度分布を確認
+	\item[\textbf{(3)}]\textbf{通常の演奏速度における角速度分布を確認}
 \end{enumerate}
 その結果、
 \begin{enumerate}
-	\item[・]静止時の角速度はおおむね ±0.005 以下
+	\item[\textbf{・}]\textbf{静止時の角速度はおおむね ±0.005 以下}
 \end{enumerate}
 
 \begin{enumerate}
-	\item[・]意図的な弓の動きは ±0.01 を明確に超える
+	\item[\textbf{・}]\textbf{意図的な弓の動きは ±0.01 を明確に超える}
 \end{enumerate}
 という傾向が確認された。
 
@@ -378,11 +387,11 @@ PCに送信されたx軸のジャイロデータをもとに、弓方向の判�
 本研究では、次の2つのケースに分類して弓方向を判定している。
 
 \begin{enumerate}
-	\item[(3-1)]各速度変化量が正に大きく変化した場合→上げ弓
+	\item[\textbf{(1)}]\textbf{各速度変化量が正に大きく変化した場合→上げ弓}
 \end{enumerate}
 
 \begin{enumerate}
-	\item[(3-2)]各速度変化量が負に大きく変化した場合→下げ弓
+	\item[\textbf{(2)}]\textbf{各速度変化量が負に大きく変化した場合→下げ弓}
 \end{enumerate}
 
 本研究における角速度変化量の判定には、閾値を 0.09 と設定した。
@@ -418,9 +427,9 @@ DMX信号の出力には、USB接続のDMXインタフェース(\figref{fig:dmx-
 具体的には、各値に対して以下の処理を適用する。
 
 \begin{enumerate}
-	\item[(1)]正規化：各特徴量の最小値・最大値を基に0〜1の範囲にスケーリング
-	\item[(2)]スケーリング：0〜1の値を255倍して0〜255の範囲に変換
-	\item[(3)]クリッピング：小数点以下を切り捨て、整数値に変換
+	\item[\textbf{(1)}]\textbf{正規化：各特徴量の最小値・最大値を基に0〜1の範囲にスケーリング}
+	\item[\textbf{(2)}]\textbf{スケーリング：0〜1の値を255倍して0〜255の範囲に変換}
+	\item[\textbf{(3)}]\textbf{クリッピング：小数点以下を切り捨て、整数値に変換}
 \end{enumerate}
 
 また、本システムでは、4台の照明機器を同時に制御する構成とした。
@@ -453,8 +462,8 @@ CH7 & Brightness \\
 具体的には、運弓方向に応じて上下動作のDMXチャンネル（チャンネル2）の値を変更し、照明の上下動作を演奏者の弓の動きに同期させている。
 
 \begin{enumerate}
-	\item[(1)]上げ弓：DMX値を120に設定（照明約60度上昇）(\figref{fig:lightupdown}参照)
-	\item[(2)]下げ弓：DMX値を0に設定（照明約60度下降）(\figref{fig:lightupdown}参照)
+	\item[\textbf{(1)}]\textbf{上げ弓：DMX値を120に設定（照明約60度上昇）(\figref{fig:lightupdown}参照)}
+	\item[\textbf{(2)}]\textbf{下げ弓：DMX値を0に設定（照明約60度下降）(\figref{fig:lightupdown}参照)}
 \end{enumerate}
 とすることで、演奏者の身体動作と照明の物理的動きを同期させている。
 この設計により、音だけでなく演奏動作そのものが照明演出に影響を与える構造となっている。
@@ -834,7 +843,7 @@ Paganini の作品は、高度な演奏技巧や急激な音高変化、速い�
 MIDIデータは、演奏音の音高、音価、発音タイミングなどを厳密に数値情報として保持しているため、音響特徴量抽出において再現性が高く、楽曲間の比較にも適している。
 特に、これらの練習曲・技巧曲は、音楽教育の現場でも広く使用されており、ヴァイオリン演奏の典型的な音域・音色変化・フレーズ構造を網羅している点で、本研究の補助的データとして有用である。
 
-\subsubsection{音響特徴量の抽出}　\label{sec:otomidi}
+\subsubsection{音響特徴量の抽出} \label{sec:otomidi}
 
 まず、MIDIデータは直接音響特徴量を算出することができないため、音声信号へ変換する必要がある。
 本研究では、ソフトウェアシンセサイザー FluidSynth\cite{FluidSynthSoftwareSynthesizer}を用い、MIDIファイルをWAV形式へ変換した。
@@ -853,13 +862,13 @@ MIDIデータは、演奏音の音高、音価、発音タイミングなどを�
 また、各MIDIファイルについて、以下の情報を1つのCSVデータとして出力した(\tabref{tab:csvmidi})。
 
 \begin{enumerate}
-	\item[(1)]時間(秒)
+	\item[\textbf{(1)}]\textbf{時間(秒)}
 \end{enumerate}
 \begin{enumerate}
-	\item[(2)]音響特徴量
+	\item[\textbf{(2)}]\textbf{音響特徴量}
 \end{enumerate}
 \begin{enumerate}
-	\item[(3)]照明予測モデルβによる推定照明特徴量
+	\item[\textbf{(3)}]\textbf{照明予測モデルβによる推定照明特徴量}
 \end{enumerate}
 
 \begin{table*}[t]
@@ -932,10 +941,10 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 分割はランダムに行い、乱数シードを固定することで実験の再現性を確保した。
 
 \begin{enumerate}
-	\item[(1)]学習データ：モデルの学習に使用
+	\item[\textbf{(1)}]\textbf{学習データ：モデルの学習に使用}
 \end{enumerate}
 \begin{enumerate}
-	\item[(2)]テストデータ：モデルの性能評価に使用
+	\item[\textbf{(2)}]\textbf{テストデータ：モデルの性能評価に使用}
 \end{enumerate}
 
 拡張された学習データセットを用いて Random Forest モデルの学習を実行し、音響特徴量と照明特徴量の対応関係を再度獲得した。
