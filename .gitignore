@@ -11,3 +11,5 @@
 *.synctex(busy)
 *.toc
 .DS_Store
+PBL報告書*/*
+ipsj_*/*
