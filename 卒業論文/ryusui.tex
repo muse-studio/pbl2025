@@ -23,14 +23,14 @@
 以上より本研究では、ヴァイオリン演奏音から抽出した音響特徴量に基づいて照明の色、明るさ、点滅速度を制御すると同時に、演奏者の運弓動作を照明の上下動作として直接反映することで、音楽表現と身体表現が一体となった照明演出の実現を目指す。
 
 
-\section{関連研究} \label{sec:Related Research}
+\section{関連研究} \label{sec:RelatedResearch}
 
 音楽ライブやコンサートにおける照明演出は、観客の没入感や一体感を高める重要な要素であり、従来は照明デザイナーやオペレータの経験や感性に基づいて設計されてきた。
 しかし、小規模公演や即興性の高い演奏では十分な準備時間や人員を確保することが難しく、音楽情報処理技術を用いた照明演出の自動化が有効な手段として注目されている。
 
 \subsection{音響信号に基づく照明演出の自動化}
 
-音響信号に基づく照明制御に関する研究として、月東らは楽曲音源からリズムの強調箇所を検出し、それを照明演出へ反映する手法を提案している\cite{1}。
+音響信号に基づく照明制御に関する研究として、月東らは楽曲音源からリズムの強調箇所を検出し、それを照明演出へ反映する手法を提案している\cite{tsukihigashi25}。
 この研究では、楽曲をドラム、ベース、ギター、ボーカルの各パートに音源分離し、それぞれのオンセットエンベロープを算出した上で、複数パートで同時に強いオンセットが観測されるタイミングを「キメ」と定義している。
 検出されたキメを基点として、照明のフラッシュや明滅といった瞬間的な演出を付与し、主観評価実験によりリズムの一体感や迫力の向上を確認している。
 
@@ -40,7 +40,7 @@
 \subsection{楽曲の印象・意味内容に基づく照明生成}
 
 楽曲全体の印象や意味内容を照明演出に反映する研究も多く報告されている。
-神野らは、歌詞および曲調の印象に基づいて照明演出を自動生成するシステムを提案している\cite{2}。
+神野らは、歌詞および曲調の印象に基づいて照明演出を自動生成するシステムを提案している\cite{kanno21}。
 
 この研究では、歌詞を形態素解析した上で分散表現ベクトルに変換し、言語イメージスケールを用いて照明色候補を選択する。
 さらに、楽曲の長短調やテンポに基づいて色の優先度や配置を決定し、BPMや歌詞のネガティブ・ポジティブ度を用いて明度を調整することで、照明の色、配置、明るさを総合的に決定している。
@@ -51,14 +51,14 @@
 \subsection{深層学習を用いた照明演出生成}
 
 近年では、照明演出を生成タスクとして捉え、深層学習モデルを用いて照明パラメータを自動生成する研究も行われている。
-月東らの研究内でも言及されている Zhao らの手法では、楽曲特徴量系列を入力として照明の色や明るさの時系列データを生成する生成モデルが提案されている\cite{5}。
+月東らの研究内でも言及されている Zhao らの手法では、楽曲特徴量系列を入力として照明の色や明るさの時系列データを生成する生成モデルが提案されている\cite{Zhao25}。
 
 このようなアプローチは、表現力や多様性の高い照明演出を実現できる可能性を示しているが、学習データへの依存度が高く、生成過程の解釈が困難であるという課題がある。
 また、演奏者の身体動作は入力として扱われていない。
 
 \subsection{演奏者操作によるリアルタイム照明制御}
 
-演奏者自身が照明演出に直接関与する研究として、瀧口らはドラム音やMIDIフットコントローラーを用いて演奏中に照明を操作可能なシステムを提案している\cite{3}。
+演奏者自身が照明演出に直接関与する研究として、瀧口らはドラム音やMIDIフットコントローラーを用いて演奏中に照明を操作可能なシステムを提案している\cite{takiguchi25}。
 この研究では、バスドラム音の音量が閾値を超えた際に照明を点灯させる手法や、足元のコントローラー操作によって照明の色や輝度、ストロボ効果を変更する仕組みが実装されている。
 
 この手法により、即興演奏に柔軟に対応できる照明演出が実現されている一方で、演奏者が照明操作を意識する必要があり、演奏負荷が増加する可能性がある。
@@ -66,7 +66,7 @@
 
 \subsection{身体動作と照明演出の連動}
 
-演奏者の身体動作と照明演出を連動させる研究として、浅田らはオンラインライブ空間において、演奏者の身体情報を用いて照明や振動装置を制御するシステムを提案している\cite{4}。
+演奏者の身体動作と照明演出を連動させる研究として、浅田らはオンラインライブ空間において、演奏者の身体情報を用いて照明や振動装置を制御するシステムを提案している\cite{asada20}。
 この研究では、ギター演奏者の腕の角度に応じてムービングライトの向きを変化させるなど、身体動作を照明の物理的な動きに対応付けることで、演奏者と観客の一体感を高めている。
 
 しかし、音響特徴量と身体動作を統合的に扱う設計にはなっておらず、音楽表現と照明表現の対応関係は限定的である。
@@ -84,8 +84,8 @@
 
 システムの実装に先立ち、システムの方向性を検討するため、簡易的なプロトタイプシステムの実装を行った。
 本プロトタイプは、ヴァイオリン演奏中の演奏者が足元に配置した3つのフットペダルを操作することで、演奏者周囲に設置された照明機材の色を制御するシステムである
-各フットペダルは、光の三原色であるRGB（Red：赤、Green：緑、Blue：青）の各成分(以下、「RGB値」)の切り替えに対応しており、これらを組み合わせることで照明のRGB値を変化させることができる。
-また、演奏時の音量に応じて照明の明るさ(以下、「Brightness」)が変化する仕組みを備えており、演奏表現と照明演出を連動させることを可能としている。
+各フットペダルは、光の三原色であるRGB（Red：赤、Green：緑、Blue：青）の各成分（以下、「RGB値」）の切り替えに対応しており、これらを組み合わせることで照明のRGB値を変化させることができる。
+また、演奏時の音量に応じて照明の明るさ（以下、「Brightness」）が変化する仕組みを備えており、演奏表現と照明演出を連動させることを可能としている。
 
 このプロトタイプを実装した理由は、演奏者自身が実際にヴァイオリンを演奏しながら照明を動かすという体験を試行的に行い、演奏と照明演出が同時に存在する状況を身体感覚として把握するためである。
 
@@ -102,7 +102,7 @@
 前節での課題を踏まえ、本システムでは以下の設計方針を定めた。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{演奏表現を連続的に反映可能な照明制御を実現すること}
+	\item[\textbf{（1）}]\textbf{演奏表現を連続的に反映可能な照明制御を実現すること}
 \end{enumerate}
 
 本研究では、音響特徴量と照明特徴量との対応関係を学習する照明予測モデルをシステムに導入した。
@@ -112,7 +112,7 @@
 また、演奏者が照明操作を意識することなく、演奏内容そのものが照明に反映される構成を実現できる点も、照明予測モデルを採用した理由の1つである。
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{演奏中に人手操作を必要としないこと}
+	\item[\textbf{（2）}]\textbf{演奏中に人手操作を必要としないこと}
 \end{enumerate}
 
 本システムでは、演奏者が演奏中に照明操作を意識したり、追加の入力デバイスを操作したりする必要がない自律的な構成を目指した。
@@ -122,14 +122,14 @@
 本研究では、演奏音および演奏動作そのものを入力として照明を自動制御する設計とした。
 
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{遅延を極力抑え、リアルタイム性を確保すること}
+	\item[\textbf{（3）}]\textbf{遅延を極力抑え、リアルタイム性を確保すること}
 \end{enumerate}
 
 本システムでは、ヴァイオリン演奏の微細な表現変化を照明に即座に反映させるため、システム全体の処理遅延を可能な限り低減する設計とした。
 プロトタイプでは、演奏と照明の同期にずれが生じる場面が確認された。
 
 この課題を踏まえ、本研究では人間の操作を介さずに制御を行うとともに、演奏と照明演出の間の時間のずれを約 10ms 以内に収めるように設定した。
-一般に、人間は 20～30ms 未満の視覚的遅延を明確には知覚しにくいとされており\cite{MenXieShenTiGanJuetoShiJueQingBaonizuregaShengziruMeiRuHuanJingniokeruDiChiYannaYingXiangnoyuzahenoYingXiang2019}、10ms 程度の更新周期であれば、演奏と照明がほぼ同時に変化しているように感じられると考えられる。
+一般に、人間は 20～30ms 未満の視覚的遅延を明確には知覚しにくいとされており\cite{Kadowaki19}、10ms 程度の更新周期であれば、演奏と照明がほぼ同時に変化しているように感じられると考えられる。
 この知見に基づき、演奏と照明の一体感を損なわない更新周期として 10ms を採用した。
 
 以上の設計方針に基づき、本研究ではヴァイオリン演奏に基づくリアルタイム照明制御システムを構築した。
@@ -143,8 +143,7 @@ DMX512 は、照明機器のRGB値やBrightness、動作を数値データとし
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/system-structure.png}
-	\caption{リアルタイム照明制御システム処理フロー図}
-	\label{fig:system-structure}
+	\caption{リアルタイム照明制御システム処理フロー図}\label{fig:system-structure}
 \end{figure}
 
 \subsection{ハードウェア構成とソフトウェア構成}
@@ -152,61 +151,57 @@ DMX512 は、照明機器のRGB値やBrightness、動作を数値データとし
 本システムは\tabref{tab:hardwea}に記載されているハードウェアで構成される。
 
 \begin{table}[tb]
-\centering
-\small
-\caption{ハードウェア構成}
-\label{tab:hardwea}
-\begin{tabular}{c}
-\hline
-\hline
-PC(Windows 11)　\\
-コンデンサマイク(演奏音入力)  \\
-スマートフォン(演奏動作取得) \\
-USB-DMXインタフェース(\figref{fig:dmx-light})  \\
-DMX対応照明機器4台(\figref{fig:dmx-light})  \\
-\hline
-\end{tabular}
+	\centering
+	\small
+	\caption{ハードウェア構成}\label{tab:hardwea}
+	\begin{tabular}{c}
+		\hline
+		\hline
+		PC（Windows 11）                        \\
+		コンデンサマイク（演奏音入力）                       \\
+		スマートフォン（演奏動作取得）                       \\
+		USB-DMXインタフェース（\figref{fig:dmx-light}）\\
+		DMX対応照明機器4台（\figref{fig:dmx-light}）   \\
+		\hline
+	\end{tabular}
 \end{table}
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/dmx-light.png}
-	\caption{USB-DMXインタフェース(左)とDMX対応照明機器(右)}
-	\label{fig:dmx-light}
+	\caption{USB-DMXインタフェース（左）とDMX対応照明機器（右）}\label{fig:dmx-light}
 \end{figure}
 
 マイクは演奏音をリアルタイムで取得するために使用し、スマートフォンはヴァイオリン演奏時の運弓動作を取得するために使用する。
-照明機器は地面にステージ四方に配置され、床から天井に向けて演奏者を中心に照射する構成とした(\figref{fig:setting})。
+照明機器は地面にステージ四方に配置され、床から天井に向けて演奏者を中心に照射する構成とした（\figref{fig:setting}）。
 \figref{fig:setting}中のそれぞれの配線はケーブルを用いたものを実線で示し、無線通信は点線で示している。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/setting.png}
-	\caption{機材配置図(上面図)}
-	\label{fig:setting}
+	\caption{機材配置図（上面図）}\label{fig:setting}
 \end{figure}
 
 また、本システムはPythonで実装され、すべての処理を単一プログラム上で統合している。
 使用した主なライブラリを\tabref{tab:library}に示す。
 
 \begin{table}[tb]
-\centering
-\small
-\caption{使用ライブラリと役割}
-\label{tab:library}
-\begin{tabular}{c|c}
-\hline
-\hline
-ライブラリ名 & 役割  \\
-\hline
-sounddevice & 演奏音取得 \\
-librosa & 音響特徴量抽出  \\
-numpy & 数値処理、データ管理 \\
-scikit-learn & 機械学習モデル推論  \\
-socket & UDP通信  \\
-ftd2xx & DMX信号出力 \\
-\hline
-\end{tabular}
+	\centering
+	\small
+	\caption{使用ライブラリと役割}\label{tab:library}
+	\begin{tabular}{c|c}
+		\hline
+		\hline
+		ライブラリ名       & 役割         \\
+		\hline
+		sounddevice  & 演奏音取得      \\
+		librosa      & 音響特徴量抽出    \\
+		numpy        & 数値処理、データ管理 \\
+		scikit-learn & 機械学習モデル推論  \\
+		socket       & UDP通信      \\
+		ftd2xx       & DMX信号出力    \\
+		\hline
+	\end{tabular}
 \end{table}
 
 \subsection{演奏音入力と音響特徴量抽出} \label{sec:sound}
@@ -226,7 +221,7 @@ ftd2xx & DMX信号出力 \\
 \subsubsection{スペクトル系特徴量}
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{スペクトル重心(Spectral Centroid)}
+	\item[\textbf{（1）}]\textbf{スペクトル重心（Spectral Centroid）}
 \end{enumerate}
 
 スペクトル重心は、音の「Brightness」を表す特徴量である。
@@ -236,7 +231,7 @@ ftd2xx & DMX信号出力 \\
 この特徴量により、音の鋭さや軽やかさを捉えることができる。
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{スペクトル帯域幅(SpectralBandwidth)}
+	\item[\textbf{（2）}]\textbf{スペクトル帯域幅（SpectralBandwidth）}
 \end{enumerate}
 
 スペクトル帯域幅は、音に含まれる周波数成分の「広がり」を表す特徴量である。
@@ -245,7 +240,7 @@ ftd2xx & DMX信号出力 \\
 和音やノイズ成分を多く含む音では帯域幅が広くなり、単音でクリアな音では狭くなる傾向がある。
 
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{スペクトルコントラスト(SpectralContrast)}
+	\item[\textbf{（3）}]\textbf{スペクトルコントラスト（SpectralContrast）}
 \end{enumerate}
 
 スペクトルコントラストは、音の中の「強い成分」と「弱い成分」の差を表す特徴量である。
@@ -255,7 +250,7 @@ ftd2xx & DMX信号出力 \\
 この特徴量により、演奏の抑揚や音の輪郭の明瞭さを捉えることができる。
 
 \begin{enumerate}
-	\item[\textbf{(4)}]\textbf{スペクトルフラットネス(SpectralFlatness)}
+	\item[\textbf{（4）}]\textbf{スペクトルフラットネス（SpectralFlatness）}
 \end{enumerate}
 
 スペクトルフラットネスは、音がどの程度ノイズ的であるかを示す特徴量である。
@@ -264,7 +259,7 @@ ftd2xx & DMX信号出力 \\
 ヴァイオリン演奏においては、弓の擦れ音が強い場面などで変化が現れる。
 
 \begin{enumerate}
-	\item[\textbf{(5)}]\textbf{スペクトルロールオフ（SpectralRolloff）}
+	\item[\textbf{（5）}]\textbf{スペクトルロールオフ（SpectralRolloff）}
 \end{enumerate}
 
 スペクトルロールオフは、音に含まれる高音成分がどのあたりまで存在しているかを示す特徴量である。
@@ -276,14 +271,14 @@ ftd2xx & DMX信号出力 \\
 \subsubsection{時間領域系特徴量}
 
 \begin{enumerate}
-	\item[\textbf{(6)}]\textbf{音量(Root Mean Square)}
+	\item[\textbf{（6）}]\textbf{音量（Root Mean Square）}
 \end{enumerate}
 
 音量は、音の「大きさ」を表す特徴量である。
 値が大きいほど強い音であり、値が小さいほど弱く静かな音であることを示す。
 
 \begin{enumerate}
-	\item[\textbf{(7)}]\textbf{ゼロ交差率}
+	\item[\textbf{（7）}]\textbf{ゼロ交差率}
 \end{enumerate}
 
 ゼロ交差率は、音の波形が上下に切り替わる回数を表す特徴量である。
@@ -294,7 +289,7 @@ ftd2xx & DMX信号出力 \\
 \subsubsection{MFCC系特徴量}
 
 \begin{enumerate}
-	\item[\textbf{(8)}]\textbf{メル周波数ケプストラム係数(MFCC)}
+	\item[\textbf{（8）}]\textbf{メル周波数ケプストラム係数（MFCC）}
 \end{enumerate}
 
 メル周波数ケプストラム係数は、人間の聴覚特性に近い形で音色を数値化した特徴量である。
@@ -305,14 +300,14 @@ ftd2xx & DMX信号出力 \\
 \subsubsection{ハーモニー系特徴量}
 
 \begin{enumerate}
-	\item[\textbf{(9)}]\textbf{クロマ特徴量（Chroma）}
+	\item[\textbf{（9）}]\textbf{クロマ特徴量（Chroma）}
 \end{enumerate}
 
 クロマ特徴量は、12 音階（ド・レ・ミなど）それぞれの音の強さを表す特徴量である。
 どの音階がどの程度鳴っているかを示すため、和音や調性感の把握に用いられる。
 
 \begin{enumerate}
-	\item[\textbf{(10)}]\textbf{トーナルネットワーク特徴量（Tonnetz）}
+	\item[\textbf{（10）}]\textbf{トーナルネットワーク特徴量（Tonnetz）}
 \end{enumerate}
 
 トーナルネットワーク特徴量は、音階同士の関係性を表す特徴量であり、和音構造や調性の傾向を捉えることができる。
@@ -320,27 +315,25 @@ ftd2xx & DMX信号出力 \\
 
 \subsection{演奏動作取得}
 
-本システムでは、演奏者の弓の上下運動(上げ弓・下げ弓)(\figref{fig:up}・\figref{fig:down})を取得するために、スマートフォンをZIG-SIMセンサとして利用している。
+本システムでは、演奏者の弓の上下運動（上げ弓・下げ弓）（\figref{fig:up}，\figref{fig:down}）を取得するために、スマートフォンをZIG-SIMセンサとして利用している。
 スマートフォンにはジャイロセンサが搭載されており、X軸方向の角速度を取得することで弓の前後運動を検出する。
 
-スマートフォンは演奏者の右腕に装着し、弓を持つ手首付近(\figref{fig:up}・\figref{fig:down}の青丸部分)に位置させる。
+スマートフォンは演奏者の右腕に装着し、弓を持つ手首付近（\figref{fig:up}，\figref{fig:down}の青丸部分）に位置させる。
 これにより、弓の上下運動が腕の回転として反映されるため、ジャイロセンサで容易に検出可能となる。
 
 右手首に装着したスマートフォンから取得したジャイロデータはUDP通信を用いてPCに送信する。
 UDPはTCPに比べて通信遅延が少なく、リアルタイム性を重視した設計である。
 
 \begin{figure}[tb]
-    \centering
-    \includegraphics[width=\hsize]{../fig/up.png}
-    \caption{上げ弓}
-    \label{fig:up}
+	\centering
+	\includegraphics[width=\hsize]{../fig/up.png}
+	\caption{上げ弓}\label{fig:up}
 \end{figure}
 
 \begin{figure}[tb]
-    \centering
-    \includegraphics[width=\hsize]{../fig/down.png}
-    \caption{下げ弓}
-    \label{fig:down}
+	\centering
+	\includegraphics[width=\hsize]{../fig/down.png}
+	\caption{下げ弓}\label{fig:down}
 \end{figure}
 
 PCに送信されたx軸のジャイロデータをもとに、弓方向の判定を行う。
@@ -354,15 +347,15 @@ PCに送信されたx軸のジャイロデータをもとに、弓方向の判�
 具体的には、以下の手順で検討を行った。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{弓を完全に静止させた状態で数十秒間データを取得}
+	\item[\textbf{（1）}]\textbf{弓を完全に静止させた状態で数十秒間データを取得}
 \end{enumerate}
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{弓を非常にゆっくり動かした場合の角速度を計測}
+	\item[\textbf{（2）}]\textbf{弓を非常にゆっくり動かした場合の角速度を計測}
 \end{enumerate}
 
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{通常の演奏速度における角速度分布を確認}
+	\item[\textbf{（3）}]\textbf{通常の演奏速度における角速度分布を確認}
 \end{enumerate}
 その結果、
 \begin{enumerate}
@@ -387,11 +380,11 @@ PCに送信されたx軸のジャイロデータをもとに、弓方向の判�
 本研究では、次の2つのケースに分類して弓方向を判定している。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{各速度変化量が正に大きく変化した場合→上げ弓}
+	\item[\textbf{（1）}]\textbf{各速度変化量が正に大きく変化した場合→上げ弓}
 \end{enumerate}
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{各速度変化量が負に大きく変化した場合→下げ弓}
+	\item[\textbf{（2）}]\textbf{各速度変化量が負に大きく変化した場合→下げ弓}
 \end{enumerate}
 
 本研究における角速度変化量の判定には、閾値を 0.09 と設定した。
@@ -415,7 +408,7 @@ PCに送信されたx軸のジャイロデータをもとに、弓方向の判�
 
 本節では、機械学習モデルおよび演奏動作推定によって得られた照明特徴量を、実際の照明機器に反映させるためのDMX信号生成および制御方法について詳細に述べる。
 
-DMX信号の出力には、USB接続のDMXインタフェース(\figref{fig:dmx-light}・左)を使用した。
+DMX信号の出力には、USB接続のDMXインタフェース（\figref{fig:dmx-light}・左）を使用した。
 本研究ではFTDI社製チップを搭載したデバイスを用い、Pythonからftd2xxライブラリを介して制御を行っている。
 
 \subsubsection{照明特徴量からDMX値への変換}
@@ -427,32 +420,31 @@ DMX信号の出力には、USB接続のDMXインタフェース(\figref{fig:dmx-
 具体的には、各値に対して以下の処理を適用する。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{正規化：各特徴量の最小値・最大値を基に0〜1の範囲にスケーリング}
-	\item[\textbf{(2)}]\textbf{スケーリング：0〜1の値を255倍して0〜255の範囲に変換}
-	\item[\textbf{(3)}]\textbf{クリッピング：小数点以下を切り捨て、整数値に変換}
+	\item[\textbf{（1）}]\textbf{正規化：各特徴量の最小値・最大値を基に0〜1の範囲にスケーリング}
+	\item[\textbf{（2）}]\textbf{スケーリング：0〜1の値を255倍して0〜255の範囲に変換}
+	\item[\textbf{（3）}]\textbf{クリッピング：小数点以下を切り捨て、整数値に変換}
 \end{enumerate}
 
 また、本システムでは、4台の照明機器を同時に制御する構成とした。
 
 \begin{table}[tb]
-\centering
-\small
-\caption{チャンネルの割り当て}
-\label{tab:channel}
-\begin{tabular}{c|c}
-\hline
-\hline
-チャンネル & 役割  \\
-\hline
-CH1 & 未使用 \\
-CH2 & 上下動作  \\
-CH3 & 点滅速度 \\
-CH4 & R成分  \\
-CH5 & G成分  \\
-CH6 & B成分 \\
-CH7 & Brightness \\
-\hline
-\end{tabular}
+	\centering
+	\small
+	\caption{チャンネルの割り当て}\label{tab:channel}
+	\begin{tabular}{c|c}
+		\hline
+		\hline
+		チャンネル & 役割         \\
+		\hline
+		CH1   & 未使用        \\
+		CH2   & 上下動作       \\
+		CH3   & 点滅速度       \\
+		CH4   & R成分        \\
+		CH5   & G成分        \\
+		CH6   & B成分        \\
+		CH7   & Brightness \\
+		\hline
+	\end{tabular}
 \end{table}
 
 \subsubsection{演奏動作情報のDMX値への変換}
@@ -462,8 +454,8 @@ CH7 & Brightness \\
 具体的には、運弓方向に応じて上下動作のDMXチャンネル（チャンネル2）の値を変更し、照明の上下動作を演奏者の弓の動きに同期させている。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{上げ弓：DMX値を120に設定（照明約60度上昇）(\figref{fig:lightupdown}参照)}
-	\item[\textbf{(2)}]\textbf{下げ弓：DMX値を0に設定（照明約60度下降）(\figref{fig:lightupdown}参照)}
+	\item[\textbf{（1）}]\textbf{上げ弓：DMX値を120に設定（照明約60度上昇）（\figref{fig:lightupdown}参照）}
+	\item[\textbf{（2）}]\textbf{下げ弓：DMX値を0に設定（照明約60度下降）（\figref{fig:lightupdown}参照）}
 \end{enumerate}
 とすることで、演奏者の身体動作と照明の物理的動きを同期させている。
 この設計により、音だけでなく演奏動作そのものが照明演出に影響を与える構造となっている。
@@ -471,8 +463,7 @@ CH7 & Brightness \\
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=0.2\textwidth]{../fig/lightupdown.png}
-	\caption{照明上下動作}
-	\label{fig:lightupdown}
+	\caption{照明上下動作}\label{fig:lightupdown}
 \end{figure}
 
 \subsection{音響特徴量と照明特徴量の対応関係}
@@ -480,7 +471,7 @@ CH7 & Brightness \\
 これまでに述べたように、本システムではヴァイオリン演奏音から抽出した音響特徴量を入力として、照明のRGB値、Brightness、点滅速度といった照明特徴量を制御している。
 本節では、システム内で扱われる音響特徴量と照明特徴量の間にどのような対応関係が見られるのかを整理し、分析する。
 
-音響特徴量と照明特徴量の対応関係を解析するため、本研究では Random Forest における特徴量重要度（feature importance） を用いた。
+音響特徴量と照明特徴量の対応関係を解析するため、本研究では Random Forest における特徴量重要度（feature importance）を用いた。
 
 Random Forest では、各決定木において分岐に使用された特徴量がどれだけ予測誤差の低減に寄与したかを基に、特徴量重要度が算出される。
 この値は、モデルが予測を行う際にどの特徴量を重視しているかを示す指標である。
@@ -491,16 +482,15 @@ Random Forest では、各決定木において分岐に使用された特徴量
 結果の可視化には円グラフを用い、各特徴量が予測にどの程度寄与しているかを直感的に把握できるようにした。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{音響特徴量と照明色（R成分）の対応関係}
+	\item[\textbf{（1）}]\textbf{音響特徴量と照明色（R成分）の対応関係}
 \end{enumerate}
 
-解析の結果、$\mathrm{RMS}$ (音量)が最も高い重要度を示し、次いで $\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$、$\mathrm{MFCC\_19}$、$\mathrm{Spectral Contrast}$ の順となった(\figref{fig:rlightstyle})。
+解析の結果、$\mathrm{RMS}$（音量）が最も高い重要度を示し、次いで $\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$、$\mathrm{MFCC\_19}$、$\mathrm{Spectral Contrast}$ の順となった（{fig:rlightstyle}）。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/rlightstyle.png}
-	\caption{照明色 (R成分) に対する音響特徴量}
-	\label{fig:rlightstyle}
+	\caption{照明色（R成分）に対する音響特徴量}\label{fig:rlightstyle}
 \end{figure}
 
 R成分の予測においてはRMSが最も高い重要度を示した。このことから、赤色成分の強度は音量の大きさに強く影響されていることが分かる。
@@ -510,16 +500,15 @@ R成分の予測においてはRMSが最も高い重要度を示した。この�
 また、Spectral Contrast も上位に含まれていることから、音の輪郭の明瞭さが赤色成分の強調に一定の影響を与えていると考えられる。
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{音響特徴量と照明色（G成分）の対応関係}
+	\item[\textbf{（2）}]\textbf{音響特徴量と照明色（G成分）の対応関係}
 \end{enumerate}
 
-解析の結果、RMS が全体の約86.8\% と極めて高い重要度を示し、他の特徴量（$\mathrm{Tonnetz\_6}$、$\mathrm{Chroma\_7}$、$\mathrm{MFCC\_5}$、$\mathrm{Spectral Contrast}$）はいずれも1〜7\%程度に留まった(\figref{fig:glightstyle})。
+解析の結果、RMS が全体の約86.8\% と極めて高い重要度を示し、他の特徴量（$\mathrm{Tonnetz\_6}$、$\mathrm{Chroma\_7}$、$\mathrm{MFCC\_5}$、$\mathrm{Spectral Contrast}$）はいずれも1〜7\%程度に留まった（\figref{fig:glightstyle}）。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/glightstyle.png}
-	\caption{照明色 (G成分)に対する音響特徴量}
-	\label{fig:glightstyle}
+	\caption{照明色（G成分）に対する音響特徴量}\label{fig:glightstyle}
 \end{figure}
 
 G成分において RMS が圧倒的な重要度を示したことから、緑色成分の強度は他の要因に比べて音量にほぼ支配的に決定されていることが明らかとなった。
@@ -532,17 +521,16 @@ R成分の解析結果では、RMS に加えて Tonnetz や MFCC が比較的高
 この違いは、照明色ごとに音響特徴量との対応関係が異なることを示している。
 
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{音響特徴量と照明色（B成分）の対応関係}
+	\item[\textbf{（3）}]\textbf{音響特徴量と照明色（B成分）の対応関係}
 \end{enumerate}
 
 解析の結果、RMS が約70.2\% と最も高い重要度を示した。
-次いで  $\mathrm{MFCC\_19}$（約14.9\%）が比較的高い寄与を示し、 $\mathrm{Chroma\_7}$、$\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$ はそれぞれ約5\%前後であった(\figref{fig:blightstyle})。
+次いで  $\mathrm{MFCC\_19}$（約14.9\%）が比較的高い寄与を示し、 $\mathrm{Chroma\_7}$、$\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$ はそれぞれ約5\%前後であった（{fig:blightstyle}）。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/blightstyle.png}
-	\caption{照明色 (B成分)に対する音響特徴量}
-	\label{fig:blightstyle}
+	\caption{照明色（B成分）に対する音響特徴量}\label{fig:blightstyle}
 \end{figure}
 
 B成分においても RMS が最も支配的な特徴量であることから、青色照明も音量変化に大きく依存していることが分かる。
@@ -557,10 +545,10 @@ $\mathrm{Chroma\_7}$ および $\mathrm{Tonnetz\_6}$ が上位に含まれてい
 これらの結果から、RGB値の各成分は一様に音量に反応するのではなく、それぞれ異なる音響的役割を担っていることが明らかとなった。
 
 \begin{enumerate}
-	\item[\textbf{(4)}]\textbf{音響特徴量と照明のBrightnessの対応関係}
+	\item[\textbf{（4）}]\textbf{音響特徴量と照明のBrightnessの対応関係}
 \end{enumerate}
 
-解析の結果、RMS が約77.8\% と最も高い重要度を示した。次いで $\mathrm{Tonnetz\_6}$（約10.4\%）、$\mathrm{MFCC\_19}$（約5.3\%）、$\mathrm{MFCC\_5}$（約3.7\%）、$\mathrm{Spectral Contrast}$（約2.8\%）が続いた(\figref{fig:brightnessstyle})。
+解析の結果、RMS が約77.8\% と最も高い重要度を示した。次いで $\mathrm{Tonnetz\_6}$（約10.4\%）、$\mathrm{MFCC\_19}$（約5.3\%）、$\mathrm{MFCC\_5}$（約3.7\%）、$\mathrm{Spectral Contrast}$（約2.8\%）が続いた（\figref{fig:brightnessstyle}）。
 
 RMS が約8割近い寄与率を示したことから、照明の明るさは主に音量に基づいて決定されていることが明らかとなった。
 
@@ -569,8 +557,7 @@ RMS が約8割近い寄与率を示したことから、照明の明るさは主
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/brilightstyle.png}
-	\caption{照明のBrightnessに対する音響特徴量}
-	\label{fig:brightnessstyle}
+	\caption{照明のBrightnessに対する音響特徴量}\label{fig:brightnessstyle}
 \end{figure}
 
 RMS に次いで $\mathrm{Tonnetz\_6}$の重要度が高かった。
@@ -584,16 +571,15 @@ RGB 各成分と照明のBrightnessの関係を比較すると、Brightnessは R
 一方で、Tonnetz や MFCC が一定の寄与を示していることから、Brightnessも完全に単純な制御ではなく、音楽的文脈を考慮した調整が行われていると解釈できる。
 
 \begin{enumerate}
-	\item[\textbf{(5)}]\textbf{音響特徴量と照明の点滅速度の対応関係}
+	\item[\textbf{（5）}]\textbf{音響特徴量と照明の点滅速度の対応関係}
 \end{enumerate}
 
-解析の結果、$\mathrm{Chroma\_7}$ が約30.6\% と最も高い重要度を示し、次いで $\mathrm{MFCC\_5}$（約21.9\%）、$\mathrm{Chroma\_1}$（約19.7\%）、$\mathrm{MFCC\_1}$（約15.6\%）、RMS（約12.1\%）という順となった(\figref{fig:blinkstyle})。
+解析の結果、$\mathrm{Chroma\_7}$ が約30.6\% と最も高い重要度を示し、次いで $\mathrm{MFCC\_5}$（約21.9\%）、$\mathrm{Chroma\_1}$（約19.7\%）、$\mathrm{MFCC\_1}$（約15.6\%）、RMS（約12.1\%）という順となった（\figref{fig:blinkstyle}）。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/blinklightstyle.png}
-	\caption{照明の点滅速度に対する音響特徴量}
-	\label{fig:blinkstyle}
+	\caption{照明の点滅速度に対する音響特徴量}\label{fig:blinkstyle}
 \end{figure}
 
 点滅速度において最も大きな影響を与えているのは Chroma 系特徴量であり、特に $\mathrm{Chroma\_7}$ および $\mathrm{Chroma\_1}$ が全体の約50\%を占めている。
@@ -610,7 +596,7 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 この違いは、照明パラメータごとに参照される音響情報の種類が異なることを明確に示している。
 
 
-\section{照明予測モデル} \label{sec:model}
+\section{照明予測モデル}\label{sec:model}
 
 本章では、\ref{sec:light}節で述べたヴァイオリン演奏音から照明特徴量を予測する機械学習モデルの構築方法について詳述する。
 
@@ -619,10 +605,10 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 照明予測モデルの構築は以下の生成フローから成り立っている。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{データベースの構築(照明予測モデルβ)}
-	\item[\textbf{(2)}]\textbf{照明予測モデルβの学習}
-	\item[\textbf{(3)}]\textbf{データベースの構築(照明予測モデル)}
-	\item[\textbf{(4)}]\textbf{照明予測モデルの学習}
+	\item[\textbf{（1）}]\textbf{データベースの構築（照明予測モデル$\beta$）}
+	\item[\textbf{（2）}]\textbf{照明予測モデル$\beta$の学習}
+	\item[\textbf{（3）}]\textbf{データベースの構築（照明予測モデル）}
+	\item[\textbf{（4）}]\textbf{照明予測モデルの学習}
 \end{enumerate}
 
 また、\figref{fig:dataflow}に、照明予測モデル構築のためのデータ生成フローを示す。
@@ -631,21 +617,20 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/dataflow.png}
-	\caption{照明予測モデル構築のためのデータ生成フロー}
-	\label{fig:dataflow}
+	\caption{照明予測モデル構築のためのデータ生成フロー}\label{fig:dataflow}
 \end{figure}
 
-\subsection{データベースの構築(照明予測モデルβ)} \label{sec:database}
+\subsection{データベースの構築（照明予測モデル$\beta$）} \label{sec:database}
 
-本研究では、最終的にリアルタイム照明制御に用いる照明予測モデルを構築する前段階として、照明予測モデルβを学習する。
+本研究では、最終的にリアルタイム照明制御に用いる照明予測モデルを構築する前段階として、照明予測モデル$\beta$を学習する。
 
-照明予測モデルβは、実際のヴァイオリン演奏におけるライブ映像から取得した実測データのみを用いて学習され、音響特徴量から照明特徴量の予測を行うモデルである。
+照明予測モデル$\beta$は、実際のヴァイオリン演奏におけるライブ映像から取得した実測データのみを用いて学習され、音響特徴量から照明特徴量の予測を行うモデルである。
 しかし、本研究で学習に用いるライブ演奏映像は 3 種類と限られており、このデータのみでは十分な学習データ量を確保することが難しい。
 
-そこで、本研究では、照明予測モデルβを最終的な照明予測モデルの学習に用いるデータベース構築に利用した。
+そこで、本研究では、照明予測モデル$\beta$を最終的な照明予測モデルの学習に用いるデータベース構築に利用した。
 具体的には、約600種類のMIDIデータから照明特徴量を推定するための中間的なデータとした。
 
-本節では、この照明予測モデルβを学習させるために構築したデータベースについて述べる。
+本節では、この照明予測モデル$\beta$を学習させるために構築したデータベースについて述べる。
 
 \subsubsection{映像データの収集}
 
@@ -654,31 +639,28 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 本研究では、入手可能な映像素材が限られているという制約のもと、音質および照明演出が比較的明瞭に記録されており、学習データとして十分な情報量を有すると判断された3種類の映像を選定した。
 各映像の詳細は以下の通りである。
 
-ライブ映像データの1つ目は、ヴァイオリン演奏曲「千本桜」の演奏を記録した映像(\figref{fig:senbonzakura})である\cite{ayakoishikawatvSutoradeibariusuJinXiaonoQianBenYinghakiretukireShiChuanLingZiAYAKOISHIKAWA2021}。
+ライブ映像データの1つ目は、ヴァイオリン演奏曲「千本桜」の演奏を記録した映像（\figref{fig:senbonzakura}）である\cite{Ayakoishikawatv21}。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/senbonzakura.png}
-	\caption{**千本桜**の演奏映像}
-	\label{fig:senbonzakura}
+	\caption{「千本桜」の演奏映像}\label{fig:senbonzakura}
 \end{figure}
 
-2つ目のライブ映像データは、ヴァイオリンソロによるクラシック楽曲「ヴァイオリンソナタ第三番"バラード"」を演奏した映像(\figref{fig:sonata})である\cite{aiolinofficialLIVEHikaritoViolinSolo2019}。
+2つ目のライブ映像データは、ヴァイオリンソロによるクラシック楽曲「ヴァイオリンソナタ第三番``バラード''」を演奏した映像（\figref{fig:sonata}）である\cite{aiolinofficialLIVEHikaritoViolinSolo2019}。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/sonata.png}
-	\caption{**ソナタ第三番"バラード"**の演奏映像}
-	\label{fig:sonata}
+	\caption{「ヴァイオリンソナタ第三番``バラード''」の演奏映像}\label{fig:sonata}
 \end{figure}
 
-3つ目のライブ映像データは、ヴァイオリンソロによる楽曲「スプラッシュ」を演奏した映像(\figref{fig:splash})である\cite{violinistshogoViolinistSHOGOSorosutezi2017}。
+3つ目のライブ映像データは、ヴァイオリンソロによる楽曲「スプラッシュ」を演奏した映像（\figref{fig:splash}）である\cite{violinistshogoViolinistSHOGOSorosutezi2017}。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/splash.png}
-	\caption{**スプラッシュ**の演奏映像}
-	\label{fig:splash}
+	\caption{「スプラッシュ」の演奏映像}\label{fig:splash}
 \end{figure}
 
 これらの映像に対して、音響特徴量と照明特徴量を抽出するための処理を行い、照明予測モデルの学習データを生成する。
@@ -686,7 +668,7 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 \subsubsection{音響特徴量の抽出} \label{sec:soundmodel}
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{ヴァイオリン音源の分離}
+	\item[\textbf{（1）}]\textbf{ヴァイオリン音源の分離}
 \end{enumerate}
 
 ライブ映像には、会場の反響音、観客ノイズ、伴奏音など、ヴァイオリン以外の音が含まれる。
@@ -694,7 +676,7 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 そこで音源分離モデルDemucs\cite{FacebookresearchDemucs2026}を用い、音声からヴァイオリン成分を抽出した。
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{ヴァイオリン特徴量の抽出}
+	\item[\textbf{（2）}]\textbf{ヴァイオリン特徴量の抽出}
 \end{enumerate}
 
 各映像から抽出したヴァイオリン音声を音声ファイルとして保存し、それらに対して1秒ごとに音響特徴量を算出した。
@@ -714,114 +696,113 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 本節では、照明特徴量の抽出手法、CSVデータ構造について詳述する。
 
 \begin{table*}[t]
-\centering
-\small
-\caption{各映像の音響特徴量と照明特徴量のCSVデータ(一部抜粋)}
-\label{tab:csv}
-\begin{tabular}{c|cccccccccc}
-\hline
-\multicolumn{11}{c}{千本桜} \\
-\hline
-\hline
-Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
- & Brightness & Blink Speed  \\
-\hline
-1.0 & 8894 & 14.5 & 0.001 & -948.6 & 0.67 & 90.1 & 45.7 & 62.1 & 59.8 & 0.40 \\
-2.0 & 6722 & 17.9 & 0.005 & -661.4 & 0.76 & 93.9 & 60.2 & 74.1 & 69.3 & 0.33 \\
-3.0 & 5257 & 23.2 & 0.033 & -385.2 & 0.57 & 89.8 & 60.7 & 70.0 & 87.0 & 0.29 \\
-4.0 & 4459 & 21.7 & 0.023 & -398.0 & 0.75 & 84.2 & 42.5 & 53.6 & 53.5 & 0.25 \\
-5.0 & 3987 & 19.5 & 0.028 & -358.8 & 0.28 & 84.8 & 32.2 & 45.8 & 47.7 & 0.44 \\
-6.0 & 3678 & 18.3 & 0.050 & -347.5 & 0.37 & 130.6 & 16.2 & 31.1 & 53.3 & 0.40 \\
-7.0 & 3521 & 17.8 & 0.039 & -410.6 & 0.30 & 125.8 & 126.4 & 136.2 & 56.7 & 0.40 \\
-8.0 & 3400 & 16.7 & 0.008 & -471.5 & 0.43 & 124.7 & 35.9 & 38.0 & 63.3 & 0.20 \\
-\hline
-\multicolumn{11}{c}{ソナタ第三番} \\
-\hline
-\hline
-Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
- & Brightness & Blink Speed  \\
-\hline
-1.0 & 1947 & 9.04 & 0.001 & -1068.0 & 0.04 & 50.8 & 45.1 & 68.7 & 50.2 & 0.40 \\
-2.0 & 2898 & 20.1 & 0.000 & -809.0 & 0.12 & 52.3 & 45.6 & 69.7 & 49.8 & 0.33 \\
-3.0 & 1695 & 19.9 & 0.001 & -675.9 & 0.35 & 54.5 & 46.9 & 71.6 & 52.9 & 0.29 \\
-4.0 & 1560 & 20.1 & 0.002 & -618.0 & 0.43 & 53.9 & 46.2 & 70.7 & 51.1 & 0.25 \\
-5.0 & 1728 & 19.1 & 0.002 & -606.8 & 0.56 & 65.0 & 58.0 & 81.3 & 63.2 & 0.22\\
-6.0 & 1887 & 19.5 & 0.002 & -604.9 & 0.28 & 120.8 & 119.2 & 131.2 & 124.0 & 0.20 \\
-7.0 & 2113 & 19.0 & 0.002 & -585.3 & 0.22 & 128.8 & 126.4 & 136.2 & 130.9 & 0.20 \\
-8.0 & 2475 & 19.9 & 0.002 & -602.9 & 0.08 & 139.3 & 137.1 & 145.3 & 140.5 & 0.20 \\
-\hline
-\multicolumn{11}{c}{スプラッシュ} \\
-\hline
-\hline
-Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
- & Brightness & Blink Speed  \\
-\hline
-1.0 & 1002 & 0.00 & 0.000 & -1131.0 & 0.08 & 91.6 & 70.0 & 76.5 & 77.5 & 0.40 \\
-2.0 & 3582 & 8.98 & 0.008 & -1055.0 & 0.27 & 54.1 & 36.1 & 50.5 & 35.3 & 0.33 \\
-3.0 & 1603 & 2.24 & 0.001 & -1109.0 & 0.16 & 17.8 & 11.4 & 23.9 & 19.2 & 0.29 \\
-4.0 & 1564 & 15.0 & 0.032 & -774.5 & 0.23 & 45.1 & 36.0 & 66.9 & 43.4 & 0.25 \\
-5.0 & 1798 & 18.4 & 0.054 & -641.0 & 0.37 & 239.0 & 238.1 & 242.0 & 242.3 & 0.22 \\
-6.0 & 1893 & 20.1 & 0.055 & -667.7 & 0.30 & 189.4 & 201.3 & 208.0 & 200.0 & 0.20 \\
-7.0 & 2060 & 20.1 & 0.057 & -634.1 & 0.25 & 191.6 & 223.9 & 233.7 & 215.8 & 0.20 \\
-8.0 & 759.7 & 19.8 & 0.062 & -621.3 & 0.25 & 200.0 & 203.9 & 199.8 & 202.8 & 0.20 \\
-\hline
-\end{tabular}
+	\centering
+	\small
+	\caption{各映像の音響特徴量と照明特徴量のCSVデータ（一部抜粋）}\label{tab:csv}
+	\begin{tabular}{c|cccccccccc}
+		\hline
+		\multicolumn{11}{c}{千本桜}                                                                                 \\
+		\hline
+		\hline
+		Time [s] & Centroid   & Contrast    & RMS   & MFCC\_1 & Chroma\_1 & R     & G     & B
+		         & Brightness & Blink Speed                                                                      \\
+		\hline
+		1.0      & 8894       & 14.5        & 0.001 & -948.6  & 0.67      & 90.1  & 45.7  & 62.1  & 59.8  & 0.40 \\
+		2.0      & 6722       & 17.9        & 0.005 & -661.4  & 0.76      & 93.9  & 60.2  & 74.1  & 69.3  & 0.33 \\
+		3.0      & 5257       & 23.2        & 0.033 & -385.2  & 0.57      & 89.8  & 60.7  & 70.0  & 87.0  & 0.29 \\
+		4.0      & 4459       & 21.7        & 0.023 & -398.0  & 0.75      & 84.2  & 42.5  & 53.6  & 53.5  & 0.25 \\
+		5.0      & 3987       & 19.5        & 0.028 & -358.8  & 0.28      & 84.8  & 32.2  & 45.8  & 47.7  & 0.44 \\
+		6.0      & 3678       & 18.3        & 0.050 & -347.5  & 0.37      & 130.6 & 16.2  & 31.1  & 53.3  & 0.40 \\
+		7.0      & 3521       & 17.8        & 0.039 & -410.6  & 0.30      & 125.8 & 126.4 & 136.2 & 56.7  & 0.40 \\
+		8.0      & 3400       & 16.7        & 0.008 & -471.5  & 0.43      & 124.7 & 35.9  & 38.0  & 63.3  & 0.20 \\
+		\hline
+		\multicolumn{11}{c}{ソナタ第三番}                                                                              \\
+		\hline
+		\hline
+		Time［s］  & Centroid   & Contrast    & RMS   & MFCC\_1 & Chroma\_1 & R     & G     & B
+		         & Brightness & Blink Speed                                                                      \\
+		\hline
+		1.0      & 1947       & 9.04        & 0.001 & -1068.0 & 0.04      & 50.8  & 45.1  & 68.7  & 50.2  & 0.40 \\
+		2.0      & 2898       & 20.1        & 0.000 & -809.0  & 0.12      & 52.3  & 45.6  & 69.7  & 49.8  & 0.33 \\
+		3.0      & 1695       & 19.9        & 0.001 & -675.9  & 0.35      & 54.5  & 46.9  & 71.6  & 52.9  & 0.29 \\
+		4.0      & 1560       & 20.1        & 0.002 & -618.0  & 0.43      & 53.9  & 46.2  & 70.7  & 51.1  & 0.25 \\
+		5.0      & 1728       & 19.1        & 0.002 & -606.8  & 0.56      & 65.0  & 58.0  & 81.3  & 63.2  & 0.22 \\
+		6.0      & 1887       & 19.5        & 0.002 & -604.9  & 0.28      & 120.8 & 119.2 & 131.2 & 124.0 & 0.20 \\
+		7.0      & 2113       & 19.0        & 0.002 & -585.3  & 0.22      & 128.8 & 126.4 & 136.2 & 130.9 & 0.20 \\
+		8.0      & 2475       & 19.9        & 0.002 & -602.9  & 0.08      & 139.3 & 137.1 & 145.3 & 140.5 & 0.20 \\
+		\hline
+		\multicolumn{11}{c}{スプラッシュ}                                                                              \\
+		\hline
+		\hline
+		Time [s] & Centroid   & Contrast    & RMS   & MFCC\_1 & Chroma\_1 & R     & G     & B
+		         & Brightness & Blink Speed                                                                      \\
+		\hline
+		1.0      & 1002       & 0.00        & 0.000 & -1131.0 & 0.08      & 91.6  & 70.0  & 76.5  & 77.5  & 0.40 \\
+		2.0      & 3582       & 8.98        & 0.008 & -1055.0 & 0.27      & 54.1  & 36.1  & 50.5  & 35.3  & 0.33 \\
+		3.0      & 1603       & 2.24        & 0.001 & -1109.0 & 0.16      & 17.8  & 11.4  & 23.9  & 19.2  & 0.29 \\
+		4.0      & 1564       & 15.0        & 0.032 & -774.5  & 0.23      & 45.1  & 36.0  & 66.9  & 43.4  & 0.25 \\
+		5.0      & 1798       & 18.4        & 0.054 & -641.0  & 0.37      & 239.0 & 238.1 & 242.0 & 242.3 & 0.22 \\
+		6.0      & 1893       & 20.1        & 0.055 & -667.7  & 0.30      & 189.4 & 201.3 & 208.0 & 200.0 & 0.20 \\
+		7.0      & 2060       & 20.1        & 0.057 & -634.1  & 0.25      & 191.6 & 223.9 & 233.7 & 215.8 & 0.20 \\
+		8.0      & 759.7      & 19.8        & 0.062 & -621.3  & 0.25      & 200.0 & 203.9 & 199.8 & 202.8 & 0.20 \\
+		\hline
+	\end{tabular}
 \end{table*}
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{人体検出による照明領域の特定}
+	\item[\textbf{（1）}]\textbf{人体検出による照明領域の特定}
 \end{enumerate}
 
 照明特徴量の抽出における映像への前処理は、YOLOv8\cite{YOLOv8StateoftheArtComputer} を用いた人物領域の除外である。
 人物領域を含んだままRGB値やBrightnessを算出すると、肌色や衣服の色、演奏者の動きによる輝度変化が混入し、照明そのものの変化を正確に捉えることができない。
 
 そこで本研究では、人物検出後に膨張処理を施し、演奏者周囲も含めて背景から除外した。
-そのうえで、背景画素のうち明度上位10％のみを抽出し、照明器具に最も近い画素群を対象としてRGB値およびBrightnessを算出している。
+そのうえで、背景画素のうち明度上位10\%のみを抽出し、照明器具に最も近い画素群を対象としてRGB値およびBrightnessを算出している。
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{RGB値の算出と各映像のcsvデータ}
+	\item[\textbf{（2）}]\textbf{RGB値の算出と各映像のcsvデータ}
 \end{enumerate}
 
 映像のフレーム画像を B,G,R チャンネルに分解し、背景マスクかつ上位10\%領域に該当する画素を抽出し、それぞれの平均値を計算した。
 これらの値をフレーム単位でバッファに蓄積し、1秒ごとに平均を取ることで、1秒単位のRGB値の照明特徴量としてCSVに書き出した。
 
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{Brightnessの算出と各映像のcsvデータ}
+	\item[\textbf{（3）}]\textbf{Brightnessの算出と各映像のcsvデータ}
 \end{enumerate}
 
 Brightnessは、グレースケール画像（または HSVのV成分）から、同じく上位10\%の明度領域を抽出して平均値を求めた。
 また、RGB値と同様に、1秒ごとに平均を取ることで、1秒単位のBrightness値としてCSVに書き出した。
 
 \begin{enumerate}
-	\item[\textbf{(4)}]\textbf{点滅速度の算出と各映像のcsvデータ}
+	\item[\textbf{（4）}]\textbf{点滅速度の算出と各映像のcsvデータ}
 \end{enumerate}
 
 照明の点滅速度を抽出するために、1秒ごとの平均Brightness値を時系列信号として蓄積し、
 前後5秒の局所FFT を行うことで点滅に対応する周波数成分を推定し、csvに書き出した。
 
 以上により、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、学習用CSVデータとして構築した。
-また、これらを1つのデータセットとして統合し、照明予測モデルの学習に使用した(\tabref{tab:csv})。
+また、これらを1つのデータセットとして統合し、照明予測モデルの学習に使用した（\tabref{tab:csv}）。
 
-\subsection{照明予測モデルβの学習} \label{sec:modelthink}
+\subsection{照明予測モデル$\beta$の学習} \label{sec:modelthink}
 
-\ref{sec:database}節で収集した学習用CSVデータを用いて、照明予測モデルβの学習を行った。
+\ref{sec:database}節で収集した学習用CSVデータを用いて、照明予測モデル$\beta$の学習を行った。
 
-照明予測モデルβへの入力として使用した音響特徴量のデータセットは\ref{sec:soundmodel}節で述べた通りである。
+照明予測モデル$\beta$への入力として使用した音響特徴量のデータセットは\ref{sec:soundmodel}節で述べた通りである。
 
-照明予測モデルβの出力として使用した照明特徴量のデータセットは\ref{sec:lightmodel}節で述べた通りである。
+照明予測モデル$\beta$の出力として使用した照明特徴量のデータセットは\ref{sec:lightmodel}節で述べた通りである。
 
-照明予測モデルβには、回帰モデルとして Random Forest Regressorを採用した。
+照明予測モデル$\beta$には、回帰モデルとして Random Forest Regressorを採用した。
 Random Forest は複数の決定木を組み合わせたアンサンブル学習手法である。
 決定木の本数は100とし、学習精度と計算コストのバランスを考慮した。
 
 データセットを用いて Random Forest モデルを学習し、音響特徴量と照明特徴量の対応関係を獲得した。
 学習が完了したモデルは、再利用を目的として joblib を用いてファイルとして保存した。
 
-\subsection{データベースの構築(照明予測モデル)} \label{sec:midi}
+\subsection{データベースの構築（照明予測モデル）} \label{sec:midi}
 
 本節では、照明予測モデルを学習するためのデータベースの構築手法について詳述する。
 
-本研究では、約600種類のMIDIデータを音声信号へ変換した上で、音響特徴量を抽出し、照明予測モデルβによって照明特徴量を推定するという処理フローを採用した。
+本研究では、約600種類のMIDIデータを音声信号へ変換した上で、音響特徴量を抽出し、照明予測モデル$\beta$によって照明特徴量を推定するという処理フローを採用した。
 
 これにより、MIDIデータから得られた音響特徴量と対応する照明特徴量のデータベースを構築することができる。
 
@@ -849,81 +830,80 @@ MIDIデータは、演奏音の音高、音価、発音タイミングなどを�
 本研究では、ソフトウェアシンセサイザー FluidSynth\cite{FluidSynthSoftwareSynthesizer}を用い、MIDIファイルをWAV形式へ変換した。
 
 生成されたWAVファイルに対し、Pythonライブラリ librosa を用いて音響特徴量を抽出した。
-抽出する特徴量の種類および構成は、\ref{sec:modelthink}節で構築した照明予測モデルβの学習時に用いたデータセットと完全に一致させている。
+抽出する特徴量の種類および構成は、\ref{sec:modelthink}節で構築した照明予測モデル$\beta$の学習時に用いたデータセットと完全に一致させている。
 
-\subsubsection{照明予測モデルβによる照明特徴量推定} \label{sec:lightmidi}
+\subsubsection{照明予測モデル$\beta$による照明特徴量推定} \label{sec:lightmidi}
 
-抽出された音響特徴量は、\ref{sec:modelthink}節で構築した 照明予測モデルβに入力される。
+抽出された音響特徴量は、\ref{sec:modelthink}節で構築した 照明予測モデル$\beta$に入力される。
 本モデルは、ライブ映像データから学習した「音響特徴量と照明特徴量の対応関係」を保持しており、MIDI由来の音響特徴量に対しても照明特徴量を推定することが可能である。
 推定される照明特徴量は、RGB値、Brightness、点滅速度の3種類である。
 
 \subsubsection{CSV形式での出力}
 
-また、各MIDIファイルについて、以下の情報を1つのCSVデータとして出力した(\tabref{tab:csvmidi})。
+また、各MIDIファイルについて、以下の情報を1つのCSVデータとして出力した（\tabref{tab:csvmidi}）。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{時間(秒)}
+	\item[\textbf{（1）}]\textbf{時間（秒）}
 \end{enumerate}
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{音響特徴量}
+	\item[\textbf{（2）}]\textbf{音響特徴量}
 \end{enumerate}
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{照明予測モデルβによる推定照明特徴量}
+	\item[\textbf{（3）}]\textbf{照明予測モデル$\beta$による推定照明特徴量}
 \end{enumerate}
 
 \begin{table*}[t]
-\centering
-\small
-\caption{MIDIデータの音響特徴量と推定された照明特徴量のCSVデータ(一部抜粋)}
-\label{tab:csvmidi}
-\begin{tabular}{c|cccccccccc}
-\hline
-\multicolumn{11}{c}{Wohlfahrt\_Op45-40\_BernardChevalier\_ijMGhEYjP98-0000-0057} \\
-\hline
-\hline
-Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
- & Brightness & Blink Speed  \\
-\hline
-1.0 & 1609 & 47.2 & 0.000 & -751.4 & 0.65 & 118.0 & 119.4 & 142.9 & 123.2 & 0.23 \\
-2.0 & 2760 & 15.7 & 0.002 & -651.4 & 0.09 & 76.1 & 60.0 & 91.5 & 67.7 & 0.24 \\
-3.0 & 2827 & 14.8 & 0.001 & -632.2 & 0.14 & 93.2 & 82.7 & 104.9 & 88.7 & 0.28 \\
-4.0 & 2389 & 13.0 & 0.002 & -637.3 & 0.14 & 81.2 & 66.6 & 102.4 & 75.0 & 0.23 \\
-5.0 & 1978 & 14.7 & 0.001 & -630.9 & 0.04 & 85.2 & 81.8 & 113.6 & 87.5 & 0.24 \\
-6.0 & 1900 & 14.2 & 0.001 & -671.0 & 0.04 & 88.9 & 88.7 & 114.8 & 92.6 & 0.23 \\
-7.0 & 2177 & 15.3 & 0.002 & -640.0 & 0.00 & 90.0 & 71.8 & 98.5 & 80.4 & 0.26 \\
-8.0 & 2832 & 15.6 & 0.002 & -634.9 & 0.13 & 75.8 & 52.8 & 81.5 & 62.8 & 0.24 \\
-\hline
-\multicolumn{11}{c}{Paganini\_Op01-23\_ItzhakPerlman\_aP15fyVkPVg-0000-0284} \\
-\hline
-\hline
-Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
- & Brightness & Blink Speed  \\
-\hline
-1.0 & 2280 & 31.7 & 0.002 & -676.8 & 0.36 & 95.4 & 76.2 & 115.9 & 87.4 & 0.23 \\
-2.0 & 2837 & 12.5 & 0.008 & -544.3 & 0.00 & 89.0 & 66.7 & 97.4 & 76.5 & 0.26 \\
-3.0 & 1993 & 12.9 & 0.005 & -565.4 & 0.14 & 78.9 & 56.3 & 86.7 & 66.3 & 0.26 \\
-4.0 & 2060 & 13.0 & 0.007 & -533.0 & 0.05 & 74.5 & 52.9 & 81.5 & 62.3 & 0.23 \\
-5.0 & 2804 & 12.8 & 0.007 & -552.2 & 0.00 & 90.5 & 65.8 & 102.8 & 77.4 & 0.24\\
-6.0 & 2492 & 12.7 & 0.009 & -532.7 & 0.02 & 83.5 & 60.9 & 89.5 & 70.8 & 0.25 \\
-7.0 & 1746 & 13.3 & 0.004 & -572.1 & 0.15 & 76.2 & 51.9 & 82.2 & 62.5 & 0.23 \\
-8.0 & 2512 & 13.2 & 0.007 & -533.6 & 0.02 & 77.0 & 54.7 & 91.5 & 65.5 & 0.23 \\
-\hline
-\multicolumn{11}{c}{Kayser\_Op20-09\_BernardChevalier\_j1AYnoTq0RM-0001-0100} \\
-\hline
-\hline
-Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
- & Brightness & Blink Speed  \\
-\hline
-1.0 & 1736 & 23.3 & 0.031 & -657.4 & 0.51 & 85.5 & 89.2 & 124.9 & 93.2 & 0.24 \\
-2.0 & 1479 & 12.0 & 0.033 & -587.6 & 0.54 & 79.2 & 62.8 & 92.7 & 71.3 & 0.23 \\
-3.0 & 1481 & 13.3 & 0.033 & -565.4 & 0.41 & 94.2 & 74.4 & 106.3 & 84.3 & 0.22 \\
-4.0 & 2080 & 12.2 & 0.059 & -540.0 & 0.18 & 78.0 & 58.9 & 91.2 & 68.4 & 0.23 \\
-5.0 & 2246 & 14.7 & 0.062 & -587.9 & 0.47 & 85.1 & 65.6 & 97.0 & 75.0 & 0.23 \\
-6.0 & 2281 & 14.8 & 0.064 & -582.4 & 0.47 & 95.5 & 71.8 & 111.3 & 84.7 & 0.23 \\
-7.0 & 2536 & 17.7 & 0.084 & -571.8 & 0.16 & 84.4 & 59.5 & 96.6 & 71.5 & 0.24 \\
-8.0 & 2984 & 16.4 & 0.097 & -567.1 & 0.35 & 86.8 & 62.7 & 104.5 & 74.6 & 0.23 \\
-\hline
-\end{tabular}
+	\centering
+	\small
+	\caption{MIDIデータの音響特徴量と推定された照明特徴量のCSVデータ（一部抜粋）}\label{tab:csvmidi}
+	\begin{tabular}{c|cccccccccc}
+		\hline
+		\multicolumn{11}{c}{Wohlfahrt\_Op45-40\_BernardChevalier\_ijMGhEYjP98-0000-0057}                         \\
+		\hline
+		\hline
+		Time [s] & Centroid   & Contrast    & RMS   & MFCC\_1 & Chroma\_1 & R     & G     & B
+		         & Brightness & Blink Speed                                                                      \\
+		\hline
+		1.0      & 1609       & 47.2        & 0.000 & -751.4  & 0.65      & 118.0 & 119.4 & 142.9 & 123.2 & 0.23 \\
+		2.0      & 2760       & 15.7        & 0.002 & -651.4  & 0.09      & 76.1  & 60.0  & 91.5  & 67.7  & 0.24 \\
+		3.0      & 2827       & 14.8        & 0.001 & -632.2  & 0.14      & 93.2  & 82.7  & 104.9 & 88.7  & 0.28 \\
+		4.0      & 2389       & 13.0        & 0.002 & -637.3  & 0.14      & 81.2  & 66.6  & 102.4 & 75.0  & 0.23 \\
+		5.0      & 1978       & 14.7        & 0.001 & -630.9  & 0.04      & 85.2  & 81.8  & 113.6 & 87.5  & 0.24 \\
+		6.0      & 1900       & 14.2        & 0.001 & -671.0  & 0.04      & 88.9  & 88.7  & 114.8 & 92.6  & 0.23 \\
+		7.0      & 2177       & 15.3        & 0.002 & -640.0  & 0.00      & 90.0  & 71.8  & 98.5  & 80.4  & 0.26 \\
+		8.0      & 2832       & 15.6        & 0.002 & -634.9  & 0.13      & 75.8  & 52.8  & 81.5  & 62.8  & 0.24 \\
+		\hline
+		\multicolumn{11}{c}{Paganini\_Op01-23\_ItzhakPerlman\_aP15fyVkPVg-0000-0284}                             \\
+		\hline
+		\hline
+		Time [s] & Centroid   & Contrast    & RMS   & MFCC\_1 & Chroma\_1 & R     & G     & B
+		         & Brightness & Blink Speed                                                                      \\
+		\hline
+		1.0      & 2280       & 31.7        & 0.002 & -676.8  & 0.36      & 95.4  & 76.2  & 115.9 & 87.4  & 0.23 \\
+		2.0      & 2837       & 12.5        & 0.008 & -544.3  & 0.00      & 89.0  & 66.7  & 97.4  & 76.5  & 0.26 \\
+		3.0      & 1993       & 12.9        & 0.005 & -565.4  & 0.14      & 78.9  & 56.3  & 86.7  & 66.3  & 0.26 \\
+		4.0      & 2060       & 13.0        & 0.007 & -533.0  & 0.05      & 74.5  & 52.9  & 81.5  & 62.3  & 0.23 \\
+		5.0      & 2804       & 12.8        & 0.007 & -552.2  & 0.00      & 90.5  & 65.8  & 102.8 & 77.4  & 0.24 \\
+		6.0      & 2492       & 12.7        & 0.009 & -532.7  & 0.02      & 83.5  & 60.9  & 89.5  & 70.8  & 0.25 \\
+		7.0      & 1746       & 13.3        & 0.004 & -572.1  & 0.15      & 76.2  & 51.9  & 82.2  & 62.5  & 0.23 \\
+		8.0      & 2512       & 13.2        & 0.007 & -533.6  & 0.02      & 77.0  & 54.7  & 91.5  & 65.5  & 0.23 \\
+		\hline
+		\multicolumn{11}{c}{Kayser\_Op20-09\_BernardChevalier\_j1AYnoTq0RM-0001-0100}                            \\
+		\hline
+		\hline
+		Time [s] & Centroid   & Contrast    & RMS   & MFCC\_1 & Chroma\_1 & R     & G     & B
+		         & Brightness & Blink Speed                                                                      \\
+		\hline
+		1.0      & 1736       & 23.3        & 0.031 & -657.4  & 0.51      & 85.5  & 89.2  & 124.9 & 93.2  & 0.24 \\
+		2.0      & 1479       & 12.0        & 0.033 & -587.6  & 0.54      & 79.2  & 62.8  & 92.7  & 71.3  & 0.23 \\
+		3.0      & 1481       & 13.3        & 0.033 & -565.4  & 0.41      & 94.2  & 74.4  & 106.3 & 84.3  & 0.22 \\
+		4.0      & 2080       & 12.2        & 0.059 & -540.0  & 0.18      & 78.0  & 58.9  & 91.2  & 68.4  & 0.23 \\
+		5.0      & 2246       & 14.7        & 0.062 & -587.9  & 0.47      & 85.1  & 65.6  & 97.0  & 75.0  & 0.23 \\
+		6.0      & 2281       & 14.8        & 0.064 & -582.4  & 0.47      & 95.5  & 71.8  & 111.3 & 84.7  & 0.23 \\
+		7.0      & 2536       & 17.7        & 0.084 & -571.8  & 0.16      & 84.4  & 59.5  & 96.6  & 71.5  & 0.24 \\
+		8.0      & 2984       & 16.4        & 0.097 & -567.1  & 0.35      & 86.8  & 62.7  & 104.5 & 74.6  & 0.23 \\
+		\hline
+	\end{tabular}
 \end{table*}
 
 \subsection{照明予測モデルの学習} \label{sec:midimodel}
@@ -941,10 +921,10 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 分割はランダムに行い、乱数シードを固定することで実験の再現性を確保した。
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{学習データ：モデルの学習に使用}
+	\item[\textbf{（1）}]\textbf{学習データ：モデルの学習に使用}
 \end{enumerate}
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{テストデータ：モデルの性能評価に使用}
+	\item[\textbf{（2）}]\textbf{テストデータ：モデルの性能評価に使用}
 \end{enumerate}
 
 拡張された学習データセットを用いて Random Forest モデルの学習を実行し、音響特徴量と照明特徴量の対応関係を再度獲得した。
@@ -952,38 +932,37 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 
 \subsection{照明予測モデルの評価}
 
-モデルの評価には、機械学習における回帰問題で一般的に用いられる決定係数（R²スコア）を採用した。
+モデルの評価には、機械学習における回帰問題で一般的に用いられる決定係数（$R^2$スコア）を採用した。
 
-R²スコアは、モデルの予測値が実測値の分散をどの程度説明できているかを示す指標であり、以下の式で定義される。
+$R^2$スコアは、モデルの予測値が実測値の分散をどの程度説明できているかを示す指標であり、以下の式で定義される。
 
 \[
-\text{決定係数 } R^2
-= 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
-           {\sum_{i=1}^{n} (y_i - \bar{y})^2}
+	\text{決定係数 } R^2
+	= 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
+	{\sum_{i=1}^{n}(y_i - \bar{y})^2}
 \]
 
 \[
-\begin{aligned}
-y_i &: \text{実測値} \\
-\hat{y}_i &: \text{予測値} \\
-\bar{y} &: \text{実測値の平均}
-\end{aligned}
+	\begin{aligned}
+		y_i       & : \text{実測値}    \\
+		\hat{y}_i & : \text{予測値}    \\
+		\bar{y}   & : \text{実測値の平均}
+	\end{aligned}
 \]
 
-R²スコアは 1 に近いほど予測精度が高く、0 は平均値予測と同等、負の値は平均予測より劣ることを示す。
+$R^2$スコアは 1 に近いほど予測精度が高く、0 は平均値予測と同等、負の値は平均予測より劣ることを示す。
 
 また、評価には、学習時に使用していないテストデータを用いた。
 テストデータには、ライブ映像由来データを中心に含めることで、実際の照明演出との整合性を重視した評価を行った。
 
-評価は、RGB値、Brightness、点滅速度といった複数の照明特徴量を同時に含む多出力回帰問題として実施し、全出力を総合したR²スコアを算出した。
+評価は、RGB値、Brightness、点滅速度といった複数の照明特徴量を同時に含む多出力回帰問題として実施し、全出力を総合した$R^2$スコアを算出した。
 
-最終照明予測モデルに対する評価の結果、R²スコアは 0.85 を示した(\figref{fig:r2-result})。
+最終照明予測モデルに対する評価の結果、$R^2$スコアは 0.85 を示した（\figref{fig:r2-result}）。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/r2-result.png}
-	\caption{決定係数 (R²) の結果}
-	\label{fig:r2-result}
+	\caption{決定係数（$R^2$）の結果}\label{fig:r2-result}
 \end{figure}
 
 この結果は、音響特徴量から照明特徴量への変換において、モデルが実測照明データの分散の約85\%を説明できていることを意味する。
@@ -996,7 +975,7 @@ R²スコアは 1 に近いほど予測精度が高く、0 は平均値予測と
 本研究では、異なる楽曲および異なる環境条件下におけるシステムの適応性と表現の妥当性を検討するため、計2回の実演を実施している。
 実演は、制御条件を限定した環境下で基礎的な検証を行う「大学教室における検証的実演」と、実環境における観客を伴う状況でシステムの実用性と表現効果を評価する「新町商店街における公開実演」の順で実施した。
 
-\subsection{第1回実演：君に乗せて(検証的実演)}
+\subsection{第1回実演：君に乗せて（検証的実演）}
 
 \subsubsection{実演環境} \label{sec:ensou}
 
@@ -1006,29 +985,28 @@ R²スコアは 1 に近いほど予測精度が高く、0 は平均値予測と
 
 室内には演奏者を中央に配置し、その周囲四方向にDMX対応照明機器を設置した。
 照明は床方向から天井に向けて照射される構成とし、四方から演奏者を照らすような光環境を作り出した。
-システムは以下の機器構成で運用した(\tabref{tab:kizai})。また、実演における各機材の配置図(上面図)は\figref{fig:setting}の通りである。
+システムは以下の機器構成で運用した（\tabref{tab:kizai}）。また、実演における各機材の配置図（上面図）は\figref{fig:setting}の通りである。
 
 \begin{table}[tb]
-\centering
-\small
-\caption{実演機材構成}
-\label{tab:kizai}
-\begin{tabular}{c}
-\hline
-\hline
-ヴァイオリン(演奏者：筆者)　\\
-PC(Windows 11)　\\
-コンデンサマイク(音声入力)  \\
-スマートフォン(ZIG-SIM用) \\
-USB-DMXインタフェース  \\
-DMX対応照明機器4台  \\
-\hline
-\end{tabular}
+	\centering
+	\small
+	\caption{実演機材構成}\label{tab:kizai}
+	\begin{tabular}{c}
+		\hline
+		\hline
+		ヴァイオリン（演奏者：筆者）   \\
+		PC（Windows 11）   \\
+		コンデンサマイク（音声入力）   \\
+		スマートフォン（ZIG-SIM用）\\
+		USB-DMXインタフェース    \\
+		DMX対応照明機器4台       \\
+		\hline
+	\end{tabular}
 \end{table}
 
 \subsubsection{実演曲目}
 
-実演に使用した楽曲は、『君に乗せて』(作曲：久石譲)である。
+実演に使用した楽曲は、『君に乗せて』（作曲：久石譲）である。
 本曲はアニメ『天空の城ラピュタ』の主題歌として広く知られており、旋律が明瞭でテンポ変化が比較的少ない楽曲である。
 ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
 演奏はAメロからサビまでをカバーしている。
@@ -1037,34 +1015,31 @@ DMX対応照明機器4台  \\
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/takeyouwithme-score.png}
-	\caption{実演曲目『君に乗せて』楽譜}
-	\label{fig:takeyouwithme-score}
+	\caption{実演曲目『君に乗せて』楽譜}\label{fig:takeyouwithme-score}
 \end{figure}
 
 \subsubsection{実演内容と観察結果}
 
-この実演では、来場者を想定せず、研究者自身による検証を目的として演奏を行った(\figref{fig:takeyouwithme-Amelody-Bmelody},\figref{fig:takeyouwithme-chorus})。
+この実演では、来場者を想定せず、研究者自身による検証を目的として演奏を行った（\figref{fig:takeyouwithme-Amelody-Bmelody},\figref{fig:takeyouwithme-chorus}）。
 図のように、演奏音の入力に応じて照明のRGB値、Brightnessおよび点滅速度が変化すること、運弓方向に応じて照明の上下動作が発生することを確認した。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/takeyouwithme-Amelody-Bmelody.png}
-	\caption{『君に乗せて』実演中の照明変化の様子(Aメロ～Bメロ)}
-	\label{fig:takeyouwithme-Amelody-Bmelody}
+	\caption{『君に乗せて』実演中の照明変化の様子（Aメロ～Bメロ）}\label{fig:takeyouwithme-Amelody-Bmelody}
 \end{figure}
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/takeyouwithme-chorus.png}
-	\caption{『君に乗せて』実演中の照明変化の様子(サビ)}
-	\label{fig:takeyouwithme-chorus}
+	\caption{『君に乗せて』実演中の照明変化の様子（サビ）}\label{fig:takeyouwithme-chorus}
 \end{figure}
 
 \subsection{第2回実演：紅蓮華（公開実演）}
 
 \subsubsection{実演環境}
 
-次の実演は、京都府福知山市の新町商店街にある「Tsunaga Room\cite{TsunagaRoomOJiaYiShangTuShuGuanWeiMan}」にて実施した。
+次の実演は、京都府福知山市の新町商店街にある「Tsunaga Room\cite{TsunagaRoom}」にて実施した。
 この実演は、一般来場者を含む環境で行われた公開実演である。
 また、使用機材の配置や照射方法は\ref{sec:ensou}節と同様である。
 
@@ -1095,8 +1070,7 @@ DMX対応照明機器4台  \\
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/gurenge-score.png}
-	\caption{実演曲目『紅蓮華』楽譜}
-	\label{fig:gurenge-score}
+	\caption{実演曲目『紅蓮華』楽譜}\label{fig:gurenge-score}
 \end{figure}
 
 \subsubsection{実演中の照明変化の様子}
@@ -1107,12 +1081,11 @@ DMX対応照明機器4台  \\
 \begin{figure*}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/gurenge-play.png}
-	\caption{『紅蓮華』実演中の照明変化の様子(左から「イントロ」、「Aメロ～Cメロ」、「サビ」、「サビ」)}
-	\label{fig:gurenge-play}
+	\caption{『紅蓮華』実演中の照明変化の様子（左から「イントロ」、「Aメロ～Cメロ」、「サビ」、「サビ」）}\label{fig:gurenge-play}
 \end{figure*}
 
 \begin{enumerate}
-	\item[\textbf{(1)}]\textbf{イントロ部分における照明の様子}
+	\item[\textbf{（1）}]\textbf{イントロ部分における照明の様子}
 \end{enumerate}
 
 演奏開始直後のイントロ部分では、演奏音の音量が全体を通して低い水準で推移しており、音量変動も小さい区間である。
@@ -1127,7 +1100,7 @@ RGB成分については、RGB値のうちB成分が相対的に高く、Rおよ
 運弓方向に連動した照明の上下動作についても、イントロ部分では運弓速度が比較的緩やかであるため、照明の上下移動は演奏動作と概ね一致していた。
 
 \begin{enumerate}
-	\item[\textbf{(2)}]\textbf{Aメロ～Cメロ部分における照明の様子}
+	\item[\textbf{（2）}]\textbf{Aメロ～Cメロ部分における照明の様子}
 \end{enumerate}
 
 演奏が進行し、中盤部分に入ると、音量の平均および最大値が徐々に増加し、それに伴ってBrightnessも段階的に上昇していることが確認できる。
@@ -1142,7 +1115,7 @@ RGB成分については、RGB値のうちB成分が相対的に高く、Rおよ
 運弓方向に連動した照明の上下動作は、中盤部においても引き続き確認できたが、演奏テンポが上がるにつれて、照明の上下移動と運弓動作との間に生じるラグがやや顕在化した。
 
 \begin{enumerate}
-	\item[\textbf{(3)}]\textbf{サビ部分における照明の様子}
+	\item[\textbf{（3）}]\textbf{サビ部分における照明の様子}
 \end{enumerate}
 
 さらに、楽曲がサビ部分に近づくにつれて、音量は高い値を維持するとともに、短時間内での変動幅も大きくなっている。
@@ -1229,11 +1202,11 @@ ZIG-SIMを用いた運弓方向推定は概ね有効であったが、演奏中�
 
 
 \begin{acknowledgment}
-本論文を執筆するにあたり、多くの方々からご指導・ご支援を賜りました。
-ここに深く感謝の意を表します。
-まず、本研究を進めるにあたり、研究の方向性から終始丁寧なご指導と貴重なご助言をくださった橋田光代准教授に心より御礼申し上げます。
-また、研究室の4年生の皆様には、日頃より温かく接していただき、研究の相談にも快く応じていただきました。
-皆様との和やかな会話は、研究生活の大きな支えとなりました。
-心より感謝いたします。
-最後に、本研究に関わってくださったすべての方々に、厚く御礼申し上げます。
+	本論文を執筆するにあたり、多くの方々からご指導・ご支援を賜りました。
+	ここに深く感謝の意を表します。
+	まず、本研究を進めるにあたり、研究の方向性から終始丁寧なご指導と貴重なご助言をくださった橋田光代准教授に心より御礼申し上げます。
+	また、研究室の4年生の皆様には、日頃より温かく接していただき、研究の相談にも快く応じていただきました。
+	皆様との和やかな会話は、研究生活の大きな支えとなりました。
+	心より感謝いたします。
+	最後に、本研究に関わってくださったすべての方々に、厚く御礼申し上げます。
 \end{acknowledgment}
