@@ -27,17 +27,17 @@
 本学部卒論文の\LaTeX スタイルファイルを含む論文執筆キットは
 \begin{quote}
 	\small
-	\|https://scrapbox.io/muselab/卒業論文(卒論)の書き方|
+	\Verb|https://scrapbox.io/muselab/卒業論文(卒論)の書き方|
 \end{quote}
 から入手する．論文執筆キットは以下のファイルを含んでいる．
 \begin{enumerate}
-	\item \|ipsj.cls   |: 原稿用クラスファイルのベース
-	\item \|ipsjtech.sty|: 論文スタイルファイルのベース
-	\item \|muselabtech.sty|: 橋田ゼミの論文スタイルファイル
-	\item \|muselab-correction.sty|: 添削用スタイルファイル
-	\item \|muselab-sample.tex |: 本稿のソースファイル
-	\item \|muselabunsrt.bst |: jBibTEX スタイル（出現順）
-	\item \|muselab-sample.bib |: 文献リストのサンプル
+	\item \Verb|ipsj.cls   |: 原稿用クラスファイルのベース
+	\item \Verb|ipsjtech.sty|: 論文スタイルファイルのベース
+	\item \Verb|muselabtech.sty|: 橋田ゼミの論文スタイルファイル
+	\item \Verb|muselab-correction.sty|: 添削用スタイルファイル
+	\item \Verb|muselab-sample.tex |: 本稿のソースファイル
+	\item \Verb|muselabunsrt.bst |: jBibTEX スタイル（出現順）
+	\item \Verb|muselab-sample.bib |: 文献リストのサンプル
 \end{enumerate}
 実行環境としては\LaTeXe を前提としている．TeXWorksやVS Codeなどで準備すること．
 
@@ -73,20 +73,34 @@ Adobeのpdf readerで読めることを確認した後，
 \subsection{表題・著者名等}
 
 表題，著者名とその所属，および概要を前述のコマンドや環境により{\bf 和文と
+<<<<<<< HEAD
 英文の双方について}定義した後，\|\maketitle| によって出力する．
+=======
+英文の双方について}定義した後，\Verb|\maketitle| によって出力する．
+>>>>>>> senior
 
 
 %4.1.1
 \subsubsection{表題}
 
+<<<<<<< HEAD
 表題は，\|\title| および \|\etitle| で定義する．コンパイルすると\ruby{中央寄せ}{センタリング}になる．
 文字数の多いものについては，適宜 \|\\| を挿入して改行する．
+=======
+表題は，\Verb|\title| および \Verb|\etitle| で定義する．コンパイルすると\ruby{中央寄せ}{センタリング}になる．
+文字数の多いものについては，適宜 \Verb|\\Verb| を挿入して改行する．
+>>>>>>> senior
 
 %4.1.2
 \subsubsection{著者名・所属}
 
+<<<<<<< HEAD
 著者名は \|\author| で定義する．学籍番号と氏名，英文氏名，
 所属ラベル（\|FUKU|）とメールアドレスを記入する．
+=======
+著者名は \Verb|\author| で定義する．学籍番号と氏名，英文氏名，
+所属ラベル（\Verb|FUKU|）とメールアドレスを記入する．
+>>>>>>> senior
 メールアドレス部分は省略してもよい．
 
 %4.2
@@ -98,7 +112,11 @@ Adobeのpdf readerで読めることを確認した後，
 節や小節の見出しには \verb|\section|, \verb|\subsection|, \verb|\subsubsection|,
 \verb|\paragraph| といったコマンドを使用する．
 
+<<<<<<< HEAD
 「定義」，「定理」などについては，\|\newtheorem|で適宜環境を宣言し，そ
+=======
+「定義」，「定理」などについては，\Verb|\newtheorem|で適宜環境を宣言し，そ
+>>>>>>> senior
 の環境を用いて記述する．
 
 %4.2.2
@@ -108,7 +126,11 @@ Adobeのpdf readerで読めることを確認した後，
 また，節見出しなど，
 行の間隔を他よりたくさんとった方が読みやすい場所では，
 この原則を守るようにスタイルファイルが自動的にスペースを挿入する．
+<<<<<<< HEAD
 したがって本文中では \|\vspace| や \|\vskip| を用いたスペースの調整を行なわないようにすること．
+=======
+したがって本文中では \Verb|\vspace| や \Verb|\vskip| を用いたスペースの調整を行なわないようにすること．
+>>>>>>> senior
 
 
 %4.2.3
@@ -142,20 +164,33 @@ Adobeのpdf readerで読めることを確認した後，
 	\item カタカナは全角文字を用いる．
 
 	\item 引用符では開きと閉じを区別する．
+<<<<<<< HEAD
 	      開きには \|``| を用い，閉じには\|''| を用いる．
+=======
+	      開きには \Verb|``| を用い，閉じには\Verb|''| を用いる．
+>>>>>>> senior
 \end{enumerate}
 
 %4.2.6
 \subsubsection{箇条書き}
 
+<<<<<<< HEAD
 箇条書きに関する形式を特に定めていない．場合に応じて標準的な \|enumerate|,
 \|itemize|, \|description| の環境を用いてよい．
+=======
+箇条書きに関する形式を特に定めていない．場合に応じて標準的な \Verb|enumerate|,
+\Verb|itemize|, \Verb|description| の環境を用いてよい．
+>>>>>>> senior
 
 
 %4.2.7
 \subsubsection{脚注}
 
+<<<<<<< HEAD
 脚注は \|\footnote| コマンドを使って書くと，
+=======
+脚注は \Verb|\footnote| コマンドを使って書くと，
+>>>>>>> senior
 ページ単位に\footnote{脚注の例．}や\footnote{二つめの脚注．}のような参照記号とともに脚注が生成される．
 なお，ページ内に複数の脚注がある場合，参照記号は\LaTeX を2回実行しないと正しくならないことに注意されたい．
 
@@ -163,7 +198,11 @@ Adobeのpdf readerで読めることを確認した後，
 
 また場合によっては，
 脚注をつけた位置と脚注本体とを別の段に置く方がよいこともある．
+<<<<<<< HEAD
 この場合には，\|\footnotemark| コマンドや \|\footnotetext| コマンドを使って対処していただきたい．
+=======
+この場合には，\Verb|\footnotemark| コマンドや \Verb|\footnotetext| コマンドを使って対処していただきたい．
+>>>>>>> senior
 
 
 なお，脚注番号は論文内で通し番号で出力される．
@@ -177,12 +216,20 @@ Adobeのpdf readerで読めることを確認した後，
 組版時にはoverfullを起こさないことを原則としている．
 従って，まず提出するソースが著者の環境でoverfullを起こさないように，
 文章を工夫するなどの最善を尽くしてほしい．
+<<<<<<< HEAD
 ただし，\|flushleft| 環境，\|\\|，\|\linebreak| などによる両端揃えをしない形でのoverfullの回避は，
+=======
+ただし，\Verb|flushleft| 環境，\Verb|\\Verb|，\Verb|\linebreak| などによる両端揃えをしない形でのoverfullの回避は，
+>>>>>>> senior
 できるだけ避けていただきたい．
 また著者の執筆時点では発生しないoverfullが，
 組版時の環境では発生することもある．
 このような事態をできるだけ回避するために，
+<<<<<<< HEAD
 文中の長い数式や verbを避ける，
+=======
+文中の長い数式や\Verb|verb|を避ける，
+>>>>>>> senior
 パラグラフの先頭付近では長い英単語を使用しない，
 などの注意を払うようにして頂きたい．
 
@@ -195,15 +242,25 @@ Adobeのpdf readerで読めることを確認した後，
 %4.3.1
 \subsubsection{本文中の数式}
 
+<<<<<<< HEAD
 本文中の数式は \|$| と \|$|, \|\(| と \|\)|, あるいは \|math| 環境のいず
+=======
+本文中の数式は \Verb|$| と \Verb|$|, \Verb|\(| と \Verb|\)|, あるいは \Verb|math| 環境のいず
+>>>>>>> senior
 れで囲んでもよい．
 
 %4.3.2
 \subsubsection{別組の数式}
 
+<<<<<<< HEAD
 別組数式(displayed math)については \|$$| と \|$$| は使用せずに，
 \|\[| と \|\]| で囲むか，
 \|displaymath|, \|equation|, \|eqnarray| のいずれかの環境を用いる．
+=======
+別組数式(displayed math)については \Verb|$$| と \Verb|$$| は使用せずに，
+\Verb|\[| と \Verb|\]| で囲むか，
+\Verb|displaymath|, \Verb|equation|, \Verb|eqnarray| のいずれかの環境を用いる．
+>>>>>>> senior
 これらは
 %
 \begin{equation}
@@ -217,9 +274,15 @@ Adobeのpdf readerで読めることを確認した後，
 \subsubsection{eqnarray環境}
 
 互いに関連する別組の数式が2行以上連続して現れる場合には，
+<<<<<<< HEAD
 単に\|\[| と \|\]|，
 あるいは \|\begin{equation}| と\|\end{equation}| で囲った数式を書き並べるのではなく，
 \|\begin|\allowbreak\|{eqnarray}| と \|\end{eqnarray}| を使って，
+=======
+単に\Verb|\[| と \Verb|\]|，
+あるいは \Verb|\begin{equation}| と\Verb|\end{equation}| で囲った数式を書き並べるのではなく，
+\Verb|\begin|\allowbreak\Verb|{eqnarray}| と \Verb|\end{eqnarray}| を使って，
+>>>>>>> senior
 等号（あるいは不等号）の位置で縦揃えを行なった方が読みやすい．
 
 
@@ -235,11 +298,19 @@ Adobeのpdf readerで読めることを確認した後，
 
 \begin{figure}[tb]
 	\setbox0\vbox{
+<<<<<<< HEAD
 		\hbox{\|\begin{figure}[tb]|}
 				\hbox{\quad \|<|図本体の指定\|>|}
 				\hbox{\|\caption{<|和文見出し\|>}|}
 				\hbox{\|\label{| $\ldots$ \|}|}
 				\hbox{\|\end{figure}|}
+=======
+		\hbox{\Verb|\begin{figure}[tb]|}
+				\hbox{\quad \Verb|<|図本体の指定\Verb|>|}
+				\hbox{\Verb|\caption{<|和文見出し\Verb|>}|}
+				\hbox{\Verb|\label{| $\ldots$ \Verb|}|}
+				\hbox{\Verb|\end{figure}|}
+>>>>>>> senior
 	}
 	\centerline{\fbox{\box0}}
 	\caption{1段幅の図}
@@ -254,6 +325,7 @@ Adobeのpdf readerで読めることを確認した後，
 
 1段の幅におさまる図は，
 \figref{fig:single} の形式で指定する．
+<<<<<<< HEAD
 位置の指定に \|h| は使わない．
 また，図の下に和文と英文の双方の見出しを
 \|\caption| で指定する．
@@ -261,11 +333,21 @@ Adobeのpdf readerで読めることを確認した後，
 見出しが2行になる場合には適宜 \|\\| を挿入して改行したほうが良い結果となることがしばしばある
 （\figref{fig:single} の英文見出しを参照）．
 図の参照は \|\figref{<|ラベル\|>}| を用いて行う．
+=======
+位置の指定に \Verb|h| は使わない．
+また，図の下に和文と英文の双方の見出しを
+\Verb|\caption| で指定する．
+文字数が多い見出しは自動的に改行して最大幅の行を基準にセンタリングするが，
+見出しが2行になる場合には適宜 \Verb|\\Verb| を挿入して改行したほうが良い結果となることがしばしばある
+（\figref{fig:single} の英文見出しを参照）．
+図の参照は \Verb|\figref{<|ラベル\Verb|>}| を用いて行う．
+>>>>>>> senior
 
 \begin{figure}[tb]
 	\begin{minipage}[t]{0.5\columnwidth}
 		\footnotesize
 		\setbox0\vbox{
+<<<<<<< HEAD
 			\hbox{\|\begin{minipage}[t]%|}
 					\hbox{\|  {0.5\columnwidth}|}
 					\hbox{\|\CaptionType{table}|}
@@ -279,6 +361,21 @@ Adobeのpdf readerで読めることを確認した後，
 								\hbox{\|L2   & C2     & R2    \\\hline|}
 								\hbox{\|\end{tabular}}|}
 					\hbox{\|\end{minipage}|}}
+=======
+			\hbox{\Verb|\begin{minipage}[t]%|}
+					\hbox{\Verb|  {0.5\columnwidth}|}
+					\hbox{\Verb|\CaptionType{table}|}
+					\hbox{\Verb|\caption{| \ldots \Verb|}|}
+					\hbox{\Verb|\label{| \ldots \Verb|}|}
+					\hbox{\Verb|\makebox[\textwidth][c]{%|}
+						\hbox{\Verb|\begin{tabular}[t]{lcr}|}
+								\hbox{\Verb|\hline\hline|}
+								\hbox{\Verb|left & center & right \\\hline|}
+								\hbox{\Verb|L1   & C1     & R1    \\Verb|}
+								\hbox{\Verb|L2   & C2     & R2    \\\hline|}
+								\hbox{\Verb|\end{tabular}}|}
+					\hbox{\Verb|\end{minipage}|}}
+>>>>>>> senior
 		\hbox{}
 		\centerline{\fbox{\box0}}
 		\caption{\protect\tabref*{tab:right} の中身}
@@ -299,11 +396,19 @@ Adobeのpdf readerで読めることを確認した後，
 
 \begin{figure*}[tb]
 	\setbox0\vbox{\large
+<<<<<<< HEAD
 		\hbox{\|\begin{figure*}[t]|}
 				\hbox{\quad \|<|図本体の指定\|>|}
 				\hbox{\|\caption{<|和文見出し\|>}|}
 				\hbox{\|\label{| $\ldots$ \|}|}
 				\hbox{\|\end{figure*}|}}
+=======
+		\hbox{\Verb|\begin{figure*}[t]|}
+				\hbox{\quad \Verb|<|図本体の指定\Verb|>|}
+				\hbox{\Verb|\caption{<|和文見出し\Verb|>}|}
+				\hbox{\Verb|\label{| $\ldots$ \Verb|}|}
+				\hbox{\Verb|\end{figure*}|}}
+>>>>>>> senior
 	\centerline{\fbox{\hbox to.9\textwidth{\hss\box0\hss}}}
 	\caption{2段幅の図}
 	\label{fig:double}
@@ -311,6 +416,7 @@ Adobeのpdf readerで読めることを確認した後，
 
 
 また紙面スペースの節約のために，
+<<<<<<< HEAD
 1つの \|figure|（または \|table|）環境の中に複数の図表を並べて表示したい場合には，
 \figref{fig:left} と \tabref{tab:right} のように個々の図表と各々の \|\caption|
 を \|minipage| 環境に入れることで実現できる．
@@ -318,12 +424,25 @@ Adobeのpdf readerで読めることを確認した後，
 \|minipage| 環境の中で\|\CaptionType{figure}| あるいは \|\CaptionType|
 \|{table}| を指定すれば，
 外側の環境が \|figure| であっても \|table| であっても指定された見出しが得られる．
+=======
+1つの \Verb|figure|（または \Verb|table|）環境の中に複数の図表を並べて表示したい場合には，
+\figref{fig:left} と \tabref{tab:right} のように個々の図表と各々の \Verb|\caption|
+を \Verb|minipage| 環境に入れることで実現できる．
+なお図と表が混在する場合，
+\Verb|minipage| 環境の中で\Verb|\CaptionType{figure}| あるいは \Verb|\CaptionType|
+\Verb|{table}| を指定すれば，
+外側の環境が \Verb|figure| であっても \Verb|table| であっても指定された見出しが得られる．
+>>>>>>> senior
 
 
 
 2段の幅にまたがる図は，
 \figref{fig:double} の形式で指定する．
+<<<<<<< HEAD
 位置の指定は \|t| しか使えない．
+=======
+位置の指定は \Verb|t| しか使えない．
+>>>>>>> senior
 
 
 
@@ -333,11 +452,19 @@ Adobeのpdf readerで読めることを確認した後，
 読み込みのためには，プリアンブルで
 %
 \begin{quote}
+<<<<<<< HEAD
 	\|\usepackage{graphicx}|
 \end{quote}
 %
 を行った上で，
 \|\includegraphics| コマンドを図を埋め込む箇所に置き，
+=======
+	\Verb|\usepackage{graphicx}|
+\end{quote}
+%
+を行った上で，
+\Verb|\includegraphics| コマンドを図を埋め込む箇所に置き，
+>>>>>>> senior
 その引数にファイル名（など）を指定する．
 
 
@@ -349,12 +476,21 @@ Adobeのpdf readerで読めることを確認した後，
 表の罫線はなるべく少なくするのが，仕上がりをすっきりさせるコツである．
 罫線をつける場合には，
 一番上の罫線には二重線を使い，左右の端には縦の罫線をつけない （\tabref{tab:example}）．
+<<<<<<< HEAD
 表中のフォントサイズのデフォルトは\|\footnotesize|である．
 
 
 また，表の上に和文と英文の双方の見出しを
 \|\caption| で指定する．
 表の参照は \|\tabref{<|ラベル\|>}| を用いて行なう．
+=======
+表中のフォントサイズのデフォルトは\Verb|\footnotesize|である．
+
+
+また，表の上に和文と英文の双方の見出しを
+\Verb|\caption| で指定する．
+表の参照は \Verb|\tabref{<|ラベル\Verb|>}| を用いて行なう．
+>>>>>>> senior
 
 \begin{table}[tb]
 	\caption{表の例}
@@ -378,12 +514,21 @@ Adobeのpdf readerで読めることを確認した後，
 %4.6.1
 \subsubsection{参考文献の参照}
 
+<<<<<<< HEAD
 本文中で参考文献を参照する場合には\|\cite|を使用する．
 参照されたラベルは自動的にソートされ，
 \|[]|でそれぞれ区切られる．
 %
 \begin{musequote}
 	文献 \|\cite{okumura, Goossens94}| は\LaTeX の総合的な解説書である．
+=======
+本文中で参考文献を参照する場合には\Verb|\cite|を使用する．
+参照されたラベルは自動的にソートされ，
+\Verb|[]|でそれぞれ区切られる．
+%
+\begin{musequote}
+	文献 \Verb|\cite{okumura, Goossens94}| は\LaTeX の総合的な解説書である．
+>>>>>>> senior
 \end{musequote}
 %
 と書くと；
@@ -396,11 +541,19 @@ Adobeのpdf readerで読めることを確認した後，
 
 %4.6.2
 \subsubsection{参考文献リスト}
+<<<<<<< HEAD
 参考文献リストはZoteroを用いて任意のフォルダに収集し，BetterBibTeXを使って\|.bib|ファイルを生成する．
 TeX文書内では，本文の一番最後に
 \begin{musequote}
 	\|\bibliographystyle{muselabunsrt} |\\
 	\|\bibliography{muselab-sample} | \\
+=======
+参考文献リストはZoteroを用いて任意のフォルダに収集し，BetterBibTeXを使って\Verb|.bib|ファイルを生成する．
+TeX文書内では，本文の一番最後に
+\begin{musequote}
+	\Verb|\bibliographystyle{muselabunsrt} |\\
+	\Verb|\bibliography{muselab-sample} | \\
+>>>>>>> senior
 	※muselab-sample.bib のこと
 \end{musequote}
 を記入する．
@@ -415,7 +568,11 @@ TeX文書内では，本文の一番最後に
 
 謝辞がある場合には，
 参考文献リストの直前に置き，
+<<<<<<< HEAD
 \|acknowledgment|環境の中に入れる．
+=======
+\Verb|acknowledgment|環境の中に入れる．
+>>>>>>> senior
 
 
 
