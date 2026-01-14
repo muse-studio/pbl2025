@@ -4,7 +4,9 @@
 % ========================================
 
 \section{はじめに}
-
+\begin{gptsample}
+  \Verb|muselab-sample-閲覧用.pdf| の5.1節に対応させること．
+\end{gptsample}
 ツールとは，目的を達成するための道具として用いられるコンピュータプログラムのことである．今回達成したい目的というのはEMDA分析の簡略化，EMDA分析とは対象である音楽や，物語の根幹となる部分を軸に木構造を作成する分析方法であり，その木構造の簡易作成が目的である．この研究を始めた経緯として，私が2年生の時にEMDA分析を行った際，PowerPointで木構造を作成したのだが，膨大な時間がかかってしまい分析の進行が遅くなってしまった事から，この作業を簡単にすればEMDA分析自体にも触れやすくなるのではないかと考えたため，今回のツール作成に至った．開発環境としては，Pythonに標準搭載されているGUIライブラリであるTkinterを使用した．
 
 本稿では，EMDAの前身となったGTTM，そしてEMDAの説明を踏まえた上で，プログラムの制作過程と最終的な機能，性能評価について述べていく．
@@ -13,134 +15,130 @@
 
 \subsection{音楽理論GTTMとは}
 
-音楽理論とは，音イベントを時系列で構造解析する技術の事である．この技術を用いることで，時間の進行によって生じる音イベントをグループ分けした上で，重要な音を見つけることが出来る．Generative Theory of Tonal Music(GTTM)は，作曲家・音楽学者のLerdahlと，言語学者のJackendaffによって1983年に提案された音楽理論である．
+音楽理論とは，\highlightComment{音イベントを時系列で構造解析する技術}{誤り}の\modified{事}{こと}である．
+この技術を用いることで，時間の進行によって生じる音イベントをグループ分けした上で，重要な音を見つけることが出来る．Generative Theory of Tonal Music（GTTM）は，作曲家・音楽学者のLerdahlと，言語学者のJackendaffによって1983年に提案された音楽理論である\needRef{}．
+%
+特徴としては楽曲の簡約や木構造による表現が挙げられ，構造解析は，音楽の認知に必要とされる4つのサブ理論から成る．1つ目はグルーピング構造であり，楽曲を楽曲中の動機や楽節といった単位のグループに分節し，分節された各グループの階層構造を定めるもの，2つ目は拍節構造であり，各拍節レベルにおける強拍と弱拍を定めるもの．3つ目がタイムスパン簡約であり，グルーピング構造の解析と拍節構造の解析をもとに重要な音の選出を繰り返し，ボトムアップに木構造（タイムスパン木）を作っていくものである\cite{miura2015gttm}（\figref{fig:01}）．
 
-特徴としては楽曲の簡約や木構造による表現が挙げられ，構造解析は，音楽の認知に必要とされる4つのサブ理論から成る．1つ目はグルーピング構造であり，楽曲を楽曲中の動機や楽節といった単位のグループに分節し，分節された各グループの階層構造を定めるもの，2つ目は拍節構造であり，各拍節レベルにおける強拍と弱拍を定めるもの．3つ目がタイムスパン簡約であり，グルーピング構造の解析と拍節構造の解析をもとに重要な音の選出を繰り返し，ボトムアップに木構造(タイムスパン木)を作っていくものである．\cite{SanPuYinLeLiLunGTTMniJidukuYiLuntaimusupanMunoShengChengFangShitosonoPingJia2015b}(図1)
-
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig01.png}
-\caption{GTTMのタイムスパン木}
-\label{fig:01}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig01.png}
+  \caption{GTTMのタイムスパン木}\label{fig:01}
 \end{figure}
 
-タイムスパン木の構造では，枝(branch)が幹(stem)の従属部になっており，幹が枝より重要な音であることを表している．4つ目に延長的簡約という，機能和声に基づく緊張-弛緩構造をトップダウンに分析するものがある．
+タイムスパン木の構造では，枝（branch）が幹（stem）の従属部になっており，幹が枝より重要な音であることを表している．4つ目に延長的簡約という，機能和声に基づく緊張-弛緩構造をトップダウンに分析するものがある．
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig02.png}
+  \caption{以前作成した木構造}\label{fig:02}
+\end{figure}
 
 \subsection{EMDA}
 
-今回ツールを作成する目的であるEMDA(Emotion Movement Design Annotator)\cite{PianJiEmotionMovementDesign2019}は，GTTMを音楽だけでなく様々な作品に応用したものである．対象である音楽や物語の根幹となる部分を軸に木構造を作成し，それまでのメロディや事象が何に繋がっているのか，何が重要なのかを可視化したものである．GTTMと対比しながら考えると，1つのイベントが音符1つ分であり，それらをグループ分けした上で，それぞれの重要度に応じて幹と枝の従属関係を構築することにより，木構造を作成していくものになっており，この時のグループ分けの基準やどのイベントがより重要なのかは，対象の作品や分析する人物によって異なる．この分析をする中で必要ではあるが，時間がかかってしまう木構造の作成という部分に焦点を当て，ツールを作成した．
+今回ツールを作成する目的であるEMDA（Emotion Movement Design Annotator）\cite{emda2019rigolo}は，GTTMを音楽だけでなく様々な作品に応用したものである．対象である音楽や物語の根幹となる部分を軸に木構造を作成し，それまでのメロディや事象が何に繋がっているのか，何が重要なのかを可視化したものである．GTTMと対比しながら考えると，1つのイベントが音符1つ分であり，それらをグループ分けした上で，それぞれの重要度に応じて幹と枝の従属関係を構築することにより，木構造を作成していくものになっており，この時のグループ分けの基準やどのイベントがより重要なのかは，対象の作品や分析する人物によって異なる．この分析をする中で必要ではあるが，時間がかかってしまう木構造の作成という部分に焦点を当て，ツールを作成した．
 
 \section{制作過程}
 
 \subsection{「木」部分の作成}
 
-今回，最終的にツールで作成したいものは以下のようなものである．(図2)
+今回，最終的にツールで作成したいものは以下のようなものである（\figref{fig:02}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig02.png}
-\caption{以前作成した木構造}
-\label{fig:02}
-\end{figure}
+\begin{figure*}[t]
+  \centering
+  \begin{minipage}[b]{0.33\linewidth}
+    \centering
+    \includegraphics[width=.6\linewidth]{figures/fig03.png}
+    \caption{2本線の木構造}\label{fig:03}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.33\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig04.png}
+    \caption{中点に吸着する6本線}\label{fig:04}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.33\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig05.png}
+    \caption{各スロットに吸着する6本線}\label{fig:05}
+  \end{minipage}
+  \hfill
+  
+\end{figure*}
 
+\added{この木構造を}
 作成するにあたって，上部の木構造部分と下部のイベント部分で分けて考えることにし，順序としては木構造部分を作成した上で，テキストボックスをそれに連動させる形で追加するという手順で行った．
 
-木構造を作成する上で，必要な機能として自由に線を動かす機能が真っ先に思い浮かび，その部分から手を付けることにした．最初に，Tkinterのキャンバスに描いた左右2本の線分の「上端」だけをドラッグで動かせるようにし，線同士が交差または十分近づいたら，ドラッグした側の上端を相手線の中点へスナップして結合状態にしつつ，子側を中点から一定距離以上離して離すと結合解除できるようにした．(図3)
+木構造を作成する上で，必要な機能として自由に線を動かす機能が真っ先に思い浮かび，その部分から手を付けることにした．最初に，Tkinterのキャンバスに描いた左右2本の線分の「上端」だけをドラッグで動かせるようにし，線同士が交差または十分近づいたら，ドラッグした側の上端を相手線の中点へスナップして結合状態にしつつ，子側を中点から一定距離以上離して離すと結合解除できるようにした（\figref{fig:03}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.50\linewidth]{figures/fig03.png}
-\caption{2本線の木構造}
-\label{fig:03}
-\end{figure}
 
-木構造自体はこの動作を繰り返していけば形になると考えた．次に，線の数を2本から6本に増やして動作させたが，この時の線はそれぞれの中点にしかスナップしないような仕組みになっていたため，1つの幹に対して枝が2本吸着する形になった時に同位置に吸着するという問題が発生した．(図4)
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig04.png}
-\caption{中点に吸着する6本線の木構造}
-\label{fig:04}
-\end{figure}
+木構造自体はこの動作を繰り返していけば形になると考えた．次に，線の数を2本から6本に増やして動作させたが，この時の線はそれぞれの中点にしかスナップしないような仕組みになっていたため，1つの幹に対して枝が2本吸着する形になった時に同位置に吸着するという問題が発生した（\figref{fig:04}）．
 
-その問題を解決するべく，線を吸着させる部分を線の中点ではなく，t値(全ての線の数-1)で等間隔にスロットを作り，既に使用しているスロットには他の線が吸着しないようにした．(図5)
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig05.png}
-\caption{各スロットに吸着する6本線の木構造}
-\label{fig:05}
-\end{figure}
+その問題を解決するべく，線を吸着させる部分を線の中点ではなく，t値（全ての線の数-1）で等間隔にスロットを作り，既に使用しているスロットには他の線が吸着しないようにした（\figref{fig:05}）．
+
 
 これにより，木構造を作成するための基礎的な機能は実装出来たと言えるが，とても便利といえるものではない為，さらに機能を追加した．
 
-まず，イベントの数は作品によって変動する為，自由に線の本数を変えられる機能を追加した．テキストボックス内に本数を入力することで瞬時にその本数になる機能と，ボタンを押すことにより，右端(一番新しい線)から線を追加，削除することが出来る機能の2種類である．また，PowerPointで作業していた時に煩わしかった作業の1つである，イベント間にイベントを追加，削除するという機能を追加し，最終的には以下の図のようになった．(図6)
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig06.png}
+    \caption{木構造部分完成時}\label{fig:06}
+  \end{figure}
+まず，イベントの数は作品によって変動する為，自由に線の本数を変えられる機能を追加した．テキストボックス内に本数を入力することで瞬時にその本数になる機能と，ボタンを押すことにより，右端（一番新しい線）から線を追加，削除することが出来る機能の2種類である．また，PowerPointで作業していた時に煩わしかった作業の1つである，イベント間にイベントを追加，削除するという機能を追加し，最終的には以下の\figref{fig:06}のようになった．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig06.png}
-\caption{木構造部分完成時のウィンドウ}
-\label{fig:06}
-\end{figure}
 
 各種ボタンを押すことによって，それぞれの機能が使えるようになっている．これにより，木構造部分だけなら本数が自由に変えられるツールが出来たと言える．
 
 \subsection{「イベント」部分の作成}
 
-次に，作成した木構造部分に連動させながらテキストボックスを追加する段階に入った．まずは線分同士の間にテキストボックスを入れ込むような形で作成した．(図7)
+次に，作成した木構造部分に連動させながらテキストボックスを追加する段階に入った．まずは線分同士の間にテキストボックスを入れ込むような形で作成した（\figref{fig:07}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig07.png}
-\caption{上段テキストボックス追加}
-\label{fig:07}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig07.png}
+  \caption{上段テキストボックス追加}\label{fig:07}
 \end{figure}
 
 テキストボックスとその左上の角から伸びている線分が連動している仕組みになっており，例えば左から2番目の線を削除した時，共に左から2番目のテキストボックスが消えるようになっている．
 
-最初に例として挙げた木構造を再現するのなら，それぞれのイベントをグループ分けするためのテキストボックスの追加も必要になってくる．グループ分けという目的に沿ったものにする為，初期状態は全てのイベントを包括する大きなグループがあり，それを分割させていくことで，イベントのグループ分けを再現しようと考えた．この考えのもと作成したのが以下の画面になる．(図8)(図9)
+最初に例として挙げた木構造を再現するのなら，それぞれのイベントをグループ分けするためのテキストボックスの追加も必要になってくる．グループ分けという目的に沿ったものにする為，初期状態は全てのイベントを包括する大きなグループがあり，それを分割させていくことで，イベントのグループ分けを再現しようと考えた．この考えのもと作成したのが以下の画面になる（\figref{fig:08}，\figref{fig:09}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig08.png}
-\caption{下段グループ列分割前}
-\label{fig:08}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig08.png}
+  \caption{下段グループ列分割前}\label{fig:08}
 \end{figure}
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig09.png}
-\caption{下段グループ列分割後}
-\label{fig:09}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig09.png}
+  \caption{下段グループ列分割後}\label{fig:09}
 \end{figure}
 
-このように，イベントテキストボックスの下部に1つの大きなテキストボックスを配置し，それを分割することでグループ分けとした．通し番号については分かりやすいように手動で入力したものである．他にもいくつか細かい修正や機能を追加した時の初期ウィンドウが以下の画像になる．(図10)
+このように，イベントテキストボックスの下部に1つの大きなテキストボックスを配置し，それを分割することでグループ分けとした．通し番号については分かりやすいように手動で入力したものである．他にもいくつか細かい修正や機能を追加した時の初期ウィンドウが以下の画像になる（\figref{fig:10}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig10.png}
-\caption{下段グループ列追加後ウィンドウ}
-\label{fig:10}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig10.png}
+  \caption{下段グループ列追加後ウィンドウ}\label{fig:10}
 \end{figure}
 
 \subsection{ユーザーフィードバック}
 
-ここまで作成してきたツールを実際に使ってもらい，不便な点や改善点を挙げてもらうテストを行った．対象ユーザーは同学年のゼミ生5人と顧問1人の計６人，調査方法はまず以下の画像(図11)と同じ木構造をツールを使用して作成してもらい，
+ここまで作成してきたツールを実際に使ってもらい，不便な点や改善点を挙げてもらうテストを行った．対象ユーザーは同学年のゼミ生5人と顧問1人の計６人，調査方法はまず以下の画像（\figref{fig:11}）と同じ木構造をツールを使用して作成してもらい，
+この木構造を作成した後にイベント「6」とイベント「9」を削除，イベント「7」とイベント「8」の間にイベント「!」を追加，グループの分割位置を変える，といった追加の操作指示をすることで，木構造を作成する時に使うであろう機能をすべて使ってもらうという形で調査を行った．最終的に作成した木構造は以下のものである（\figref{fig:12}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig11.png}
-\caption{調査用木構造(編集前)}
-\label{fig:11}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig11.png}
+  \caption{調査用木構造（編集前）}\label{fig:11}
 \end{figure}
-
-この木構造を作成した後にイベント「6」とイベント「9」を削除，イベント「7」とイベント「8」の間にイベント「!」を追加，グループの分割位置を変える，といった追加の操作指示をすることで，木構造を作成する時に使うであろう機能をすべて使ってもらうという形で調査を行った．最終的に作成した木構造は以下のものである．(図12)
-
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig12.png}
-\caption{調査用木構造(編集後)}
-\label{fig:12}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig12.png}
+  \caption{調査用木構造（編集後）}\label{fig:12}
 \end{figure}
 
 この木構造を作成する上での感想や改善点を挙げてもらい，それを元にプログラムに修正を加えていった．フィードバックとしては，直感的に操作が分かりづらい箇所がある，判定の拾い方次第では不具合のような挙動になることがある，などの自分で操作していた時には気づけなかった意見があり，テストプレイの重要性を実感した．
@@ -161,7 +159,7 @@
 
 \subsection{全体構成（クラス設計）}
 
-実装は大きく \texttt{Line} と \texttt{SnapHierarchyApp} の2クラスに分かれる．
+実装は大きく \Verb|Line| と\Verb|SnapHierarchyApp| の2クラスに分かれる．
 
 \begin{itemize}
   \item \textbf{Lineクラス}：線1本の「幾何（座標）」「描画」「親子スナップ（追従）」を担当する．
@@ -169,7 +167,7 @@
         線の追加削除，テキスト欄の再構築，Undo/Redo，保存/復元を担当する．
 \end{itemize}
 
-以降では，設計上の重要点（右端の隠し線・座標系）→ \texttt{Line} → \texttt{SnapHierarchyApp} の順に説明する．
+以降では，設計上の重要点（右端の隠し線・座標系）→ \Verb|Line| → \Verb|SnapHierarchyApp| の順に説明する．
 
 
 \subsection{座標系とビューポート（ズーム・パンの前提）}
@@ -177,22 +175,21 @@
 本ツールでは，線のX位置を「ピクセル」ではなく \textbf{0〜1の比率（世界座標）} として保持する．
 この設計により，ウィンドウサイズ変更やズーム操作後でも，再描画によって配置を保ちやすい．
 
-世界座標と画面座標（px）の変換は \texttt{Line.map\_x()/unmap\_x()} および \texttt{Line.map\_y()/unmap\_y()} で行う．
-表示範囲（viewport）はX方向が \texttt{view\_min}, \texttt{view\_max}，Y方向が \texttt{view\_y\_min}, \texttt{view\_y\_max} で表される．
+世界座標と画面座標（px）の変換は \Verb|Line.map_x()/unmap_x()| および \Verb|Line.map_y()/unmap_y()| で行う．
+表示範囲（viewport）はX方向が \Verb|view_min| ，\Verb|view_max| ，Y方向が \Verb|view_y_min| ，\Verb|view_y_max| で表される．
 
 \begin{itemize}
-  \item ズーム：ホイール操作で，マウス位置を基準（アンカー）にX/Y同倍率で拡大縮小する（\texttt{zoom\_at\_worldxy()}）．
-  \item パン：中ボタン/右ボタンのドラッグで，表示範囲を平行移動する（\texttt{pan\_by\_xy()}）．
+  \item ズーム：ホイール操作で，マウス位置を基準（アンカー）にX/Y同倍率で拡大縮小する（\Verb|zoom_at_worldxy()| ）．
+  \item パン：中ボタン/右ボタンのドラッグで，表示範囲を平行移動する（\Verb|pan_by_xy()| ）．
   \item 縦パン：Shift+ホイールでY方向のみパンする．
 \end{itemize}
 
-極端な拡大で表示幅が0に近づくことを防ぐため，最小幅 \texttt{\_min\_span}（Yは \texttt{\_min\_span\_y}）を設けている．
-
+極端な拡大で表示幅が0に近づくことを防ぐため，最小幅 \Verb|_min_span| （Yは \Verb|_min_span_y| ）を設けている．
 
 \subsection{右端の隠し線（区間を作るための設計）}
 
 本コードの重要な設計ポイントとして，内部的に「右端の隠し線」を常に1本保持する点が挙げられる．
-線の配列 \texttt{self.lines} には \textbf{内部的な線の本数} が入り，実際に描画するのは \texttt{self.lines[:-1]}（最後の1本を除いたもの）のみである．
+線の配列 \Verb|self.lines| には \textbf{内部的な線の本数} が入り，実際に描画するのは \Verb|self.lines[:-1]| （最後の1本を除いたもの）のみである．
 
 この設計を採用する理由は，テキスト入力欄を「線と線の間（区間）」に生成しているためである．
 区間を$N$個作るには境界となる線が$N+1$本必要になるが，画面上で見せたい「線の本数」は$N$本にしたい．
@@ -211,52 +208,50 @@
 
 \subsubsection{Lineが保持する情報}
 
-\texttt{Line} は線1本分の状態を保持するクラスである．主なコードを役割ごとに示す．
+\Verb|Line| は線1本分の状態を保持するクラスである．主なコードを役割ごとに示す．
 
 \begin{itemize}
-  \item \textbf{識別子}：\texttt{line\_id}（保存/復元やテキスト対応付けに使う永続ID）
-  \item \textbf{世界座標（比率）}：\texttt{base\_ratio}（根元X），\texttt{base\_y\_ratio}（根元Y），
-        \texttt{top\_ratio\_x}, \texttt{top\_ratio\_y}（上端の世界座標）
-  \item \textbf{画面座標（px）}：\texttt{base\_x, base\_y, top\_x, top\_y}
-  \item \textbf{親子関係（スナップ）}：\texttt{parent}, \texttt{children}, \texttt{snap\_t}, \texttt{used\_t\_values}
-  \item \textbf{描画ID}：\texttt{id}（Tkinter Canvas上のオブジェクトID）
+  \item \textbf{識別子}：\Verb|line_id| （保存/復元やテキスト対応付けに使う永続ID）
+  \item \textbf{世界座標（比率）}：\Verb|base_ratio| （根元X），\Verb|base_y_ratio| （根元Y），
+        \Verb|top_ratio_x| ，\Verb|top_ratio_y| （上端の世界座標）
+  \item \textbf{画面座標（px）}：\Verb|base_x，base_y，top_x，top_y|
+  \item \textbf{親子関係（スナップ）}：\Verb|parent| ，\Verb|children| ，\Verb|snap_t| ，\Verb|used_t_values|
+  \item \textbf{描画ID}：\Verb|id| （Tkinter Canvas上のオブジェクトID）
 \end{itemize}
 
-根元は \texttt{base\_y\_ratio=0.9} に固定され，キャンバス下側（90\%付近）に揃えて配置される．
+根元は \Verb|base_y_ratio=0.9| に固定され，キャンバス下側（90\%付近）に揃えて配置される．
 上端はドラッグやスナップによって変化し，形状（傾きや長さ）を表現する．
 
 
 \subsubsection{世界座標と画面座標の変換}
 
-\texttt{map\_x()} は世界座標のX（0〜1）を，\texttt{view\_min/view\_max} の範囲に応じて画面Xに写像する．
-逆に \texttt{unmap\_x()} は画面Xから世界座標Xへ戻す．
-Y方向も同様に \texttt{map\_y()/unmap\_y()} が \texttt{view\_y\_min/view\_y\_max} を用いて写像を行う．
+\Verb|map_x()| は世界座標のX（0〜1）を，\Verb|view_min/view_max| の範囲に応じて画面Xに写像する．
+逆に \Verb|unmap_x()| は画面Xから世界座標Xへ戻す．
+Y方向も同様に \Verb|map_y()/unmap_y()| が \Verb|view_y_min/view_y_max| を用いて写像を行う．
 
 この変換を統一しておくことで，ズーム・パン後でも「世界座標としての配置」を保った再描画ができる．
 
 
 \subsubsection{描画と幾何更新（update\_base\_position / draw）}
 
-\texttt{update\_base\_position()} はキャンバスサイズに基づき，根元（base）の画面座標を更新する．
-親を持たない線（\texttt{parent is None}）の場合，上端については以下の方針で決める．
+\Verb|update_base_position()| はキャンバスサイズに基づき，根元（base）の画面座標を更新する．
+親を持たない線（\Verb|parent is None| ）の場合，上端については以下の方針で決める．
 
 \begin{itemize}
-  \item 既に上端比率（\texttt{top\_ratio\_x/y}）を持っている場合：比率から上端を復元する
-  \item それ以外：初期状態として「真上に\texttt{length}だけ伸びる線」にする
+  \item 既に上端比率（\Verb|top_ratio_x/y| ）を持っている場合：比率から上端を復元する
+  \item それ以外：初期状態として「真上に\Verb|length| だけ伸びる線」にする
 \end{itemize}
 
-描画そのものは \texttt{draw()} で行い，既存の線IDがあれば削除してから再生成する．
-
-
+描画そのものは \Verb|draw()| で行い，既存の線IDがあれば削除してから再生成する．
 \subsubsection{ドラッグによる形状変更（move）}
 
-ドラッグ中は \texttt{move(dx,dy)} が呼ばれ，上端座標を$(dx,dy)$だけ移動する．
+ドラッグ中は \Verb|move（dx, dy）| が呼ばれ，上端座標を$(dx, dy)$だけ移動する．
 その後，
 
 \begin{enumerate}
-  \item \texttt{update\_top\_ratios()} により，上端位置を世界座標比率に更新する
-  \item \texttt{draw()} により線を描き直す
-  \item 子線があれば \texttt{follow\_parent()} で追従させる
+  \item \Verb|update_top_ratios| により，上端位置を世界座標比率に更新する
+  \item \Verb|draw| により線を描き直す
+  \item 子線があれば \Verb|follow_parent| で追従させる
 \end{enumerate}
 
 という流れで，見た目と内部状態（比率）を同期させている．
@@ -265,30 +260,29 @@ Y方向も同様に \texttt{map\_y()/unmap\_y()} が \texttt{view\_y\_min/view\_
 \subsubsection{親子スナップと追従（follow\_parent / detach\_from\_parent）}
 
 線同士を吸着させると，子線は親線の線分上の位置$t$に固定される．
-この$t$が \texttt{snap\_t} であり，\texttt{follow\_parent()} は
+この$t$が \Verb|snap_t| であり，\Verb|follow_parent| は
 \[
-\text{top} = \text{base(parent)} + t \cdot (\text{top(parent)} - \text{base(parent)})
+  \text{top} = \text{base(parent)} + t \cdot (\text{top(parent)} - \text{base(parent)})
 \]
 
 により子線の上端位置を更新する．
 これにより親線の形状が変わっても，子線は同じ割合位置に追従できる．
 
 また，同じ親線に複数の子線が吸着するとき，同一点に重ならないよう
-親側で使用済みの$t$を \texttt{used\_t\_values} に記録する．
-吸着候補の$t$は \texttt{generate\_snap\_t\_values(count)} により等間隔で生成される．
+親側で使用済みの$t$を \Verb|used_t_values| に記録する．
+吸着候補の$t$は \Verb|generate_snap_t_values(count)| により等間隔で生成される．
 
-親からの解除は \texttt{detach\_from\_parent()} で行う．
-このとき，親の \texttt{children} から自分を外し，\texttt{used\_t\_values} から自分の$t$も解放する．
-
+親からの解除は \Verb|detach_from_parent()| で行う．
+このとき，親の \Verb|children| から自分を外し，\Verb|used_t_values| から自分の$t$も解放する．
 
 \subsection{SnapHierarchyAppクラス（UI全体とイベント処理）}
 
 \subsubsection{UIの構成}
 
-\texttt{SnapHierarchyApp} はツール全体の状態とUIを管理する．主なUIは次の通りである．
+\Verb|SnapHierarchyApp| はツール全体の状態とUIを管理する．主なUIは次の通りである．
 
 \begin{itemize}
-  \item 上部コントロール：追加/削除/分割モード切替，表示範囲入力（％），線の本数指定，Undo/Redoなど
+  \item 上部コントロール：追加/削除/分割モード切替，表示範囲入力（\%），線の本数指定，Undo/Redoなど
   \item キャンバス：線の描画とドラッグ操作の中心領域（スクリーンショットはここだけを保存）
   \item 上段テキスト行：各区間（線と線の間）に1つずつEntryを配置
   \item 下段グループ行：複数区間をまとめるEntryを配置し，境界クリックで分割/結合
@@ -300,27 +294,27 @@ Y方向も同様に \texttt{map\_y()/unmap\_y()} が \texttt{view\_y\_min/view\_
 主なバインドは以下である．
 
 \begin{itemize}
-  \item 左クリック：ドラッグ開始判定（\texttt{on\_press}），ドラッグ（\texttt{on\_drag}），リリース（\texttt{on\_release}）
-  \item 中/右ドラッグ：パン開始・移動・終了（\texttt{on\_pan\_start/drag/end}）
-  \item ホイール：ズーム（\texttt{on\_wheel}），Shift+ホイールは縦パン
-  \item \texttt{<Configure>}：リサイズ時に再描画（\texttt{on\_resize}）
-  \item \texttt{Ctrl+Z/Ctrl+Y}：Undo/Redo
+  \item 左クリック：ドラッグ開始判定（\Verb|on_press| ），ドラッグ（\Verb|on_drag| ），リリース（\Verb|on_release| ）
+  \item 中/右ドラッグ：パン開始・移動・終了（\Verb|on_pan_start/drag/end| ）
+  \item ホイール：ズーム（\Verb|on_wheel| ），Shift+ホイールは縦パン
+  \item \Verb|<Configure>| ：リサイズ時に再描画（\Verb|on_resize| ）
+  \item \Verb|Ctrl+Z/Ctrl+Y| ：Undo/Redo
 \end{itemize}
 
 なお左右キーは「入力欄フォーカス移動」にも用いるため，
-Entry上では \texttt{\_focus\_prev/\_focus\_next} を優先し，キャンバス操作（パン）と干渉しないようにしている．
+Entry上では \Verb|_focus_prev/_focus_next| を優先し，キャンバス操作（パン）と干渉しないようにしている．
 
 
-\subsubsection{再描画の中心処理（redraw\_all）}
+\subsubsection{再描画の中心処理（redraw\_ all）}
 
-キャンバスの表示更新は \texttt{redraw\_all()} が中心となる．処理は概ね次の順である．
+キャンバスの表示更新は \Verb|redraw_all()| が中心となる．処理は概ね次の順である．
 
 \begin{enumerate}
-  \item 全線（隠し線含む）について根元座標を更新（\texttt{update\_base\_position}）
-  \item 見える線（\texttt{self.lines[:-1]}）のみ描画（\texttt{draw}）
-  \item 親子関係がある線は \texttt{follow\_parent()} により追従位置を反映
+  \item 全線（隠し線含む）について根元座標を更新（\Verb|update_base_position| ）
+  \item 見える線（\Verb|self.lines[:-1]| ）のみ描画（\Verb|draw| ）
+  \item 親子関係がある線は \Verb|follow_parent()| により追従位置を反映
   \item モードに応じてガイドを表示（追加ガイド/削除ガイド）
-  \item 上段・下段のテキスト欄を作り直す（\texttt{draw\_text\_rows\_and\_group\_row}）
+  \item 上段・下段のテキスト欄を作り直す（\Verb|draw_text_rows_and_group_row| ）
 \end{enumerate}
 
 上段/下段のEntryは「線の増減やリサイズ」で位置や幅が変わるため，
@@ -331,43 +325,42 @@ Entry上では \texttt{\_focus\_prev/\_focus\_next} を優先し，キャンバ�
 \subsubsection{上段：区間テキスト（IDでずれを防ぐ）}
 
 上段の入力欄は「隣り合う2本の線の間」を1区間として，区間ごとにEntryを1つ配置する．
-内部的には \texttt{i=0..len(self.lines)-2} について \texttt{line[i]} と \texttt{line[i+1]} の間に枠を作る．
+内部的には \Verb|i=0..len（self.lines）-2| について \Verb|line[i]| と \Verb|line[i+1]| の間に枠を作る．
 右端には隠し線があるため，見える線の本数と同数の区間が作れる．
 
-線の追加・削除で \texttt{self.lines} のインデックスが変わると，単純な配列対応ではテキストがずれる．
-そこで本ツールでは，区間テキストを「左側の線の永続ID（\texttt{left\_line\_id}）」で管理する．
-
+線の追加・削除で \Verb|self.lines| のインデックスが変わると，単純な配列対応ではテキストがずれる．
+そこで本ツールでは，区間テキストを「左側の線の永続ID（\Verb|left_line_id| ）」で管理する．
 \begin{itemize}
-  \item 保存：\texttt{\_top\_text\_map[left\_line\_id] = text}
-  \item 復元：Entry生成時に \texttt{left\_line\_id} を見てテキストを戻す
+  \item 保存：\Verb|_top_text_map[left_line_id] = text|
+  \item 復元：Entry生成時に \Verb|left_line_id| を見てテキストを戻す
 \end{itemize}
 
 また，左右矢印キーで入力欄間を移動できるよう，
-Entryを順序リスト（\texttt{top\_entries}）に保持し，
-\texttt{\_focus\_prev/\_focus\_next} によりフォーカス移動を行う．
+Entryを順序リスト（\Verb|top_entries| ）に保持し，
+\Verb|_focus_prev/_focus_next| によりフォーカス移動を行う．
 これによりマウス操作の手間を減らし，連続入力がしやすくなる．
 
 
 \subsubsection{下段：グループ行（区間のまとめと境界操作）}
 
 下段のグループ行は，複数区間をまとめて一つのグループとして扱うための入力欄である．
-分割位置（境界）は \texttt{group\_boundaries} に「線のインデックス」で保持する．
+分割位置（境界）は \Verb|group_boundaries| に「線のインデックス」で保持する．
 
 \begin{itemize}
   \item 境界の候補：左端（0）と右端（隠し線）を除いた線位置
-  \item 境界の有効範囲：\texttt{1〜len(self.lines)-2}（端は境界にしない）
+  \item 境界の有効範囲：\Verb|1〜len（self.lines）-2| （端は境界にしない）
 \end{itemize}
 
 分割モードONのとき，下段をクリックすると「最も近い境界候補」を探し，
 近ければ（一定距離以内）その境界を \textbf{追加または削除} することで分割/結合を行う．
-この処理が \texttt{\_handle\_split\_click\_local()} である．
+この処理が \Verb|_handle_split_click_local()| である．
 また，線が少なすぎる場合（内部線が3本未満）には分割自体に意味がないため，何もしないよう条件分岐している．
 
-下段Entryの生成は \texttt{\_rebuild\_group\_row()} が担う．
-境界列 \texttt{group\_boundaries} から区間の開始点列 \texttt{starts} を作り，
+下段Entryの生成は \Verb|_rebuild_group_row()| が担う．
+境界列 \Verb|group_boundaries| から区間の開始点列 \Verb|starts| を作り，
 各区間（グループ）に対応するEntryを幅いっぱいに配置する．
 
-下段テキストも上段と同様に \texttt{left\_line\_id} をキーに保存する．
+下段テキストも上段と同様に \Verb|left_line_id| をキーに保存する．
 そのため，境界変更でEntryが作り直されても，どのグループの文字かが保たれやすい．
 
 
@@ -376,32 +369,32 @@ Entryを順序リスト（\texttt{top\_entries}）に保持し，
 本ツールには3つのモードがある．
 
 \begin{enumerate}
-  \item[(1)]追加モード（add\_mode）
+  \item[（1）]追加モード（\Verb|add_mode| ）
 \end{enumerate}
 
-追加モードでは，線の下側に赤い「追加ガイド」を表示する（\texttt{show\_insert\_guides()}）．
-ユーザがガイドをクリックすると \texttt{insert\_line\_at\_index()} が呼ばれ，
+追加モードでは，線の下側に赤い「追加ガイド」を表示する（\Verb|show_insert_guides()| ）．
+ユーザがガイドをクリックすると \Verb|insert_line_at_index()| が呼ばれ，
 右端の隠し線の手前に新しい線を挿入する．
-このとき，境界配列 \texttt{group\_boundaries} も挿入位置以降を右に1つずらして整合性を保つ．
+このとき，境界配列 \Verb|group_boundaries| も挿入位置以降を右に1つずらして整合性を保つ．
 
 \begin{enumerate}
-  \item[(2)]削除モード（delete\_mode）
+  \item[（2）]削除モード（\Verb|delete_mode| ）
 \end{enumerate}
 
-削除モードでは，線の上端に青いガイド（円）を表示する（\texttt{show\_delete\_guides()}）．
+削除モードでは，線の上端に青いガイド（円）を表示する（\Verb|show_delete_guides()| ）．
 上端付近をクリックするとその線を削除する．
 削除時には以下も同時に更新する．
 \begin{itemize}
-  \item 下段のテキスト対応（\texttt{\_group\_text\_map}）から削除線のIDを除去
-  \item 親子スナップ関係の解除（\texttt{detach\_from\_parent}）
-  \item 境界 \texttt{group\_boundaries} のシフト（右側の境界を1つ左へ）
+  \item 下段のテキスト対応（\Verb|_group_text_map| ）から削除線のIDを除去
+  \item 親子スナップ関係の解除（\Verb|detach_from_parent| ）
+  \item 境界 \Verb|group_boundaries| のシフト（右側の境界を1つ左へ）
 \end{itemize}
 
 また削除モード中は，マウス位置に近い線を検出し，
 対応する上段入力欄をハイライトすることで「どれが削除対象になるか」を視覚的に示す．
 
 \begin{enumerate}
-  \item[(3)]分割モード（split\_mode）
+  \item[（3）]分割モード（\Verb|split_mode| ）
 \end{enumerate}
 
 
@@ -415,34 +408,36 @@ ONの間は下段の背景色を変え，境界クリックによる分割/結�
 主要な流れは次の通りである．
 
 \begin{enumerate}
-  \item クリック位置が上端に十分近い線をドラッグ対象にする（\texttt{on\_press}）
-  \item ドラッグ中は \texttt{Line.move(dx,dy)} で上端を更新し，随時再描画する（\texttt{on\_drag}）
-  \item リリース時，対象線の上端が他線の線分に近いか判定する（\texttt{is\_near}）
+  \item クリック位置が上端に十分近い線をドラッグ対象にする（\Verb|on_press| ）
+  \item ドラッグ中は \Verb|Line.move（dx，dy）| で上端を更新し，随時再描画する（\Verb|on_drag| ）
+  \item リリース時，対象線の上端が他線の線分に近いか判定する（\Verb|is_near| ）
   \item 近ければ，親候補線上の等間隔スロット$t$のうち，未使用で最も近いものを選んで吸着する
-  \item 近くなければ親子関係を解除する（\texttt{detach\_from\_parent}）
+  \item 近くなければ親子関係を解除する（\Verb|detach_from_parent| ）
 \end{enumerate}
 
 スナップ判定は「点（ドラッグ線の上端）」と「線分（親候補の根元〜上端）」の距離で行い，
 閾値以内なら吸着可能とする．
 
 また，階層構造が循環（親を辿ると自分に戻る）すると追従が破綻するため，
-\texttt{detect\_cycle()} で循環を検出した場合はその親候補を無視する．
+\Verb|detect_cycle()| で循環を検出した場合はその親候補を無視する．
 
-スナップ位置$t$の候補は \texttt{generate\_snap\_t\_values(len(self.lines)-1)} により等間隔に生成される．
-\texttt{used\_t\_values} によって同じ$t$に複数の子が吸着しないよう制約をかけている．
-
-
+スナップ位置$t$の候補は
+\begin{verbatim}
+  generate_snap_t_values(len(self.lines)-1)
+\end{verbatim}
+により等間隔に生成される．
+\Verb|used_t_values| によって同じ$t$に複数の子が吸着しないよう制約をかけている．
 \subsubsection{Undo/Redoと状態復元（is\_restoringの役割）}
 
-Undo/Redoは \texttt{undo\_stack} と \texttt{redo\_stack} に状態スナップショット（辞書）を積むことで実現している．
-状態変更前に \texttt{push\_undo\_state()} を呼び，現在状態をUndoスタックへ保存する．
+Undo/Redoは \Verb|undo_stack| と \Verb|redo_stack| に状態スナップショット（辞書）を積むことで実現している．
+状態変更前に \Verb|push_undo_state()| を呼び，現在状態をUndoスタックへ保存する．
 Undo実行時は「現在状態をRedoへ退避」してから過去状態を復元し，Redoはその逆を行う．
 
-復元処理 \texttt{restore\_state()} の間は \texttt{is\_restoring=True} とし，
-再描画に伴う \texttt{\_snapshot\_current\_texts()} が「途中のUI」を誤って保存してしまわないようにしている．
-復元が完了したら \texttt{is\_restoring=False} に戻す．
+復元処理 \Verb|restore_state()| の間は \Verb|is_restoring=True| とし，
+再描画に伴う \Verb|_snapshot_current_texts()| が「途中のUI」を誤って保存してしまわないようにしている．
+復元が完了したら \Verb|is_restoring=False| に戻す．
 
-さらに，起動直後の状態を \texttt{initial\_state} として保存しておき，
+さらに，起動直後の状態を \Verb|initial_state| として保存しておき，
 編集メニューから「初期状態にリセット」できるようにしている．
 この操作もUndo可能とするため，実行前に現在状態をUndoへ積んでから復元している．
 
@@ -451,66 +446,53 @@ Undo実行時は「現在状態をRedoへ退避」してから過去状態を復
 
 本ツールの状態を復元するには，線の幾何と親子関係だけでなく，
 上段/下段テキスト，グループ境界，表示範囲（viewport）も保存する必要がある．
-保存対象の主な要素を表\ref{tab:state-elements}に示す．
+保存対象の主な要素を\tabref{tab:state-elements}に示す．
 
-\begin{table}[tb]
-\centering
-\caption{状態(JSON)に含める要素}
-\label{tab:state-elements}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|p{0.18\linewidth}|p{0.32\linewidth}|p{0.42\linewidth}|}
-\hline
-\textbf{カテゴリ} & \textbf{項目（キー）} & \textbf{内容} \\
-\hline
-線（Line） & \texttt{lines[i].id}（\texttt{line\_id}） & 永続ID（親子・テキスト対応付けに使用） \\
-\hline
-線（Line） & \texttt{base\_ratio} & 根元Xの世界座標比率 \\
-\hline
-線（Line） & \texttt{top\_ratio\_x}, \texttt{top\_ratio\_y} & 上端位置（世界座標比率） \\
-\hline
-線（Line） & \texttt{parent\_id} & 親線の\texttt{line\_id}（無ければnull） \\
-\hline
-線（Line） & \texttt{snap\_t} & 親線分上の吸着位置$t$ \\
-\hline
-上段テキスト & \texttt{top\_texts} & \texttt{left\_line\_id}をキーにした辞書 \\
-\hline
-下段（グループ） & \texttt{group.boundaries} & 境界のインデックス配列 \\
-\hline
-下段（グループ） & \texttt{group.texts\_by\_left\_id} & \texttt{left\_line\_id}に対応するテキスト辞書 \\
-\hline
-表示範囲（viewport） & \texttt{view.xmin/xmax} & X方向の表示範囲（世界座標） \\
-\hline
-表示範囲（viewport） & \texttt{view.ymin/ymax} & Y方向の表示範囲（世界座標） \\
-\hline
-\end{tabular}
-\end{table}
+\begin{table*}[t]
+  \centering
+  \caption{状態（JSON）に含める要素}\label{tab:state-elements}
+  % \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{lll}
+    \hline\hline
+    カテゴリ  & 項目（キー）                         & 内容                     \\ \hline
+    線（Line）        & \Verb|lines[i].id| （\Verb|line_id| ）    & 永続ID（親子・テキスト対応付けに使用）            \\
+    線（Line）        & \Verb|base_ratio|                       & 根元Xの世界座標比率                      \\
+    線（Line）        & \Verb|top_ratio_x| ，\Verb|top_ratio_y| & 上端位置（世界座標比率）                    \\
+    線（Line）        & \Verb|parent_id|                        & 親線の\Verb|line_id| （無ければnull）    \\
+    線（Line）        & \Verb|snap_t|                           & 親線分上の吸着位置$t$                    \\
+    上段テキスト         & \Verb|top_texts|                        & \Verb|left_line_id| をキーにした辞書    \\
+    下段（グループ）       & \Verb|group.boundaries|                 & 境界のインデックス配列                     \\
+    下段（グループ）       & \Verb|group.texts_by_left_id|           & \Verb|left_line_id| に対応するテキスト辞書 \\
+    表示範囲（viewport） & \Verb|view.xmin/xmax|                   & X方向の表示範囲（世界座標）                  \\
+    表示範囲（viewport） & \Verb|view.ymin/ymax|                   & Y方向の表示範囲（世界座標）                  \\
+    \hline
+  \end{tabular}
+\end{table*}
 
 ここで，JSONでは辞書のキーが文字列になるため，
-保存時は \texttt{left\_line\_id} を文字列化して保持し，復元時に整数へ戻している．
-また復元処理では，古い形式のデータ（例：\texttt{view.min/max} や \texttt{group.texts}）にも対応するため，
+保存時は \Verb|left_line_id| を文字列化して保持し，復元時に整数へ戻している．
+また復元処理では，古い形式のデータ（例：\Verb|view.min/max| や \Verb|group.texts| ）にも対応するため，
 キーが無い場合は互換処理を行うよう実装している．
 
 \subsubsection{スクリーンショット機能（キャンバスだけ保存）}
 
 スクリーンショット機能は，GUI全体ではなくキャンバス領域のみを画像として保存する．
-\texttt{winfo\_rootx/y} と \texttt{winfo\_width/height} からキャンバスの絶対座標とサイズを取得し，
-その矩形（bbox）だけを Pillow の \texttt{ImageGrab} でキャプチャする．
+\Verb|winfo_rootx/y| と \Verb|winfo_width/height| からキャンバスの絶対座標とサイズを取得し，
+その矩形（bbox）だけを Pillow の \Verb|ImageGrab| でキャプチャする．
 
 保存形式はPNG/JPEGを選択でき，JPEGの場合はRGB変換して保存する．
-Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip install pillow} を促す．
-
+Pillowが未導入の場合はエラーメッセージを表示し，\Verb|pip install pillow| を促す．
 
 \section{ツールの機能一覧}
 
-ここまでどのようにツールを作成してきたか，プログラムをどのように組んだのかについて説明してきた．これらを踏まえた上で，最終的にどのような機能が実装できたのかを紹介していく．プログラムを起動した直後の初期画面は以下のようになっている．(図13)
+ここまでどのようにツールを作成してきたか，プログラムをどのように組んだのかについて説明してきた．これらを踏まえた上で，最終的にどのような機能が実装できたのかを紹介していく．プログラムを起動した直後の初期画面は以下のようになっている（\figref{fig:15}）．
 
 このように，本プログラムの画面は上部の操作パネルと下部のキャンバス領域から構成されている．操作パネルには，画像保存，モード切り替え，表示範囲指定，線数の操作ボタンを配置している．キャンバス領域には，複数の線分と，線分に対応する上段テキスト入力欄，線群の区間に対応する下段グループ入力欄を配置している．これらにどのような機能があるか，操作方法も踏まえながら挙げていく．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig15.png}
-\caption{ツール起動時の初期画面}
-\label{fig:15}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig15.png}
+  \caption{ツール起動時の初期画面}\label{fig:15}
 \end{figure}
 
 
@@ -518,56 +500,54 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 各線は下端（根元）と上端（先端）からなる．下端は画面下部に固定され，上端のみを移動可能である．変更したい線の上端を左クリックし，押下したままマウスを移動すると上端を任意位置へドラッグ出来る．
 
-木構造を作成するには，線の親子関係を作る必要がある．方法としては，子にしたい線の上端をドラッグし，親候補の線分上(t値でされたスロット)へ上端を近づけ，十分近い状態でマウスボタンを離すと，子線上端が親線へ吸着し，親子関係が作られる．この時，子線は親線に追従するようになる．
+木構造を作成するには，線の親子関係を作る必要がある．方法としては，子にしたい線の上端をドラッグし，親候補の線分上（t値でされたスロット）へ上端を近づけ，十分近い状態でマウスボタンを離すと，子線上端が親線へ吸着し，親子関係が作られる．この時，子線は親線に追従するようになる．
 
 子線を再度ドラッグし，親線から離れた位置で離すと親子関係が解除される．解除後，その線は単独の線として扱われ，親に追従しない．
 
 \subsection{上段テキストボックス}
 
-対象のテキストボックスをクリックし，通常のテキスト入力として文字列を編集できる．また，入力中に左右キーを用いることで，隣接するテキストボックスへフォーカスを移動できる．また，テキストボックスはそれぞれ左上の線と連動している．(図14)
+対象のテキストボックスをクリックし，通常のテキスト入力として文字列を編集できる．また，入力中に左右キーを用いることで，隣接するテキストボックスへフォーカスを移動できる．また，テキストボックスはそれぞれ左上の線と連動している（\figref{fig:16}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig16.png}
-\caption{線分とそれに対応したテキストボックス}
-\label{fig:16}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig16.png}
+  \caption{線分とそれに対応したテキストボックス}\label{fig:16}
 \end{figure}
 
 \subsection{下段グループ列}
 
 上段テキストボックスの下部にグループ入力欄が配置されている．下段グループ列は，線全体をいくつかの区間に分割し，各区間へ代表名やカテゴリ名を付ける用途を想定している．
 
-下段グループの区間分割は，「分割モード」で行う．分割モードを有効(図15)にすると，下段グループ列の境界を置きたい，または削除したい付近をクリックした時，境界の追加・削除が可能になる．
+下段グループの区間分割は，「分割モード」で行う．分割モードを有効（\figref{fig:17}）にすると，下段グループ列の境界を置きたい，または削除したい付近をクリックした時，境界の追加・削除が可能になる．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig17.png}
-\caption{分割モードON状態}
-\label{fig:17}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig17.png}
+  \caption{分割モードON状態}\label{fig:17}
 \end{figure}
 
 下段グループの各入力欄も，上段と同様にテキストボックスをクリックして編集，左右キーによる隣のグループ欄へのフォーカス移動が可能となっている．
 
 \subsection{追加モード}
 
-「追加モード」をONにすると，線の下端付近に追加ガイドが表示される．(図16)利用者はガイドをクリックすることで，クリック位置に新しい線とそれに連動したテキストボックスを挿入できる．イベント間に新たなイベントを追加したい時に使用する．
+「追加モード」をONにすると，線の下端付近に追加ガイドが表示される（\figref{fig:18}）．
+利用者はガイドをクリックすることで，クリック位置に新しい線とそれに連動したテキストボックスを挿入できる．イベント間に新たなイベントを追加したい時に使用する．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig18.png}
-\caption{追加モードON状態}
-\label{fig:18}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/fig18.png}
+  \caption{追加モードON状態}\label{fig:18}
 \end{figure}
 
 \subsection{削除モード}
 
-「削除モード」をONにすると，各線の上端に削除ガイドが表示される．(図17)削除したい線のガイドをクリックすることで，その線とそれに連動したテキストボックスを削除できる．削除候補が分かりやすいよう，ガイドにカーソルを合わせた時に連動するテキストボックスの枠も強調表示される．
+「削除モード」をONにすると，各線の上端に削除ガイドが表示される（\figref{fig:19}）．
+削除したい線のガイドをクリックすることで，その線とそれに連動したテキストボックスを削除できる．削除候補が分かりやすいよう，ガイドにカーソルを合わせた時に連動するテキストボックスの枠も強調表示される．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig19.png}
-\caption{削除モードON状態}
-\label{fig:19}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/fig19.png}
+  \caption{削除モードON状態}\label{fig:19}
 \end{figure}
 
 \subsection{線数の指定と増減}
@@ -576,33 +556,31 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 \subsection{表示範囲操作}
 
-マウスホイールによりズーム操作を行う事が出来る．ズームはマウスカーソル位置を基準として行われるため，注目したい領域を中心に拡大できる．右クリックのドラッグ操作により，表示範囲を上下左右へ移動できる．キーボードの左右キーでも左右操作が可能である．操作パネルの「表示範囲（％）」により，現在の表示範囲が確認できる．表示メニューから初期範囲へ戻すリセット機能を使用できる．
+マウスホイールによりズーム操作を行う事が出来る．ズームはマウスカーソル位置を基準として行われるため，注目したい領域を中心に拡大できる．右クリックのドラッグ操作により，表示範囲を上下左右へ移動できる．キーボードの左右キーでも左右操作が可能である．操作パネルの「表示範囲（\%）」により，現在の表示範囲が確認できる．表示メニューから初期範囲へ戻すリセット機能を使用できる．
 
 \subsection{Redo / Undoと初期化}
 
-線の移動，接続，追加・削除などを操作履歴として復元できる機能である．Ctrl+Y により「Redo」，Ctrl+Z によりUndoを実行する．編集メニューでも実行が可能である．(図18)また，編集メニューには初期状態へ戻すリセット機能も実装している．このリセットは編集操作として扱われるため，Undoによりリセット前へ戻すことも可能になっている．
+線の移動，接続，追加・削除などを操作履歴として復元できる機能である．Ctrl+Y により「Redo」，Ctrl+Z によりUndoを実行する．編集メニューでも実行が可能である（\figref{fig:20}）また，編集メニューには初期状態へ戻すリセット機能も実装している．このリセットは編集操作として扱われるため，Undoによりリセット前へ戻すことも可能になっている．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.65\linewidth]{figures/fig20.png}
-\caption{編集メニュー選択時}
-\label{fig:20}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/fig20.png}
+  \caption{編集メニュー選択時}\label{fig:20}
 \end{figure}
 
 \subsection{状態の保存・復元}
 
-4.4で述べたように作成した構造と入力内容をファイルとして保存，再読み込みにより復元できる機能である．ファイルメニューから実行が可能(図19)であり，選択後にファイルの保存場所，ファイル名などを決める．
+4.4で述べたように作成した構造と入力内容をファイルとして保存，再読み込みにより復元できる機能である．ファイルメニューから実行が可能（\figref{fig:21}）であり，選択後にファイルの保存場所，ファイル名などを決める．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.65\linewidth]{figures/fig21.png}
-\caption{ファイルメニュー選択時}
-\label{fig:21}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/fig21.png}
+  \caption{ファイルメニュー選択時}\label{fig:21}
 \end{figure}
 
 \subsection{スクリーンショット}
 
-キャンバス領域のみを画像として保存するスクリーンショット機能である．操作パネルの「画面を画像として保存」を押し，保存先とファイル名を指定すれば画面の内容(木構造)が画像として出力される仕組みになっている．
+キャンバス領域のみを画像として保存するスクリーンショット機能である．操作パネルの「画面を画像として保存」を押し，保存先とファイル名を指定すれば画面の内容（木構造）が画像として出力される仕組みになっている．
 
 \section{性能調査}
 
@@ -610,24 +588,22 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 \subsection{調査方法}
 
-PowerPointとツールで，ランダム生成した木構造を5つずつ作成し，時間を計測するという手段を取った．線の親子関係は完全ランダム，上段テキストボックスには1から通し番号を振り，下段グループ列は分割位置をランダム，分割後のテキストボックスにはgr1，gr2…といった通し番号が振られるようにした．この時，線の数を8～12本で1本ずつ増やすことで，似た木構造がランダム生成される確率を減らした．また，PowerPointとツールの作業を交互に行う事で，木構造作成作業に出来るだけ慣れが生じないように工夫した．(図20)
+PowerPointとツールで，ランダム生成した木構造を5つずつ作成し，時間を計測するという手段を取った．線の親子関係は完全ランダム，上段テキストボックスには1から通し番号を振り，下段グループ列は分割位置をランダム，分割後のテキストボックスにはgr1，gr2…といった通し番号が振られるようにした．この時，線の数を8～12本で1本ずつ増やすことで，似た木構造がランダム生成される確率を減らした．また，PowerPointとツールの作業を交互に行う事で，木構造作成作業に出来るだけ慣れが生じないように工夫した（\figref{fig:22}）．
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig22.png}
-\caption{計測時にツールで作成した木構造(ｎ＝12)}
-\label{fig:22}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig22.png}
+  \caption{計測時にツールで作成した木構造（$n=12$）}\label{fig:22}
 \end{figure}
 
 \subsection{調査結果と考察}
 
-5回ずつ測定した結果が表2である．
+5回ずつ測定した結果が\tabref{tab:23}である．
 
-\begin{table}[tb]
-\centering
-\includegraphics[width=0.95\linewidth]{figures/fig23.png}
-\caption{計測結果(単位は分)}
-\label{tab:23}
+\begin{table}[t]
+  \centering
+  \caption{計測結果（単位は分）\commented{tableで書く}}\label{tab:23}
+  \includegraphics[width=0.95\linewidth]{figures/fig23.png}
 \end{table}
 
 1回目のPowerPointの時間が極端に長いのは表の出し方や線の配置に苦戦したためであるが，ツールを使用すればそのような事態も起きないと考え，記録に含んでいる．時間を比較した時に，PowerPointに比べてツールを使用した時の時間は2～3倍速くなっている事が分かる．また，PowerPointを使用して木構造を作成する場合，線を1本動かすだけでも親子関係にある線や，全体の見え方を考慮した時の周りの線も1本ずつ手作業で移動させなければならない．今回はそのパターンが無かったためこのような時間差になっているが，あった場合はさらに時間の差が広がると考えられる．この結果より，今回作成したツールは，EMDA分析における木構造の作成を大きく簡略化するものになったと言えるだろう．
