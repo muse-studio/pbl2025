@@ -17,7 +17,7 @@
 
 特徴としては楽曲の簡約や木構造による表現が挙げられ，構造解析は，音楽の認知に必要とされる4つのサブ理論から成る．1つ目はグルーピング構造であり，楽曲を楽曲中の動機や楽節といった単位のグループに分節し，分節された各グループの階層構造を定めるもの，2つ目は拍節構造であり，各拍節レベルにおける強拍と弱拍を定めるもの．3つ目がタイムスパン簡約であり，グルーピング構造の解析と拍節構造の解析をもとに重要な音の選出を繰り返し，ボトムアップに木構造(タイムスパン木)を作っていくものである．\cite{SanPuYinLeLiLunGTTMniJidukuYiLuntaimusupanMunoShengChengFangShitosonoPingJia2015b}(図1)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig01.png}
 \caption{GTTMのタイムスパン木}
@@ -36,7 +36,7 @@
 
 今回，最終的にツールで作成したいものは以下のようなものである．(図2)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig02.png}
 \caption{以前作成した木構造}
@@ -47,7 +47,7 @@
 
 木構造を作成する上で，必要な機能として自由に線を動かす機能が真っ先に思い浮かび，その部分から手を付けることにした．最初に，Tkinterのキャンバスに描いた左右2本の線分の「上端」だけをドラッグで動かせるようにし，線同士が交差または十分近づいたら，ドラッグした側の上端を相手線の中点へスナップして結合状態にしつつ，子側を中点から一定距離以上離して離すと結合解除できるようにした．(図3)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.50\linewidth]{figures/fig03.png}
 \caption{2本線の木構造}
@@ -56,7 +56,7 @@
 
 木構造自体はこの動作を繰り返していけば形になると考えた．次に，線の数を2本から6本に増やして動作させたが，この時の線はそれぞれの中点にしかスナップしないような仕組みになっていたため，1つの幹に対して枝が2本吸着する形になった時に同位置に吸着するという問題が発生した．(図4)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig04.png}
 \caption{中点に吸着する6本線の木構造}
@@ -65,7 +65,7 @@
 
 その問題を解決するべく，線を吸着させる部分を線の中点ではなく，t値(全ての線の数-1)で等間隔にスロットを作り，既に使用しているスロットには他の線が吸着しないようにした．(図5)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig05.png}
 \caption{各スロットに吸着する6本線の木構造}
@@ -76,7 +76,7 @@
 
 まず，イベントの数は作品によって変動する為，自由に線の本数を変えられる機能を追加した．テキストボックス内に本数を入力することで瞬時にその本数になる機能と，ボタンを押すことにより，右端(一番新しい線)から線を追加，削除することが出来る機能の2種類である．また，PowerPointで作業していた時に煩わしかった作業の1つである，イベント間にイベントを追加，削除するという機能を追加し，最終的には以下の図のようになった．(図6)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig06.png}
 \caption{木構造部分完成時のウィンドウ}
@@ -89,7 +89,7 @@
 
 次に，作成した木構造部分に連動させながらテキストボックスを追加する段階に入った．まずは線分同士の間にテキストボックスを入れ込むような形で作成した．(図7)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig07.png}
 \caption{上段テキストボックス追加}
@@ -100,14 +100,14 @@
 
 最初に例として挙げた木構造を再現するのなら，それぞれのイベントをグループ分けするためのテキストボックスの追加も必要になってくる．グループ分けという目的に沿ったものにする為，初期状態は全てのイベントを包括する大きなグループがあり，それを分割させていくことで，イベントのグループ分けを再現しようと考えた．この考えのもと作成したのが以下の画面になる．(図8)(図9)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig08.png}
 \caption{下段グループ列分割前}
 \label{fig:08}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig09.png}
 \caption{下段グループ列分割後}
@@ -116,7 +116,7 @@
 
 このように，イベントテキストボックスの下部に1つの大きなテキストボックスを配置し，それを分割することでグループ分けとした．通し番号については分かりやすいように手動で入力したものである．他にもいくつか細かい修正や機能を追加した時の初期ウィンドウが以下の画像になる．(図10)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig10.png}
 \caption{下段グループ列追加後ウィンドウ}
@@ -127,7 +127,7 @@
 
 ここまで作成してきたツールを実際に使ってもらい，不便な点や改善点を挙げてもらうテストを行った．対象ユーザーは同学年のゼミ生5人と顧問1人の計６人，調査方法はまず以下の画像(図11)と同じ木構造をツールを使用して作成してもらい，
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig11.png}
 \caption{調査用木構造(編集前)}
@@ -136,7 +136,7 @@
 
 この木構造を作成した後にイベント「6」とイベント「9」を削除，イベント「7」とイベント「8」の間にイベント「!」を追加，グループの分割位置を変える，といった追加の操作指示をすることで，木構造を作成する時に使うであろう機能をすべて使ってもらうという形で調査を行った．最終的に作成した木構造は以下のものである．(図12)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig12.png}
 \caption{調査用木構造(編集後)}
@@ -375,13 +375,19 @@ Entryを順序リスト（\texttt{top\_entries}）に保持し，
 
 本ツールには3つのモードがある．
 
-\paragraph{追加モード（add\_mode）}
+\begin{enumerate}
+  \item[(1)]追加モード（add\_mode）
+\end{enumerate}
+
 追加モードでは，線の下側に赤い「追加ガイド」を表示する（\texttt{show\_insert\_guides()}）．
 ユーザがガイドをクリックすると \texttt{insert\_line\_at\_index()} が呼ばれ，
 右端の隠し線の手前に新しい線を挿入する．
 このとき，境界配列 \texttt{group\_boundaries} も挿入位置以降を右に1つずらして整合性を保つ．
 
-\paragraph{削除モード（delete\_mode）}
+\begin{enumerate}
+  \item[(2)]削除モード（delete\_mode）
+\end{enumerate}
+
 削除モードでは，線の上端に青いガイド（円）を表示する（\texttt{show\_delete\_guides()}）．
 上端付近をクリックするとその線を削除する．
 削除時には以下も同時に更新する．
@@ -394,7 +400,11 @@ Entryを順序リスト（\texttt{top\_entries}）に保持し，
 また削除モード中は，マウス位置に近い線を検出し，
 対応する上段入力欄をハイライトすることで「どれが削除対象になるか」を視覚的に示す．
 
-\paragraph{分割モード（split\_mode）}
+\begin{enumerate}
+  \item[(3)]分割モード（split\_mode）
+\end{enumerate}
+
+
 分割モードは下段グループ行の編集にのみ関係し，追加/削除モードとは独立してON/OFFできる．
 ONの間は下段の背景色を変え，境界クリックによる分割/結合を有効化する．
 
@@ -443,7 +453,7 @@ Undo実行時は「現在状態をRedoへ退避」してから過去状態を復
 上段/下段テキスト，グループ境界，表示範囲（viewport）も保存する必要がある．
 保存対象の主な要素を表\ref{tab:state-elements}に示す．
 
-\begin{table}[H]
+\begin{table}[tb]
 \centering
 \caption{状態(JSON)に含める要素}
 \label{tab:state-elements}
@@ -496,7 +506,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 このように，本プログラムの画面は上部の操作パネルと下部のキャンバス領域から構成されている．操作パネルには，画像保存，モード切り替え，表示範囲指定，線数の操作ボタンを配置している．キャンバス領域には，複数の線分と，線分に対応する上段テキスト入力欄，線群の区間に対応する下段グループ入力欄を配置している．これらにどのような機能があるか，操作方法も踏まえながら挙げていく．
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig15.png}
 \caption{ツール起動時の初期画面}
@@ -516,7 +526,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 対象のテキストボックスをクリックし，通常のテキスト入力として文字列を編集できる．また，入力中に左右キーを用いることで，隣接するテキストボックスへフォーカスを移動できる．また，テキストボックスはそれぞれ左上の線と連動している．(図14)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig16.png}
 \caption{線分とそれに対応したテキストボックス}
@@ -529,7 +539,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 下段グループの区間分割は，「分割モード」で行う．分割モードを有効(図15)にすると，下段グループ列の境界を置きたい，または削除したい付近をクリックした時，境界の追加・削除が可能になる．
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig17.png}
 \caption{分割モードON状態}
@@ -542,7 +552,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 「追加モード」をONにすると，線の下端付近に追加ガイドが表示される．(図16)利用者はガイドをクリックすることで，クリック位置に新しい線とそれに連動したテキストボックスを挿入できる．イベント間に新たなイベントを追加したい時に使用する．
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig18.png}
 \caption{追加モードON状態}
@@ -553,7 +563,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 「削除モード」をONにすると，各線の上端に削除ガイドが表示される．(図17)削除したい線のガイドをクリックすることで，その線とそれに連動したテキストボックスを削除できる．削除候補が分かりやすいよう，ガイドにカーソルを合わせた時に連動するテキストボックスの枠も強調表示される．
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig19.png}
 \caption{削除モードON状態}
@@ -572,7 +582,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 線の移動，接続，追加・削除などを操作履歴として復元できる機能である．Ctrl+Y により「Redo」，Ctrl+Z によりUndoを実行する．編集メニューでも実行が可能である．(図18)また，編集メニューには初期状態へ戻すリセット機能も実装している．このリセットは編集操作として扱われるため，Undoによりリセット前へ戻すことも可能になっている．
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.65\linewidth]{figures/fig20.png}
 \caption{編集メニュー選択時}
@@ -583,7 +593,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 4.4で述べたように作成した構造と入力内容をファイルとして保存，再読み込みにより復元できる機能である．ファイルメニューから実行が可能(図19)であり，選択後にファイルの保存場所，ファイル名などを決める．
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.65\linewidth]{figures/fig21.png}
 \caption{ファイルメニュー選択時}
@@ -602,7 +612,7 @@ Pillowが未導入の場合はエラーメッセージを表示し，\texttt{pip
 
 PowerPointとツールで，ランダム生成した木構造を5つずつ作成し，時間を計測するという手段を取った．線の親子関係は完全ランダム，上段テキストボックスには1から通し番号を振り，下段グループ列は分割位置をランダム，分割後のテキストボックスにはgr1，gr2…といった通し番号が振られるようにした．この時，線の数を8～12本で1本ずつ増やすことで，似た木構造がランダム生成される確率を減らした．また，PowerPointとツールの作業を交互に行う事で，木構造作成作業に出来るだけ慣れが生じないように工夫した．(図20)
 
-\begin{figure}[H]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig22.png}
 \caption{計測時にツールで作成した木構造(ｎ＝12)}
@@ -613,7 +623,7 @@ PowerPointとツールで，ランダム生成した木構造を5つずつ作成
 
 5回ずつ測定した結果が表2である．
 
-\begin{table}[H]
+\begin{table}[tb]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig23.png}
 \caption{計測結果(単位は分)}
