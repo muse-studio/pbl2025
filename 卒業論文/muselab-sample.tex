@@ -68,8 +68,8 @@
 
 弦楽器，管楽器，声楽，電子音楽におけるヴィブラートの歴史について述べる．
 弦楽器，管楽器，声楽はニューグローブ音楽辞典\cite{Niyugurovu}を参考にした．
-電子音楽は，莱氏の研究\cite{LaiXiaoZhiYinLeChuangZuotokonpiyutaYinLe2009}と
-田中氏の研究\cite{utTianZhongFanKangErekutoronikusuJiShuTeniDianZiYingaYinLeZuoPinniJibositaYingXiangnituiteZuoQuJianoLiChangkara2016}を主に参考にした．
+電子音楽は，莱氏の研究\cite{Rai2009}と
+田中氏の研究\cite{Tanaka16}を主に参考にした．
 その他は文中に引用を示す．
 
 %2．2．1
@@ -108,7 +108,7 @@
 
 20世紀初頭から電気的に新たな音を作りだす試みが始まり，様々な電子楽器がつくられるようになった．
 「テルミン」や「オンド・マルトノ」といった楽器もこの時代につくられた．
-二つの発振回路を作り，2つの振動のうなりによって音声がつくられる\cite{YaChuanRenShanBenXunJiuFanTianQingMeiDaoQiHongCiTengYuanBoShenHuangChuanYueXiongZhiYuanYiMingZhongCunZhenFanZuoTengLiangWeiBanJingLuZhenGaoQiRuiXiDianZiLeQiteruminniyoruYinLeLiKemonodukuriJiaoYu2013}．
+二つの発振回路を作り，2つの振動のうなりによって音声がつくられる\cite{Kamogawa13}．
 そして，人体とアンテナの位置関係によって決まる静電気量の変化によって音の高さや音量を変化させるという仕組みになっている．
 このような装置は電気的に連続的な音高操作が可能となり，独特のグリッサンド，ヴィブラートを表現することができるようになった．
 
@@ -119,7 +119,7 @@
 この技術がデジタル・シンセサイザー全盛期の序章となった．
 シンセサイザーの発展により，LFO（低周波発振器）を用いた意図的なピッチ変調が一般化し，
 ヴィブラートは電子楽器上で設計可能な音響パラメータとなった．
-最後に，デジタル歌声合成，なかでもVOCALOID\cite{JianChiXiuJiGeShengHeChengJiShuVOCALOIDtmtoXinsiiYinLe}は2003年の商用化以降に「音の高さ（ピッチ）」や「各倍音のレベル（音色）」をパラメータとして精密に扱えるようになり，
+最後に，デジタル歌声合成，なかでもVOCALOID\cite{Vocaloid}は2003年の商用化以降に「音の高さ（ピッチ）」や「各倍音のレベル（音色）」をパラメータとして精密に扱えるようになり，
 ヴィブラートを周期・深さ・位相・高さのなどのパラメータで表現し用いるようになった．
 
 
@@ -134,15 +134,15 @@
 %3．1．1
 \subsubsection{電子楽器}
 
-電子楽器の基本的な音生成\cite{YaChuanRenShanBenXunJiuFanTianQingMeiDaoQiHongCiTengYuanBoShenHuangChuanYueXiongZhiYuanYiMingZhongCunZhenFanZuoTengLiangWeiBanJingLuZhenGaoQiRuiXiDianZiLeQiteruminniyoruYinLeLiKemonodukuriJiaoYu2013}
-\cite{QingShuiYouShuDianZiLeQimaguteruminnoZhiZuotoDianCiQiShiYanhenoHuoYong2008}
+電子楽器の基本的な音生成\cite{Kamogawa13}
+\cite{Shimizu08}
 は電気信号の合成・加工によって行われる．
 発振器によって生成された基本波形に対し，フィルタやアンプなどの信号処理を施すことで音色を形成する．
 電子楽器の一つである「シンセサイザ」は，最初に「オシレータ」という発振器で基本波形である，
 正弦波，三角波，矩形波などを生成し，それをフィルタやエンベロープで変化させることにより音色を合成する．
 この手法を減算合成といわれる．
 
-減算合成型のシンセサイザにおけるヴィブラート\cite{TangQianXingSiQiuTianChunYiXiaoSongXiaoDeYinSenoYinXiangYuniJidukuJianSuanHeChengXingsinsesaizanoParametaCaoZuoShouFanoJianTao2010}
+減算合成型のシンセサイザにおけるヴィブラート\cite{Domae10}
 は，低周波発振器（LFO）を用いたピッチ変調として実装されている．
 具体的には深さと速さといったパラメータで表現強弱を制御する．
 すなわち，電子楽器ではピッチ変動を数値化した制御信号でヴィブラートが再現されている．
@@ -151,13 +151,13 @@
 %3．1．2
 \subsubsection{歌声合成システム}
 
-VOCALOID\cite{JianChiXiuJiGeShengHeChengJiShuVOCALOIDtmtoXinsiiYinLe}に代表される歌声合成システムは，人間の歌声を対象とした音声情報処理技術に基づいて音を生成する．
+VOCALOID\cite{Vocaloid}に代表される歌声合成システムは，人間の歌声を対象とした音声情報処理技術に基づいて音を生成する．
 VOCALOIDは，ヤマハが開発した歌声合成技術およびその応用ソフトウェアの事である．
 音符と歌詞を入力するエディタ，実際の歌声から取り出した音声素片の集まりである歌声ライブラリ，
 音声素片を接続・変換する合成エンジンの3つで構成させる．
 歌声素片は，事前に録音された歌声や音声から切り出し加工して作成され，周波数領域で接続・補間・変換することで自然な歌声に近づけている．
 
-歌声合成一般\cite{TianZhongRuiSuiZhuChuanJiaChengPingTianGuiErHeChengYinShengGeChangniokeruvuiburatonoparametaZiDongTuiDing2020}
+歌声合成一般\cite{Tanaka20}
 においてヴィブラートは，音高の周期的な変動として実装される歌唱表現の要素である．
 その制御には速さと深さという2つのパラメータが用いられている．
 
@@ -168,13 +168,13 @@ VOCALOIDは，ヤマハが開発した歌声合成技術およびその応用ソ
 電子楽器と歌声合成システムは，ともにコンピュータをもちいた音生成システムであるが，
 その開発の目的の本質は異なる．
 
-田中氏の電子音楽史の研究\cite{TianZhongFanKangErekutoronikusuJiShuTeniDianZiYingaYinLeZuoPinniJibositaYingXiangnituiteZuoQuJianoLiChangkara2016}
-では，電子楽器は新たな音響表現の創出を目的として発展してきたことが述べられている．
+田中氏の電子音楽史の研究\cite{Tanaka16}によれば，
+電子楽器は新たな音響表現の創出を目的として発展してきたことが述べられている．
 そこでは，音そのものを設計対象とし，既存の楽器音や人声に必ずしも依拠しない音楽表現が追及されてきた．
 あくまで，ヴィブラートは音色や音響表現を設計・拡張するための機能として位置づけられる．
 
 一方で，歌声合成システムは，人間の歌唱行使を機械的に再現することを主としており，
-音響的自然さや歌唱らしさが重視される\cite{ZhongYeLunJingHouTengZhenXiaoPingHeRangLePuQingBaowoYonginaiGeChangLiZiDongPingJiaShouFa2007}．
+音響的自然さや歌唱らしさが重視される\cite{Nakano07}．
 したがって，ヴィブラートも音色の変化の一種ではなく歌唱表現の一部として扱われる．
 
 %4
@@ -189,7 +189,7 @@ VOCALOIDは，ヤマハが開発した歌声合成技術およびその応用ソ
 初心者にとってはその判断が困難であることが多い．
 指導の場においては、声や実演によって具体例が示されることもあるが，
 その時ごとに揺れ方が異なるため，学習者が同一条件のヴィブラートを繰り返し聴取・比較することは難しい．
-また,ヴィブラートを波形化するもの\cite{GongQiSongDa1SenShiJiangYaYinShengBoXingkaranovuiburatoparametaTuiDingnoGaoJingDuHuatoPingJia2019}
+また,ヴィブラートを波形化するもの\cite{Miyazaki19}
 はあるが，特定の部分に特定の波形を再現し実際の音として再現されることは少ない．
 
 そこで本研究では，ヴィブラートを機械音声として簡単に制御・再現できるシステムを作成することで常に同一条件のヴィブラートを提示し，
@@ -286,7 +286,7 @@ Max８では受信した情報に基づき音声を合成し再生を行う．
 各時刻における音高変動量は，周期と深さを反映した正弦関数によって算出される．
 周期はヴィブラートの細かさ，深さは音の変化の大きさを示している．
 
-先行研究\cite{ZhongYeLunJingHouTengZhenXiaoPingHeRangLePuQingBaowoYonginaiGeChangLiZiDongPingJiaShouFa2007}では，実際の歌唱におけるヴィブラートは周期および深さが時間的に変動する非定常な現象であることが示されている．
+先行研究\cite{Nakano07}では，実際の歌唱におけるヴィブラートは周期および深さが時間的に変動する非定常な現象であることが示されている．
 本研究では，これらの複雑な揺らぎをそのまま再現するのではなく，初心者が理解しやすいように，周期と深さの変化を段階的かつ単純な形に抽象化したモデルを採用した．
 
 
@@ -315,7 +315,7 @@ ticks per beat（1拍を何 tick で分割して表現しているか）に基�
 今回は０のノート（楽譜上では一つ目の赤のファの音）のみを選択し，５の「定速で一定」を適用した．
 ヴィブラートの形状を指定後,深さの最大値および周期の最大値を入力することで，制御信号の生成が開始される．
 今回は変化をわかりやすくするため深さを100セント，周期を8Hzに設定した．
-周期は\cite{sundbergScienceSingingVoice1987,seashorePsychologyMusic1938}を元に一般的に5～7Hz程度であることを考慮し，やや速めに設定した．
+周期は\cite{Seashore38,Sundberg87}を元に一般的に5～7Hz程度であることを考慮し，やや速めに設定した．
 
 ヴィブラートの制御信号は，正弦波を基本形とし，その周期および振幅を時間的に変化させることで生成する．
 具体的には，加速・減速および強弱の変化を組み合わせた複数のビブラート形状を定義し，
@@ -426,7 +426,7 @@ UDPは確認応答を行わない軽量な通信方式であるため低遅延�
 用語や選択範囲等の説明の追加を行い，ユーザが操作内容を理解しやすさの改善や視覚的理解の向上を図った．
 \figref{fig:syuuseipython}では,ビブラートの深さや周期などの専門用語について,
 用語説明をシステム内に明示するようにした.また,例を挙げることで,初心者にも理解しやすいよう工夫した.
-例の数値は\cite{sundbergScienceSingingVoice1987,seashorePsychologyMusic1938}を参考にした.
+例の数値は\cite{Sundberg87,Seashore38}を参考にした.
 \figref{fig:syuuseimax}では,波形表示図の周囲に,各要素の意味を示す注釈や説明文を追加した.
 
 なお，本システムの評価は限定的な条件下で行われたため，
