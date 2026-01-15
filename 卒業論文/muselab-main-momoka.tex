@@ -608,7 +608,7 @@ MusicXMLは小節や拍といった音楽的な単位で時間を管理するの
 % (2)CC2値（強弱）の変化
 \noindent \textbf{(2) CC2値（強弱）の変化}
 
-元の音源のCC2値を\figref{fig:Symphony9_cc2}に，各発想標語を適用した際のCC2値の変化を\figref{fig:Symphony9_cc2_cantabile}，\figref{fig:Symphony9_cc2_Maestoso}，\figref{fig:Symphony9_cc2_Conbrio}に示す．
+元の音源のCC2値を\figref{fig:Symphony9_cc2}に，各発想標語を適用した際のCC2値の変化を\figref{fig:Symphony9_cc2_result}に示す．
 
 % 図13
 \begin{figure}[tb]
@@ -621,30 +621,15 @@ MusicXMLは小節や拍といった音楽的な単位で時間を管理するの
 % 図14
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{../fig/Symphony9_cc2_cantabile.png}
-	\caption{Cantabile適用後のCC2値の推移}
-	\label{fig:Symphony9_cc2_cantabile}
+	\includegraphics[width=\hsize]{../fig/Symphony9_cc2_result.png}
+	\caption{各発想標語を適用した際のCC2値の比較}
+	\label{fig:Symphony9_cc2_result}
 \end{figure}
 
-% 図15
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/Symphony9_cc2_maestoso.png}
-	\caption{Maestoso適用後のCC2値の推移}
-	\label{fig:Symphony9_cc2_Maestoso}
-\end{figure}
-
-% 図16
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/Symphony9_cc2_conbrio.png}
-	\caption{Con brio適用後のCC2値の推移}
-	\label{fig:Symphony9_cc2_Conbrio}
-\end{figure}
-
-グラフより，cantabileでは変化幅が+35と中程度であり，旋律を自然に歌うような滑らかな変化となっている（\figref{fig:Symphony9_cc2_cantabile}）．
-一方，Maestosoでは，Peak CC2が+50と高く設定されているため，頂点に向かって急激な音量の盛り上がりが確認できる（\figref{fig:Symphony9_cc2_Maestoso}）．
-Con brioも変化幅は大きいが，後述するOnset（発音時刻の制御）の違いにより，Maestosoとは全く異なる印象を与える（\figref{fig:Symphony9_cc2_Conbrio}）．
+\figref{fig:Symphony9_cc2_result}より，適用した発想標語によって生成される強弱のカーブが大きく異なることが分かる．
+cantabile（紫線）では変化幅が+35と中程度であり，旋律を自然に歌うような滑らかな変化となっている．
+一方，Maestoso（緑線）では，Peak CC2が+50と高く設定されているため，頂点に向かって急激な音量の盛り上がりが確認できる．
+Con brio（オレンジ線）も変化幅は大きいが，後述するOnset（発音時刻の制御）の違いにより，Maestosoとは全く異なる印象を与える．
 
 % (3)Onset（発音時刻）の比較
 \noindent \textbf{(3) Onset（発音時刻）の比較}
@@ -653,7 +638,7 @@ Con brioも変化幅は大きいが，後述するOnset（発音時刻の制御�
 横軸は時間，縦軸は元の演奏データ（黒線）からのOnsetのずれをTick単位で示している．
 グラフが正の領域にある場合は演奏が遅延しており，負の領域にある場合は前倒しになっていることを意味する．
 
-% 図17
+% 図15
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Symphony9_onset.png}
@@ -739,7 +724,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 
 このように，ユーザが楽曲全体の構造を解釈し，セクションごとに異なる表情をデザインすることで，一本の旋律から多様な音楽表現を生成できることが本システムの大きな特徴である．
 
-% 図18
+% 図16
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_Score_flute.png}
@@ -764,7 +749,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 まず，楽曲冒頭の主題を構成する1小節目から4小節目までを分析対象とする．
 このフレーズを本システムに入力したところ，\figref{fig:sonata8_phrase1}に示すように，2小節目のE$\flat$5が頂点候補として提示された．
 
-% 図19
+% 図17
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/sonta8_phrase1.png}
@@ -781,7 +766,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 続いて，前半から直接繋がる5小節目から8小節目までを分析する．
 \figref{fig:sonata8_phrase2}の青い矢印で示すように，本システムは，複数のルールが複合的に適用された5小節目のD$\flat$5を頂点として提示した．
 
-% 図20
+% 図18
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/sonta8_phrase2.png}
@@ -801,7 +786,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 まず，楽曲を象徴する主題の冒頭部分（3～6小節）を分析対象とする．
 \figref{fig:sault_phrase1}の青い矢印で示すように，本システムの単旋律ルールは，フレーズ内で最も音高が高く，上行跳躍によって到達する5小節目のA5を頂点として提示した．
 
-% 図21
+% 図19
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/sault_phrase1.png}
@@ -818,7 +803,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 一方で，主題が1度目のクライマックスを迎える11～14小節では，単旋律ルールと和声分析の結果が一致した．
 \figref{fig:sault_phrase2}に示すように，システムは主題全体の最高音である13小節目のC$\sharp$6を頂点として正しく推定した．
 
-% 図22
+% 図20
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/sault_phrase2.png}
@@ -843,7 +828,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 検証には，G線上のアリアの冒頭6小節を対象とした（\figref{fig:Air_Score}）．
 この範囲は，楽曲の最も象徴的な主題を含み，1つの音楽的なまとまりとして完結しているため，詳細な表現分析を行うのに適している．
 
-% 図23
+% 図21
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_Score.png}
@@ -892,7 +877,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 横軸は時間（Tick），縦軸は音高（MIDIノート番号）を表す．
 加工後の青線が加工前の灰色線よりも右側にプロットされている箇所は，演奏が遅延している（溜めがある）ことを示し，両者を結ぶ赤色の矢印はその「ずれ」の大きさを示している．
 
-% 図24
+% 図22
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_onset.png}
@@ -911,7 +896,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 また，\figref{fig:Air_cc2}に示す強弱の変化と合わせることで，本システムの有効性がより明確になる．
 1～2小節の大きなクレッシェンドと時間的な溜め，3小節目の静寂，そして5小節目のダイナミックな頂点と前進するエネルギーという，強弱と時間の両側面からの表情付けが，目標音源の持つ豊かな音楽性の再現に不可欠であった．
 
-% 図25
+% 図23
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_cc2.png}
@@ -983,7 +968,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 
 本節では，「G線上のアリア」の冒頭6小節の主旋律パート（\figref{fig:Air_Phrase_flute}）を例に，ベースとなる大きな表現の流れの中に，性格の異なる複数の局所的な表現を段階的に組み込むことで，より多層的で物語性のある演奏デザインを試みる．
 
-% 図26
+% 図24
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_Phrase_flute.png}
@@ -1010,7 +995,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 \subsubsection{CC2パラメータの変化と考察}
 上記のプロセスによって生成されたCC2値の推移を\figref{fig:Air_cc2_original}，\figref{fig:Air_cc2_dolce},\figref{fig:Air_cc2_processed}に示す．
 
-% 図27
+% 図25
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_cc2_original.png}
@@ -1018,7 +1003,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 	\label{fig:Air_cc2_original}
 \end{figure}
 
-% 図28
+% 図26
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_cc2_dolce.png}
@@ -1026,7 +1011,7 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 	\label{fig:Air_cc2_dolce}
 \end{figure}
 
-% 図29
+% 図27
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/Air_cc2_processed.png}
