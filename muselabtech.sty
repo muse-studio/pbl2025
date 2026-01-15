@@ -16,9 +16,11 @@
 \newcommand{\cut}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
 
 % ==============================================
-% 年度・提出日・改訂日の設定
+% 定数
 % ==============================================
-\input{../_date} 
+\def\thesisyear{2024}
+\def\submitdate{2025年1月31日}
+\def\revicedate{2025年2月7日}
 % ==============================================
 % ヘッダ
 % ==============================================
@@ -33,7 +35,7 @@
       %IPSJ SIG Technical Report%
    \else 福知山公立大学情報学部 地域情報PBLプロジェクト報告書\fi}%%
 
-
+\def\ipsj@year{2023-2025}
 
 %%%%%%%%%
 %%%
@@ -172,7 +174,8 @@
       \par\vspace{7mm}
       \mbox{\begin{tabular}{rl}
             提出日 & \submitdate \\
-            \showReviceDate
+            \\
+            改訂日 & \revicedate \\
          \end{tabular}
       }
       %

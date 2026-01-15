@@ -75,11 +75,27 @@
 \begin{document}
 
 
-\title{\input{../credit/author-title}}
+\title{\input{author-title}}
+
+%\etitle{How to Prepare Your Paper for IPSJ SIG Technical Report \\ (version 2018/10/29)}
+%SIGMUS/EC 予稿には入れるので，英文タイトルは考えておこう（情報学広場に掲載される英文タイトルがこれになる）
+
+%\affiliate{FUKU}{福知山公立大学情報学部\\
+%	3370 Azahori, Fukuchiyama-shi, Kyoto 620--0886, Japan}
 
 
-\author{\input{../credit/author-name}}{\input{../credit/author-name-eng}}{FUKU}[]
+\author{\input{author-name}}{\input{author-name-eng}}{FUKU}[]
+%\author{32045033　酒井　愛実}{Joho Taro}{FUKU}[32045033@fukuchiyama.ac.jp] %SIGMUS/EC 予稿には入れる
+% \author{橋田 光代}{Mitsuyo Hashida}{FUKU}[hashida-mitsuyo@fukuchiyama.ac.jp] %SIGMUS/EC 予稿には入れる
 
+% 要旨キーワード：SIGMUS/EC予稿には入れる
+%\begin{abstract}
+%本研究では，音楽学習の取り組みについて調査する．また，語学学習から聴き比べに焦点を当てた音楽学習について考察する．
+%\end{abstract}
+%\begin{jkeyword}
+%情報処理学会論文誌ジャーナル，\LaTeX，スタイルファイル，べからず集
+%\end{jkeyword}
+%
 
 \maketitle
 
@@ -111,7 +127,12 @@
 % 参考文献
 % ==========================================
 
+<<<<<<< HEAD:卒業論文/_main.tex
 \bibliographystyle{../muselabunsrt} % SIGMUS/EC予稿の時は ipsjunsrt にする
 \bibliography{../minato} % .bibファイルの名前（Zoteroからエクスポートして作る）
+=======
+\bibliographystyle{muselabunsrt} % SIGMUS/EC予稿の時は ipsjunsrt にする
+\bibliography{muselab-sample} % .bibファイルの名前（Zoteroからエクスポートして作る）
+>>>>>>> ab02e57 (1/15(たぶん先ほどの問題は解決したはず)):_main.tex
 
 \end{document}
