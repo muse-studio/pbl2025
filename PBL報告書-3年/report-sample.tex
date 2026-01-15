@@ -50,8 +50,7 @@ Unityでは，音楽再生や映像を制御した．システムの構成とし
 
 \begin{figure}[tb]
     \includegraphics[width=\linewidth]{system.png}
-    \caption{システム構成図}
-    \label{fig:system}
+    \caption{システム構成図}\label{fig:system}
 \end{figure}
 
 
@@ -85,8 +84,7 @@ Animon.aiでは，背景，ピアノを弾いているうさぎ，ギターを�
 
 \begin{figure}[tb]
     \includegraphics[width=\linewidth]{basic.png}
-    \caption{画面の基本構成}
-    \label{fig:basic}
+    \caption{画面の基本構成}\label{fig:basic}
 \end{figure}
 
 
@@ -131,8 +129,7 @@ Pythonでは，MediaPipeで得た手の情報を処理し，Unityに送信する
 
 \begin{figure}[tb]
     \includegraphics[width=\linewidth]{MediaPipe.png}
-    \caption{PC画面のデバッグ表示}
-    \label{fig:MediaPipe}
+    \caption{PC画面のデバッグ表示}\label{fig:MediaPipe}
 \end{figure}
 
 %3.4.3
@@ -152,13 +149,13 @@ PythonからUDP通信によって送信された手の座標情報をUnity側で
 ３つ目は，投影映像の変化である．
 曲が流れている間は，クリスマスツリーのオーナメントが点滅したり，雪が降っているように見えるようにしたりした．
 具体的に図を使って変化の様子を示す．
-図\ref{fig:syoki}は，利用者が操作を行っていない画面の状態であり，音は再生されず，動物のキャラクターや背景の演出も変化しない．
-図\ref{fig:ugoki}は，音が再生されている際の映像演出であり，きつねの位置を触った時の変化で，ギターの音色で曲が流れている状態である．
-図\ref{fig:syoki}と比べて，楽曲が再生されている間，クリスマスツリーのオーナメントが点滅，雪が降る，きつねの周りに音符が表示されるという変化があることが分かる．
+\figref{fig:syoki}は，利用者が操作を行っていない画面の状態であり，音は再生されず，動物のキャラクターや背景の演出も変化しない．
+\figref{fig:ugoki}は，音が再生されている際の映像演出であり，きつねの位置を触った時の変化で，ギターの音色で曲が流れている状態である．
+\figref{fig:syoki}と比べて，楽曲が再生されている間，クリスマスツリーのオーナメントが点滅，雪が降る，きつねの周りに音符が表示されるという変化があることが分かる．
 
 また，音色に対応する動物が横に揺れたりその動物の周りに配置された音符のイラストが表示されたり消えたりするなど，音が流れている状態や，どの音色の音が流れているかが利用者に分かるようにした．
-具体的に示すと，図\ref{fig:change}は，利用者がハムスターの位置で壁を押した状態のときの映像変化である．
-図\ref{fig:ugoki}できつねの周りに音符が出現していたのがハムスターの周りになっていることが分かる．
+具体的に示すと，\figref{fig:change}は，利用者がハムスターの位置で壁を押した状態のときの映像変化である．
+\figref{fig:ugoki}できつねの周りに音符が出現していたのがハムスターの周りになっていることが分かる．
 
 
 
@@ -168,22 +165,22 @@ PythonからUDP通信によって送信された手の座標情報をUnity側で
 
 
 \begin{figure}[tb]
+    \centering
     \includegraphics[width=\linewidth]{syoki.png}
-    \caption{初期状態の画面}
-    \label{fig:syoki}
+    \caption{初期状態の画面}\label{fig:syoki}
 \end{figure}
 
 
 \begin{figure}[tb]
+    \centering
     \includegraphics[width=\linewidth]{ugoki.png}
-    \caption{音が再生された時の映像演出}
-    \label{fig:ugoki}
+    \caption{音が再生された時の映像演出}\label{fig:ugoki}
 \end{figure}
 
 \begin{figure}[tb]
+    \centering
     \includegraphics[width=\linewidth]{change.png}
-    \caption{操作位置に応じて動く動物が切り替わる演出}
-    \label{fig:change}
+    \caption{操作位置に応じて動く動物が切り替わる演出}\label{fig:change}
 \end{figure}
 
 
@@ -196,10 +193,11 @@ PythonからUDP通信によって送信された手の座標情報をUnity側で
 %4.1
 \subsection{参加イベントの概要}
 本研究で制作したシステムは，2025年11月28日に兵庫県立和田山特別支援学校で実施された「和田山特別支援学校UDゲーム交流会」で実践を行った．
+
 このイベントの目的は２つある．
-
+%
 １つ目は，ユニバーサルデザインのゲーム交流会を通じて，児童生徒が地域の方と協力しながら活動する中で，協調性やコミュニケーション能力を育むことである．
-
+%
 ２つ目は，デジタルファブリケーション体験会を通じて，特別支援教育におけるデジタル技術を活用したものづくりの可能性を広げ，創造的な学びのきっかけを提供することである．
 
 %4.2
@@ -233,14 +231,12 @@ PythonからUDP通信によって送信された手の座標情報をUnity側で
 
 \begin{figure}[tb]
     \includegraphics[width=\linewidth]{haichi.png}
-    \caption{各機材の配置}
-    \label{fig:haichi}
+    \caption{各機材の配置}\label{fig:haichi}
 \end{figure}
 
 \begin{figure}[tb]
     \includegraphics[width=\linewidth]{zissen.png}
-    \caption{各機材の配置・実践の様子}
-    \label{fig:zissen}
+    \caption{各機材の配置・実践の様子}\label{fig:zissen}
 \end{figure}
 
 
@@ -258,15 +254,14 @@ PythonからUDP通信によって送信された手の座標情報をUnity側で
 
 \begin{figure}[tb]
     \includegraphics[width=\linewidth]{zissen2.png}
-    \caption{体験の様子}
-    \label{fig:zissen2}
+    \caption{体験の様子}\label{fig:zissen2}
 \end{figure}
 
 %5
 \section{課題・今後の展望}
 
 %5.1
-\subsection{システムや実践環境についての課題}
+\subsection{\highlight{実践環境における機材配置と操作性}の課題}
 本研究で制作したシステムは，Webカメラを用いて利用者の手の動きを認識し，音色や映像の変化を利用者に体験してもらうことを目的とした．
 
 システム上の課題としては，上方向からのカメラと横方向からのカメラ２台を用いる構成が，操作性の向上にはつながらなかった点が挙げられる．
