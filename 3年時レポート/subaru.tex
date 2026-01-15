@@ -17,32 +17,9 @@
 楽曲の解析には Python を用い，
 music21 ライブラリによって
 以下の特徴量を抽出した。
-\begin{table}[H]
-\caption{抽出した特徴量一覧}
-\label{tab:features}
-\centering
-\renewcommand{\arraystretch}{2.1} % ← 1.5倍に広げる（1.2〜1.8くらいで調整）
-\begin{adjustbox}{width=\linewidth} % adjustboxで幅を100%に指定
-\begin{tabular}{lllll}
-特徴量                                      & 意味               & どの性質を表すか           &  &  \\
-measures                                 & 小節数              & 曲の長さ               &  &  \\
-avg\_chord\_size                         & 平均和音サイズ（同時発音数）   & 和声の厚み              &  &  \\
-seventh\_ratio                           & 7th和音の割合         & 和声の複雑さ             &  &  \\
-pitch\_mean                              & 平均音高             & 全体の音域の中心           &  &  \\
-pitch\_std                               & 音高の標準偏差          & メロディの動きの大きさ        &  &  \\
-pitch\_range                             & 最高音−最低音          & 音域の広さ              &  &  \\
-leap\_rate                               & 跳躍進行の割合          & メロディの飛び方の多さ        &  &  \\
-smoothness                               & 音程差の逆数的な指標       & 滑らかさ               &  &  \\
-up\_rate                                 & 上行音程の割合          & メロディの方向性（上昇か下降か）   &  &  \\
-\\
-\shortstack{dur\_whole/half/quarter/\\eighth/sixteenth} & 各音価の出現比率         & リズムの構成（長音中心か短音中心か） &  &  \\
-vel\_mean                                & 平均ベロシティ（強さ）      & 曲の平均的な音量           &  &  \\
-vel\_std                                 & ベロシティの変動         & 強弱表現の豊かさ           &  &  \\
-prog\_unique                             & ユニークな和音進行数       & ハーモニーの多様性          &  &  \\
-rn\_seq\_len                             & ローマ数字解析による進行列の長さ & 和声進行の規模            &  & 
-\end{tabular}
-\end{adjustbox}
-\end{table}
+% ================================
+\input{table_features.tex}
+% ================================
 本研究では、MIDIデータから抽出可能な特徴量のうち、
 音高、リズム、和声の三要素に基づく特徴量を使用した。
 
@@ -53,7 +30,7 @@ rn\_seq\_len                             & ローマ数字解析による進行�
 本研究では、楽曲特徴量の抽出および解析に Python を用いた。
 解析環境として、Python 3 系および以下の主要ライブラリを使用した。
 
-・楽曲解析ライブラリ（music21）
+\subsection{楽曲解析ライブラリ（music21）}
 
 本研究における楽曲特徴量の抽出には、
 Python 用音楽解析ライブラリ music21 を使用した。
@@ -72,7 +49,7 @@ music21 は、MIDI ファイルや楽譜データを対象として、
 これらの特徴量は、演奏表現ではなく楽曲構造そのものを捉える
 Symbolic 音楽解析に基づくものである。
 
-・データ処理および前処理（pandas / numpy）
+\subsection{データ処理および前処理（pandas / numpy）}
 
 抽出した特徴量は、
 Python のデータ解析ライブラリ pandas および numpy を用いて
@@ -82,7 +59,7 @@ Python のデータ解析ライブラリ pandas および numpy を用いて
 欠損値の補完や数値処理を行った後、
 後続の解析に利用可能な形式（CSV）として保存した。
 
-・標準化処理（scikit-learn）
+\subsection{標準化処理（scikit-learn）}
 
 異なるスケールを持つ特徴量を同時に扱うため、
 機械学習ライブラリ scikit-learn を用いて標準化を行った。
@@ -91,7 +68,7 @@ Python のデータ解析ライブラリ pandas および numpy を用いて
 Z-score 正規化を適用した。
 これにより、特定の特徴量が解析結果に過度に影響することを防いだ。
 
-・主成分分析（PCA）
+\subsection{主成分分析（PCA）}
 
 高次元特徴量空間の構造を把握するため、
 scikit-learn に実装されている 主成分分析（PCA） を用いた。
@@ -109,7 +86,7 @@ PCA は、特徴量間の相関を考慮しつつ分散を最大化する
 特に、第1主成分（PC1）および第2主成分（PC2）に着目し、
 楽曲データの分布を散布図として可視化した。
 
-・クラスタリング（K-means）
+\subsection{クラスタリング（K-means）}
 
 楽曲特徴量に基づく分類を行うため、
 scikit-learn に実装されている K-means クラスタリングを用いた。
@@ -121,7 +98,7 @@ K-means 法は、データ点間の距離に基づいて
 標準化後の特徴量空間を用いてクラスタリングを行い、
 楽曲の構造的な類似性を検討した。
 
-・可視化（matplotlib）
+\subsection{可視化（matplotlib）}
 
 解析結果の可視化には、
 Python の描画ライブラリ matplotlib を使用した。
@@ -132,122 +109,45 @@ Python の描画ライブラリ matplotlib を使用した。
 
 %4
 \section{分析}
+
+\input{table_chorale1}
+\input{table_chorale2}
+\input{table_chorale3}
+
+
 \subsection{分析1回目}
 まず、全楽曲を対象にクラスタリングを行った。
-PCAによる散布図を図\ref{fig:pca}に示す。
+PCAによる散布図を\figref{fig:pca}に示す。
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\linewidth]{fig/pca.png}
-  \caption{バッハのコラールのPCA散布図（K-meansで色分け）}
-  \label{fig:pca}
-\end{figure}
+
 
 黄色で示した部分がクラスタ0、青色で示した部分がクラスタ1である。
-また、クラスタごとの特徴量平均の比較を図\ref{fig:average1}に、クラスタごとのZ-score（平均からの相対距離）を図\ref{fig:Z-score1}に示す。
+また、クラスタごとの特徴量平均の比較を\figref{fig:average1}に、クラスタごとのZ-score（平均からの相対距離）を\figref{fig:Z-score1}に示す。
 
-\begin{figure}[H]
-  \centering
-  % --- 左側の画像 ---
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/average1.png}
-    \subcaption{クラスタごとの特徴量平均の比較}
-    \label{fig:average1}
-  \end{minipage}
-  \hfill % 左右の間に適度な空白を入れる
-  % --- 右側の画像 ---
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/Z-score1.png}
-    \subcaption{クラスタごとのZ-score}
-    \label{fig:Z-score1}
-  \end{minipage}
-  
-  \caption{バッハのコラールの分析をヒートマップで可視化したもの}
-  \label{fig:total1}
-\end{figure}
 
 \subsection{分析2回目}
 クラスタ1の構成曲の数を調べた所、約400曲含まれていたため、さらに分類ができるのではないかと思い、クラスタ1のみを使い再びクラスタリングを行った。
-PCAによる散布図を図\ref{fig:cluster1pca}に示す。
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\linewidth]{fig/cluster1pca.png}
-  \caption{バッハのコラールクラスタ1のPCA散布図(k-meansで色分け)}
-  \label{fig:cluster1pca}
-\end{figure}
+PCAによる散布図を\figref{fig:cluster1pca}に示す。
 
 黄色で示した部分がサブクラスタ0、青色で示した部分がサブクラスタ1である。
-また、クラスタごとの特徴量平均の比較を図\ref{fig:average2}に、クラスタごとのZ-score（平均からの相対距離）を図\ref{fig:Z-score2}に示す。
+また、クラスタごとの特徴量平均の比較を\figref{fig:average2}に、クラスタごとのZ-score（平均からの相対距離）を\figref{fig:Z-score2}に示す。
 
-\begin{figure}[H]
-  \centering
-  % --- 左側の画像 ---
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/average2.png}
-    \subcaption{クラスタごとの特徴量平均の比較（クラスタ1のみ）}
-    \label{fig:average2}
-  \end{minipage}
-  \hfill % 左右の間に適度な空白を入れる
-  % --- 右側の画像 ---
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/Z-score2.png}
-    \subcaption{クラスタごとのZ-score（クラスタ1のみ）}
-    \label{fig:Z-score2}
-  \end{minipage}
-  
-  \caption{バッハのコラールの分析をヒートマップで可視化したもの（クラスタ1のみ）}
-  \label{fig:total2}
-\end{figure}
+
 
 \subsection{分析3回目}
 サブクラスタ1を見た所、まだ約300曲含まれていたため、さらに分類ができるのではないかと思い、クラスタ1のみを使い再びクラスタリングを行った。
-PCAによる散布図を図\ref{fig:cluster11pca}に示す。
+PCAによる散布図を\figref{fig:cluster11pca}に示す。
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\linewidth]{fig/cluster11.png}
-  \caption{バッハのコラールクラスタ1のPCA散布図(k-meansで色分け)}
-  \label{fig:cluster11pca}
-\end{figure}
-
-また、クラスタごとの特徴量平均の比較を図\ref{fig:average11}に、クラスタごとのZ-score（平均からの相対距離）を図\ref{fig:Z-score11}に示す。
-
-\begin{figure}[H]
-  \centering
-  % --- 左側の画像 ---
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/average11.png}
-    \subcaption{クラスタごとの特徴量平均の比較（サブクラスタ1のみ）}
-    \label{fig:average11}
-  \end{minipage}
-  \hfill % 左右の間に適度な空白を入れる
-  % --- 右側の画像 ---
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/Z-score11.png}
-    \subcaption{クラスタごとのZ-score（サブクラスタ1のみ）}
-    \label{fig:Z-score11}
-  \end{minipage}
-
-  \caption{バッハのコラールの分析をヒートマップで可視化したもの（サブクラスタ1のみ）}
-  \label{fig:total11}
-\end{figure}
-
+また、クラスタごとの特徴量平均の比較を\figref{fig:average11}に、クラスタごとのZ-score（平均からの相対距離）を\figref{fig:Z-score11}に示す。
 
 \section{結果と考察}
-一回目の分析の結果，図\ref{fig:Z-score1}より、クラスタ0がクラスタ1に対して楽曲の長さ、音域の広さ、16分音符の割合、和声進行の規模が大きくなっており、クラスタ0は曲が長く、多数の音域と細かいリズムで複雑な曲が含まれていると推測できる。
+一回目の分析の結果，\figref{fig:Z-score1}より、クラスタ0がクラスタ1に対して楽曲の長さ、音域の広さ、16分音符の割合、和声進行の規模が大きくなっており、クラスタ0は曲が長く、多数の音域と細かいリズムで複雑な曲が含まれていると推測できる。
 一方、クラスタ1は曲が短く、音域が狭く、長い音符が多い単純な曲が含まれていると考えられる。
-二回目の分析の結果，図\ref{fig:Z-score2}より、サブクラスタ0は半音符の割合が高く、四分音符の割合が低くなっています。曲の長さもサブクラスタ0とサブクラスタ1では相違が見られます。
+二回目の分析の結果，\figref{fig:Z-score2}より、サブクラスタ0は半音符の割合が高く、四分音符の割合が低くなっています。曲の長さもサブクラスタ0とサブクラスタ1では相違が見られます。
 このことから、サブクラスタ0はリズムがゆったりとした曲が多く含まれていると推測できる。
-三回目の分析の結果、図\ref{fig:Z-score11}より、サブクラスタ2とサブクラスタ3では大きな相違が見られている。
-しかし、図\ref{fig:average11}を見た所、例で言うとdur\_sixteenthの割合が他のクラスタが0に近いのに対し、サブクラスタ2は0.07であり、全体的に数値が小さくなっていることが分かる。
-また、図\ref{fig:cluster11pca}を見ると、各クラスタに大きな境がなく、クラスタリングがうまくいっていない可能性があると考えられる。このことから、クラスタリングを行い過ぎていると考えられる。
+三回目の分析の結果、\figref{fig:Z-score11}より、サブクラスタ2とサブクラスタ3では大きな相違が見られている。
+しかし、\figref{fig:average11}を見た所、例で言うとdur\_sixteenthの割合が他のクラスタが0に近いのに対し、サブクラスタ2は0.07であり、全体的に数値が小さくなっていることが分かる。
+また、\figref{fig:cluster11pca}を見ると、各クラスタに大きな境がなく、クラスタリングがうまくいっていない可能性があると考えられる。このことから、クラスタリングを行い過ぎていると考えられる。
 また、サブクラスタ1に含まれている曲がバッハが作成するコラール曲の特徴を多く含んでいるものと推測できる。
 
 
@@ -255,13 +155,13 @@ PCAによる散布図を図\ref{fig:cluster11pca}に示す。
 一回目の分析の結果、楽曲の長さがクラスタリングに影響を与えている可能性があると述べた。
 そのため、楽曲の長さが各特徴量にどのような影響を及ぼしているのかを相関係数を用いて考えてみる。
 
-\begin{figure}[H]
+\begin{figure}[tb]
   \centering
-  \includegraphics[width=0.9\linewidth]{fig/相関関係値.png}
+  \includegraphics[width=0.9\linewidth]{fig/correlation.png}
   \caption{各特徴量の相関係数}
   \label{fig:soukan11}
 \end{figure}
-図\ref{fig:soukan11}に今回研究に使用した全楽曲を対象とした各特徴量の相関係数を示す。
+\figref{fig:soukan11}に今回研究に使用した全楽曲を対象とした各特徴量の相関係数を示す。
 特に0.7以上という強い相関がみられた4例\\
 measures $\leftrightarrow$ rn\_seq\_len：r $\approx$ 0.90\\
 pitch\_std $\leftrightarrow$ pitch\_range：r $\approx$ 0.89\\
@@ -278,16 +178,16 @@ leap\_rate $\leftrightarrow$ smoothness：r $\approx$ 0.72\\
 これは、音域が広い楽曲ほど音高の分布も大きくなる傾向を反映している。
 この二つについて、全楽曲を対象に平均を取った表が以下の通りである。
 
-\begin{table}[H]
-\caption{音高の標準偏差と音域の平均値}
-\label{tab:pitch}
-\renewcommand{\arraystretch}{1.8} % ← 1.5倍に広げる（1.2〜1.8くらいで調整）
-\centering
-\begin{tabular}{cc}
-pitch\_std & pitch\_range \\
-3.07 & 12.75 \\
-\end{tabular}
-\end{table} 
+\begin{table}[t]
+  \centering
+  \caption{音高の標準偏差と音域の平均値}
+  \label{tab:pitch}
+  % \renewcommand{\arraystretch}{1.8} % ← 1.5倍に広げる（1.2〜1.8くらいで調整）
+  \begin{tabular}{cc}\hline
+    pitch\_std & pitch\_range \\\hline\hline
+    3.07       & 12.75        \\\hline
+  \end{tabular}
+\end{table}
 
 \ref{tab:pitch}より、音域幅は12音半、1オクターブくらいであり、標準偏差が約3半音で、主に中心音付近で旋律が動いている、典型的なコラールであると分かる。
 この、12音半というのは音域として狭く、標準偏差も3しかないことから端まで使うことはあるが滞在時間は短いことが分かる。
@@ -298,26 +198,26 @@ pitch\_std & pitch\_range \\
 平均和音サイズ（\texttt{avg\_chord\_size}）と7th和音比率（\texttt{seventh\_ratio}）の間に、0.87と強い正の相関が確認された。
 これは、和音の厚みが増すほど、7thコードの使用頻度も高まる傾向を反映している。
 この二つについて、全楽曲を対象に平均を取った表が以下の通りである
-\begin{table}[H]
-\caption{平均和音サイズと7th和音比率の平均値}
-\label{tab:chord}
-\renewcommand{\arraystretch}{1.8} % ← 1.5倍に
-\centering
-\begin{tabular}{cc}
-avg\_chord\_size & seventh\_ratio \\
-3.22 & 0.29 \\
-\end{tabular}
+\begin{table}[t]
+  \centering
+  \caption{平均和音サイズと7th和音比率の平均値}
+  \label{tab:chord}
+  % \renewcommand{\arraystretch}{1.8} % ← 1.5倍に
+  \begin{tabular}{cc}\hline
+    avg\_chord\_size & seventh\_ratio \\ \hline\hline
+    3.22             & 0.29           \\\hline
+  \end{tabular}
 \end{table}
 
 このことから、バッハのコラールの平均和音は3.22音、7th和音は全和音の約29\%を占めていることが分かる。
 バッハのコラールでは三和音が基本構造であり、7th和音の使用は和声的な緊張や進行上の機能として現れるため、7th和音の割合が増加すると平均構成音数も自然に増加すると考えられる。
 この二つの特徴量について考えた所、一般的な楽曲では3和音もしくは7th和音が多く使われる。実際に、バッハのコラールではこの２つしか使っていないと仮定すると
 \[
-\text{avg\_chord\_size} = 3 \cdot p_3 + 4 \cdot p_4 \quad (p_3 + p_4 = 1)
+  \text{avg\_chord\_size} = 3 \cdot p_3 + 4 \cdot p_4 \quad (p_3 + p_4 = 1)
 \]
 という式が立てられる。しかし、p4に7th和音の割合を代入すると
 \[
-3 \cdot (1 - 0.29) + 4 \cdot 0.29 = 3.29
+  3 \cdot (1 - 0.29) + 4 \cdot 0.29 = 3.29
 \]
 
 となり、\texttt{avg\_chord\_size} = 3.22とは小さい値となるため、バッハのコラールには2つ以下の音がなっている場所も存在していると考えられる。
@@ -353,6 +253,6 @@ avg\_chord\_size & seventh\_ratio \\
 \end{document}
 
 \begin{acknowledgment}
-	本稿の執筆にあたり，参考文献に挙げた方々のWebサイト，スライド，各種資料を大いに参考にさせていただいた．
+  本稿の執筆にあたり，参考文献に挙げた方々のWebサイト，スライド，各種資料を大いに参考にさせていただいた．
 \end{acknowledgment}
 
