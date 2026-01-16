@@ -993,42 +993,27 @@ Cantabile（青線）では，+20msが適用され，Maestosoよりも緩やか�
 
 % -6.3.2 CC2パラメータの変化と考察 -
 \subsubsection{CC2パラメータの変化と考察}
-上記のプロセスによって生成されたCC2値の推移を\figref{fig:Air_cc2_original}，\figref{fig:Air_cc2_dolce},\figref{fig:Air_cc2_processed}に示す．
+上記のプロセスによって生成されたCC2値の推移を段階ごとに比較したグラフを\figref{fig:Air_cc2_result}に示す．
+グラフ中の緑線は加工前のCC2値，オレンジ線はベースとなる「Dolce」を適用した後のCC2値，青線は最終的な階層的表現を適用した後のCC2値の推移をそれぞれ表している．
 
 % 図25
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{../fig/Air_cc2_original.png}
-	\caption{階層的表現の適用によるCC2値の変化（加工前）}
-	\label{fig:Air_cc2_original}
+	\includegraphics[width=\hsize]{../fig/Air_cc2_result.png}
+	\caption{階層的表現の適用によるCC2値の変化の比較}
+	\label{fig:Air_cc2_result}
 \end{figure}
 
-% 図26
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/Air_cc2_dolce.png}
-	\caption{階層的表現の適用によるCC2値の変化（ベースとなる「Dolce」適用後）}
-	\label{fig:Air_cc2_dolce}
-\end{figure}
-
-% 図27
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/Air_cc2_processed.png}
-	\caption{階層的表現の適用によるCC2値の変化（最終的な階層的表現を適用後）}
-	\label{fig:Air_cc2_processed}
-\end{figure}
-
-これらの図は，本アプローチの有効性を明確に示している．
-加工前の平坦なCC2値（\figref{fig:Air_cc2_original}）に対し，まず「Dolce」を適用することで，全体が抑えられた緩やかな山型のカーブ（\figref{fig:Air_cc2_dolce}）が形成される．
-最終的な出力である\figref{fig:Air_cc2_processed}では，この「Dolce」によって形成されたベースラインの上に，「Cantabile」による緩やかな盛り上がりが3～4小節目に現れる．
-そして，その流れを引き継ぐ形で，5小節目には「Appassionato」によるダイナミックなピークが形成されている．
+\figref{fig:Air_cc2_result}は，本アプローチの有効性を明確に示している．
+加工前の平坦なCC2値（緑線）に対し，まずフレーズ全体に「Dolce」を適用することで，全体が抑えられた緩やかな山型のカーブ（オレンジ線）が形成される．
+次に，このオレンジ線を新たな基準値として局所的な加工が行われる．
+最終的な出力である青線を見ると，ベースラインの上に3～4小節目の「Cantabile」による緩やかな盛り上がりが現れ，その流れを引き継ぐ形で，5小節目には「Appassionato」によるダイナミックなピークが形成されていることがわかる．
 
 ここでは，後から適用された「Cantabile」や「Appassionato」のカーブが，元のMIDIデータのCC2値を基準にするのではなく，先行して適用された「Dolce」のカーブの値を新たな基準として再計算・生成されている．
 これにより，大きなフレーズの流れを汲みつつ部分的な性格を変化させるという，音楽的に自然な階層性がパラメータレベルで実現されている．
 
 この結果は，本システムがユーザによる段階的な加工プロセスを通じて，単一のプリセットでは実現できない，多層的な楽曲の表現意図を構築できることを示している．
-演奏者は，大きなフレーズの全体像（Dolce）を描いた後，その中の特定の区間に対して「少し歌わせる（Cantabile）」「情熱的に盛り上げる（Appasionato）」といった，複数の異なるレベルの表情付けを施すことができる．
+演奏者は，大きなフレーズの全体像（Dolce）を描いた後，その中の特定の区間に対して「少し歌わせる（Cantabile）」「情熱的に盛り上げる（Appassionato）」といった，複数の異なるレベルの表情付けを施すことができる．
 これは，楽曲の物語性を深く解釈し，それを具体的なパラメータとして具現化する創造的なプロセスであり，本システムの有効性を強く示すものである．
 
 % -6.4 今後の課題と展望 -
