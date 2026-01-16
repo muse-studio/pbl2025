@@ -10,11 +10,9 @@
 *.bbl
 *.dvi
 .DS_Store
-<<<<<<< HEAD
 2023/*
 unused/*
 _main 2.synctex(busy)
-=======
 PBL報告書*/*
 ipsj_*/*
->>>>>>> chk-minato
+卒業論文*/*
