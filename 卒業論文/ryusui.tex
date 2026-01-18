@@ -697,13 +697,7 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 
 \subsubsection{CSV形式での出力} \label{sec:csvoutput}
 
-このようにして、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、以下の情報を学習用CSVデータとして出力した（\tabref{tab:csv-live}）。
-
-\begin{enumerate}
-	\item \textbf{時間（秒）}
-	\item \textbf{音響特徴量}
-	\item \textbf{照明特徴量}
-\end{enumerate}
+このようにして、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、\textbf{「時間（秒）」}、\textbf{「音響特徴量」}、\textbf{「照明特徴量」}の情報を学習用CSVデータとして出力した（\tabref{tab:csv-live}）。
 
 \subsection{照明予測モデル$\beta$の学習} \label{sec:modelthink}
 
@@ -752,9 +746,6 @@ MIDIデータを学習データとする目的は、以下の点にある。
         音階練習や基本的な運弓・音程感覚の習得を目的とした楽曲が多く、比較的安定した音高変化と明瞭なフレーズ構造を持つ。
 \end{itemize}
 
-MIDIデータは、演奏音の音高、音価、発音タイミングなどを厳密に数値情報として保持しているため、音響特徴量抽出において再現性が高く、楽曲間の比較にも適している。
-特に、これらの練習曲・技巧曲は、音楽教育の現場でも広く使用されており、ヴァイオリン演奏の典型的な音域・音色変化・フレーズ構造を網羅している点で、本研究の補助的データとして有用である。
-
 \subsubsection{音響特徴量の抽出} \label{sec:otomidi}
 
 MIDIデータは直接音響特徴量を算出することができないため、音声信号へ変換する必要がある。
@@ -771,13 +762,7 @@ MIDIデータは直接音響特徴量を算出することができないため�
 
 \subsubsection{CSV形式での出力}
 
-各MIDIファイルについて、以下の情報を1つのCSVデータとして出力した（\tabref{tab:csvmidi}）。
-
-\begin{enumerate}
-	\item \textbf{時間（秒）}
-	\item \textbf{音響特徴量}
-	\item \textbf{照明予測モデル$\beta$による推定照明特徴量}
-\end{enumerate}
+各MIDIファイルについて、「\textbf{「時間（秒）」}」「\textbf{「音響特徴量」}」「\textbf{「照明予測モデル$\beta$による推定照明特徴量」}」の情報を1つのCSVデータとして出力した（\tabref{tab:csvmidi}）。
 
 \begin{table*}[t]
 \centering
