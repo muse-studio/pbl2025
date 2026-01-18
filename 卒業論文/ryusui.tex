@@ -695,9 +695,9 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
         前後5秒の局所FFT を行うことで点滅に対応する周波数成分を推定し、csvに書き出した。
 \end{itemize}
 
-\subsubsection{CSV形式での出力} \label{sec:csvoutput}
+\subsubsection{データベースとしての出力} \label{sec:csvoutput}
 
-このようにして、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、\textbf{「時間（秒）」}、\textbf{「音響特徴量」}、\textbf{「照明特徴量」}の情報を学習用CSVデータとして出力した（\tabref{tab:csv-live}）。
+このようにして、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、\textbf{「時間（秒）」}、\textbf{「音響特徴量」}、\textbf{「照明特徴量」}を学習用CSVデータとして出力した（\tabref{tab:csv-live}）。
 
 \subsection{照明予測モデル$\beta$の学習} \label{sec:modelthink}
 
@@ -746,6 +746,8 @@ MIDIデータを学習データとする目的は、以下の点にある。
         音階練習や基本的な運弓・音程感覚の習得を目的とした楽曲が多く、比較的安定した音高変化と明瞭なフレーズ構造を持つ。
 \end{itemize}
 
+これらのMIDIデータは、音楽教育において広く使用されており、ヴァイオリン演奏の典型的な音域・音色変化・フレーズ構造を網羅している点で、本モデルのデータソースとして有用である。
+
 \subsubsection{音響特徴量の抽出} \label{sec:otomidi}
 
 MIDIデータは直接音響特徴量を算出することができないため、音声信号へ変換する必要がある。
@@ -760,9 +762,9 @@ MIDIデータは直接音響特徴量を算出することができないため�
 本モデルは、ライブ映像データから学習した「音響特徴量と照明特徴量の対応関係」を保持しており、MIDI由来の音響特徴量に対しても照明特徴量を推定することが可能である。
 推定される照明特徴量は、RGB値、Brightness、点滅速度の3種類である。
 
-\subsubsection{CSV形式での出力}
+\subsubsection{データベースとしての出力}
 
-各MIDIファイルについて、「\textbf{「時間（秒）」}」「\textbf{「音響特徴量」}」「\textbf{「照明予測モデル$\beta$による推定照明特徴量」}」の情報を1つのCSVデータとして出力した（\tabref{tab:csvmidi}）。
+各MIDIファイルについて、「\textbf{「時間（秒）」}」「\textbf{「音響特徴量」}」「\textbf{「照明予測モデル$\beta$による推定照明特徴量」}」を1つのCSVデータとして出力した（\tabref{tab:csvmidi}）。
 
 \begin{table*}[t]
 \centering
