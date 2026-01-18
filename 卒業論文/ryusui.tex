@@ -129,9 +129,8 @@
 
 \ref{sec:design-policy}節の設計方針に基づき、本研究ではヴァイオリン演奏に基づくリアルタイム照明制御システムを構築した。
 
-本システムは、ヴァイオリン演奏に伴う音響特徴量および演奏動作情報を入力とし、機械学習モデルによって推定された照明特徴量を、舞台照明分野で標準的に用いられている DMX512 プロトコルを用いて照明機器へ出力する構成となっている。
-DMX512 は、照明機器のRGB値やBrightness、動作を数値データとして制御する一方向通信方式であり、1 チャンネルあたり 0～255 の値によって各制御パラメータを指定する(\figref{fig:system-structure})。
-
+本システムは、ヴァイオリン演奏に伴う音響特徴量および演奏動作情報を入力とし、機械学習モデルによって推定された照明特徴量を、舞台照明分野で標準的に用いられている DMX512 プロトコルを用いて照明機器へ出力する構成となっている(\figref{fig:system-structure})。
+DMX512 は、照明機器のRGB値やBrightness、動作を数値データとして制御する一方向通信方式であり、1 チャンネルあたり 0～255 の値によって各制御パラメータを指定する。
 本研究では、この DMX512 を用いることで、演奏に基づく制御信号を実際の照明機器に直接反映可能とし、現実のステージ環境に即したリアルタイム照明演出を実現している。
 
 \begin{figure}[tb]
@@ -342,7 +341,7 @@ PCに送信されたx軸のジャイロデータをもとに、弓方向の判�
 \subsection{機械学習モデルによる照明特徴量推定} \label{sec:light}
 
 抽出された音響特徴量を用いて、機械学習モデルにより照明特徴量を推定する。
-モデルは\textbf{「RGB値」}、\textbf{「Brightness」}、\textbf{「点滅速度」}の3つの照明特徴量を出力する。
+モデルは\textbf{「RGB値」}\textbf{「Brightness」}\textbf{「点滅速度」}の3つの照明特徴量を出力する。
 推定値は0〜1の正規化値として出力され、DMX出力時に0〜255の整数値へスケーリングされる。
 また、機械学習モデルの学習方法については次章で詳述する。
 
@@ -390,7 +389,6 @@ DMX信号の出力には、USB接続のDMXインタフェース（\figref{fig:dm
 \subsubsection{演奏動作情報のDMX値への変換}
 
 音響特徴量から推定された照明特徴量とは別に、ZIG-SIMによって取得した運弓方向情報をDMX制御に直接反映させている。
-
 具体的には、運弓方向に応じて上下動作のDMXチャンネル（チャンネル2）の値を変更し、照明の上下動作を演奏者の弓の動きに同期させている。
 
 \begin{itemize}
@@ -420,12 +418,13 @@ Random Forest では、各決定木において分岐に使用された特徴量
 
 \noindent \textbf{(1) 音響特徴量と照明色（R成分）の対応関係}
 
-解析の結果、$\mathrm{RMS}$（音量）が最も高い重要度を示し、次いで $\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$、$\mathrm{MFCC\_19}$、$\mathrm{Spectral Contrast}$ の順となった（{fig:rlightstyle}）。
+解析の結果、$\mathrm{RMS}$（音量）が最も高い重要度を示し、次いで $\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$、$\mathrm{MFCC\_19}$、$\mathrm{Spectral Contrast}$ の順となった（\figref{fig:rlightstyle}）。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/rlightstyle.png}
-	\caption{照明色（R成分）に対する音響特徴量}\label{fig:rlightstyle}
+	\caption{照明色（R成分）に対する音響特徴量}
+	\label{fig:rlightstyle}
 \end{figure}
 
 R成分の予測においてはRMSが最も高い重要度を示した。このことから、赤色成分の強度は音量の大きさに強く影響されていることが分かる。
@@ -441,7 +440,8 @@ R成分の予測においてはRMSが最も高い重要度を示した。この�
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/glightstyle.png}
-	\caption{照明色（G成分）に対する音響特徴量}\label{fig:glightstyle}
+	\caption{照明色（G成分）に対する音響特徴量}
+	\label{fig:glightstyle}
 \end{figure}
 
 G成分において RMS が圧倒的な重要度を示したことから、緑色成分の強度は他の要因に比べて音量にほぼ支配的に決定されていることが明らかとなった。
@@ -456,12 +456,13 @@ R成分の解析結果では、RMS に加えて Tonnetz や MFCC が比較的高
 \noindent \textbf{(3) 音響特徴量と照明色（B成分）の対応関係}
 
 解析の結果、RMS が約70.2\% と最も高い重要度を示した。
-次いで  $\mathrm{MFCC\_19}$（約14.9\%）が比較的高い寄与を示し、 $\mathrm{Chroma\_7}$、$\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$ はそれぞれ約5\%前後であった（{fig:blightstyle}）。
+次いで  $\mathrm{MFCC\_19}$（約14.9\%）が比較的高い寄与を示し、 $\mathrm{Chroma\_7}$、$\mathrm{Tonnetz\_6}$、$\mathrm{MFCC\_5}$ はそれぞれ約5\%前後であった（\figref{fig:blightstyle}）。
 
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/blightstyle.png}
-	\caption{照明色（B成分）に対する音響特徴量}\label{fig:blightstyle}
+	\caption{照明色（B成分）に対する音響特徴量}
+	\label{fig:blightstyle}
 \end{figure}
 
 B成分においても RMS が最も支配的な特徴量であることから、青色照明も音量変化に大きく依存していることが分かる。
@@ -486,7 +487,8 @@ RMS が約8割近い寄与率を示したことから、照明の明るさは主
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/brilightstyle.png}
-	\caption{照明のBrightnessに対する音響特徴量}\label{fig:brightnessstyle}
+	\caption{照明のBrightnessに対する音響特徴量}
+	\label{fig:brightnessstyle}
 \end{figure}
 
 RMS に次いで $\mathrm{Tonnetz\_6}$の重要度が高かった。
@@ -506,7 +508,8 @@ RGB 各成分と照明のBrightnessの関係を比較すると、Brightnessは R
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/blinklightstyle.png}
-	\caption{照明の点滅速度に対する音響特徴量}\label{fig:blinkstyle}
+	\caption{照明の点滅速度に対する音響特徴量}
+	\label{fig:blinkstyle}
 \end{figure}
 
 点滅速度において最も大きな影響を与えているのは Chroma 系特徴量であり、特に $\mathrm{Chroma\_7}$ および $\mathrm{Chroma\_1}$ が全体の約50\%を占めている。
@@ -527,7 +530,7 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 
 本章では、\ref{sec:light}節で述べたヴァイオリン演奏音から照明特徴量を予測する機械学習モデルの構築方法について詳述する。
 
-本研究では、音響特徴量を入力とし、それらの照明特徴量を予測するモデルを用いて照明の制御を行っている。
+本研究では、音響特徴量を入力とし、照明特徴量を予測するモデルを用いて照明の制御を行っている。
 最終的に構築されたモデルは、リアルタイムの演奏音を入力として照明を自動制御する「照明予測モデル」として機能する。
 照明予測モデルの構築は以下の生成フローから成り立っている。
 
@@ -551,13 +554,13 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 
 本研究では、最終的にリアルタイム照明制御に用いる照明予測モデルを構築する前段階として、照明予測モデル$\beta$を学習する。
 
-照明予測モデル$\beta$は、実際のヴァイオリン演奏におけるライブ映像から取得した実測データのみを用いて学習され、音響特徴量から照明特徴量の予測を行うモデルである。
+照明予測モデル$\beta$は、実際のヴァイオリン演奏におけるライブ映像から取得した実測データのみを用い、音響特徴量から照明特徴量の予測を行うモデルである。
 しかし、本研究で学習に用いるライブ演奏映像は 3 種類と限られており、このデータのみでは十分な学習データ量を確保することが難しい。
 
-そこで、本研究では、照明予測モデル$\beta$を最終的な照明予測モデルの学習に用いるデータベースの構築に利用した。
-具体的には、約600種類のMIDIデータから照明特徴量を推定するための中間的なデータとした。
+そこで、本研究では、照明予測モデル$\beta$を照明予測モデルの学習のための中間データとして位置付けた。
+具体的な説明は\ref{sec:midi}節にて後述する。
 
-本節では、この照明予測モデル$\beta$を学習させるために構築したデータベースについて述べる。
+まず本節では、この照明予測モデル$\beta$を学習させるために構築したデータベースについて述べる。
 
 \subsubsection{映像データの収集}
 
@@ -692,24 +695,30 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
         前後5秒の局所FFT を行うことで点滅に対応する周波数成分を推定し、csvに書き出した。
 \end{itemize}
 
-以上により、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、学習用CSVデータとして構築した。
+\subsubsection{CSV形式での出力} \label{sec:csvoutput}
 
-最後に、これらを1つのデータセットとして統合し、照明予測モデルの学習に使用した（\tabref{tab:csv-live}）。
+このようにして、各映像から音響特徴量と照明特徴量のペアを1秒ごとに抽出し、以下の情報を学習用CSVデータとして出力した（\tabref{tab:csv-live}）。
+
+\begin{enumerate}
+	\item \textbf{時間（秒）}
+	\item \textbf{音響特徴量}
+	\item \textbf{照明特徴量}
+\end{enumerate}
 
 \subsection{照明予測モデル$\beta$の学習} \label{sec:modelthink}
 
 \ref{sec:database}節で収集した学習用CSVデータを用いて、照明予測モデル$\beta$の学習を行った。
 
 \begin{itemize}
-	\item \textbf{入力変数：}
+	\item \textbf{入力：}
         照明予測モデル$\beta$への入力として使用した音響特徴量のデータセットは\ref{sec:soundmodel}項で述べた通りである。
-    \item \textbf{出力変数：}
+    \item \textbf{出力：}
         照明予測モデル$\beta$の出力として使用した照明特徴量のデータセットは\ref{sec:lightmodel}項で述べた通りである。
     \item \textbf{学習方法：}
         照明予測モデル$\beta$には、回帰モデルとして Random Forest Regressorを採用した。
         Random Forest は複数の決定木を組み合わせたアンサンブル学習手法である。
         決定木の本数は100とし、学習精度と計算コストのバランスを考慮した。
-        そして、前述したデータセットを用いて Random Forest モデルを学習し、音響特徴量と照明特徴量の対応関係を獲得した。
+        そして、\ref{sec:csvoutput}で述べたデータセットを用いて Random Forest モデルを学習し、音響特徴量と照明特徴量の対応関係を獲得した。
         学習が完了したモデルは、再利用を目的として joblib を用いてファイルとして保存した。
 \end{itemize}
 
@@ -719,8 +728,7 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 
 本研究では、約600種類のMIDIデータを音声信号へ変換した上で、音響特徴量を抽出し、照明予測モデル$\beta$によって照明特徴量を推定するという処理フローを採用した。
 これにより、MIDIデータから得られた音響特徴量と対応する照明特徴量のデータベースを構築することができる。
-
-また、MIDIデータを学習データとする目的は、以下の点にある。
+MIDIデータを学習データとする目的は、以下の点にある。
 
 \begin{enumerate}
 	\item \textbf{演奏音の多様性を拡張するため}　\\
@@ -735,6 +743,7 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 
 本研究で使用したMIDIデータは、ヴァイオリン演奏において代表的かつ教育的価値の高い楽曲群から構成されている。
 具体的には、「Paganini\cite{Paganini24Violin}」、「Kayser\cite{36ViolinStudies}」、「Wohlfahrt\cite{FreeSheetMusic}」の作品を中心としたヴァイオリンソロのMIDIデータを用いた。
+各作品の特徴は以下の通りである。
 
 \begin{itemize}
 	\item \textbf{Paganini：}
@@ -748,7 +757,7 @@ MIDIデータは、演奏音の音高、音価、発音タイミングなどを�
 
 \subsubsection{音響特徴量の抽出} \label{sec:otomidi}
 
-まず、MIDIデータは直接音響特徴量を算出することができないため、音声信号へ変換する必要がある。
+MIDIデータは直接音響特徴量を算出することができないため、音声信号へ変換する必要がある。
 本研究では、ソフトウェアシンセサイザー FluidSynth\cite{FluidSynthSoftwareSynthesizer}を用い、MIDIファイルをWAV形式へ変換した。
 
 生成されたWAVファイルに対し、Pythonライブラリ librosa を用いて音響特徴量を抽出した。
@@ -829,9 +838,9 @@ MIDIデータは、演奏音の音高、音価、発音タイミングなどを�
 本節では、\ref{sec:midi}節で生成したデータベースをもとに、照明予測モデルの学習を行った。
 
 \begin{itemize}
-	\item \textbf{入力変数：}
+	\item \textbf{入力：}
 		照明予測モデルへの入力として使用した音響特徴量のデータセットは\ref{sec:otomidi}項で述べた通りである。
-	\item \textbf{出力変数：}
+	\item \textbf{出力：}
 		照明予測モデルの出力として使用した照明特徴量のデータセットは\ref{sec:lightmidi}項で述べた通りである。
 	\item \textbf{学習方法：}
 		学習手法としては、\ref{sec:modelthink}節と同様に Random Forest Regressor を採用した。
