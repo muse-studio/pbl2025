@@ -159,7 +159,7 @@ DMX512 は、照明機器のRGB値やBrightness、動作を数値データとし
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=\hsize]{../fig/dmx-light.png}
+	\includegraphics[width=0.3\textwidth]{../fig/dmx-light.png}
 	\caption{USB-DMXインタフェース（左）とDMX対応照明機器（右）}\label{fig:dmx-light}
 \end{figure}
 
@@ -675,7 +675,7 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 \end{tabular}
 \end{table*}
 
-まず、照明特徴量の抽出における映像への前処理として、YOLOv8\cite{YOLOv8StateoftheArtComputer} を用いた人物領域の除外を行う。
+まずは、照明特徴量の抽出における映像への前処理として、YOLOv8\cite{YOLOv8StateoftheArtComputer} を用いた人物領域の除外を行う。
 人物領域を含んだままRGB値やBrightnessを算出すると、肌色や衣服の色、演奏者の動きによる輝度変化が混入し、照明そのものの変化を正確に捉えることができない。
 
 そこで本研究では、人物検出後に膨張処理を施し、演奏者周囲も含めて背景から除外した。
@@ -831,8 +831,7 @@ MIDIデータは直接音響特徴量を算出することができないため�
 		学習手法としては、\ref{sec:modelthink}節と同様に Random Forest Regressor を採用した。
         モデル構造や主要なハイパーパラメータも、同一に設定している。
         データセットは、モデルの汎化性能を評価するため、全体の80\%を学習用データ、20\%をテスト用データに分割した。
-        分割はランダムに行い、乱数シードを固定することで実験の再現性を確保した。
-		そして、分割された学習用データを用いて Random Forest モデルの学習を実行し、音響特徴量と照明特徴量の対応関係を獲得した。
+		この学習用データを用いて Random Forest モデルの学習を実行し、音響特徴量と照明特徴量の対応関係を獲得した。
         学習が完了したモデルは、 joblib を用いてファイルとして保存し、リアルタイム照明制御システムに直接組み込んだ。
 \end{itemize}
 
@@ -925,6 +924,18 @@ MIDIデータは直接音響特徴量を算出することができないため�
 \figref{fig:takeyouwithme-Amelody-Bmelody}、\figref{fig:takeyouwithme-chorus}に、実演中の照明変化の様子を示す。
 これらの画像は、前述した実演環境にて、ヴァイオリン演奏曲『君に乗せて』を演奏した際の照明挙動を記録したものである。
 
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{../fig/takeyouwithme-Amelody-Bmelody.png}
+	\caption{『君に乗せて』実演中の照明変化の様子（Aメロ～Bメロ）}\label{fig:takeyouwithme-Amelody-Bmelody}
+\end{figure}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{../fig/takeyouwithme-chorus.png}
+	\caption{『君に乗せて』実演中の照明変化の様子（サビ）}\label{fig:takeyouwithme-chorus}
+\end{figure}
+
 \noindent \textbf{(1) Aメロ～Bメロ部分における照明の様子}
 
 AメロからBメロにかけての区間では、照明のBrightnessは比較的低から中程度に抑えられており、照明は白色光を中心とした控えめな発光状態であった。
@@ -943,18 +954,6 @@ AメロからBメロにかけての区間では、照明のBrightnessは比較�
 点滅は高速なストロボ状ではなく、比較的短い周期で明暗が変化する緩やかな点滅となっていた。
 
 さらに、この区間においても運弓動作に応じた照明の上下動作は継続していたが、演奏のテンポが上がるにつれて時間のずれが生じ、完全な同期は維持されなかった。
-
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/takeyouwithme-Amelody-Bmelody.png}
-	\caption{『君に乗せて』実演中の照明変化の様子（Aメロ～Bメロ）}\label{fig:takeyouwithme-Amelody-Bmelody}
-\end{figure}
-
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/takeyouwithme-chorus.png}
-	\caption{『君に乗せて』実演中の照明変化の様子（サビ）}\label{fig:takeyouwithme-chorus}
-\end{figure}
 
 \subsection{第2回実演『紅蓮華』}
 
