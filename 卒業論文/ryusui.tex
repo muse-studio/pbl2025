@@ -620,7 +620,7 @@ RGB 各成分およびBrightnessでは RMS の重要度が支配的であった�
 \subsubsection{照明特徴量の抽出} \label{sec:lightmodel}
 
 続いて、各映像からRGB値、Brightness、点滅速度の 3 種類の照明特徴量を1秒ごとに抽出し、学習用CSVデータとして構築した。
-本節では、照明特徴量の抽出手法、CSVデータ構造について詳述する。
+本節では、照明特徴量の抽出手法について詳述する。
 
 \begin{table*}[t]
 \centering
@@ -692,7 +692,7 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 		また、RGB値と同様に、1秒ごとに平均を取ることで、1秒単位のBrightness値としてCSVに書き出した。
     \item \textbf{点滅速度の算出と各映像のcsvデータ}　\\
         照明の点滅速度を抽出するために、1秒ごとの平均Brightness値を時系列信号として蓄積し、
-        前後5秒の局所FFT を行うことで点滅に対応する周波数成分を推定し、csvに書き出した。
+        前後5秒の局所FFT を行うことで点滅に対応する周波数成分を推定し、CSVに書き出した。
 \end{itemize}
 
 \subsubsection{学習用CSVデータの構築} \label{sec:csvoutput}
