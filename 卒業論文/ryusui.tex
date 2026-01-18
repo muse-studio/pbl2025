@@ -25,7 +25,7 @@
 
 \section{関連研究} \label{sec:RelatedResearch}
 
-音楽ライブやコンサートにおける照明演出は、観客の没入感や一体感を高める重要な要素であり、従来は照明デザイナーやオペレータの経験や感性に基づいて設計されてきた。
+音楽ライブやコンサートにおける照明演出は、従来は照明デザイナーやオペレータの経験や感性に基づいて設計されてきた。
 しかし、小規模公演や即興性の高い演奏では十分な準備時間や人員を確保することが難しく、音楽情報処理技術を用いた照明演出の自動化が有効な手段として注目されている。
 
 \subsection{音響信号に基づく照明演出の自動化}
@@ -79,8 +79,6 @@
 
 
 \section{リアルタイム照明制御システム} \label{sec:system}
-
-第\ref{sec:RelatedResearch}章で述べた関連研究を踏まえ、本研究ではヴァイオリン演奏に基づくリアルタイム照明制御システムを構築した。
 
 \subsection{プロトタイプシステムの実装}
 
@@ -159,7 +157,7 @@ DMX512 は、照明機器のRGB値やBrightness、動作を数値データとし
 
 \begin{figure}[tb]
 	\centering
-	\includegraphics[width=0.3\textwidth]{../fig/dmx-light.png}
+	\includegraphics[width=0.35\textwidth]{../fig/dmx-light.png}
 	\caption{USB-DMXインタフェース（左）とDMX対応照明機器（右）}\label{fig:dmx-light}
 \end{figure}
 
@@ -710,7 +708,8 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
         照明予測モデル$\beta$には、回帰モデルとして Random Forest Regressorを採用した。
         Random Forest は複数の決定木を組み合わせたアンサンブル学習手法である。
         決定木の本数は100とし、学習精度と計算コストのバランスを考慮した。
-        そして、\ref{sec:csvoutput}で述べたデータセットを用いて Random Forest モデルを学習し、音響特徴量と照明特徴量の対応関係を獲得した。
+	\item \textbf{学習の実行：}
+        データセットを用いて Random Forest モデルを学習し、音響特徴量と照明特徴量の対応関係を獲得した。
         学習が完了したモデルは、再利用を目的として joblib を用いてファイルとして保存した。
 \end{itemize}
 
@@ -831,7 +830,9 @@ MIDIデータは直接音響特徴量を算出することができないため�
 		学習手法としては、\ref{sec:modelthink}節と同様に Random Forest Regressor を採用した。
         モデル構造や主要なハイパーパラメータも、同一に設定している。
         データセットは、モデルの汎化性能を評価するため、全体の80\%を学習用データ、20\%をテスト用データに分割した。
-		この学習用データを用いて Random Forest モデルの学習を実行し、音響特徴量と照明特徴量の対応関係を獲得した。
+        分割はランダムに行い、学習用データとテスト用データが重複しないようにした。
+	\item \textbf{学習の実行：}
+		学習用データを用いて Random Forest モデルの学習を実行し、音響特徴量と照明特徴量の対応関係を獲得した。
         学習が完了したモデルは、 joblib を用いてファイルとして保存し、リアルタイム照明制御システムに直接組み込んだ。
 \end{itemize}
 
@@ -908,7 +909,6 @@ MIDIデータは直接音響特徴量を算出することができないため�
 \subsubsection{実演曲目}
 
 実演に使用した楽曲は、『君に乗せて』（作曲：久石譲）である。
-本曲はアニメ『天空の城ラピュタ』の主題歌として広く知られており、旋律が明瞭でテンポ変化が比較的少ない楽曲である。
 ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
 演奏はAメロからサビまでをカバーしている。
 \figref{fig:takeyouwithme-score}に実演で使用した楽譜を示す。
@@ -922,7 +922,6 @@ MIDIデータは直接音響特徴量を算出することができないため�
 \subsubsection{実演中の照明変化の様子} \label{sec:takeyouwithmeplay}
 
 \figref{fig:takeyouwithme-Amelody-Bmelody}、\figref{fig:takeyouwithme-chorus}に、実演中の照明変化の様子を示す。
-これらの画像は、前述した実演環境にて、ヴァイオリン演奏曲『君に乗せて』を演奏した際の照明挙動を記録したものである。
 
 \begin{figure}[tb]
 	\centering
@@ -966,7 +965,6 @@ AメロからBメロにかけての区間では、照明のBrightnessは比較�
 \subsubsection{実演曲目}
 
 実演に使用した楽曲は、『紅蓮華』（作曲：草野華余子）である。
-本曲はアニメ『鬼滅の刃』のオープニングテーマとして広く知られており、力強いリズムと感情豊かなメロディが特徴である。
 ヴァイオリンソロアレンジ版を用い、演奏時間は約1分30秒である。
 演奏はイントロから1番のサビまでをカバーしている。
 \figref{fig:gurenge-score}に実演で使用した楽譜を示す。
@@ -980,7 +978,6 @@ AメロからBメロにかけての区間では、照明のBrightnessは比較�
 \subsubsection{実演中の照明変化の様子} \label{sec:gurengeplay}
 
 \figref{fig:gurenge-play}に、実演中の照明変化の様子を示す。
-これらの画像は、前述した実演環境にて、ヴァイオリン演奏曲『紅蓮華』を演奏した際の照明挙動を記録したものである。
 
 \begin{figure*}[tb]
 	\centering
