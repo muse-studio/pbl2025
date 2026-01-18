@@ -679,7 +679,7 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
 そこで本研究では、人物検出後に膨張処理を施し、演奏者周囲も含めて背景から除外した。
 そのうえで、背景画素のうち明度上位10\%のみを抽出し、照明器具に最も近い画素群を対象としてRGB値およびBrightnessを算出している。
 
-\begin{itemize}
+\begin{enumerate}
 	\item \textbf{RGB値の算出と各映像のcsvデータ}　\\
         映像のフレーム画像を B,G,R チャンネルに分解し、背景マスクかつ上位10\%領域に該当する画素を抽出し、それぞれの平均値を計算した。
         これらの値をフレーム単位でバッファに蓄積し、1秒ごとに平均を取ることで、1秒単位のRGB値の照明特徴量としてCSVに書き出した。
@@ -689,7 +689,7 @@ Time [s] & Centroid & Contrast & RMS &　MFCC\_1 & Chroma\_1 & R & G & B
     \item \textbf{点滅速度の算出と各映像のcsvデータ}　\\
         照明の点滅速度を抽出するために、1秒ごとの平均Brightness値を時系列信号として蓄積し、
         前後5秒の局所FFT を行うことで点滅に対応する周波数成分を推定し、CSVに書き出した。
-\end{itemize}
+\end{enumerate}
 
 \subsubsection{学習用CSVデータの構築} \label{sec:csvoutput}
 
