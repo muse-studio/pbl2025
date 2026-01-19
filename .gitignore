@@ -11,6 +11,10 @@
 *.synctex(busy)
 *.toc
 .DS_Store
+<<<<<<< HEAD
 PBL報告書*/*
 ipsj_*/*
 unused/*
+=======
+PBL報告書-*/*
+>>>>>>> senior
