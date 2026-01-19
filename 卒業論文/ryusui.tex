@@ -420,14 +420,14 @@ R成分の予測においてはRMSが最も高い重要度を示した。この�
 
 \noindent \textbf{(2) 音響特徴量と照明色（G成分）の対応関係}
 
-解析の結果、RMS が全体の約86.8\% と極めて高い重要度を示し、他の特徴量（$\mathrm{Tonnetz\_6}$、$\mathrm{Chroma\_7}$、$\mathrm{MFCC\_5}$、$\mathrm{Spectral Contrast}$）はいずれも1〜7\%程度に留まった（\figref{fig:glightstyle}）。
-
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/glightstyle.png}
 	\caption{照明色（G成分）に対する音響特徴量}
 	\label{fig:glightstyle}
 \end{figure}
+
+解析の結果、RMS が全体の約86.8\% と極めて高い重要度を示し、他の特徴量（$\mathrm{Tonnetz\_6}$、$\mathrm{Chroma\_7}$、$\mathrm{MFCC\_5}$、$\mathrm{Spectral Contrast}$）はいずれも1〜7\%程度に留まった（\figref{fig:glightstyle}）。
 
 G成分において RMS が圧倒的な重要度を示したことから、緑色成分の強度は他の要因に比べて音量にほぼ支配的に決定されていることが明らかとなった。
 
@@ -531,19 +531,6 @@ RMS は点滅速度においても一定の影響を持つものの、その重�
 
 \subsubsection{映像データの収集}
 
-まずは、データソースとして、実際のヴァイオリンソロ演奏におけるライブ映像データを用意した。
-これらは実際の照明演出を伴う演奏映像であり、音楽と照明の対応関係を直接的に取得できる点で有用である。
-本研究では、入手可能な映像素材が限られているという制約のもと、音質および照明演出が比較的明瞭に記録されており、学習データとして十分な情報量を有すると判断された以下の3種類の映像を選定した。
-
-\begin{itemize}
-  \item \textbf{曲目：}千本桜(\figref{fig:senbonzakura})　\\
-      \textbf{演奏時間：}3分50秒
-  \item \textbf{曲目：}ヴァイオリンソナタ第三番「バラード」(\figref{fig:sonata})
-      \textbf{演奏時間：}2分31秒
-  \item \textbf{曲目：}スプラッシュ(\figref{fig:splash})　\\
-      \textbf{演奏時間：}4分12秒
-\end{itemize}
-
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/senbonzakura.png}
@@ -567,6 +554,19 @@ RMS は点滅速度においても一定の影響を持つものの、その重�
 	{\small 出典：\cite{violinistshogoViolinistSHOGOSorosutezi2017}}
 	\label{fig:splash}
 \end{figure}
+
+まずは、データソースとして、実際のヴァイオリンソロ演奏におけるライブ映像データを用意した。
+これらは実際の照明演出を伴う演奏映像であり、音楽と照明の対応関係を直接的に取得できる点で有用である。
+本研究では、入手可能な映像素材が限られているという制約のもと、音質および照明演出が比較的明瞭に記録されており、学習データとして十分な情報量を有すると判断された以下の3種類の映像を選定した。
+
+\begin{itemize}
+  \item \textbf{曲目：}千本桜(\figref{fig:senbonzakura})　\\
+      \textbf{演奏時間：}3分50秒
+  \item \textbf{曲目：}ヴァイオリンソナタ第三番「バラード」(\figref{fig:sonata})
+      \textbf{演奏時間：}2分31秒
+  \item \textbf{曲目：}スプラッシュ(\figref{fig:splash})　\\
+      \textbf{演奏時間：}4分12秒
+\end{itemize}
 
 これらの映像に対して、音響特徴量と照明特徴量を抽出するための処理を行い、照明予測モデル$\beta$の学習データを生成する。
 
@@ -727,16 +727,6 @@ MIDIデータは直接音響特徴量を算出することができないため�
 生成されたWAVファイルに対し、Pythonライブラリ librosa を用いて音響特徴量を抽出した。
 抽出する特徴量の種類および構成は、\ref{sec:modelthink}節で構築した照明予測モデル$\beta$の学習時に用いたデータセットと完全に一致させている。
 
-\subsubsection{照明予測モデル$\beta$による照明特徴量推定} \label{sec:lightmidi}
-
-抽出された音響特徴量は、\ref{sec:modelthink}節で構築した 照明予測モデル$\beta$に入力される。
-本モデルは、ライブ映像データから学習した「音響特徴量と照明特徴量の対応関係」を保持しており、MIDI由来の音響特徴量に対しても照明特徴量を推定することが可能である。
-推定される照明特徴量は、RGB値、Brightness、点滅速度の3種類である。
-
-\subsubsection{学習用CSVデータの構築}
-
-各MIDIファイルについて、「時間（秒）」、「音響特徴量」、「照明予測モデル$\beta$による推定照明特徴量」を1つのCSVデータとして出力した（\tabref{tab:csvmidi}）。
-
 \begin{table*}[t]
 \centering
 \small
@@ -790,6 +780,16 @@ MIDIデータは直接音響特徴量を算出することができないため�
 		\hline
 	\end{tabular}
 \end{table*}
+
+\subsubsection{照明予測モデル$\beta$による照明特徴量推定} \label{sec:lightmidi}
+
+抽出された音響特徴量は、\ref{sec:modelthink}節で構築した 照明予測モデル$\beta$に入力される。
+本モデルは、ライブ映像データから学習した「音響特徴量と照明特徴量の対応関係」を保持しており、MIDI由来の音響特徴量に対しても照明特徴量を推定することが可能である。
+推定される照明特徴量は、RGB値、Brightness、点滅速度の3種類である。
+
+\subsubsection{学習用CSVデータの構築}
+
+各MIDIファイルについて、「時間（秒）」、「音響特徴量」、「照明予測モデル$\beta$による推定照明特徴量」を1つのCSVデータとして出力した（\tabref{tab:csvmidi}）。
 
 \subsection{照明予測モデルの学習} \label{sec:midimodel}
 
@@ -895,18 +895,6 @@ MIDIデータは直接音響特徴量を算出することができないため�
 
 \figref{fig:takeyouwithme-Amelody-Bmelody}と\figref{fig:takeyouwithme-chorus}に、実演中の照明変化の様子を示す。
 
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/takeyouwithme-Amelody-Bmelody.png}
-	\caption{『君に乗せて』実演中の照明変化の様子（Aメロ～Bメロ）}\label{fig:takeyouwithme-Amelody-Bmelody}
-\end{figure}
-
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/takeyouwithme-chorus.png}
-	\caption{『君に乗せて』実演中の照明変化の様子（サビ）}\label{fig:takeyouwithme-chorus}
-\end{figure}
-
 \noindent \textbf{(1) Aメロ～Bメロ部分における照明の様子}
 
 AメロからBメロにかけての区間では、Brightnessは比較的低から中程度に抑えられており、照明は白色光を中心とした控えめな発光状態であった。
@@ -925,6 +913,18 @@ AメロからBメロにかけての区間では、Brightnessは比較的低か�
 点滅は高速なストロボ状ではなく、比較的短い周期で明暗が変化する緩やかな点滅となっていた。
 
 さらに、この区間においても運弓動作に応じた照明の上下動作は継続していたが、演奏のテンポが上がるにつれて時間のずれが生じ、完全な同期は維持されなかった。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{../fig/takeyouwithme-Amelody-Bmelody.png}
+	\caption{『君に乗せて』実演中の照明変化の様子（Aメロ～Bメロ）}\label{fig:takeyouwithme-Amelody-Bmelody}
+\end{figure}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{../fig/takeyouwithme-chorus.png}
+	\caption{『君に乗せて』実演中の照明変化の様子（サビ）}\label{fig:takeyouwithme-chorus}
+\end{figure}
 
 \subsection{第2回実演『紅蓮華』}
 
