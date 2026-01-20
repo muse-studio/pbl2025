@@ -11,3 +11,7 @@
 *.synctex(busy)
 *.toc
 .DS_Store
+卒業論文*/*
+卒論プロジェクト予稿*/*
+PBL報告書-1・2年*/*
+ipsj_*/*
