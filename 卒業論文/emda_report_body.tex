@@ -12,6 +12,16 @@
 本稿では，EMDAの前身となったGTTM，そしてEMDAの説明を踏まえた上で，プログラムの制作過程と最終的な機能，性能評価について述べていく．
 
 \section{EMDAについて}
+\begin{gptsample}
+  「EMDAについて」という見出しのすぐ次に「GTTMとは」という小見出しは訳がわからない．
+  この章では何を説明するのか，まず能書きを．
+  理論史の説明ではなく「このツールが何を扱うためのものか」の前提説明であるべき
+
+  GTTMの詳細説明が長すぎる割に、
+  「だからEMDAでは木構造が重要」
+  「だから編集支援が必要」
+  という接続が弱い
+\end{gptsample}
 
 \subsection{音楽理論GTTMとは}
 
@@ -37,7 +47,7 @@
 
 今回ツールを作成する目的であるEMDA（Emotion Movement Design Annotator）\cite{emda2019rigolo}は，GTTMを音楽だけでなく様々な作品に応用したものである．対象である音楽や物語の根幹となる部分を軸に木構造を作成し，それまでのメロディや事象が何に繋がっているのか，何が重要なのかを可視化したものである．GTTMと対比しながら考えると，1つのイベントが音符1つ分であり，それらをグループ分けした上で，それぞれの重要度に応じて幹と枝の従属関係を構築することにより，木構造を作成していくものになっており，この時のグループ分けの基準やどのイベントがより重要なのかは，対象の作品や分析する人物によって異なる．この分析をする中で必要ではあるが，時間がかかってしまう木構造の作成という部分に焦点を当て，ツールを作成した．
 
-\section{制作過程}
+\section{\highlight{設計方針・設計上の工夫}}
 
 \subsection{「木」部分の作成}
 
@@ -63,7 +73,7 @@
     \caption{各スロットに吸着する6本線}\label{fig:05}
   \end{minipage}
   \hfill
-  
+
 \end{figure*}
 
 
@@ -82,10 +92,10 @@
 これにより，木構造を作成するための基礎的な機能は実装出来たと言えるが，とても便利といえるものではない為，さらに機能を追加した．
 
 \begin{figure}[t]
-    \centering
-    \includegraphics[width=\linewidth]{figures/fig06.png}
-    \caption{木構造部分完成時}\label{fig:06}
-  \end{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figures/fig06.png}
+  \caption{木構造部分完成時}\label{fig:06}
+\end{figure}
 まず，イベントの数は作品によって変動する為，自由に線の本数を変えられる機能を追加した．テキストボックス内に本数を入力することで瞬時にその本数になる機能と，ボタンを押すことにより，右端（一番新しい線）から線を追加，削除することが出来る機能の2種類である．また，PowerPointで作業していた時に煩わしかった作業の1つである，イベント間にイベントを追加，削除するという機能を追加し，最終的には以下の\figref{fig:06}のようになった．
 
 
@@ -144,7 +154,11 @@
 この木構造を作成する上での感想や改善点を挙げてもらい，それを元にプログラムに修正を加えていった．フィードバックとしては，直感的に操作が分かりづらい箇所がある，判定の拾い方次第では不具合のような挙動になることがある，などの自分で操作していた時には気づけなかった意見があり，テストプレイの重要性を実感した．
 
 \section{コード解説}
-
+\begin{gptsample}
+  「最初こうした → 次にこうした → 問題が出た → 直した」は
+  開発日誌，実装力アピールにはなるが、論文としては冗長（主役にはならない）．
+  設計思想，	なぜその構造にしたか，	EMDA特有の要請との対応だけ残す
+\end{gptsample}
 \subsection{概要（このツールでできること）}
 
 本プログラムは，Tkinterを用いてGUIを構築し，キャンバス上に複数の線（Line）を配置・編集するツールである．
@@ -454,17 +468,17 @@ Undo実行時は「現在状態をRedoへ退避」してから過去状態を復
   % \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{lll}
     \hline\hline
-    カテゴリ  & 項目（キー）                         & 内容                     \\ \hline
-    線（Line）        & \Verb|lines[i].id| （\Verb|line_id| ）    & 永続ID（親子・テキスト対応付けに使用）            \\
-    線（Line）        & \Verb|base_ratio|                       & 根元Xの世界座標比率                      \\
+    カテゴリ           & 項目（キー）                                 & 内容                              \\ \hline
+    線（Line）        & \Verb|lines[i].id| （\Verb|line_id| ）   & 永続ID（親子・テキスト対応付けに使用）            \\
+    線（Line）        & \Verb|base_ratio|                      & 根元Xの世界座標比率                      \\
     線（Line）        & \Verb|top_ratio_x| ，\Verb|top_ratio_y| & 上端位置（世界座標比率）                    \\
-    線（Line）        & \Verb|parent_id|                        & 親線の\Verb|line_id| （無ければnull）    \\
-    線（Line）        & \Verb|snap_t|                           & 親線分上の吸着位置$t$                    \\
-    上段テキスト         & \Verb|top_texts|                        & \Verb|left_line_id| をキーにした辞書    \\
-    下段（グループ）       & \Verb|group.boundaries|                 & 境界のインデックス配列                     \\
-    下段（グループ）       & \Verb|group.texts_by_left_id|           & \Verb|left_line_id| に対応するテキスト辞書 \\
-    表示範囲（viewport） & \Verb|view.xmin/xmax|                   & X方向の表示範囲（世界座標）                  \\
-    表示範囲（viewport） & \Verb|view.ymin/ymax|                   & Y方向の表示範囲（世界座標）                  \\
+    線（Line）        & \Verb|parent_id|                       & 親線の\Verb|line_id| （無ければnull）    \\
+    線（Line）        & \Verb|snap_t|                          & 親線分上の吸着位置$t$                    \\
+    上段テキスト         & \Verb|top_texts|                       & \Verb|left_line_id| をキーにした辞書    \\
+    下段（グループ）       & \Verb|group.boundaries|                & 境界のインデックス配列                     \\
+    下段（グループ）       & \Verb|group.texts_by_left_id|          & \Verb|left_line_id| に対応するテキスト辞書 \\
+    表示範囲（viewport） & \Verb|view.xmin/xmax|                  & X方向の表示範囲（世界座標）                  \\
+    表示範囲（viewport） & \Verb|view.ymin/ymax|                  & Y方向の表示範囲（世界座標）                  \\
     \hline
   \end{tabular}
 \end{table*}
@@ -583,7 +597,16 @@ Pillowが未導入の場合はエラーメッセージを表示し，\Verb|pip i
 キャンバス領域のみを画像として保存するスクリーンショット機能である．操作パネルの「画面を画像として保存」を押し，保存先とファイル名を指定すれば画面の内容（木構造）が画像として出力される仕組みになっている．
 
 \section{性能調査}
+\begin{gptsample}
+  PowerPoint比較は分かりやすい，定量評価をしようとしている姿勢はよいのだけど，
+  （１）	被験者が「自分だけ」
+  （２）ランダム生成構造の妥当性説明が不足
+  （３）統計的扱いはしていない
 
+  のうち，未使用で最も近いものを選んで吸着する．
+  無理に統計をしなくていいかわりに，「予備的評価」と明記する．
+
+\end{gptsample}
 今回ツールを作成した目的は，木構造作成の簡略化及び時間の短縮である．そこで，PowerPointを用いての作成とツールを用いての作成でどれくらい作業効率が上がったのかを調べることにした．
 
 \subsection{調査方法}
@@ -606,13 +629,13 @@ PowerPointとツールで，ランダム生成した木構造を5つずつ作成
   % \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{lll}
     \hline\hline
-    & PowerPoint     & ツール    \\ \hline
-    1回目(ｎ＝8)        & 5：41    & 1：35            \\
-    2回目(ｎ＝9)        & 4：07    & 1：58            \\
-    3回目(ｎ＝10)        & 4：27　　 & 1：50         \\
-    4回目(ｎ＝11)        & 4：40      & 1：45   \\
-    5回目(ｎ＝12)        & 4：42      & 1：44      \\
-    
+              & PowerPoint & ツール  \\ \hline
+    1回目(ｎ＝8)  & 5：41       & 1：35 \\
+    2回目(ｎ＝9)  & 4：07       & 1：58 \\
+    3回目(ｎ＝10) & 4：27       & 1：50 \\
+    4回目(ｎ＝11) & 4：40       & 1：45 \\
+    5回目(ｎ＝12) & 4：42       & 1：44 \\
+
     \hline
   \end{tabular}
 \end{table}
