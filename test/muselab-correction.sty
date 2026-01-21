@@ -1,0 +1,31 @@
+% muselab-correction.sty (safe)
+% 既存のマクロと衝突しないように「未定義なら定義」方式で提供する
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{muselab-correction}[2026/01/21 v0.2 muselab correction helpers (safe)]
+
+\RequirePackage{ifthen}
+\RequirePackage{xcolor}
+\RequirePackage[normalem]{ulem} % \sout
+
+% --- 色付き強調（既に定義されていれば上書きしない） ---
+\providecommand{\red}[1]{\textcolor{red}{#1}}
+\providecommand{\blue}[1]{\textcolor{blue}{#1}}
+\providecommand{\gray}[1]{\textcolor{gray}{#1}}
+
+% --- 削除（黒字に取り消し線＋赤で囲う、などは好みで変更可） ---
+\providecommand{\cut}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
+
+% --- 置換（旧→新を見せる） ---
+\providecommand{\rep}[2]{\cut{#1}\,\red{#2}}
+
+% --- コメント（教員用メモ） ---
+\providecommand{\commentnote}[1]{\marginpar{\scriptsize\red{#1}}}
+
+% todonotes が使える環境なら todo を有効化（無ければ無害にする）
+\IfFileExists{todonotes.sty}{%
+  \RequirePackage{todonotes}%
+}{%
+  \providecommand{\todo}[2][]{\commentnote{#2}}%
+}
+
+\endinput

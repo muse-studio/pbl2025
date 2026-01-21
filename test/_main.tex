@@ -1,0 +1,42 @@
+\documentclass[submit,techrep,noauthor,dvipdfmx]{muselab} % <= muselab で！
+
+% ==========================
+% 目次の深さ（必要なら調整）
+% ==========================
+% muselab.cls 側で必要な基本パッケージは読み込み済みです。
+\setcounter{tocdepth}{3} % 3: subsectionまで, 4: paragraphまで
+
+\begin{document}
+
+% ==========================
+% 前付け（タイトル・目次）
+% ==========================
+% ここは「手作業コード無し」で動くようにしてあります。
+% 題目と氏名は ../credit/author-title.tex と ../credit/author-name.tex に
+% 文字だけを書いてください（\title や \author は不要です）。
+\muselabfrontmatter
+
+% ==========================
+% 本文
+% ==========================
+\IfFileExists{body.tex}{%
+  \input{body}%
+}{%
+  \IfFileExists{muselab-sample.tex}{\input{muselab-sample}}{}%
+}
+
+% ==========================
+% 参考文献（必要なら）
+% ==========================
+% \bibliographystyle{ipsjunsrt} % 例（スタイルは運用に合わせて）
+% \bibliography{../muselab-sample} % 例
+
+% ==========================
+% 付録（必要なら）
+% ==========================
+\IfFileExists{appendix.tex}{%
+  \appendix
+  \input{appendix}%
+}{}
+
+\end{document}
