@@ -20,6 +20,8 @@
 %% 添削コマンド定義
 \if@finalcorrection
     %% final オプション時の定義（プレーンな出力）
+    \newcommand{\red}[1]{}
+    \newcommand{\cut}[1]{}
     \newcommand{\deleted}[1]{}
     \newcommand{\commented}[1]{}
     \newcommand{\added}[1]{#1}
@@ -31,6 +33,8 @@
     \excludecomment{gptsample}
 \else
     %% 通常時の定義（添削用表示）
+    \newcommand{\red}[1]{\textcolor{red}{#1}}
+    \newcommand{\cut}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
     \newcommand{\deleted}[1]{\sout{\textcolor{red}{#1}}}
     \newcommand{\commented}[1]{\colorbox{red!30}{#1}}
     \newcommand{\added}[1]{\textcolor{red}{#1}}
