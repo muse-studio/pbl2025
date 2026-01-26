@@ -129,7 +129,7 @@
    \end{center}
    %%%%%%%%%%%%%%%%%%%
    %    
-   \thispagestyle{muselabTITLEheadings}
+   \thispagestyle{empty}
 
 }
 
@@ -190,6 +190,22 @@
 % ==============================================
 
 \pagestyle{muselabTITLEheadings}
+
+% ==============================================
+% Front matter / Main matter helpers
+%  - 目次・図目次・表目次など「本文より前」のページ番号を出さないための補助
+%  - 本文に入る前に \muselabMainMatter で必ず戻す
+% ==============================================
+\newcommand{\muselabFrontMatter}{%
+  \pagestyle{empty}% 複数ページになってもページ番号を出さない
+  \thispagestyle{empty}% 呼び出し直後のページも確実に empty
+}
+\newcommand{\muselabMainMatter}{%
+  \clearpage%
+  \pagestyle{muselabTITLEheadings}% 本文のページ番号を復帰
+  \pagenumbering{arabic}%
+  \setcounter{page}{1}%
+}
 
 % ==============================================
 % 目次
