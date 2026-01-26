@@ -127,7 +127,7 @@
    \end{center}
    %%%%%%%%%%%%%%%%%%%
    %    
-   \thispagestyle{muselabTITLEheadings}
+   \thispagestyle{empty}
 
 }
 
@@ -190,6 +190,22 @@
 \pagestyle{muselabTITLEheadings}
 
 % ==============================================
+% Front matter / Main matter helpers
+%  - 目次・図目次・表目次など「本文より前」のページ番号を出さないための補助
+%  - 本文に入る前に \muselabMainMatter で必ず戻す
+% ==============================================
+\newcommand{\muselabFrontMatter}{%
+  \pagestyle{empty}% 複数ページになってもページ番号を出さない
+  \thispagestyle{empty}% 呼び出し直後のページも確実に empty
+}
+\newcommand{\muselabMainMatter}{%
+  \clearpage%
+  \pagestyle{muselabTITLEheadings}% 本文のページ番号を復帰
+  \pagenumbering{arabic}%
+  \setcounter{page}{1}%
+}
+
+% ==============================================
 % 目次
 % ==============================================
 \RequirePackage{color}
@@ -227,29 +243,10 @@
          \protected@file@percent}}%
 }
 \newcommand{\tableofcontents}{%
-  \clearpage
-  \begingroup
-    \makeatletter
-    % Save and locally override page styles so that TOC pages never show numbers,
-    % even if the current global pagestyle is muselabTITLEheadings/IPSJTITLEheadings.
-    \let\muse@orig@ps@plain\ps@plain
-    \let\muse@orig@ps@muselabTITLEheadings\ps@muselabTITLEheadings
-    \let\muse@orig@ps@IPSJTITLEheadings\ps@IPSJTITLEheadings
-    \let\ps@plain\ps@empty
-    \let\ps@muselabTITLEheadings\ps@empty
-    \let\ps@IPSJTITLEheadings\ps@empty
-    \thispagestyle{empty}%
-    \par\par
-    \section*{\contentsname
-      \@mkboth{\contentsname}{\contentsname}}%
-    \thispagestyle{empty}%
-    \@starttoc{toc}%
-    % Restore
-    \let\ps@plain\muse@orig@ps@plain
-    \let\ps@muselabTITLEheadings\muse@orig@ps@muselabTITLEheadings
-    \let\ps@IPSJTITLEheadings\muse@orig@ps@IPSJTITLEheadings
-    \makeatother
-  \endgroup
+   \par\par
+   \section*{\contentsname
+     \@mkboth{\contentsname}{\contentsname}%
+    }\@starttoc{toc}%
 }
 \newcommand*{\l@part}[2]{%
    \ifnum \c@tocdepth >-2\relax
@@ -286,47 +283,15 @@
 \newcommand*{\l@paragraph}    {\@dottedtocline{4}{7.0em}{4.1em}}
 \newcommand*{\l@subparagraph} {\@dottedtocline{5}{10em}{5em}}
 \newcommand{\listoffigures}{%
-  \clearpage
-  \begingroup
-    \makeatletter
-    \let\muse@orig@ps@plain\ps@plain
-    \let\muse@orig@ps@muselabTITLEheadings\ps@muselabTITLEheadings
-    \let\muse@orig@ps@IPSJTITLEheadings\ps@IPSJTITLEheadings
-    \let\ps@plain\ps@empty
-    \let\ps@muselabTITLEheadings\ps@empty
-    \let\ps@IPSJTITLEheadings\ps@empty
-    \thispagestyle{empty}%
-    \section*{\listfigurename}%
-    \@mkboth{\listfigurename}{\listfigurename}%
-    \thispagestyle{empty}%
-    \@starttoc{lof}%
-    \let\ps@plain\muse@orig@ps@plain
-    \let\ps@muselabTITLEheadings\muse@orig@ps@muselabTITLEheadings
-    \let\ps@IPSJTITLEheadings\muse@orig@ps@IPSJTITLEheadings
-    \makeatother
-  \endgroup
+   \section*{\listfigurename}%
+   \@mkboth{\listfigurename}{\listfigurename}%
+   \@starttoc{lof}%
 }
 \newcommand*{\l@figure}{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand{\listoftables}{%
-  \clearpage
-  \begingroup
-    \makeatletter
-    \let\muse@orig@ps@plain\ps@plain
-    \let\muse@orig@ps@muselabTITLEheadings\ps@muselabTITLEheadings
-    \let\muse@orig@ps@IPSJTITLEheadings\ps@IPSJTITLEheadings
-    \let\ps@plain\ps@empty
-    \let\ps@muselabTITLEheadings\ps@empty
-    \let\ps@IPSJTITLEheadings\ps@empty
-    \thispagestyle{empty}%
-    \section*{\listtablename}%
-    \@mkboth{\listtablename}{\listtablename}%
-    \thispagestyle{empty}%
-    \@starttoc{lot}%
-    \let\ps@plain\muse@orig@ps@plain
-    \let\ps@muselabTITLEheadings\muse@orig@ps@muselabTITLEheadings
-    \let\ps@IPSJTITLEheadings\muse@orig@ps@IPSJTITLEheadings
-    \makeatother
-  \endgroup
+   \section*{\listtablename}%
+   \@mkboth{\listtablename}{\listtablename}%
+   \@starttoc{lot}%
 }
 \let\l@table\l@figure
 \newcommand{\contentsname}{--- 目次 ---------}

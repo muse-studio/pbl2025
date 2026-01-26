@@ -1,12 +1,22 @@
 % !TEX root = _main.tex
 
 \clearpage
+
+% 目次ブロック中はページ番号を出さない（複数ページでもOK）
+\pagestyle{empty}
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+
 \tableofcontents
 \listoffigures
 \listoftables
-\thispagestyle{empty}
+
 \clearpage
 
-% --- 本文へ
+% 本文用のスタイルに戻す（ここが重要）
+\pagestyle{muselabTITLEheadings}
+
+% 本文はここから1
 \pagenumbering{arabic}
 \setcounter{page}{1}
