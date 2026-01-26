@@ -1,29 +1,25 @@
-% !TEX root = _main3nen.tex
-\begin{figure*}[tb]
+% !TEX root = _main.tex
+\begin{figure}[tb]
     \centering
     % --- 左側の画像 ---
-    \begin{minipage}[b]{0.33\linewidth}
+    \begin{minipage}[b]{\linewidth}
         \centering
         \includegraphics[width=.9\linewidth]{fig/cluster1pca.png}
-        \subcaption{PCA散布図（K-meansで色分け）}
-        \label{fig:cluster1pca}
+        \subcaption{PCA散布図（K-meansで色分け）}\label{fig:cluster1pca}
     \end{minipage}
     % --- 中側の画像 ---
-    \begin{minipage}[b]{0.33\linewidth}
+    \begin{minipage}[b]{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{fig/average2.png}
-        \subcaption{サブクラスタごとの特徴量平均の比較}
-        \label{fig:average2}
+        \subcaption{サブクラスタごとの特徴量平均の比較}\label{fig:average2}
     \end{minipage}
-    \hfill % 左右の間に適度な空白を入れる
+    % \hfill % 左右の間に適度な空白を入れる
     % --- 右側の画像 ---
-    \begin{minipage}[b]{0.33\linewidth}
+    \begin{minipage}[b]{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{fig/Z-score2.png}
-        \subcaption{サブクラスタごとのZ-score}
-        \label{fig:Z-score2}
+        \subcaption{サブクラスタごとのZ-score}\label{fig:Z-score2}
     \end{minipage}
 
-    \caption{バッハのコラールの分析（クラスタ1のみ）}
-    \label{fig:total2}
-\end{figure*}
+    \caption{バッハのコラールの分析（クラスタ1のみ）}\label{fig:total2}
+\end{figure}

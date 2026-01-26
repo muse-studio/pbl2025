@@ -16,7 +16,7 @@
 \section{特徴量抽出}
 楽曲の解析には Python を用い、
 music21 ライブラリによって
-以下の特徴量を抽出した。
+\tabref{tab:features}を抽出した。
 % ================================
 \input{table_features.tex}
 % ================================
@@ -43,12 +43,14 @@ music21 は、MIDI ファイルや楽譜データを対象として、
 音高、リズム、和声などの構造的情報を解析可能なライブラリである。
 本研究では、MIDI 形式で提供されている楽曲データを入力とし、
 以下のような特徴量を抽出した。
+\begin{gptsample}
 
-音高分布および音域に関する特徴量
-
-リズム構造（音価分布）に関する特徴量
-
-和声構造（和音サイズ、7thコード比率など）に関する特徴量
+\begin{itemize}
+  \item 音高分布および音域に関する特徴量
+  \item リズム構造（音価分布）に関する特徴量
+  \item 和声構造（和音サイズ、7thコード比率など）に関する特徴量
+\end{itemize}
+\end{gptsample}
 
 これらの特徴量は、演奏表現ではなく楽曲構造そのものを捉える
 Symbolic 音楽解析に基づくものである。
@@ -180,7 +182,7 @@ leap\_rate $\leftrightarrow$ smoothness：r $\approx$ 0.72\\
 
 音高の標準偏差（\texttt{pitch\_std}）と音域（\texttt{pitch\_range}）の間に、0.89と強い正の相関が確認された。
 これは、音域が広い楽曲ほど音高の分布も大きくなる傾向を反映している。
-この二つについて、全楽曲を対象に平均を取った表が以下の通りである。
+この二つについて、全楽曲を対象に平均を取ったものを\tabref{tab:pitch}に示す。
 
 \begin{table}[t]
   \centering
@@ -193,7 +195,7 @@ leap\_rate $\leftrightarrow$ smoothness：r $\approx$ 0.72\\
   \end{tabular}
 \end{table}
 
-\ref{tab:pitch}より、音域幅は12音半、1オクターブくらいであり、標準偏差が約3半音で、主に中心音付近で旋律が動いている、典型的なコラールであると分かる。
+\modified{\ref{tab:pitch}}{\tabref{tab:pitch}}より、音域幅は12音半、1オクターブくらいであり、標準偏差が約3半音で、主に中心音付近で旋律が動いている、典型的なコラールであると分かる。
 この、12音半というのは音域として狭く、標準偏差も3しかないことから端まで使うことはあるが滞在時間は短いことが分かる。
 つまり、バッハのコラールが比較的狭い音域内で均質に旋律が展開されていることから強い相関がみられているように見えるだけで、
 音域が狭くても標準偏差が大きいジャンルで実験すれば異なる結果となる可能性があるため、一般的にこの二つの特徴量に強い相関があるとは言えない。
@@ -201,7 +203,7 @@ leap\_rate $\leftrightarrow$ smoothness：r $\approx$ 0.72\\
 
 平均和音サイズ（\texttt{avg\_chord\_size}）と7th和音比率（\texttt{seventh\_ratio}）の間に、0.87と強い正の相関が確認された。
 これは、和音の厚みが増すほど、7thコードの使用頻度も高まる傾向を反映している。
-この二つについて、全楽曲を対象に平均を取った表が以下の通りである
+この二つについて、全楽曲を対象に平均を取ったものを\tabref{tab:chord}に示す。
 \begin{table}[t]
   \centering
   \caption{平均和音サイズと7th和音比率の平均値}
@@ -239,13 +241,14 @@ leap\_rate $\leftrightarrow$ smoothness：r $\approx$ 0.72\\
 \section{The MAESTRO Datasetを用いた比較実証}
 leap\_rateとsmoothnessの間の相関が高いことが、バッハのコラール特有の現象であるかを確認するため、The MAESTRO Dataset\cite{MAESTRODataset2018}を用いて同様の分析を行った。
 MAESTRO Datasetは、主に19世紀のピアノ曲を収録したデータセットであり、今回は20曲を用いた。
-プログラムに関しては、先ほどと同様のものを使用する。
+プログラムに関しては、\highlightComment{先ほどと同様のもの}{明示する}を使用する。
+\added{結果を\figref{fig:soukan_maestro}に示す。}
 
-\begin{figure}[H]
+\begin{figure}[t]
   \centering
   \includegraphics[width=0.9\linewidth]{fig/corr-maestro.png}
   \caption{MAESTRO Datasetを用いた各特徴量の相関係数}
-  \label{fig:soukan11}
+  \label{fig:soukan_maestro}
 \end{figure}
 
 その結果、バッハにおいて 0.72 であった \texttt{leap\_rate} と \texttt{smoothness} の相関係数は、MAESTRO においては 0.18 という極めて低い値を示した。

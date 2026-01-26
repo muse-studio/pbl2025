@@ -1,12 +1,13 @@
 % !TEX root = _main.tex
-\begin{table*}[b]
-    \caption{抽出した特徴量一覧}
-    \label{tab:features}
+\begin{table*}[t]
+    \caption{抽出した特徴量一覧}\label{tab:features}
     \centering
     % \renewcommand{\arraystretch}{2.1} % ← 1.5倍に広げる（1.2〜1.8くらいで調整）
-    \begin{adjustbox}{width=\linewidth} % adjustboxで幅を100%に指定
-        \begin{tabular}{lllll}\hline
-            特徴量              & 意味               & どの性質を表すか         &  & \\\hline\hline
+    \begin{adjustbox}{width=.8\linewidth} % adjustboxで幅を100%に指定
+        \begin{tabular}{lllll}
+            \hline\hline
+            特徴量              & 意味               & どの性質を表すか         &  & \\
+            \hline
             measures         & 小節数              & 曲の長さ             &  & \\
             avg\_chord\_size & 平均和音サイズ（同時発音数）   & 和声の厚み            &  & \\
             seventh\_ratio   & 7th和音の割合         & 和声の複雑さ           &  & \\
@@ -21,7 +22,8 @@
             vel\_mean        & 平均ベロシティ（強さ）      & 曲の平均的な音量         &  & \\
             vel\_std         & ベロシティの変動         & 強弱表現の豊かさ         &  & \\
             prog\_unique     & ユニークな和音進行数       & ハーモニーの多様性        &  & \\
-            rn\_seq\_len     & ローマ数字解析による進行列の長さ & 和声進行の規模          &  & \\\hline
+            rn\_seq\_len     & ローマ数字解析による進行列の長さ & 和声進行の規模          &  & \\
+            \hline
         \end{tabular}
     \end{adjustbox}
 \end{table*}
