@@ -227,10 +227,29 @@
          \protected@file@percent}}%
 }
 \newcommand{\tableofcontents}{%
-   \par\par
-   \section*{\contentsname
-     \@mkboth{\contentsname}{\contentsname}%
-    }\@starttoc{toc}%
+  \clearpage
+  \begingroup
+    \makeatletter
+    % Save and locally override page styles so that TOC pages never show numbers,
+    % even if the current global pagestyle is muselabTITLEheadings/IPSJTITLEheadings.
+    \let\muse@orig@ps@plain\ps@plain
+    \let\muse@orig@ps@muselabTITLEheadings\ps@muselabTITLEheadings
+    \let\muse@orig@ps@IPSJTITLEheadings\ps@IPSJTITLEheadings
+    \let\ps@plain\ps@empty
+    \let\ps@muselabTITLEheadings\ps@empty
+    \let\ps@IPSJTITLEheadings\ps@empty
+    \thispagestyle{empty}%
+    \par\par
+    \section*{\contentsname
+      \@mkboth{\contentsname}{\contentsname}}%
+    \thispagestyle{empty}%
+    \@starttoc{toc}%
+    % Restore
+    \let\ps@plain\muse@orig@ps@plain
+    \let\ps@muselabTITLEheadings\muse@orig@ps@muselabTITLEheadings
+    \let\ps@IPSJTITLEheadings\muse@orig@ps@IPSJTITLEheadings
+    \makeatother
+  \endgroup
 }
 \newcommand*{\l@part}[2]{%
    \ifnum \c@tocdepth >-2\relax
@@ -267,15 +286,47 @@
 \newcommand*{\l@paragraph}    {\@dottedtocline{4}{7.0em}{4.1em}}
 \newcommand*{\l@subparagraph} {\@dottedtocline{5}{10em}{5em}}
 \newcommand{\listoffigures}{%
-   \section*{\listfigurename}%
-   \@mkboth{\listfigurename}{\listfigurename}%
-   \@starttoc{lof}%
+  \clearpage
+  \begingroup
+    \makeatletter
+    \let\muse@orig@ps@plain\ps@plain
+    \let\muse@orig@ps@muselabTITLEheadings\ps@muselabTITLEheadings
+    \let\muse@orig@ps@IPSJTITLEheadings\ps@IPSJTITLEheadings
+    \let\ps@plain\ps@empty
+    \let\ps@muselabTITLEheadings\ps@empty
+    \let\ps@IPSJTITLEheadings\ps@empty
+    \thispagestyle{empty}%
+    \section*{\listfigurename}%
+    \@mkboth{\listfigurename}{\listfigurename}%
+    \thispagestyle{empty}%
+    \@starttoc{lof}%
+    \let\ps@plain\muse@orig@ps@plain
+    \let\ps@muselabTITLEheadings\muse@orig@ps@muselabTITLEheadings
+    \let\ps@IPSJTITLEheadings\muse@orig@ps@IPSJTITLEheadings
+    \makeatother
+  \endgroup
 }
 \newcommand*{\l@figure}{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand{\listoftables}{%
-   \section*{\listtablename}%
-   \@mkboth{\listtablename}{\listtablename}%
-   \@starttoc{lot}%
+  \clearpage
+  \begingroup
+    \makeatletter
+    \let\muse@orig@ps@plain\ps@plain
+    \let\muse@orig@ps@muselabTITLEheadings\ps@muselabTITLEheadings
+    \let\muse@orig@ps@IPSJTITLEheadings\ps@IPSJTITLEheadings
+    \let\ps@plain\ps@empty
+    \let\ps@muselabTITLEheadings\ps@empty
+    \let\ps@IPSJTITLEheadings\ps@empty
+    \thispagestyle{empty}%
+    \section*{\listtablename}%
+    \@mkboth{\listtablename}{\listtablename}%
+    \thispagestyle{empty}%
+    \@starttoc{lot}%
+    \let\ps@plain\muse@orig@ps@plain
+    \let\ps@muselabTITLEheadings\muse@orig@ps@muselabTITLEheadings
+    \let\ps@IPSJTITLEheadings\muse@orig@ps@IPSJTITLEheadings
+    \makeatother
+  \endgroup
 }
 \let\l@table\l@figure
 \newcommand{\contentsname}{--- 目次 ---------}
