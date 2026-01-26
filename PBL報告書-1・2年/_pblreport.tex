@@ -105,8 +105,8 @@
 
 \thispagestyle{empty}
 \clearpage
-\addtocounter{page}{-2}
-\newpage
+% \addtocounter{page}{-2}
+% \newpage
 \setcounter{tocdepth}{3}
 
 %\section*{要旨}
@@ -118,7 +118,6 @@
 
 % \listoftables %表目次
 
-\thispagestyle{empty}
 \clearpage
 
 
@@ -126,6 +125,8 @@
 % ==========================================
 % 本文．
 % ==========================================
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \input{report-sample}  % 本文は report-sample.tex に書く
 
 % ==========================================
