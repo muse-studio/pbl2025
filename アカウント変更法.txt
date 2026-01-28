@@ -1,7 +1,0 @@
-subaru035用
-git clone git@github.com:muse-studio/XXX.git
-# 普通のgit@github.com を使う → 自動でid_ed25519（subaru035の鍵）を使用
-
-個人用
-git clone git@github.com-personal:subaruchuanren-maker/XXX.git
-# git@github.com-personal を使う → 自動でid_ed25519_personalを使用
