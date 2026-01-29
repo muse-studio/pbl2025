@@ -1,4 +1,12 @@
 \documentclass[dvipdfmx,line_length=48zw,column_gap=2zw,number_of_lines=60,baselineskip=12pt]{jlreq}
+
+% --- ここから追加 ---
+\makeatletter
+\providecommand{\jlreq@keepbaselineskip}{}
+\makeatother
+% --- ここまで追加 ---
+
+
 \jlreqsetup{itemization_beforeafter_space=0pt}
 \makeatletter
 \RenewBlockHeading{section}{1}{font={\jlreq@keepbaselineskip{\normalsize\sffamily\gtfamily}},indent=0pt,lines=1}

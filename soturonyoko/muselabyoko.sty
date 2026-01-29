@@ -19,6 +19,7 @@
 
 
 % --- ipsj.cls から導入 ---
+
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
 
@@ -59,6 +60,7 @@
     \@ifundefined{used@#1}{\expandafter\gdef\csname used@#1\endcsname{used}%
         \let\bf@or@normal\bfseries}{\relax}%
     \bf@or@normal\prefix@figtabref\ref{#1}\egroup}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
