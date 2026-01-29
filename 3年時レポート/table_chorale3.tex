@@ -1,15 +1,15 @@
 % !TEX root = _main.tex
-\begin{figure*}[tb]
+\begin{figure}[tb]
     \centering
     % --- 左側の画像 ---
-    \begin{minipage}[b]{0.33\linewidth}
+    \begin{minipage}[b]{\linewidth}
         \centering
         \includegraphics[width=0.8\linewidth]{fig/cluster11.png}
         \subcaption{PCA散布図(k-meansで色分け)}
         \label{fig:cluster11pca}
     \end{minipage}
     % --- 中側の画像 ---
-    \begin{minipage}[b]{0.33\linewidth}
+    \begin{minipage}[b]{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{fig/average11.png}
         \subcaption{サブクラスタごとの特徴量平均の比較}
@@ -17,13 +17,13 @@
     \end{minipage}
     \hfill % 左右の間に適度な空白を入れる
     % --- 右側の画像 ---
-    \begin{minipage}[b]{0.33\linewidth}
+    \begin{minipage}[b]{\linewidth}
         \centering
         \includegraphics[width=\linewidth]{fig/Z-score11.png}
         \subcaption{サブクラスタごとのZ-score}
         \label{fig:Z-score11}
     \end{minipage}
-
     \caption{バッハのコラールの分析（サブクラスタ1のみ）}
     \label{fig:total11}
-\end{figure*}
+    
+\end{figure}
