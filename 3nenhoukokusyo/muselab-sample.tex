@@ -37,6 +37,9 @@
 本ゲームは、カメラを通じて取得した人の動きを入力情報とし、
 その情報を映像表現およびゲーム進行に反映させる
 インタラクティブコンテンツとして設計した。
+\begin{gptsample}
+どういうゲームなのかがわからないので、最初に簡単に説明してください。何をするゲームなのか、目的は何か、など。
+\end{gptsample}
 
 Touch Designerは、リアルタイム処理に優れた
 ビジュアルプログラミング環境であり、
@@ -47,9 +50,8 @@ Touch Designerは、リアルタイム処理に優れた
 ゲームシステムの構築を目指した。
 
 
-また、アミッドスクリーン(図1)とは、パイプ、ジョイント、
-網戸で成り立っている透過スクリーンであり、全長は幅145cm・縦240cmの大型スクリーンとなる。
-製作は１人で15分程度で行うことができ、 持ち運びや設営が容易である点も特徴である。 
+\deleted{また、}アミッドスクリーン（\figref{fig:amid}）とは、パイプ、ジョイント、網戸で成り立っている透過スクリーンであり、全長は幅145cm・縦240cmの大型スクリーンとなる。
+製作は１人で15分程度で行うことができ、 持ち運びや設営が容易である点も特徴である。
 このような特性から、イベント会場や学校行事など、 限られた準備時間の中でも
 導入しやすいスクリーンであると考え、今回使用することにした。
 普通のスクリーンではなくアミッドスクリーンを使用することで、
@@ -59,7 +61,7 @@ Touch Designerは、リアルタイム処理に優れた
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/1.jpg}
-	\caption{アミッドスクリーン}
+	\caption{アミッドスクリーン}\label{fig:amid}
 \end{figure}
 
 %3.1
@@ -127,29 +129,29 @@ Touch Designerは、リアルタイム処理に優れた
 \subsection{手の検出と入力情報の生成}
 カメラ映像から手の位置を検出するため、
 本システムではMediaPipe\cite{MediaPipe}
-を利用した。Touch Designer内へのMedia Pypeの導入はサイト\cite{TouchDesignerMediaPipe}
+を利用した。Touch Designer内への\modified{Media Pype}{MediaPipe}の導入はサイト\cite{TouchDesignerMediaPipe}
 を参考に行った。
 MediaPipeは、画像や映像から人体の特徴点を検出できるライブラリであり、
-手先や関節位置などを高精度に取得することが可能である。(図2)
+手先や関節位置などを高精度に取得することが可能である\added{（\figref{fig:mediapipe}）}。
 顔検出、手検出、ポーズ検出、さらにはジェスチャー認識など、
-さまざまなリアルタイム機能を備えているMedia Pypeの中で、
+さまざまなリアルタイム機能を備えている\modified{Media Pype}{MediaPipe}の中で、
 今回はハンドトラッキングのみを使用した。
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/2.png}
-	\caption{TouchDesigner内でのMediaPipe}
+	\caption{TouchDesigner内でのMediaPipe}\label{fig:mediapipe}
 \end{figure}
 
 
 検出された手の位置情報は、
-そのままでは後段の処理で扱いにくいため、
+そのままでは\highlightComment{後段の処理}{どこのこと？}で扱いにくいため、
 Touch Designer内でNullノードを用いて一度整理した。
 これにより、不要なデータの影響を抑えつつ、
-安定した入力情報として利用できるようにした。(図3)
+安定した入力情報として利用できるようにした\added{（\figref{fig:position}）}。
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/3.png}
-	\caption{位置情報のデータ化}
+	\caption{位置情報のデータ化}\label{fig:position}
 \end{figure}
 
 
@@ -171,11 +173,11 @@ Touch Designer内でNullノードを用いて一度整理した。
 ゲーム内に表示される「もみじ」のオブジェクトは、
 Movie File In TOPを用いて複数の画像素材を読み込み、
 それぞれにTransform TOPを適用することで
-画面内の異なる位置に配置した。(図4)
+画面内の異なる位置に配置した（\figref{fig:loadimage}）。
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/4.png}
-	\caption{画像の読み込み、配置}
+	\caption{画像の読み込み、配置}\label{fig:loadimage}
 \end{figure}
 
 これらのオブジェクトはSwitch TOPによって切り替えられ、
@@ -189,11 +191,11 @@ Movie File In TOPを用いて複数の画像素材を読み込み、
 秋をイメージした背景を取り入れることで、
 全体として統一感のあるビジュアル表現を目指した。
 背景ともみじオブジェクトは後段で合成され、
-一つのゲーム画面として出力される。(図5)
+一つのゲーム画面として出力される（\figref{fig:display}）。
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/5.png}
-	\caption{背景を入れたゲーム画面}
+	\caption{背景を入れたゲーム画面}\label{fig:display}
 \end{figure}
 
 %3.5
@@ -203,14 +205,14 @@ Movie File In TOPを用いて複数の画像素材を読み込み、
 もみじオブジェクトの映像との差分をDiff TOPで取得した。
 その結果をAnalyze TOPによって数値化し、
 一定以上の値が得られた場合に
-「触れた」と判定する仕組みとした。(図6)
+「触れた」と判定する仕組みとした（\figref{fig:atari}）。
 ここでは、手の位置情報ともみじオブジェクトが重なったときに
 重なったその部分のみ青色を出力し、全体としてその色の値が一定以上となったときに
 次の処理に進むようになっている。
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/6.png}
-	\caption{手の当たり判定}
+	\caption{手の当たり判定}\label{fig:atari}
 \end{figure}
 
 この判定結果はCHOPデータとして取り出され、
@@ -224,11 +226,11 @@ Switch TOPに接続された複数のもみじ画像の中から
 ランダムに一つを選択して表示を切り替える。
 これにより、オブジェクトに触れるたびに
 異なる位置にもみじが現れ、
-単調にならないゲーム体験を実現した。(図7)
+単調にならないゲーム体験を実現した（\figref{fig:code}）。
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/7.png}
-	\caption{Pythonコード}
+	\caption{Pythonコード}\label{fig:code}
 \end{figure}
 
 また、値が「1」の状態で処理が連続して実行されることを防ぐため、
@@ -255,16 +257,16 @@ Out TOPおよびWindow COMPを通して
 このように、Touch Designerのノードベースの特性と
 Pythonによる制御処理を組み合わせることで、
 現場状況に応じた調整が可能な
-インタラクティブシステムを構築することができた。(図8)(図9)
+インタラクティブシステムを構築することができた（\figref{fig:screen}、\figref{fig:event}）。
 
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/8.jpg}
-	\caption{カメラとスクリーンの位置関係}
+	\caption{カメラとスクリーンの位置関係}\label{fig:screen}
 \end{figure}
- 
+
 \begin{figure}[tb]
 	\includegraphics[width = \linewidth]{../fig/9.png}
-	\caption{当日の様子}
+	\caption{当日の様子}\label{fig:event}
 \end{figure}
 
 %4
@@ -316,7 +318,6 @@ Pythonによる制御処理を組み合わせることで、
 
 
 %8
-\section{参考文献}
 
 
 
