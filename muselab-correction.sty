@@ -54,16 +54,16 @@
 \else
     %% 通常時の定義（添削用表示）
     \newcommand{\red}[1]{\textcolor{red}{#1}}
-    \newcommand{\cut}[1]{\textcolor{red}{\textcolor{red}{［削除：#1］}}}
+    \newcommand{\cut}[1]{\textcolor{red}{\textcolor{gray}{［削除：#1］}}}
     \newcommand{\deleted}[1]{\cut{#1}}
-    \newcommand{\commented}[1]{\textsuperscript{\textcolor{orange}{oO（#1）}}}
+    \newcommand{\commented}[1]{\textsuperscript{\textcolor{teal}{oO（#1）}}}
     \newcommand{\added}[1]{\textcolor{red}{#1}}
-    \newcommand{\highlight}[1]{\muselab@wrapcolorbox{yellow!40}{#1}}
+    \newcommand{\highlight}[1]{\textcolor{orange}{#1}}
     \newcommand{\needRef}[1]{%
         \textcolor{blue}{#1}\textsuperscript{\colorbox{blue!30}{要出典}}%
     }
     \newcommand{\highlightComment}[2]{%
-        \muselab@wrapcolorbox{yellow!40}{#1}\textsuperscript{\textcolor{red}{#2}}
+        \highlight{#1}\textsuperscript{\textcolor{red}{#2}}
     }
     \newcommand{\modified}[2]{\deleted{#1}\added{#2}}
     %% gptsample環境の定義（通常時は紫色）
