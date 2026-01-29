@@ -351,19 +351,57 @@ $y_{t-1}$：直前(150ms前)の上下位置座標
 \end{figure}
 
 
+\subsection{MIDI送信設定}
+本システムにて、シンセサイザー等へMIDIを送信するためには、MIDI送信先、ノートナンバー、CCナンバー・制御値、MIDIチャンネル、MIDI CC範囲といった項目をユーザが設定する必要がある。それぞれの項目について詳しく説明する。
 
+\subsubsection{MIDI送信先}
+この項目では、MIDI情報の送信先を決める。Maxの起動時またはMIDI機器の検索ボタンを押した際に、PCにつながっているシンセサイザー等のMIDI機器がポップアップメニューに表示され、選択したMIDI機器に情報が送信される。
 
+\subsubsection{CCナンバー・ノートナンバー}
+トリガージェスチャーを扱う際に設定が必要になる項目であり、単発的に送るCCナンバー
 
+\subsubsection{MIDIチャンネル}
+MIDI機器によっては、送信先の設定のほかにも、MIDIチャンネルを設定する必要がある。
 
+MIDIチャンネルは、1本のMIDIケーブルで複数の楽器(パート)の演奏情報を区別して送受信するための1〜16の番号で、各パートにチャンネルを割り当てることで、異なる楽器を同時にコントロールすることができる。
 
+本システムでも、1〜16の番号を指定することで、1つのPCで複数のMIDI機器を使い分けることが可能である。
 
+\subsubsection{MIDI CC範囲}
+MIDIコントロールチェンジを使ってシンセサイザー等MIDI機器を制御する際に、どの値の範囲のみジェスチャーで変化させるかを設定することができる。
 
+\figref{fig:CC-rangeAB}は設定つまみである。このつまみ両端の白と青の丸を動かすことで範囲を設定することができる。この範囲は\figref{fig:CC-range}のように、MIDIで制御するシンセサイザーのつまみ等のパラメータと模しているものになっており、どの範囲のみパラーメータを変化させるかが視覚的に理解しやすく設定できる。
+
+つまり、カメラからの距離でシンセサイザーを操る場合、\figref{fig:CC-rangeAB}のAの時は、カメラと手の距離が1番短い場合にCC値30を出力し、1番長い場合にCC値100を出力する。
+
+また\figref{fig:CC-rangeAB}のBのように、両端の白と青の丸が逆転している場合は、先ほどと逆方向に値が変化する。つまり、カメラと手の距離が1番短い場合にCC値100を出力し、1番長い場合にCC値30を出力する。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=0.8\hsize]{../fig/CC-rangeAB.png}
+	\caption{CC範囲設定つまみ}
+	\label{fig:CC-rangeAB}
+\end{figure}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{../fig/CC-range.png}
+	\caption{CC範囲設定の詳細}
+	\label{fig:CC-range}
+\end{figure}
 
 
 \subsection{トリガージェスチャー設定}
 
-指定したCCナンバーにおける送信値とノートナンバー、そしてこれら2つのどちらかを時間的な値変化で制御するための単発的な信号を送るジェスチャーについて説明する。
+トリガージェスチャーを使用するために、\figref{fig:trigger_set}のように使用ジェスチャーと使用機能とのパッチングや、用意した項目の設定をする必要がある。
 
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{../fig/trigger_set.png}
+	\caption{トリガージェスチャー設定画面}
+	\label{fig:trigger_set}
+\end{figure}
 
 
 \subsubsection{ジェスチャー選択}
@@ -437,7 +475,7 @@ $y_{t-1}$：直前(150ms前)の上下位置座標
 
 \subsection{コントロールジェスチャー設定}
 指定したMIDI CCとピッチ範囲で、連続的な値変化
-指定したCCナンバーにおける送信値とノートナンバー、そしてこれら２つのどちらかを時間的な値変化で制御するための単発的な信号を送るジェスチャーについて説明する。
+指定したCCナンバーにおける送制御値とノートナンバー、そしてこれら2つのどちらかを時間的な値変化で制御するための単発的な信号を送るジェスチャーについて説明する。
 \subsubsection{ジェスチャー選択}
 
 \subsubsection{MIDI CC機能}
@@ -474,57 +512,6 @@ $y_{t-1}$：直前(150ms前)の上下位置座標
 	\end{tabular}
 \end{table}
 
-\subsection{MIDI送信設定}
-シンセサイザー等へMIDIを送信するためには、\figref{fig:MIDI-set}のようにMIDI送信先、ノートナンバー・CCナンバー、MIDIチャンネル、MIDI CC範囲の４種類の項目をユーザが設定する必要がある。それぞれの項目について詳しく説明する。
-
-\begin{figure}[tb]
-	\centering
-	{\setlength{\fboxsep}{0pt}
-	 \setlength{\fboxrule}{0.5pt}
-	 \fcolorbox{gray}{white}{%
-	   \includegraphics[width=0.8\linewidth]{../fig/MIDI-set.png}
-	 }}
-	\caption{MIDI送信設定画面}
-	\label{fig:MIDI-set}
-\end{figure}
-
-
-\subsubsection{MIDI送信先}
-この項目では、MIDI情報の送信先を決める。Maxの起動時またはMIDI機器の検索ボタンを押した際に、PCにつながっているシンセサイザー等のMIDI機器がポップアップメニューに表示され、選択したMIDI機器に情報が送信される。
-
-\subsubsection{CCナンバー・ノートナンバー}
-トリガージェスチャーを扱う際に設定が必要になる項目であり、単発的に送るCCナンバー
-
-\subsubsection{MIDIチャンネル}
-MIDI機器によっては、送信先の設定のほかにも、MIDIチャンネルを設定する必要がある。
-
-MIDIチャンネルは、1本のMIDIケーブルで複数の楽器(パート)の演奏情報を区別して送受信するための1〜16の番号で、各パートにチャンネルを割り当てることで、異なる楽器を同時にコントロールすることができる。
-
-本システムでも、1〜16の番号を指定することで、1つのPCで複数のMIDI機器を使い分けることが可能である。
-
-\subsubsection{MIDI CC範囲}
-MIDIコントロールチェンジを使ってシンセサイザー等MIDI機器を制御する際に、どの値の範囲のみジェスチャーで変化させるかを設定することができる。
-
-\figref{fig:CC-rangeAB}は設定つまみである。このつまみ両端の白と青の丸を動かすことで範囲を設定することができる。この範囲は\figref{fig:CC-range}のように、MIDIで制御するシンセサイザーのつまみ等のパラメータと模しているものになっており、どの範囲のみパラーメータを変化させるかが視覚的に理解しやすく設定できる。
-
-つまり、カメラからの距離でシンセサイザーを操る場合、\figref{fig:CC-rangeAB}のAの時は、カメラと手の距離が1番短い場合にCC値30を出力し、1番長い場合にCC値100を出力する。
-
-また\figref{fig:CC-rangeAB}のBのように、両端の白と青の丸が逆転している場合は、先ほどと逆方向に値が変化する。つまり、カメラと手の距離が1番短い場合にCC値100を出力し、1番長い場合にCC値30を出力する。
-
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=0.8\hsize]{../fig/CC-rangeAB.png}
-	\caption{CC範囲設定つまみ}
-	\label{fig:CC-rangeAB}
-\end{figure}
-
-\begin{figure}[tb]
-	\centering
-	\includegraphics[width=\hsize]{../fig/CC-range.png}
-	\caption{CC範囲設定の詳細}
-	\label{fig:CC-range}
-\end{figure}
-
 
 
 
@@ -537,6 +524,7 @@ MediaPipeから得られる連続値を扱う際に、測定誤差や環境要�
 
 \subsubsection{プリセット機能}
 
+本システムには、
 
 \label{sec:contents}
 
@@ -591,6 +579,8 @@ MediaPipeから得られる連続値を扱う際に、測定誤差や環境要�
 
 \section{考察}
 \subsection{ユーザー視点でのシステムの有効性}
+
+
 
 \subsection{実演を通じて明らかになった課題}
 
