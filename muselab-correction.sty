@@ -10,6 +10,7 @@
 \RequirePackage{xcolor}         % 色指定
 \RequirePackage{comment}        % 環境ごと非表示用
 \RequirePackage{graphicx}
+\RequirePackage{soul}
 
 %% finalオプション処理
 \newif\if@finalcorrection
@@ -17,6 +18,24 @@
 
 \DeclareOption{final}{\@finalcorrectiontrue}
 \ProcessOptions\relax
+
+% 背景ハイライト（改行追従）
+\newcommand{\muselab@hl}[2]{%
+    {\sethlcolor{#1}\hl{#2}}%
+}
+
+% --- 追加：折り返し可能な色付きボックス（箱の中で改行できる） ---
+\newcommand{\muselab@wrapcolorbox}[2]{%
+    \begingroup
+    \setlength{\fboxsep}{1pt}%
+    \colorbox{#1}{%
+        \parbox[t]{\dimexpr\linewidth-2\fboxsep\relax}{%
+            \raggedright\hspace{0pt}#2%
+        }%
+    }%
+    \endgroup
+}
+
 
 %% 添削コマンド定義
 \if@finalcorrection
@@ -35,17 +54,16 @@
 \else
     %% 通常時の定義（添削用表示）
     \newcommand{\red}[1]{\textcolor{red}{#1}}
-    \newcommand{\cut}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
-    \newcommand{\deleted}[1]{\sout{\textcolor{red}{#1}}}
-    \newcommand{\commented}[1]{\colorbox{red!30}{#1}}
+    \newcommand{\cut}[1]{\textcolor{red}{\textcolor{red}{［削除：#1］}}}
+    \newcommand{\deleted}[1]{\cut{#1}}
+    \newcommand{\commented}[1]{\textsuperscript{\textcolor{orange}{oO（#1）}}}
     \newcommand{\added}[1]{\textcolor{red}{#1}}
-    \newcommand{\highlight}[1]{\colorbox{yellow!40}{#1}}
+    \newcommand{\highlight}[1]{\muselab@wrapcolorbox{yellow!40}{#1}}
     \newcommand{\needRef}[1]{%
         \textcolor{blue}{#1}\textsuperscript{\colorbox{blue!30}{要出典}}%
     }
     \newcommand{\highlightComment}[2]{%
-        \colorbox{yellow!40}{#1}%
-        \textsuperscript{\textcolor{red}{#2}}%
+        \muselab@wrapcolorbox{yellow!40}{#1}\textsuperscript{\textcolor{red}{#2}}
     }
     \newcommand{\modified}[2]{\deleted{#1}\added{#2}}
     %% gptsample環境の定義（通常時は紫色）
