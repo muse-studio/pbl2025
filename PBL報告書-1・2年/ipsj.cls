@@ -2051,7 +2051,7 @@ c}}}
 %%
 %===
 \ifnum\c@year<\z@
-\c@year1959 \advance\c@year\c@volume 
+\c@year2026 \advance\c@year\c@volume 
 \fi
 \number\c@year
 %===
