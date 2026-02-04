@@ -154,7 +154,7 @@ DMX512 は、照明機器のRGB値やBrightness、動作を数値データとし
 		\hline
 		\hline
 		PC（Windows 11）                        \\
-		コンデンサマイク（演奏音入力）                       \\
+		コンデンサマイク（演奏音入力）                     \\
 		スマートフォン（演奏動作取得）                       \\
 		USB-DMXインタフェース（\figref{fig:dmx-light}）\\
 		DMX対応照明機器4台（\figref{fig:dmx-light}）   \\
@@ -273,7 +273,7 @@ UDPはTCPに比較して通信遅延が小さいため、本システムでは�
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/updown.png}
-	\caption{上げ弓(左)と下げ弓(右)}\label{fig:up}
+	\caption{上げ弓（左）と下げ弓（右）}\label{fig:up}
 \end{figure}
 
 PCに送信されたx軸のジャイロデータをもとに、弓方向の判定を行う。
@@ -338,7 +338,7 @@ DMX信号の出力には、USB接続のDMXインタフェース（\figref{fig:dm
 
 \subsubsection{照明特徴量からDMX値への変換}
 
-照明特徴量（RGB値,Brightness,点滅速度）は、DMXチャンネルに対応する値へ変換される(\tabref{tab:channel})。
+照明特徴量（RGB値,Brightness,点滅速度）は、DMXチャンネルに対応する値へ変換される（\tabref{tab:channel}）。
 
 これらは連続値として出力されるため、DMXチャンネルに割り当てる際には0〜255の整数値へ正規化・クリッピング処理を行う。
 具体的には、各値に対して以下の処理を適用する。
@@ -558,11 +558,11 @@ RMS は点滅速度においても一定の影響を持つものの、その重�
 本研究では、入手可能な映像素材が限られているという制約のもと、音質および照明演出が比較的明瞭に記録されており、学習データとして十分な情報量を有すると判断された以下の3種類の映像を選定した。
 
 \begin{itemize}
-  \item \textbf{曲目：}千本桜(\figref{fig:senbonzakura})　\\
+  \item \textbf{曲目：}千本桜（\figref{fig:senbonzakura}）　\\
       \textbf{演奏時間：}3分50秒
-  \item \textbf{曲目：}ヴァイオリンソナタ第三番「バラード」(\figref{fig:sonata})
+  \item \textbf{曲目：}ヴァイオリンソナタ第三番「バラード」（\figref{fig:sonata}）
       \textbf{演奏時間：}2分31秒
-  \item \textbf{曲目：}スプラッシュ(\figref{fig:splash})　\\
+  \item \textbf{曲目：}スプラッシュ（\figref{fig:splash}）　\\
       \textbf{演奏時間：}4分12秒
 \end{itemize}
 
@@ -594,7 +594,7 @@ RMS は点滅速度においても一定の影響を持つものの、その重�
 \begin{table*}[t]
 \centering
 \small
-\caption{各映像の音響特徴量と照明特徴量のCSVデータ(一部抜粋)}
+\caption{各映像の音響特徴量と照明特徴量のCSVデータ（一部抜粋）}
 \label{tab:csv-live}
 \begin{tabular}{c|cccccccccc}
 \hline
@@ -828,7 +828,7 @@ MIDIデータは直接音響特徴量を算出することができないため�
 		\]
 		$R^2$スコアは 1 に近いほど予測精度が高く、0 は平均値予測と同等、負の値は平均予測より劣ることを示す。
 	\item \textbf{評価データ：}
-	    評価には、学習時に使用していないテスト用データを用いた(\ref{sec:midimodel}節参照)。
+	    評価には、学習時に使用していないテスト用データを用いた（\ref{sec:midimodel}節参照）。
     \item \textbf{評価手順：}
 		学習済みの照明予測モデルに対し、テスト用データの音響特徴量を入力として与え、対応する照明特徴量を予測させた。
 		その後、予測された照明特徴量と実測値を比較し、$R^2$スコアを計算した。
@@ -850,7 +850,7 @@ MIDIデータは直接音響特徴量を算出することができないため�
 
 本章では、本研究で構築したリアルタイム照明制御システムを用いて実施した実演について述べる。
 本研究では、異なる楽曲および異なる環境条件下におけるシステムの適応性と表現の妥当性を検討するため、計2回の実演を実施している。
-1回目の実演は、大学教室において同ゼミ生(約20名)を対象に実施し、2回目の実演は、新町商店街において一般の観客を伴う公開実演として実施した。
+1回目の実演は、大学教室において同ゼミ生（約20名）を対象に実施し、2回目の実演は、新町商店街において一般の観客を伴う公開実演として実施した。
 
 \subsection{第1回実演『君をのせて』}
 
