@@ -19,6 +19,12 @@
 \usepackage[]{pdfpages}	%必要なら
 \usepackage{url} %必要なら
 
+%付録の超長テーブル用
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+% \usepackage{caption}
+
 \def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
 \def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
 % \def\|{\verb|}
@@ -128,6 +134,7 @@
 \input{05-mieru}
 \input{06-matome}
 
+\input{app1-story}
 % ==========================================
 % 参考文献
 % ==========================================
