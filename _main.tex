@@ -104,25 +104,11 @@
 %
 
 \maketitle
-
 \thispagestyle{empty}
-\clearpage
-\addtocounter{page}{-2}
-\newpage
-\setcounter{tocdepth}{3}
-
-%\section*{要旨}
-%本研究では，＊＊＊＊の取り組みについて調査する．また，＊＊＊＊について考察する．
-
-\tableofcontents %目次
-
-\listoffigures %図目次
-
-
-\thispagestyle{empty}
-\clearpage
-
-
+% ==========================================
+% 目次
+% ==========================================
+\input{_index} % 目次・図目次・表目次
 
 % ==========================================
 % 本文．
@@ -134,13 +120,18 @@
 \input{05-mieru}
 \input{06-matome}
 
-\input{app1-story}
-\input{app2-story-minaty}
 % ==========================================
 % 参考文献
 % ==========================================
 
 \bibliographystyle{muselabunsrt} % SIGMUS/EC予稿の時は ipsjunsrt にする
 \bibliography{minato} % .bibファイルの名前（Zoteroからエクスポートして作る）
+
+% ==========================================
+% 付録
+% ==========================================
+
+\input{app1-story}
+\input{app2-story-minaty}
 
 \end{document}
