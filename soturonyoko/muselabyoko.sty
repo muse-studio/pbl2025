@@ -6,13 +6,13 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{muselabyoko}
 
-\usepackage{mathtools,amssymb}
-\usepackage{latexsym}
-\usepackage{newtxtext,newtxmath}
-\usepackage[utf8]{inputenc} 	%波ダッシュ（〜）を表記できるようにする
+\RequirePackage{mathtools,amssymb}
+\RequirePackage{latexsym}
+\RequirePackage{newtxtext,newtxmath}
+\RequirePackage[utf8]{inputenc} 	%波ダッシュ（〜）を表記できるようにする
 
 
-\usepackage[normalem]{ulem} % \soutを有効化
+\RequirePackage[normalem]{ulem} % \soutを有効化
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\cut}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
 
