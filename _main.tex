@@ -19,6 +19,7 @@
 \usepackage[]{pdfpages}	%必要なら
 \usepackage{url} %必要なら
 
+
 %付録の超長テーブル用
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -28,6 +29,9 @@
 \def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
 \def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
 % \def\|{\verb|}
+\usepackage{fancyvrb}
+\renewcommand{\|}{\Verb|}
+\newcommand{\vbarSafe}{\texttt{|}}
 
 % マル○記号を使いたい場合------
 %	○×〜 などは機種依存文字のため本文で直接は使えない
@@ -46,7 +50,9 @@
 % ------------------------------------------
 
 % ---- 添削用 ----------------------
-\newcommand{\Erase}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
+\usepackage{muselab-correction} % 添削用のマクロを定義しているパッケージ
+% \usepackage[final]{muselab_correction} % 添削終了時は final オプションをつける
+%	このパッケージを使うと，添削用のコメントが出力される
 % ------------------------------------------
 
 % ---- この論文オリジナル ------------
