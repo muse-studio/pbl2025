@@ -11,7 +11,7 @@
 %% デフォルトでは詰め込むために見出しの行数は1行分となっています．
 %% 見出しの前に1行分のスペースを入れるには以下を有効にしてください．
 %% （section, subsection, subsubsection ごとに変更できます）
-% \ModifyHeading{section}{before_lines=1}
+\ModifyHeading{section}{before_lines=1}
 % \ModifyHeading{subsection}{before_lines=1}
 % \ModifyHeading{subsubsection}{before_lines=1}
 
@@ -35,30 +35,26 @@
     {\Large
             \begin{center}
                 %%↓タイトルを入力してください
-                \input{../credit/author-title}
+                \input{author-title}
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%
             \end{center}
         }
     \vspace{12pt}
     \begin{flushright}
-<<<<<<< HEAD:yoko/_yoko.tex
-        福知山公立大学情報学部　\input{../credit/author-name} \\
-        湊蒼志
-=======
         福知山公立大学情報学部　\input{author-name} \\
         指導教員　橋田光代
->>>>>>> minaty:_yoko.tex
     \end{flushright}
     \vspace{1\Cvs}
 ]
 
 
 %% ここから本文を書く
-\input{muselab-yoko-sample}
+\input{00-yoko-minato}
 
 
 % 参考文献
+\small
 \bibliographystyle{muselabunsrt} % bstファイルの名前
-\bibliography{muselab-sample} % .bibファイルの名前（Zoteroからエクスポートして作る）
+\bibliography{minato} % .bibファイルの名前（Zoteroからエクスポートして作る）
 
 \end{document}
