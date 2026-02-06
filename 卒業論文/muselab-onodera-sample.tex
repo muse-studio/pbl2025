@@ -22,7 +22,14 @@
 
 \subsection{マシンライブ}
 \subsubsection{マシンライブとは}
-マシンライブは、一般的にハードウェアの電子楽器(ドラムマシンやシンセサイザー)を複数個用いたパフォーマンスのことを指す。現状では、詳しい定義は定められておらず、ハードウェアシンセの他にも、ソフトウェアシンセや生楽器の使用やDAW等による電子楽器の制御がなされることもある。そのため本研究では、マイシンライブを、テクノ、ハウス、トランスといった音楽ジャンルがメインとなる、ハードウェアの電子楽器を中心としたライブパフォーマンスであると仮定する。
+マシンライブは、一般的にハードウェアの電子楽器(ドラムマシンやシンセサイザー)を複数個用いたパフォーマンスのことを指す(\figref{fig:machinelive})。現状では、詳しい定義は定められておらず、ハードウェアシンセの他にも、ソフトウェアシンセや生楽器の使用やDAW等による電子楽器の制御がなされることもある。そのため本研究では、マイシンライブを、テクノ、ハウス、トランスといった音楽ジャンルがメインとなる、ハードウェアの電子楽器を中心としたライブパフォーマンスであると仮定する。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\hsize]{../fig/machinelive.png}
+	\caption{マシンライブの例（文献\cite{2-minute}より抜粋）}
+	\label{fig:machinelive}
+\end{figure}
 
 今回のような電子楽器を主体とした演奏では、演奏情報(ノート、タイミングなど)を記録・再生し、音源を鳴らして音楽を自動で演奏できるシーケンサーといった機器を使うことで、永続的に音源を流し続ける。その最中に演奏者が、電子楽器のつまみやフェーダーを動かすことによる音色パラメータの変更と、音色やシーケンスパターンの変更といった操作をリアルタイムで行う。これによって、曲に繊細な展開が生まれ、その展開を楽しむのがマシンライブの醍醐味となっている。
 
@@ -38,7 +45,7 @@
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/TR-6S.png}
-	\caption{ノブ・つまみ、フェーダー、ボタンの例}
+	\caption{ノブ・つまみ、フェーダー、ボタンの例（文献\cite{RolandTR6S}より抜粋）}
 	\label{fig:TR-6S}
 \end{figure}
 
@@ -48,7 +55,7 @@
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/synthesizer.png}
-	\caption{小型シンセサイザーの例(Roland S-1、KORG volca bass)}
+	\caption{小型シンセサイザーの例(Roland S-1、KORG volca bass)（文献\cite{RolandS1}\cite{VolcaBass}より抜粋）}
 	\label{fig:synthesizer}
 \end{figure}
 
@@ -60,7 +67,7 @@ MIDIは、シンセサイザー等の電子楽器やコンピュータ間で演�
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/MIDI_sample.png}
-	\caption{MIDIコントローラーの例(AKAI MPK mini MK3、Novation Launchpad)}
+	\caption{MIDIコントローラーの例(AKAI MPK mini MK3、Novation Launchpad)（文献\cite{MPKMiniMK3}\cite{LaunchNovation}より抜粋）}
 	\label{fig:MIDI_sample}
 \end{figure}
 
@@ -193,7 +200,7 @@ CCは、どのパラメーターを制御するかを示す0〜127の番号で�
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\hsize]{../fig/cc_logic.png}
-	\caption{MIDI CCの構成}
+	\caption{MIDI CCの構成（文献\cite{Minilogue}より抜粋）}
 	\label{fig:cc_logic}
 \end{figure}
 
@@ -565,7 +572,7 @@ MediaPipeから得られる連続値を扱う際に、測定誤差や環境要�
 
 \subsection{実演内容}
 実演内容としては、ダンスミュージックの要素を持った4分弱の自作の曲を、用意したシンセサイザーと、制作したシステムを用いて演奏するというものである。
-この際、S-1はPC内のDAW\cite{DTMDAW}から送信されるMIDIノートに沿って音が出力され、TR-6Sはマシン本体のシーケンサー機能を使うことであらかじめ構築した音源の自動再生による音の出力がなされている。また、あらかじめシンセパッド系の音をDAWに録音し、曲の一部で流している。
+この際、S-1はPC内のDAW\cite{DAW}から送信されるMIDIノートに沿って音が出力され、TR-6Sはマシン本体のシーケンサー機能を使うことであらかじめ構築した音源の自動再生による音の出力がなされている。また、あらかじめシンセパッド系の音をDAWに録音し、曲の一部で流している。
 また今回は、ハンドジェスチャーで制御する楽器として、DAW内で動作するサンプラーとソフトシンセも用意している。
 これは、アクセント付けをする際に効果音を出力と、コントロールジェスチャーによるノイズ音の長い時間にわたる音色変化といったアクセント付けがしたかったのだが、ハードウェア型のサンプラーを筆者が持っていないことや、所持しているハードウェア型のシンセサイザーでは思った通りのアクセント付けができなかったため、今回はソフトウェア型のものを使用した。
 
