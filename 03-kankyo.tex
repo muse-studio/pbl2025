@@ -11,10 +11,10 @@
 
 \subsection{作品制作の環境}
 本節では，本研究における作品制作の環境について述べる．
-
+%
 具体的には，使用した DAW ソフトウェア，MIDI データを中心とした制作方法，およびサンプリングによる音声素材の利用について整理し，音のみを用いた物語作品を制作するための前提条件について解説する．
 
-\vskip\baselineskip
+
 \subsubsection{使用した DAW ソフトウェア}
 本研究では，作品制作にあたり，DAW（Digital Audio Workstation）ソフトである Logic Pro  を使用した．
 
@@ -24,7 +24,7 @@ Logic Pro は，macOS 環境において標準的に利用可能なソフトで�
 
 なお，本研究では Logic Pro を用いたが，同様に MIDI 編集機能とリバーブをはじめとしたエフェクト処理，および音声素材のサンプリングが可能な環境が整っていれば，他の DAW ソフトを用いても同種の作品制作は可能である．
 
-\vskip\baselineskip
+
 \subsubsection{MIDI データを中心とした制作方法}
 本研究における作品は，主に MIDI（Musical Instrument Digital Interface）データを用いて制作している．
 
@@ -36,7 +36,7 @@ MIDI とは，音声そのものを記録する形式ではなく，音源を演
 
 本研究では，これらの MIDI パラメータを，登場キャラクターの鳴き声や身体動作，および出来事の推移を表現するための手段として用いている．
 
-\vskip\baselineskip
+
 \subsubsection{サンプリングによる音声素材の利用}
 本研究では，作品制作にあたり，サンプリングの手法を用いている．
 
@@ -46,7 +46,7 @@ MIDI とは，音声そのものを記録する形式ではなく，音源を演
 
 本研究における作品制作で利用したフリー音源配布サイトを，以下に示す．
 
-\vskip\baselineskip
+
 \begin{enumerate}
   \item 効果音ラボ（https://soundeffect-lab.info/）
   \item Pixabay（https://pixabay.com/music/）
@@ -57,43 +57,43 @@ MIDI とは，音声そのものを記録する形式ではなく，音源を演
 
 具体的には，物語作品をどのような単位で構成しているか，音声素材をどのように読み込むか，そしてそれらを用いてどのように表現上の工夫を行っているかについて述べる．なお，実際に作品中で行った具体的な工夫の内容については，次章において，個別のリージョンごとに詳しく述べる．
 
-\vskip\baselineskip
+
 \subsubsection{リージョンによる作品構成の整理}
 本研究で対象とする物語作品は，連続した音の流れによって構成されているが，それは単一の音の連なりではなく，複数のイベントが連続することで物語として形成されている．このイベントに当たるのが，リージョンである．
 
 リージョンとは，MIDI データやオーディオデータをブロックとしてまとめた音のまとまりであり，時間軸上に配置されることで，物語を構成する出来事の単位として扱うことができる（図1参照）．
 
 \begin{figure}[t]
-\begin{center}
-\includegraphics[width=70mm]{env1.png}
-\caption{図1．DAW 上に配置されたリージョンの例（赤丸で囲った部分）}
-\end{center}
+  \begin{center}
+    \includegraphics[width=\hsize]{env1.png}
+    \caption{DAW上に配置されたリージョンの例（赤丸で囲った部分）}
+  \end{center}
 \end{figure}
 
 本研究では，リージョンを物語の構成単位として設定している．次小節以降では，リージョン内部において，音声素材をどのように用い，物語の具体的な出来事や展開を構成しているかについて述べる．
 
-\vskip\baselineskip
+
 \subsubsection{Quick Sampler の活用}
 本研究における作品制作では，サンプリング機能を使用して各イベントの音声を作成するが，本小節では，サンプリングの手順について解説する．
 
 各トラックで「Quick Sampler」を起動した後，音声素材のファイルをドラッグし，これをプラグインの画面上にドロップすることで，音声素材を読み込ませることができる（図2参照）．
 
 \begin{figure}[t]
-\begin{center}
-\includegraphics[width=70mm]{env2.png}
-\caption{図2．Quick Samplerでの音声素材の読み込み}
-\end{center}
+  \begin{center}
+    \includegraphics[width=\hsize]{env2.png}
+    \caption{Quick Samplerでの音声素材の読み込み}\label{fig:env2}
+  \end{center}
 \end{figure}
 
 Quick Sampler では，音声素材の読み込み時に，もとのピッチや音量設定を保持する Original と，それらの最適化を自動的に行う Optimized を選択することができる．本研究では，音声素材の原音のピッチの基準を一貫して C3 として扱うため，音声素材の読み込みには Original を用いている．
 
-音声素材のファイルを読み込むと，プラグインの画面にその音声素材の波形が表示される．この画面上では，音声素材のうち，MIDI データまたはオーディオデータとして再生に用いる部分を設定することができる（図3参照）．なお，Quick Sampler には，本研究で示したもの以外にもさまざまな機能が備わっているが，本研究では，作品制作に必要な基本的な機能に絞って使用している．
+音声素材のファイルを読み込むと，プラグインの画面にその音声素材の波形が表示される．この画面上では，音声素材のうち，MIDI データまたはオーディオデータとして再生に用いる部分を設定することができる（\figref{fig:env2}）．なお，Quick Sampler には，本研究で示したもの以外にもさまざまな機能が備わっているが，本研究では，作品制作に必要な基本的な機能に絞って使用している．
 
 \begin{figure}[t]
-\begin{center}
-\includegraphics[width=70mm]{env3.png}
-\caption{図3．音声素材の再生に用いる部分の設定（赤丸で示した操作部）}
-\end{center}
+  \begin{center}
+    \includegraphics[width=\hsize]{env3.png}
+    \caption{音声素材の再生範囲の指定}
+  \end{center}
 \end{figure}
 
 本小節では，Quick Sampler を用いたサンプリング機能の活用方法について述べた．次小節では，これらの音声素材を， MIDI データまたはオーディオデータとしてどのように扱い，作品内で活用しているかについて述べる．
