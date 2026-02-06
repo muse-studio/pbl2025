@@ -66,7 +66,7 @@ EMDA（Emotion Movement Design Annotator）は，
 木構造作成の手続きを簡略化する支援ツールを開発する．
 
 なお，EMDAの木構造表現を説明するための参照枠として，
-本章ではGTTM（Generative Theory of Tonal Music）に触れる．
+本章ではGTTM（Generative Theory of Tonal Music）\cite{GTTM}に触れる．
 GTTMは音楽を対象に，時間的イベントのまとまりと重要度を階層構造として扱う枠組みを与えており，
 EMDAが採用する「イベントのグルーピング」と「重要度に基づく木構造化」を
 位置づける上で有用である．
@@ -76,29 +76,29 @@ EMDAが採用する「イベントのグルーピング」と「重要度に基�
 
 EMDA分析は，大きく分けると，
 （A）分析者の解釈判断を行う工程と，
-（B）その判断結果を木構造として外化する工程から構成される．
+（B）その判断結果を木構造として外在化する工程から構成される．
 本研究で問題として扱うのは主に（B）である．
 
 EMDA分析の典型的な作業手順を，工程として整理すると以下となる．
 \begin{enumerate}
-  \item 対象作品の選定と資料準備（音源，譜面，台本，シーン記述など）．
-  \item イベントの抽出と記述（時間軸に沿った出来事の切り出しと命名）．
-  \item イベントのグルーピング（どれとどれを同じまとまりと見なすかの判断）．
-  \item 重要度の判断（どれがより根幹に近いか，主従関係の判断）．
-  \item 木構造の作成（幹と枝の接続を決め，図として配置して表現する）．
-  \item 試行錯誤（グループ再編，主従関係の入れ替え）と結果の共有・議論．
+  \item 対象作品の選定と資料準備（音源，譜面，台本，シーン記述など）
+  \item イベントの抽出と記述（時間軸に沿った出来事の切り出しと命名）
+  \item イベントのグルーピング（どれとどれを同じまとまりと見なすかの判断）
+  \item 重要度の判断（どれがより根幹に近いか，主従関係の判断）
+  \item 木構造の作成（幹と枝の接続を決め，図として配置して表現する）
+  \item 試行錯誤（グループ再編，主従関係の入れ替え）と結果の共有・議論
 \end{enumerate}
 
-このうち，2～4は分析理論と分析者の観点に強く依存する「判断」の工程である．
+このうち，（２）〜（４）は分析理論と分析者の観点に強く依存する「\textbf{判断}」の工程である．
 
-一方，5は判断結果を外化するための「表現・編集」の工程であり，
+一方，（５）は，判断結果を外在化するための「\textbf{表現・編集}」の工程であり，
 イベント数や修正回数に応じて図編集コストが増大する．
-
+%
 例えば，親子接続を付け替えるたびに線を引き直す，
 配置を整えるたびに全体が崩れる，
 ラベルが構造に追従せず更新が必要になる，
 といった作業が反復しやすい．
-
+%
 この編集負荷が大きいと，分析者は判断を更新する試行錯誤自体を控えるようになり，
 結果として分析の探索が阻害される．
 
@@ -106,25 +106,25 @@ EMDA分析の典型的な作業手順を，工程として整理すると以下�
 \subsection{本研究の支援範囲と対象外}
 
 本研究で開発するツールは，上記工程のうち，
-「木構造の作成（工程5）」と，
-「試行錯誤を可能にする編集（工程6のうち図編集に関わる部分）」を支援対象とする．
-
+「（５）\textbf{木構造の作成}」と，
+「（６）\textbf{試行錯誤を可能にする編集}（のうち図編集に関わる部分）」を支援対象とする．
+%
 つまり，本ツールは分析者が行った判断（グルーピングと重要度）を前提として，
 それを素早く組み立て直せる編集環境を提供することに焦点を当てる．
 
 本ツールが支援する範囲は以下である．
 \begin{itemize}
-  \item 線分の追加・削除・ドラッグによる形状変更による木構造の作図．
-  \item 線分同士のスナップ接続による親子関係（幹・枝）の構築と解除．
-  \item 構造に追従するテキスト入力欄の配置によるラベリング支援（イベント名，グループ名など）．
-  \item 状態の保存・読み込み，Undo/Redoによる試行錯誤の支援．
+  \item 線分の追加・削除・ドラッグによる形状変更による木構造の作図
+  \item 線分同士のスナップ接続による親子関係（幹・枝）の構築と解除
+  \item 構造に追従するテキスト入力欄の配置によるラベリング支援（イベント名，グループ名など）
+  \item 状態の保存・読み込み，Undo/Redoによる試行錯誤の支援
 \end{itemize}
 
 一方で，本ツールが対象外とする範囲は以下である．
 \begin{itemize}
-  \item イベントの自動抽出（音源・譜面・文章からの分割や候補提示）．
-  \item グルーピング基準や重要度判断の自動推定，正解判定，分析結果の評価．
-  \item EMDA理論そのものの提案・改変（本研究は編集環境の提供を目的とする）．
+  \item イベントの自動抽出（音源・譜面・文章からの分割や候補提示）
+  \item グルーピング基準や重要度判断の自動推定，正解判定，分析結果の評価
+  \item EMDA理論そのものの提案・改変（本研究は編集環境の提供を目的とする）
 \end{itemize}
 
 以上より，本研究の目的は，
@@ -134,8 +134,13 @@ EMDA分析の典型的な作業手順を，工程として整理すると以下�
 
 \subsection{音楽理論GTTM}
 
-なお，EMDAの木構造表現を説明するための参照枠として，
-本章ではGTTM（Generative Theory of Tonal Music）に触れる．
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig01.png}
+  \caption{GTTMのタイムスパン木}\label{fig:01}
+\end{figure}
+EMDAの木構造表現を説明するための参照枠として，
+本章ではGTTM（Generative Theory of Tonal Music）\cite{GTTM}に触れる．
 GTTMは，音楽を時間的に連なる音イベントの集合として捉え，
 それらのまとまりと重要度を階層構造として記述する理論である\cite{GTTM}．
 この枠組みは，EMDAが採用する
@@ -156,51 +161,55 @@ GTTMは，音楽を時間的に連なる音イベントの集合として捉え�
 ボトムアップに木構造（タイムスパン木）を作っていくものである\cite{miura2015gttm}．
 \figref{fig:01}は，GTTMにおけるタイムスパン木の例を示したものであり，
 音楽構造がボトムアップに分節化され，階層的に整理されていく様子を表している．
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.95\linewidth]{figures/fig01.png}
-  \caption{GTTMのタイムスパン木}\label{fig:01}
-\end{figure}
-
 タイムスパン木の構造では，枝（branch）が幹（stem）の従属部になっており，
 幹が枝より重要な音であることを表している．
-4つ目に延長的簡約という，機能和声に基づく緊張-弛緩構造をトップダウンに分析するものがある．
+
+4つ目に，延長的簡約という，機能和声に基づく緊張-弛緩構造の関係を主軸において，タイムスパン分析と同様に
+木構造の形を構築していく分析手法を提供している．
+これら4つのサブ理論は，相互に関連し合いながら，最終的に楽曲の構造を多面的に捉える枠組みを提供している．
 
 \subsection{EMDA}
 
 今回ツールを作成する目的であるEMDA\cite{emda2019rigolo}は，
-GTTMを音楽だけでなく様々な作品に応用したものである．
+GTTMの延長的簡約を基盤として，音楽に限らず多様な分野における時系列表現を，緊張ー弛緩構造という
+共通の枠組みで捉えようとする試みである．
 
-対象である音楽や物語の根幹となる部分を軸に木構造を作成し，
-それまでのメロディや事象が何に繋がっているのか，
-何が重要なのかを可視化したものである．
-
+EMDAでは，分析対象となる作品や物語の根幹となる部分を木構造として表現し，
+それまでの事象が何に繋がっているのか，
+何が重要なのかを可視化する．
+%
 GTTMと対比しながら考えると，
 音符に相当する単位が一般化された「イベント」であり，
 イベントをグループ分けした上で，
 それぞれの重要度に応じて幹と枝の従属関係を構築することにより，
 木構造を作成していくものになっている．
-
+%
 この時のグループ分けの基準や，
 どのイベントがより重要なのかは，
 対象の作品や分析する人物によって異なる．
-
+%
 したがってEMDA分析の核は，
-グルーピングと重要度判断という分析者の解釈判断にある．
+\textbf{グルーピング}と\textbf{重要度判断}という分析者の解釈判断にある．
 
-一方で，この判断結果を木構造として外化する工程では，
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\hsize]{figures/fig02.png}
+  \caption{手作業によるEMDA分析例（PowerPointにて作成）}\label{fig:02}
+\end{figure}
+
+一方で，この判断結果を木構造として外在化する工程では，
 配置調整や接続更新などの図編集が反復しやすく，
 イベント数が増えるほど負担が増大する．
 
-本研究はこの「木構造の作成・修正」という手続き的工程に焦点を当て，
+本研究はこの「\textbf{木構造の作成・修正}」という手続き的工程に焦点を当て，
 分析者が判断を更新しながら試行錯誤できるよう，
-木構造編集を簡略化するツールを作成した．
-
+木構造編集を簡略化するツールを作成したものである．
+%
 本ツールは，判断そのものを代替せず，
 分析者が決めた構造を素早く組み立て直すための編集環境を提供する．
 
-\section{設計方針・設計上の工夫}
+\section{設計方針と設計上の工夫}
 
 \subsection{木構造表現に関する設計}
 
@@ -213,32 +222,32 @@ GTTMと対比しながら考えると，
 本研究では，このような木構造の作成作業を対象として，
 操作性および作業効率の評価を行う．
 
+
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.95\linewidth]{figures/fig02.png}
-  \caption{以前作成した木構造}\label{fig:02}
-\end{figure}
-
-\begin{figure*}[t]
-  \centering
-  \begin{minipage}[b]{0.33\linewidth}
+  \begin{minipage}[b]{\linewidth}
     \centering
-    \includegraphics[width=.6\linewidth]{figures/fig03.png}
+    \includegraphics[width=.3\linewidth]{figures/fig03.png}
     \caption{2本線の木構造}\label{fig:03}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.33\linewidth}
+  \begin{minipage}[b]{\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/fig04.png}
+    \includegraphics[width=.7\linewidth]{figures/fig04.png}
     \caption{中点に吸着する6本線}\label{fig:04}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.33\linewidth}
+  \begin{minipage}[b]{\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/fig05.png}
-    \caption{各スロットに吸着する6本線}\label{fig:05}
+    \includegraphics[width=.7\linewidth]{figures/fig05.png}
+    \caption{木構造の完成}\label{fig:05}
   \end{minipage}
-\end{figure*}
+  % \begin{minipage}[b]{\linewidth}
+  %   \centering
+  %   \includegraphics[width=\linewidth]{figures/fig06.png}
+  %   \caption{木構造部分完成時}\label{fig:06}
+  % \end{minipage}
+\end{figure}
 
 本ツールでは，分析対象の各要素を「線分」として表現し，それらを接続することで木構造を構成するUIを採用した．
 線分の上端を操作することで階層関係を形成する設計とすることで，親子関係を視覚的に把握しやすくし，構造の再構成を直感的に行えるようにしている．
@@ -260,11 +269,7 @@ GTTMと対比しながら考えると，
 
 以上の設計により，本ツールはEMDA分析における「階層関係の明示性」と「構造修正の容易性」という要請に対応した木構造表現を実現している．
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig06.png}
-  \caption{木構造部分完成時}\label{fig:06}
-\end{figure}
+
 
 \subsection{イベント情報およびグループ表現の設計}
 
@@ -344,6 +349,16 @@ EMDA分析では，木構造によって示される関係性と併せて，各�
   \includegraphics[width=0.95\linewidth]{figures/fig15.png}
   \caption{ツール起動時の初期画面}\label{fig:15}
 \end{figure}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig16.png}
+  \caption{線分とそれに対応したテキストボックス}\label{fig:16}
+\end{figure}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig17.png}
+  \caption{分割モードON状態}\label{fig:17}
+\end{figure}
 
 \subsection{線の基本操作}
 
@@ -365,10 +380,17 @@ EMDA分析では，木構造によって示される関係性と併せて，各�
 入力中は左右キーによって隣接する入力欄へフォーカスを移動でき，連続入力を支援する．
 線分と入力欄の対応関係を\figref{fig:16}に示す．
 
+
+
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.95\linewidth]{figures/fig16.png}
-  \caption{線分とそれに対応したテキストボックス}\label{fig:16}
+  \includegraphics[width=0.7\linewidth]{figures/fig18.png}
+  \caption{追加モードON状態}\label{fig:18}
+\end{figure}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/fig19.png}
+  \caption{削除モードON状態}\label{fig:19}
 \end{figure}
 
 \subsection{下段グループ列}
@@ -380,11 +402,7 @@ EMDA分析では，木構造によって示される関係性と併せて，各�
 分割モードを有効化すると（\figref{fig:17}），下段グループ列上で境界を追加したい（または削除したい）位置付近をクリックすることで，境界の追加・削除が可能となる．
 各グループ入力欄も上段と同様にクリックで編集でき，左右キーで隣接する入力欄へフォーカス移動が可能である．
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.95\linewidth]{figures/fig17.png}
-  \caption{分割モードON状態}\label{fig:17}
-\end{figure}
+
 
 \subsection{追加モード}
 
@@ -393,11 +411,6 @@ EMDA分析では，木構造によって示される関係性と併せて，各�
 この操作により，イベント間へ新たなイベントを追加する作業を支援する．
 線の追加に伴い，対応する上段テキストボックスも自動的に再配置される．
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.7\linewidth]{figures/fig18.png}
-  \caption{追加モードON状態}\label{fig:18}
-\end{figure}
 
 \subsection{削除モード}
 
@@ -405,16 +418,23 @@ EMDA分析では，木構造によって示される関係性と併せて，各�
 削除したい線のガイドをクリックすることで，当該線を削除できる．
 また，削除対象を視覚的に特定しやすいよう，ガイドにカーソルを合わせた際に，対応するテキストボックス枠を強調表示する．
 
+
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.7\linewidth]{figures/fig19.png}
-  \caption{削除モードON状態}\label{fig:19}
+  \includegraphics[width=0.5\linewidth]{figures/fig20.png}
+  \caption{編集メニュー選択時}\label{fig:20}
 \end{figure}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/fig21.png}
+  \caption{ファイルメニュー選択時}\label{fig:21}
+\end{figure}
+
 
 \subsection{線数の指定と増減}
 
 線の本数は，操作パネル右側の「線の本数」入力欄に数値を入力して適用することで変更できる．
-また，「＋線を追加」「−線を削除」ボタンにより，1本単位の増減も可能である．
+「＋線を追加」「−線を削除」ボタンにより，1本単位の増減も可能とする．
 
 \subsection{表示範囲操作}
 
@@ -431,13 +451,9 @@ EMDA分析では，木構造によって示される関係性と併せて，各�
 Ctrl+ZでUndo，Ctrl+YでRedoを実行する．
 同操作は編集メニューからも実行可能である（\figref{fig:20}）．
 編集メニューには初期状態へ戻すリセット機能も実装している．
-リセットは編集操作として扱われるため，Undoによりリセット前の状態へ戻すことも可能である．
+リセットは編集操作として扱われるため，Undoによりリセット前の状態へ戻すことも可能とする．
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.5\linewidth]{figures/fig20.png}
-  \caption{編集メニュー選択時}\label{fig:20}
-\end{figure}
+
 
 \subsection{状態の保存・復元}
 
@@ -445,11 +461,7 @@ Ctrl+ZでUndo，Ctrl+YでRedoを実行する．
 ファイルメニューから実行可能であり（\figref{fig:21}），保存先とファイル名を指定する．
 なお，保存形式と状態に含める要素の詳細は該当節で述べる．
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.5\linewidth]{figures/fig21.png}
-  \caption{ファイルメニュー選択時}\label{fig:21}
-\end{figure}
+
 
 \subsection{スクリーンショット}
 
@@ -552,6 +564,30 @@ EMDA分析では，
 分析における試行錯誤を阻害しない環境が提供できているかを測る指標として位置づけられる．
 
 
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/fig22.png}
+  \caption{計測時にツールで作成した木構造（$n=12$）}
+  \label{fig:22}
+\end{figure}
+
+\begin{table}[t]
+  \centering
+  \caption{表1　作業時間の比較（単位：分:秒）}
+  \label{tab:23}
+  \begin{tabular}{lll}
+    \hline\hline
+    試行回数        & PowerPoint & 本ツール \\ \hline
+    1回目($n=8$)  & 5:41       & 1:35 \\
+    2回目($n=9$)  & 4:07       & 1:58 \\
+    3回目($n=10$) & 4:27       & 1:50 \\
+    4回目($n=11$) & 4:40       & 1:45 \\
+    5回目($n=12$) & 4:42       & 1:44 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
 \subsubsection{調査方法}
 
 PowerPointおよび本研究で開発したツールを用いて，
@@ -584,36 +620,23 @@ PowerPointとツールでの作業を交互に行うことで，
 作業への慣れが極力生じないよう配慮した．
 
 
-図\ref{fig:22}に，
+\figref{fig:22}に，
 計測時に本ツールで作成した木構造の一例（線数 $n=12$）を示す．
+
+
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{figures/fig22.png}
-  \caption{計測時にツールで作成した木構造（$n=12$）}
-  \label{fig:22}
+  \includegraphics[width=\linewidth]{figures/fig24.png}
+  \caption{ツールで作成した木構造（図\ref{fig:02}と同形）}
+  \label{fig:24}
 \end{figure}
-
 
 \subsubsection{結果}
 
-各条件で5回ずつ測定した作業時間を表\ref{tab:23}に示す．
+各条件で5回ずつ測定した作業時間を\tabref{tab:23}に示す．
 
-\begin{table}[t]
-  \centering
-  \caption{表1　作業時間の比較（単位：分:秒）}
-  \label{tab:23}
-  \begin{tabular}{lll}
-    \hline\hline
-    試行回数        & PowerPoint & 本ツール \\ \hline
-    1回目($n=8$)  & 5:41       & 1:35     \\
-    2回目($n=9$)  & 4:07       & 1:58     \\
-    3回目($n=10$) & 4:27       & 1:50     \\
-    4回目($n=11$) & 4:40       & 1:45     \\
-    5回目($n=12$) & 4:42       & 1:44     \\
-    \hline
-  \end{tabular}
-\end{table}
+
 
 PowerPointによる1回目の作業時間が他と比べて長いのは，
 表の作成や線配置の方法に試行錯誤を要したためである．
@@ -654,16 +677,10 @@ PowerPointと本ツールを比較した．
 
 \subsubsection{比較課題}
 
-2年次にEMDA分析を実施した際に作成した木構造（図\ref{fig:02}）と
+2年次にEMDA分析を実施した際に作成した木構造（\figref{fig:02}）と
 同様の従属関係を持つ木構造を，
-本ツールを用いて作成した（図\ref{fig:24}）．
+本ツールを用いて作成した（\figref{fig:24}）．
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig24.png}
-  \caption{ツールで作成した図\ref{fig:02}と同様の木構造}
-  \label{fig:24}
-\end{figure}
 
 この木構造に対して，
 以下の3つの修正作業をPowerPointおよび本ツールでそれぞれ行い，
