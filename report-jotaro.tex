@@ -38,6 +38,16 @@ WAM-Studioとは，Web Audio Modules （WAMs）\cite{WAM-paper-buffa-2022}
 音源やエフェクト（FX）を追加するために作られた共通規格を用いて開発されたOSSのDAWである．
 以下では，DAWIYを構成する基本機能と，便利機能，また，
 プラグインについて述べる．
+\figref{fig:system-structure}にDAWIYのシステム構成を示す．
+
+
+\begin{figure}[tb]
+      \centering
+      \includegraphics[width=0.9\linewidth]{../fig/dummy.png}
+      \caption{DAWIYシステム構成}
+      \label{fig:system-structure}
+\end{figure}
+
 
 \subsection{基本機能}
 % DAWとして必須
@@ -121,6 +131,14 @@ DAWIYでは，下記のプラグインを外部から読み込むことで，
 \section{プラグイン}
 DAWIYプラグインは，VSTプラグインではカバーできない，
 DAWの入出力・UI・操作等に介入する処理を拡張するための独自のプラグインシステムである．
+\figref{fig:installation_procedure}にDAWIYプラグイン導入の流れを示す．
+
+\begin{figure}[tb]
+      \centering
+      \includegraphics[width=1.0\linewidth]{../fig/installation_procedure.pdf}
+      \caption{DAWIYプラグイン導入の流れ}
+      \label{fig:installation_procedure}
+\end{figure}
 
 \subsection{種類と適用範囲}
 DAWIYプラグインは，
@@ -176,20 +194,14 @@ DAWIYプラグインは，
 より，登録されているDAWIYプラグインのインストール
 ・アンイストール，また有効化・無効化
 が可能である．
-\begin{figure}[tb]
-      \centering
-      \includegraphics[width=1.0\linewidth]{../fig/installation_procedure.pdf}
-      \caption{DAWIYプラグイン導入の流れ}
-      \label{fig:installation_procedure}
-\end{figure}
+
 エンドユーザは、パッケージマネージャから
 インストールボタンを押すか，事前にダウンロードした
 zipファイル等を選択するか，
 DAW画面上にドラッグアンドドロップする
 だけで自動的にプラグインを
 インストールすることができるため，
-内部のディレクトリ構造を把握する必要が無い
-（\textbf{図\ref{fig:installation_procedure}}）．
+内部のディレクトリ構造を把握する必要が無い．
 
 \subsection{作成方法}
 \begin{figure}[tb]
