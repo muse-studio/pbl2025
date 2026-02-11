@@ -182,19 +182,7 @@ DAWIY本体に取り込むことを推奨する．
       \caption{DAWIYパッケージマネージャー}
       \label{fig:package_manager}
 \end{figure}
-DAWIYプラグインは，
-\texttt{public/src/DawiyPlugins}
-ディレクトリ以下に配置されたTypeScriptファイル
-（\texttt{.ts}）として管理される．
-システムはこのディレクトリを自動的にスキャンし，
-有効なプラグインファイルを検出して
-ロードする仕組みとなっている．
-プラグインごとの設定やメタデータは，
-必要に応じて\texttt{plugin.json}等の形式で
-管理されることもあるが，基本的にはTypeScriptの
-クラス定義内に記述されたメタデータ
-（ID，名前，説明など）が使用される．
-また，DAW内部のパッケージマネージャ
+DAW内部のパッケージマネージャ
 （\textbf{図\ref{fig:package_manager}}）
 より，登録されているDAWIYプラグインのインストール
 ・アンイストール，また有効化・無効化
@@ -215,8 +203,19 @@ DAW画面上にドラッグアンドドロップする
       \caption{クリエイターツール}
       \label{fig:creator_tool}
 \end{figure}
-DAWIYプラグインの開発は，
-TypeScriptを用いて行われる．
+DAWIYプラグインは個々のユーザで自由に開発・導入することが可能である．
+DAWIYプラグインは，
+\texttt{public/src/DawiyPlugins}
+ディレクトリ以下に配置されたTypeScriptファイル
+（\texttt{.ts}）として管理される．
+システムはこのディレクトリを自動的にスキャンし，
+有効なプラグインファイルを検出して
+ロードする仕組みとなっている．
+プラグインごとの設定やメタデータは，
+必要に応じて\texttt{plugin.json}等の形式で
+管理されることもあるが，基本的にはTypeScriptの
+クラス定義内に記述されたメタデータ
+（ID，名前，説明など）が使用される．
 % \begin{figure}[tb]
 %       \centering
 %       \includegraphics[width=1.0\linewidth]{../fig/plugin_structure.png}
