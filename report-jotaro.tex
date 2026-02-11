@@ -80,7 +80,7 @@ HTML, JavaScript, TypeScript, CSSを組み合わせて，webブラウザおよ�
 クロスプラットフォームなDAWである．
 %
 \figref{fig:system-structure}にDAWIYのシステム構成を示す．
-以下，本章では，DAWIYを構成する主要な機能と，そのカスタマイズ性について述べる．
+以下，本章では，DAWIYを構成する機能について述べる．
 
 
 \footnotetext{
@@ -88,12 +88,12 @@ HTML, JavaScript, TypeScript, CSSを組み合わせて，webブラウザおよ�
       という，WebベースのDAWにおいてVST （Virtual Studio Technology） プラグインのように
       音源やエフェクト（FX）を追加するために作られた共通規格．
 }
-\begin{figure}[tb]
-      \centering
-      \includegraphics[width=0.9\linewidth]{../fig/dummy.png}
-      \caption{DAWIYシステム構成}
-      \label{fig:system-structure}
-\end{figure}
+% \begin{figure}[tb]
+%       \centering
+%       \includegraphics[width=0.9\linewidth]{../fig/dummy.png}
+%       \caption{DAWIYシステム構成}
+%       \label{fig:system-structure}
+% \end{figure}
 
 
 \subsection{基本制御機能}
@@ -215,10 +215,10 @@ AviUtl及びAviUtl2\cite{AviUtlnooheya}のプラグインを参考にし，
 プラグインを下記のカテゴリに分類する．
 プラグインによっては，
 複数のカテゴリを横断する機能を保有することも可能である．
-また，下記のいずれかにプラグインとして実装できそうなものであっても，
-その機能がDAWIYユーザ全体に必要である，と判断される場合には，
-プラグインとして配布するよりもプルリクエストを出すなどして
-DAWIY本体に取り込むことを推奨する．
+% また，下記のいずれかにプラグインとして実装できそうなものであっても，
+% その機能がDAWIYユーザ全体に必要である，と判断される場合には，
+% プラグインとして配布するよりもプルリクエストを出すなどして
+% DAWIY本体に取り込むことを推奨する．
 \begin{itemize}
       \item \textbf{生成}：
             ノート，オーディオ，パターンを生成して
@@ -427,6 +427,7 @@ DAWIYのコミュニティを活性化させ，
 期待される．
 
 \begin{acknowledgment}
-      本研究を行うにあたって，プラグインの開発等に関わってくださった
-      平山 心\footnote{関西学院大学工学部，ifp34362@kwansei.ac.jp}氏に深く感謝申し上げる．
+      本研究の実施にあたり，プラグイン開発等で
+      平山心氏（関西学院大学）に有益な助言と協力を頂いた．
+      % 平山 心\footnote{関西学院大学工学部，ifp34362@kwansei.ac.jp}氏に深く感謝申し上げる．
 \end{acknowledgment}
