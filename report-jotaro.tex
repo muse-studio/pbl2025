@@ -56,10 +56,10 @@ MIDIデータの演奏に際しては専らWAMsを利用することになる．
 
 \subsubsection{ピアノロール}
 \begin{figure}[tb]
-  \centering
-  \includegraphics[width=0.9\linewidth]{../fig/pianoroll.png}
-  \caption{ピアノロール}
-  \label{fig:pianoroll}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../fig/pianoroll.png}
+      \caption{ピアノロール}
+      \label{fig:pianoroll}
 \end{figure}
 MIDIノートを視覚的に配置・編集できるピアノロール画面を実装した
 （\textbf{図\ref{fig:pianoroll}}）．
@@ -120,20 +120,20 @@ AviUtl及びAviUtl2\cite{AviUtlnooheya}のプラグインを参考にし，
 プラグインとして配布するよりもプルリクエストを出すなどして
 DAWIY本体に取り込むことを推奨する．
 \begin{itemize}
-  \item \textbf{Generator（生成）}：
-        ノート，オーディオ，パターンを生成して
-        楽曲に追加するプラグイン．
-  \item \textbf{Modifier（加工）}：
-        既存のノートやオーディオデータを
-        選択・加工するプラグイン．
-  \item \textbf{Analysis（解析）}：
-        楽曲情報の可視化・分析を行うプラグイン．
-  \item \textbf{IO（入出力）}：
-        外部ファイル形式の読み込み・
-        書き出し機能を追加するプラグイン．
-  \item \textbf{UI（ユーザインターフェース）}：
-        DAWの全体的な外観の変更や，
-        操作性の拡張を行うプラグイン．
+      \item \textbf{生成}：
+            ノート，オーディオ，パターンを生成して
+            楽曲に追加するプラグイン．
+      \item \textbf{加工}：
+            既存のノートやオーディオデータを
+            選択・加工するプラグイン．
+      \item \textbf{解析}：
+            楽曲情報の可視化・分析を行うプラグイン．
+      \item \textbf{入出力}：
+            外部ファイル形式の読み込み・
+            書き出し機能を追加するプラグイン．
+      \item \textbf{UI}：
+            DAWの全体的な外観の変更や，
+            操作性の拡張を行うプラグイン．
 \end{itemize}
 これらのカテゴリは\texttt{IDawiyPlugin}
 インターフェース内で定義されており，
@@ -141,10 +141,10 @@ DAWIY本体に取り込むことを推奨する．
 
 \subsection{全体管理}
 \begin{figure}[tb]
-  \centering
-  \includegraphics[width=0.9\linewidth]{../fig/package_manager.png}
-  \caption{DAWIYパッケージマネージャー}
-  \label{fig:package_manager}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../fig/package_manager.png}
+      \caption{DAWIYパッケージマネージャー}
+      \label{fig:package_manager}
 \end{figure}
 DAWIYプラグインは，
 \texttt{public/src/DawiyPlugins}
@@ -163,38 +163,53 @@ DAWIYプラグインは，
 より，登録されているDAWIYプラグインのインストール
 ・アンイストール，また有効化・無効化
 が可能である．
+\begin{figure}[tb]
+      \centering
+      \includegraphics[width=1.0\linewidth]{../fig/installation_procedure.pdf}
+      \caption{DAWIYプラグイン導入の流れ}
+      \label{fig:installation_procedure}
+\end{figure}
 エンドユーザは、パッケージマネージャから
 インストールボタンを押すか，事前にダウンロードした
-zipファイル等を選択するだけで自動的にプラグインを
+zipファイル等を選択するか，
+DAW画面上にドラッグアンドドロップする
+だけで自動的にプラグインを
 インストールすることができるため，
-内部のディレクトリ構造を把握する必要が無い．
+内部のディレクトリ構造を把握する必要が無い
+（\textbf{図\ref{fig:installation_procedure}}）．
 
 \subsection{作成方法}
 \begin{figure}[tb]
-  \centering
-  \includegraphics[width=0.9\linewidth]{../fig/creator_tool.png}
-  \caption{クリエイターツール}
-  \label{fig:creator_tool}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../fig/creator_tool.png}
+      \caption{クリエイターツール}
+      \label{fig:creator_tool}
 \end{figure}
 DAWIYプラグインの開発は，
 TypeScriptを用いて行われる．
+% \begin{figure}[tb]
+%       \centering
+%       \includegraphics[width=1.0\linewidth]{../fig/plugin_structure.png}
+%       \caption{プラグイン周辺のクラス構造と連携}
+%       \label{fig:plugin_structure}
+% \end{figure}
 全てのプラグインは，基底クラスである
 \texttt{DawiyPluginBase}を継承し，
 \texttt{@DAWIYPlugin}デコレーターを
 付与したクラスとして定義する必要がある．
 基本的な実装の流れは以下の通りである．
 \begin{enumerate}
-  \item \texttt{DawiyPluginBase}
-        クラスを継承したクラスを作成する．
-  \item クラスプロパティとして，一意なID，
-        名称，説明などを定義する．
-  \item 必要に応じて，
-        初期化処理を行う\texttt{onInit}メソッド，
-        UIを描画する\texttt{render}メソッド，
-        有効化・無効化時の処理を行う
-        \texttt{onActivate} /
-        \texttt{onDeactivate}メソッドを
-        オーバーライドして実装する．
+      \item \texttt{DawiyPluginBase}
+            クラスを継承したクラスを作成する．
+      \item クラスプロパティとして，一意なID，
+            名称，説明などを定義する．
+      \item 必要に応じて，
+            初期化処理を行う\texttt{onInit}メソッド，
+            UIを描画する\texttt{render}メソッド，
+            有効化・無効化時の処理を行う
+            \texttt{onActivate} /
+            \texttt{onDeactivate}メソッドを
+            オーバーライドして実装する．
 \end{enumerate}
 プラグイン内からは，\texttt{HostAPI}を通じてDAWのコア機能
 （UI操作，ファイルシステムアクセス，トラックデータの操作など）
@@ -208,10 +223,10 @@ TypeScriptを用いて行われる．
 
 \subsubsection{AIアシスタント}
 \begin{figure}[tb]
-  \centering
-  \includegraphics[width=0.9\linewidth]{../fig/ai_assistant.png}
-  \caption{AIアシスタントのサイドバー}
-  \label{fig:ai_assistant}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../fig/ai_assistant.png}
+      \caption{AIアシスタントのサイドバー}
+      \label{fig:ai_assistant}
 \end{figure}
 
 DAWIYの画面右側に常駐する「AIアシスタント」
