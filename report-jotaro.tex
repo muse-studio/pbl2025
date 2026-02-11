@@ -54,6 +54,12 @@ WAM-Studioとは，Web Audio Modules （WAMs）\cite{WAM-paper-buffa-2022}
 \subsection{基本機能}
 \begin{figure}[tb]
       \centering
+      \includegraphics[width=0.9\linewidth]{../fig/dawiy_desktop.png}
+      \caption{DAWIYの基本画面}
+      \label{fig:dawiy_desktop}
+\end{figure}
+\begin{figure}[tb]
+      \centering
       \includegraphics[width=0.9\linewidth]{../fig/pianoroll.png}
       \caption{ピアノロール}
       \label{fig:pianoroll}
@@ -62,6 +68,8 @@ WAM-Studioとは，Web Audio Modules （WAMs）\cite{WAM-paper-buffa-2022}
 % 無いと話にならない機能一覧
 % 基本構成こういうことになってますよ
 この項では，DAWIYにあらかじめ実装されている，DAWとして必須の機能について述べる．
+\figref{fig:dawiy_desktop}にDAWIYの基本画面を示す．
+
 \begin{description}
       \item[（1）オーディオ・MIDI入出力の制御]
             PCに登録されている
@@ -77,11 +85,11 @@ WAM-Studioとは，Web Audio Modules （WAMs）\cite{WAM-paper-buffa-2022}
             複数のトラックを追加・削除することができる．
             各トラックで音声やMIDIをそれぞれ配置することができる．
 
-      \item[（4）ピアノロール（\figref{fig:pianoroll}）]
+      \item[（4）ピアノロール]
             % MIDIノートを視覚的に配置・編集できるピアノロール画面を実装した
             % （\textbf{図\ref{fig:pianoroll}}）．
             % 具体的には，
-            トラックをダブルクリックすることでピアノロール画面に遷移する．
+            トラックをダブルクリックすると，ピアノロール画面に遷移する（\figref{fig:pianoroll}）．
             ピアノロール画面では，マウス操作を通じて，(i)ノートの追加・削除，(ii)再生位置の指定，
             (iii)ノートの長さの伸縮，(iv)複数ノートの範囲選択，ほか，PCの標準的な編集ショートカットキー
             を操作できる．
