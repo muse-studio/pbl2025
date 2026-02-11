@@ -199,12 +199,7 @@ DAW画面上にドラッグアンドドロップする
 内部のディレクトリ構造を把握する必要が無い．
 
 \subsection{作成方法}
-\begin{figure}[tb]
-      \centering
-      \includegraphics[width=0.9\linewidth]{../fig/creator_tool.png}
-      \caption{クリエイターツール}
-      \label{fig:creator_tool}
-\end{figure}
+
 DAWIYプラグインは個々のユーザで自由に開発・導入することが可能である．
 DAWIYプラグインは，
 \texttt{public/src/DawiyPlugins}
@@ -217,12 +212,26 @@ DAWIYプラグインは，
 基本的にはTypeScriptの
 クラス定義内に記述されたメタデータ
 （ID，名前，説明など）が使用される．
-% \begin{figure}[tb]
-%       \centering
-%       \includegraphics[width=1.0\linewidth]{../fig/plugin_structure.png}
-%       \caption{プラグイン周辺のクラス構造と連携}
-%       \label{fig:plugin_structure}
-% \end{figure}
+
+
+\subsubsection*{（1）クラス設計}
+\begin{figure}[tb]
+      \centering
+      \includegraphics[width=1.0\linewidth]{../fig/dummy.png}
+      % \includegraphics[width=1.0\linewidth]{../fig/plugin_structure.png}
+      \caption{プラグイン周辺のクラス構造と連携}
+      \label{fig:plugin_structure}
+\end{figure}
+\begin{figure}[tb]
+      \centering
+      \includegraphics[width=0.9\linewidth]{../fig/creator_tool.png}
+      \caption{クリエイターツール}
+      \label{fig:creator_tool}
+\end{figure}
+
+
+
+\figref{fig:plugin_structure}に示すように，
 全てのプラグインは，基底クラスである
 \texttt{DawiyPluginBase}を継承し，
 \texttt{@DAWIYPlugin}デコレーターを
@@ -244,6 +253,8 @@ DAWIYプラグインは，
 プラグイン内からは，\texttt{HostAPI}を通じてDAWのコア機能
 （UI操作，ファイルシステムアクセス，トラックデータの操作など）
 に安全にアクセスすることが可能である．
+
+
 ファイルを作成したら，DAW内部のクリエイターツール
 （\textbf{図\ref{fig:creator_tool}}）
 にファイルをドラッグアンドドロップし，
@@ -251,7 +262,9 @@ DAWIYプラグインは，
 記述してから生成ボタンを押すことで，
 プラグインを登録することが可能である．
 
-\subsubsection*{（1）AIアシスタント}
+
+
+\subsubsection*{（2）AIアシスタント}
 \begin{figure}[tb]
       \centering
       \includegraphics[width=0.9\linewidth]{../fig/ai_assistant.png}
@@ -259,10 +272,12 @@ DAWIYプラグインは，
       \label{fig:ai_assistant}
 \end{figure}
 
+プラグイン開発を補助するツールとして，
 DAWIYの画面右側に常駐する「AIアシスタント」
-（サイドバー）を実装した（\textbf{図\ref{fig:ai_assistant}}）．
+（サイドバー）を用意している（\textbf{図\ref{fig:ai_assistant}}）．
+
 AIアシスタントは，
-Google Gemini APIやOpenAI API等の
+Google Gemini API\cite{xxx}やOpenAI API\cite{xxx}等の
 LLMプロバイダと連携している．
 ユーザが自然言語で「リアルタイムに
 コード名を検出して表示する機能を作成して」
@@ -275,12 +290,12 @@ LLMプロバイダと連携している．
 即座にビルド・ロードされる．
 この一連の流れにより，ユーザはコードを
 一切書くことなく，対話をするだけで数十秒で
-独自の機能をDAWIYに追加することが可能となった．
+独自の機能をDAWIYに追加することが可能である．
 
 \subsection{事例}
 本研究では，DAWIYプラグインの有用性と
 表現力を検証するために，いくつかの
-プロトタイププラグインを実装した．
+プロトタイププラグインを実装している．
 
 \subsubsection*{（1）MIDI Chord Assistant}
 リアルタイムにMIDI入力信号を解析し，
@@ -350,6 +365,6 @@ DAWIYのコミュニティを活性化させ，
 期待される．
 
 \begin{acknowledgment}
-本研究を行うにあたって，プラグインの開発等に関わってくださった
-{平山 心}{Hirayama Kokoro}{KW}に深く感謝申し上げる．
+      本研究を行うにあたって，プラグインの開発等に関わってくださった
+      {平山 心}{Hirayama Kokoro}{KW}に深く感謝申し上げる．
 \end{acknowledgment}
