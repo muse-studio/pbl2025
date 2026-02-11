@@ -78,16 +78,16 @@ DAWIY\footnote{\url{https://github.com/NumberZero-0621/DAWIY}}は，
 WAM-Studio\cite{WAM-studio-paper-2023}\footnotemark を技術基盤とし，
 HTML, JavaScript, TypeScript, CSSを組み合わせて，webブラウザおよびデスクトップ上で動作する
 クロスプラットフォームなDAWである．
+%
+\figref{fig:system-structure}にDAWIYのシステム構成を示す．
+以下，本章では，DAWIYを構成する主要な機能と，そのカスタマイズ性について述べる．
+
 
 \footnotetext{
       Web Audio Modules (WAMs)\cite{WAM-paper-buffa-2022}
       という，WebベースのDAWにおいてVST （Virtual Studio Technology） プラグインのように
       音源やエフェクト（FX）を追加するために作られた共通規格．
 }
-
-\figref{fig:system-structure}にDAWIYのシステム構成を示す．
-以下，本章では，DAWIYを構成する主要な機能と，そのカスタマイズ性について述べる．
-
 \begin{figure}[tb]
       \centering
       \includegraphics[width=0.9\linewidth]{../fig/dummy.png}
@@ -97,17 +97,12 @@ HTML, JavaScript, TypeScript, CSSを組み合わせて，webブラウザおよ�
 
 
 \subsection{基本制御機能}
-\begin{figure}[tb]
-      \centering
-      \includegraphics[width=0.9\linewidth]{../fig/dawiy_desktop.png}
-      \caption{DAWIYの基本画面}
-      \label{fig:dawiy_desktop}
-\end{figure}
 % DAWとして必須
 % 無いと話にならない機能一覧
 % 基本構成こういうことになってますよ
 この項では，DAWIYにあらかじめ実装されている，DAWとして必須の機能について述べる．
 \figref{fig:dawiy_desktop}にDAWIYの基本画面を示す．
+
 
 \begin{description}
       \item[（1）オーディオ・MIDI入出力の制御]
@@ -129,16 +124,27 @@ HTML, JavaScript, TypeScript, CSSを組み合わせて，webブラウザおよ�
             を操作できる．
 \end{description}
 
+\begin{figure}[tb]
+      \centering
+      \includegraphics[width=0.9\linewidth]{../fig/dawiy_desktop.png}
+      \caption{DAWIYの基本画面}
+      \label{fig:dawiy_desktop}
+\end{figure}
+
+
+
 \subsection{表現制御機能}
+本項では，各トラックにおける表現力を高めるための機能について述べる．
 \begin{description}
-      \item[（1）オートメーション]
-            楽曲の進行に合わせて刻々とパラメータを変化させることができる
-            オートメーション機能を実装した．
-            オートメーションレーンはパラメータの数に合わせて動的に増減することが可能である．
+      \item[（1）オートメーションレーン]
+            各トラック内の制御パラメータ（音量，パン，エフェクトの各種パラメータなど）に対して，
+            時間軸進行に伴いパラメータを動的に変化させることができる（\figref{fig:dawiy_desktop}）．
+            オートメーションレーンは編集対象とするパラメータの数に合わせて動的に増減できる．
       \item[（2）ベロシティレーン]
-            ノートの強さを表すベロシティを指定することができる．
-            さらに，ピアノロール画面の下部に，各ノートのベロシティの可視化，また操作が可能な
-            ベロシティレーンを実装した．
+            ピアノロール画面の中に，MIDIノートの強弱を制御するためのベロシティレーンを実装した（\figref{fig:pianoroll}）．
+            ノートを追加・編集する際に，ノートのベロシティ値を個別に設定することができる．
+            また，複数ノートを範囲選択した状態でベロシティレーン上でドラッグ操作を行うことで，
+            選択中のノート全てのベロシティ値を線形に変化させることが可能である．
 \end{description}
 \subsection{DIY制御機能}
 % この項では，DAWIYに予め実装されている，あると便利な機能について述べる．
@@ -168,27 +174,27 @@ HTML, JavaScript, TypeScript, CSSを組み合わせて，webブラウザおよ�
 % 画面のカスタマイズ
 % ユーザ単位で，色を変える，配置を変える，ショートカットを変える
 % 今までのDAWでこうなってたやつの読み替え
-画面左上のハンバーガーメニューから見ることのできる設定ウィンドウにて，
+画面左上のハンバーガーメニューから開く設定ウィンドウにて，
 ショートカットキーを自由に変更したり，
-ハンバーガーメニューに出るメニューの管理を行うことができる．
-また，各GUIの色も細かく設定したり，
-プリセットを利用することで一括でカラーテーマを変更することも
-可能である．
-DAWを構成するそれぞれのUIはドラッグアンドドロップで配置を自由に入れ替えることができる．
-このように，画面の見た目をそれぞれのユーザにとってなるべく思い通りになるように
-DIYすることができる．
+メニューの管理を行うことができる．
+また，
+トラックビューやピアノロール画面など，
+DAWを構成する各コンポーネントは，ドラッグアンドドロップで配置を自由に入れ替えたり，配色を変更したりすることができる．
+これらの機能を通じて，各ユーザが自身の好みや作業効率に合わせたインターフェースを実現できる．
 
 % \subsection{プラグイン}
 % DAWIYでは，下記のプラグインを外部から読み込むことで，
 % 初期インストールの時点では入っていない機能を追加することができる．
 \subsubsection*{（3）VSTプラグイン}
+VSTは，DAW上で動作する，エフェクトや音源のプラグイン規格で，DAWコミュニティにおいて広く普及しているものである．
 ユーザのPC内にあるVSTプラグインを
-検索・登録することで，DAWIY内からVSTプラグインを
-呼び出し，楽器として音を鳴らしたりエフェクト処理をかけることが可能である．
+検索・登録することで，DAWIY内からもVSTプラグインを
+呼び出し，楽器として音を鳴らしたりエフェクト処理をかけることが可能となる．
 
 \subsubsection*{（4）DAWIYプラグイン}
-以下に述べるDAWIYプラグインを利用することで，
-より機能面に踏み込んだカスタマイズや，大幅なUIの変更・拡張を実現する．
+既存のDAWやVSTプラグインの枠組みを超えて，
+より機能面に踏み込んだカスタマイズや，大幅なUIの変更・拡張を実現することを目的として，
+ユーザが独自に編集・表現機能を追加できる仕組みを提供する．詳細については次章で述べる．
 
 % DIYできるものの1つがプラグインです
 % ↓
